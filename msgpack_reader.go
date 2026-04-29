@@ -115,6 +115,25 @@ func (r *MsgPackReader) ReadInt() int64 {
 	}
 }
 
+func (r *MsgPackReader) ReadInt32() int32  { return int32(r.ReadInt()) }
+func (r *MsgPackReader) ReadInt64() int64  { return r.ReadInt() }
+func (r *MsgPackReader) ReadUint32() uint32 { return uint32(r.ReadInt()) }
+func (r *MsgPackReader) ReadUint64() uint64 {
+	b := r.readByte()
+	if b <= 0x7F { return uint64(b) }
+	switch b {
+	case 0xCC: return uint64(r.readByte())
+	case 0xCD: return uint64(r.readU16())
+	case 0xCE: return uint64(r.readU32())
+	case 0xCF:
+		hi := uint64(r.readU32())
+		lo := uint64(r.readU32())
+		return (hi << 32) | lo
+	default:
+		panic(fmt.Sprintf("msgpack: expected uint64, got 0x%02X", b))
+	}
+}
+
 func (r *MsgPackReader) ReadFloat() float64 {
 	b := r.readByte()
 	if b == 0xCA {
@@ -129,6 +148,25 @@ func (r *MsgPackReader) ReadFloat() float64 {
 	}
 	panic(fmt.Sprintf("msgpack: expected float, got 0x%02X", b))
 }
+
+func (r *MsgPackReader) ReadFloat32() float32 { return float32(r.ReadFloat()) }
+func (r *MsgPackReader) ReadFloat64() float64 { return r.ReadFloat() }
+
+func (r *MsgPackReader) ReadBytes() []byte {
+	b := r.readByte()
+	var length int
+	switch b {
+	case 0xC4: length = int(r.readByte())
+	case 0xC5: length = int(r.readU16())
+	case 0xC6: length = int(r.readU32())
+	default: panic(fmt.Sprintf("msgpack: expected bin, got 0x%02X", b))
+	}
+	v := r.data[r.pos : r.pos+length]
+	r.pos += length
+	return v
+}
+
+func (r *MsgPackReader) ReadEnum() string { return r.ReadString() }
 
 func (r *MsgPackReader) ReadBool() bool {
 	b := r.readByte()

@@ -8,8 +8,10 @@ import (
 )
 
 type JsonReader struct {
-	src string
-	pos int
+	src        string
+	pos        int
+	firstField []bool
+	firstElem  []bool
 }
 
 func NewJsonReader(data []byte) *JsonReader {
@@ -299,24 +301,36 @@ func (r *JsonReader) ReadEnum() string {
 
 func (r *JsonReader) BeginObject() {
 	r.expect('{')
+	r.firstField = append(r.firstField, true)
 }
 
 func (r *JsonReader) HasNextField() bool {
 	ch := r.peek()
-	return ch != '}'
+	if ch == '}' {
+		r.firstField = r.firstField[:len(r.firstField)-1]
+		return false
+	}
+	top := len(r.firstField) - 1
+	if !r.firstField[top] {
+		if ch != ',' {
+			panic(fmt.Sprintf("json: expected ',' or '}', got '%c'", ch))
+		}
+		r.pos++
+	} else {
+		r.firstField[top] = false
+	}
+	return true
 }
 
 func (r *JsonReader) ReadFieldName() string {
-	return r.parseString()
-}
-
-func (r *JsonReader) NextFieldSeparator() {
-	ch := r.peek()
-	if ch == ',' {
+	key := r.parseString()
+	r.ws()
+	if r.pos < len(r.src) && r.src[r.pos] == ':' {
 		r.pos++
-	} else if ch != '}' {
-		panic(fmt.Sprintf("json: expected ',' or '}', got '%c'", ch))
+	} else {
+		panic(fmt.Sprintf("json: expected ':' after field name '%s'", key))
 	}
+	return key
 }
 
 func (r *JsonReader) EndObject() {
@@ -325,20 +339,25 @@ func (r *JsonReader) EndObject() {
 
 func (r *JsonReader) BeginArray() {
 	r.expect('[')
+	r.firstElem = append(r.firstElem, true)
 }
 
 func (r *JsonReader) HasNextElement() bool {
 	ch := r.peek()
-	return ch != ']'
-}
-
-func (r *JsonReader) NextElementSeparator() {
-	ch := r.peek()
-	if ch == ',' {
-		r.pos++
-	} else if ch != ']' {
-		panic(fmt.Sprintf("json: expected ',' or ']', got '%c'", ch))
+	if ch == ']' {
+		r.firstElem = r.firstElem[:len(r.firstElem)-1]
+		return false
 	}
+	top := len(r.firstElem) - 1
+	if !r.firstElem[top] {
+		if ch != ',' {
+			panic(fmt.Sprintf("json: expected ',' or ']', got '%c'", ch))
+		}
+		r.pos++
+	} else {
+		r.firstElem[top] = false
+	}
+	return true
 }
 
 func (r *JsonReader) EndArray() {
@@ -372,25 +391,14 @@ func (r *JsonReader) Skip() {
 		panic("json: unterminated string in skip")
 	case '{':
 		r.BeginObject()
-		first := true
 		for r.HasNextField() {
-			if !first {
-				r.NextFieldSeparator()
-			}
-			first = false
 			r.ReadFieldName()
-			r.expect(':')
 			r.Skip()
 		}
 		r.EndObject()
 	case '[':
 		r.BeginArray()
-		first := true
 		for r.HasNextElement() {
-			if !first {
-				r.NextElementSeparator()
-			}
-			first = false
 			r.Skip()
 		}
 		r.EndArray()
