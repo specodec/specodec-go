@@ -12,6 +12,10 @@ type JsonWriter struct {
 	firstItem []bool
 }
 
+func NewJsonWriter() *JsonWriter {
+	return &JsonWriter{}
+}
+
 func (w *JsonWriter) escape(s string) {
 	for i := 0; i < len(s); i++ {
 		c := s[i]
@@ -119,7 +123,7 @@ func (w *JsonWriter) WriteField(name string) {
 	w.firstItem[top] = false
 	w.sb.WriteByte('"')
 	w.escape(name)
-	w.sb.WriteString(`:`)
+	w.sb.WriteString(`":`)
 }
 
 func (w *JsonWriter) EndObject() {
