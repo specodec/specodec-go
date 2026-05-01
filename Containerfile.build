@@ -1,0 +1,13 @@
+FROM dhi.io/golang:1-alpine3.23-dev AS builder
+WORKDIR /app
+ARG HTTP_PROXY HTTPS_PROXY http_proxy https_proxy ALL_PROXY all_proxy
+ENV http_proxy=${HTTP_PROXY} https_proxy=${HTTPS_PROXY} HTTP_PROXY=${HTTP_PROXY} HTTPS_PROXY=${HTTPS_PROXY} ALL_PROXY=${ALL_PROXY}
+ENV GOPROXY=https://goproxy.cn,direct GONOSUMCHECK=* GONOSUMDB=*
+RUN git config --global http.proxy ${HTTP_PROXY}
+COPY go.mod ./
+RUN go mod download || true
+COPY . .
+RUN go vet ./... && go build ./...
+
+FROM scratch
+COPY --from=builder /app/go.mod /out/go.mod

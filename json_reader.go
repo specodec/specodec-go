@@ -140,6 +140,7 @@ func (r *JsonReader) parseString() string {
 }
 
 func (r *JsonReader) parseNumberRaw() string {
+	r.ws()
 	start := r.pos
 	if r.pos < len(r.src) && r.src[r.pos] == '-' {
 		r.pos++

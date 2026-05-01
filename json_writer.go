@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"math"
+	"strconv"
 	"strings"
 )
 
@@ -78,19 +79,27 @@ func (w *JsonWriter) WriteUint64(value uint64) {
 	w.sb.WriteByte('"')
 }
 
+func fmtFloat64(value float64) string {
+	s := strconv.FormatFloat(value, 'f', -1, 64)
+	if strings.HasSuffix(s, ".0") {
+		s = s[:len(s)-2]
+	}
+	return s
+}
+
 func (w *JsonWriter) WriteFloat32(value float32) {
 	v := float64(value)
 	if math.IsNaN(v) || math.IsInf(v, 0) {
 		panic("float32: NaN/Infinity not valid JSON")
 	}
-	w.sb.WriteString(fmt.Sprintf("%g", v))
+	w.sb.WriteString(fmtFloat64(v))
 }
 
 func (w *JsonWriter) WriteFloat64(value float64) {
 	if math.IsNaN(value) || math.IsInf(value, 0) {
 		panic("float64: NaN/Infinity not valid JSON")
 	}
-	w.sb.WriteString(fmt.Sprintf("%g", value))
+	w.sb.WriteString(fmtFloat64(value))
 }
 
 func (w *JsonWriter) WriteNull() {
@@ -110,7 +119,7 @@ func (w *JsonWriter) WriteEnum(value string) {
 	w.sb.WriteByte('"')
 }
 
-func (w *JsonWriter) BeginObject() {
+func (w *JsonWriter) BeginObject(_ int) {
 	w.sb.WriteByte('{')
 	w.firstItem = append(w.firstItem, true)
 }
@@ -131,7 +140,7 @@ func (w *JsonWriter) EndObject() {
 	w.sb.WriteByte('}')
 }
 
-func (w *JsonWriter) BeginArray() {
+func (w *JsonWriter) BeginArray(_ int) {
 	w.sb.WriteByte('[')
 	w.firstItem = append(w.firstItem, true)
 }

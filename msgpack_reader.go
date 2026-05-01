@@ -110,6 +110,14 @@ func (r *MsgPackReader) ReadInt() int64 {
 		return int64(r.readI16())
 	case 0xD2:
 		return int64(r.readI32())
+	case 0xD3:
+		hi := uint64(r.readU32())
+		lo := uint64(r.readU32())
+		return int64((hi << 32) | lo)
+	case 0xCF:
+		hi := uint64(r.readU32())
+		lo := uint64(r.readU32())
+		return int64((hi << 32) | lo)
 	default:
 		panic(fmt.Sprintf("msgpack: expected int, got 0x%02X", b))
 	}
@@ -146,7 +154,8 @@ func (r *MsgPackReader) ReadFloat() float64 {
 		r.pos += 8
 		return math.Float64frombits(bits)
 	}
-	panic(fmt.Sprintf("msgpack: expected float, got 0x%02X", b))
+	r.pos--
+	return float64(r.ReadInt())
 }
 
 func (r *MsgPackReader) ReadFloat32() float32 { return float32(r.ReadFloat()) }

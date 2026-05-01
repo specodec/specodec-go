@@ -212,6 +212,10 @@ func (w *MsgPackWriter) NextElement() {
 func (w *MsgPackWriter) EndArray() {
 }
 
+func (w *MsgPackWriter) WriteEnum(value string) {
+	w.WriteString(value)
+}
+
 func (w *MsgPackWriter) ToBytes() []byte {
 	return w.buf
 }
