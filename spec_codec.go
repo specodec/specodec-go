@@ -1,6 +1,5 @@
 package specodec
 
-import "strings"
 
 type SpecCodec[T any] struct {
 	Encode func(w SpecWriter, obj *T)
@@ -32,7 +31,7 @@ func (r *FormatRegistry) Register(e FormatEntry) *FormatRegistry {
 
 func (r *FormatRegistry) Match(format string) FormatEntry {
 	for _, e := range r.entries {
-		if strings.Contains(format, e.Name) {
+		if format == e.Name {
 			return e
 		}
 	}
