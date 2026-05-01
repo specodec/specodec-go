@@ -133,7 +133,6 @@ func (r *GronReader) ReadFieldName() string {
 	return r.lines[r.cursor][0][len(pfx):]
 }
 
-func (r *GronReader) NextFieldSeparator() {}
 func (r *GronReader) EndObject()          { r.ctx = r.ctx[:len(r.ctx)-1] }
 
 func (r *GronReader) BeginArray() {
@@ -152,7 +151,6 @@ func (r *GronReader) HasNextElement() bool {
 	return p == exp || strings.HasPrefix(p, exp+".") || strings.HasPrefix(p, exp+"[")
 }
 
-func (r *GronReader) NextElementSeparator() {}
 func (r *GronReader) NextElement()          { r.ctx[len(r.ctx)-1].index++ }
 func (r *GronReader) EndArray()             { r.ctx = r.ctx[:len(r.ctx)-1] }
 

@@ -88,11 +88,10 @@ func fmtFloat64(value float64) string {
 }
 
 func (w *JsonWriter) WriteFloat32(value float32) {
-	v := float64(value)
-	if math.IsNaN(v) || math.IsInf(v, 0) {
+	if math.IsNaN(float64(value)) || math.IsInf(float64(value), 0) {
 		panic("float32: NaN/Infinity not valid JSON")
 	}
-	w.sb.WriteString(fmtFloat64(v))
+	w.sb.WriteString(fmtFloat32(value))
 }
 
 func (w *JsonWriter) WriteFloat64(value float64) {

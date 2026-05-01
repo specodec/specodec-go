@@ -105,10 +105,13 @@ func (w *GronWriter) WriteNull()                       { w.emit("null") }
 func (w *GronWriter) WriteBytes(value []byte)          { w.emit(`"` + gronB64(value) + `"`) }
 
 func (w *GronWriter) WriteFloat32(value float32) {
+	if math.IsNaN(float64(value)) || math.IsInf(float64(value), 0) {
+		panic("float32: NaN/Infinity not valid")
+	}
 	if value == 0 && math.Signbit(float64(value)) {
 		w.emit("-0"); return
 	}
-	w.emit(strconv.FormatFloat(float64(value), 'f', -1, 32))
+	w.emit(fmtFloat32(value))
 }
 
 func (w *GronWriter) WriteFloat64(value float64) {
