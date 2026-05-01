@@ -8,16 +8,16 @@ type SpecCodec[T any] struct {
 }
 
 // ---------------------------------------------------------------------------
-// FormatEntry: a reader/writer factory pair for one MIME type
+// FormatEntry: a reader/writer factory pair for one format
 // ---------------------------------------------------------------------------
 type FormatEntry struct {
-	ContentType string
-	NewWriter   func() SpecWriter
-	NewReader   func(body []byte) SpecReader
+	Name      string // e.g. "json", "msgpack", "gron"
+	NewWriter func() SpecWriter
+	NewReader func(body []byte) SpecReader
 }
 
 // ---------------------------------------------------------------------------
-// FormatRegistry: maps content-type substrings to format entries
+// FormatRegistry: maps format name substrings to format entries
 // ---------------------------------------------------------------------------
 type FormatRegistry struct {
 	entries []FormatEntry
@@ -30,10 +30,9 @@ func (r *FormatRegistry) Register(e FormatEntry) *FormatRegistry {
 	return r
 }
 
-func (r *FormatRegistry) Match(contentType string) FormatEntry {
+func (r *FormatRegistry) Match(format string) FormatEntry {
 	for _, e := range r.entries {
-		parts := strings.SplitN(e.ContentType, "/", 2)
-		if len(parts) == 2 && strings.Contains(contentType, parts[1]) {
+		if strings.Contains(format, e.Name) {
 			return e
 		}
 	}
@@ -45,46 +44,46 @@ func (r *FormatRegistry) Match(contentType string) FormatEntry {
 // ---------------------------------------------------------------------------
 var DefaultRegistry = NewFormatRegistry().
 	Register(FormatEntry{
-		ContentType: "application/json",
-		NewWriter:   func() SpecWriter { return NewJsonWriter() },
-		NewReader:   func(body []byte) SpecReader { return NewJsonReader(body) },
+		Name:      "json",
+		NewWriter: func() SpecWriter { return NewJsonWriter() },
+		NewReader: func(body []byte) SpecReader { return NewJsonReader(body) },
 	}).
 	Register(FormatEntry{
-		ContentType: "application/msgpack",
-		NewWriter:   func() SpecWriter { return NewMsgPackWriter() },
-		NewReader:   func(body []byte) SpecReader { return NewMsgPackReader(body) },
+		Name:      "msgpack",
+		NewWriter: func() SpecWriter { return NewMsgPackWriter() },
+		NewReader: func(body []byte) SpecReader { return NewMsgPackReader(body) },
 	}).
 	Register(FormatEntry{
-		ContentType: "application/gron",
-		NewWriter:   func() SpecWriter { return NewGronWriter() },
-		NewReader:   func(body []byte) SpecReader { return NewGronReader(body) },
+		Name:      "gron",
+		NewWriter: func() SpecWriter { return NewGronWriter() },
+		NewReader: func(body []byte) SpecReader { return NewGronReader(body) },
 	})
 
 // ---------------------------------------------------------------------------
 // Dispatch / Respond
 // ---------------------------------------------------------------------------
-func Dispatch[T any](codec SpecCodec[T], body []byte, contentType string) *T {
-	return DispatchWith(codec, body, contentType, DefaultRegistry)
+func Dispatch[T any](codec SpecCodec[T], body []byte, format string) *T {
+	return DispatchWith(codec, body, format, DefaultRegistry)
 }
 
-func DispatchWith[T any](codec SpecCodec[T], body []byte, contentType string, registry *FormatRegistry) *T {
-	fmt := registry.Match(contentType)
+func DispatchWith[T any](codec SpecCodec[T], body []byte, format string, registry *FormatRegistry) *T {
+	fmt := registry.Match(format)
 	r := fmt.NewReader(body)
 	return codec.Decode(r)
 }
 
 type RespondResult struct {
-	Body        []byte
-	ContentType string
+	Body []byte
+	Name string // format name: "json" | "msgpack" | "gron"
 }
 
-func Respond[T any](codec SpecCodec[T], obj *T, accept string) RespondResult {
-	return RespondWith(codec, obj, accept, DefaultRegistry)
+func Respond[T any](codec SpecCodec[T], obj *T, format string) RespondResult {
+	return RespondWith(codec, obj, format, DefaultRegistry)
 }
 
-func RespondWith[T any](codec SpecCodec[T], obj *T, accept string, registry *FormatRegistry) RespondResult {
-	fmt := registry.Match(accept)
+func RespondWith[T any](codec SpecCodec[T], obj *T, format string, registry *FormatRegistry) RespondResult {
+	fmt := registry.Match(format)
 	w := fmt.NewWriter()
 	codec.Encode(w, obj)
-	return RespondResult{Body: w.ToBytes(), ContentType: fmt.ContentType}
+	return RespondResult{Body: w.ToBytes(), Name: fmt.Name}
 }
