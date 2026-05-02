@@ -3,7 +3,6 @@ package specodec
 import (
 	"encoding/base64"
 	"fmt"
-	"math"
 	"strconv"
 	"strings"
 )
@@ -100,13 +99,11 @@ func (r *GronReader) ReadEnum() string               { v, _ := gronUnescape(r.li
 
 func (r *GronReader) ReadFloat32() float32 {
 	v := r.lines[r.cursor][1]; r.cursor++
-	if v == "-0" { return math.Float32frombits(1 << 31) }
 	f, _ := strconv.ParseFloat(v, 32); return float32(f)
 }
 
 func (r *GronReader) ReadFloat64() float64 {
 	v := r.lines[r.cursor][1]; r.cursor++
-	if v == "-0" { return math.Float64frombits(1 << 63) }
 	f, _ := strconv.ParseFloat(v, 64); return f
 }
 

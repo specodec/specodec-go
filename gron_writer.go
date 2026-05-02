@@ -108,17 +108,14 @@ func (w *GronWriter) WriteFloat32(value float32) {
 	if math.IsNaN(float64(value)) || math.IsInf(float64(value), 0) {
 		panic("float32: NaN/Infinity not valid")
 	}
-	if value == 0 && math.Signbit(float64(value)) {
-		w.emit("-0"); return
-	}
-	w.emit(fmtFloat32(value))
+	w.emit(formatFloat32(value))
 }
 
 func (w *GronWriter) WriteFloat64(value float64) {
-	if value == 0 && math.Signbit(value) {
-		w.emit("-0"); return
+	if math.IsNaN(value) || math.IsInf(value, 0) {
+		panic("float64: NaN/Infinity not valid")
 	}
-	w.emit(strconv.FormatFloat(value, 'f', -1, 64))
+	w.emit(formatFloat64(value))
 }
 
 func (w *GronWriter) BeginObject(fieldCount int) {

@@ -4,7 +4,6 @@ import (
 	"encoding/base64"
 	"fmt"
 	"math"
-	"strconv"
 	"strings"
 )
 
@@ -79,26 +78,18 @@ func (w *JsonWriter) WriteUint64(value uint64) {
 	w.sb.WriteByte('"')
 }
 
-func fmtFloat64(value float64) string {
-	s := strconv.FormatFloat(value, 'f', -1, 64)
-	if strings.HasSuffix(s, ".0") {
-		s = s[:len(s)-2]
-	}
-	return s
-}
-
 func (w *JsonWriter) WriteFloat32(value float32) {
 	if math.IsNaN(float64(value)) || math.IsInf(float64(value), 0) {
 		panic("float32: NaN/Infinity not valid JSON")
 	}
-	w.sb.WriteString(fmtFloat32(value))
+	w.sb.WriteString(formatFloat32(value))
 }
 
 func (w *JsonWriter) WriteFloat64(value float64) {
 	if math.IsNaN(value) || math.IsInf(value, 0) {
 		panic("float64: NaN/Infinity not valid JSON")
 	}
-	w.sb.WriteString(fmtFloat64(value))
+	w.sb.WriteString(formatFloat64(value))
 }
 
 func (w *JsonWriter) WriteNull() {
