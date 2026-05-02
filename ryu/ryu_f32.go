@@ -1,4 +1,6 @@
 package ryu
+import "math"
+import "strconv"
 
 // Float32 configuration constants
 const FLOAT_MANTISSA_BITS = 23

@@ -1,4 +1,6 @@
 package ryu
+import "math"
+import "strconv"
 
 // Float64 configuration constants
 const DOUBLE_MANTISSA_BITS = 52
