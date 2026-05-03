@@ -41,7 +41,7 @@ if (existsSync(outputGo)) rmSync(outputGo, { recursive: true });
 mkdirSync(join(outputGo, 'scalars'), { recursive: true });
 
 run(`cd ${TESTS_DIR} && podman build ${COMMON} -t specodec-interop-go -f Containerfile \
-  --build-context specodec-go=${LANG_ROOT} \
+  --build-context specodec-runtime-go=${LANG_ROOT} \
   --build-context run=${TESTS_DIR}/run \
   --build-context vectors=${vectorsDir} \
   --build-context output_ts=${outputTsDir} .`);
@@ -60,7 +60,7 @@ run(`cd ${LANG_ROOT} && npx tsp compile ${CACHE}/alltypes.tsp --emit=@specodec/t
   --option @specodec/typespec-emitter-go.emitter-output-dir=${emitGen}`);
 
 run(`cd ${TESTS_DIR} && podman build ${COMMON} -t specodec-emit-go -f Containerfile.emit \
-  --build-context specodec-go=${LANG_ROOT} \
+  --build-context specodec-runtime-go=${LANG_ROOT} \
   --build-context emit=${TESTS_DIR}/emit \
   --build-context emit_gen=${emitGen} .`);
 
@@ -71,7 +71,7 @@ if (existsSync(outputEmitGo)) rmSync(outputEmitGo, { recursive: true });
 mkdirSync(outputEmitGo, { recursive: true });
 
 run(`cd ${TESTS_DIR} && podman build ${COMMON} -t specodec-emit-run-go -f Containerfile.emit-run \
-  --build-context specodec-go=${LANG_ROOT} \
+  --build-context specodec-runtime-go=${LANG_ROOT} \
   --build-context emit=${TESTS_DIR}/emit \
   --build-context emit_gen=${emitGen} \
   --build-context vectors=${vectorsDir} .`);
