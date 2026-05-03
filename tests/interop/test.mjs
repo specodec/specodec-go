@@ -58,13 +58,20 @@ if (goFiles.length > 0) {
   content = content.replace(/\*specodec\.SpecReader/g, 'specodec.SpecReader');
   writeFileSync(genFile, content);
   console.log(`  ✓ Fixed SpecWriter/SpecReader references`);
+  
+  // Fix generated code to use pointer parameters
+  content = content.replace(/func write(\w+)\(w specodec\.SpecWriter, obj (\w+)\)/g, 'func write$1(w specodec.SpecWriter, obj *$2)');
+  content = content.replace(/\(obj, w\)/g, '(obj, w)');
+  writeFileSync(genFile, content);
+  console.log(`  ✓ Fixed pointer parameters for write functions`);
 } else {
   console.error('  FAIL: No generated Go files');
   process.exit(1);
 }
 
 console.log('\n=== Step 5: Generate test runner ===');
-run(`cd ${__dir}/emit && VEC_DIR=${VEC_DIR} node generate_emit_runner.mjs`);
+mkdirSync(join(__dir, 'emit'), { recursive: true });
+run(`cd ${__dir} && VEC_DIR=${VEC_DIR} node generate_emit_runner.mjs`);
 
 console.log('\n=== Step 6: Setup Go module ===');
 const goMod = `module emit_go
@@ -77,7 +84,11 @@ console.log('\n=== Step 7: Run tests ===');
 if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
 mkdirSync(OUT_DIR, { recursive: true });
 
-run(`cd ${__dir}/emit && GOPROXY=direct GONOSUMDB=github.com/specodec/* go get github.com/specodec/specodec-go@latest`);
+// Get latest commit hash from GitHub
+const getLatestCommit = 'main';
+
+writeFileSync(join(__dir, 'emit', 'go.mod'), `module emit_go\n\ngo 1.23\n`);
+run(`cd ${__dir}/emit && GOPROXY=direct GONOSUMDB=github.com/specodec/* go get github.com/specodec/specodec-go@${getLatestCommit}`);
 run(`cd ${__dir}/emit && GOPROXY=direct GONOSUMDB=github.com/specodec/* VEC_DIR=${VEC_DIR} OUT_DIR=${OUT_DIR} go run run_emit.go`);
 
 console.log('\n=== ALL PASSED ===');
