@@ -79,15 +79,33 @@ func (w *JsonWriter) WriteUint64(value uint64) {
 }
 
 func (w *JsonWriter) WriteFloat32(value float32) {
-	if math.IsNaN(float64(value)) || math.IsInf(float64(value), 0) {
-		panic("float32: NaN/Infinity not valid JSON")
+	if math.IsNaN(float64(value)) {
+		w.sb.WriteString("\"NaN\"")
+		return
+	}
+	if math.IsInf(float64(value), 1) {
+		w.sb.WriteString("\"Infinity\"")
+		return
+	}
+	if math.IsInf(float64(value), -1) {
+		w.sb.WriteString("\"-Infinity\"")
+		return
 	}
 	w.sb.WriteString(formatFloat32(value))
 }
 
 func (w *JsonWriter) WriteFloat64(value float64) {
-	if math.IsNaN(value) || math.IsInf(value, 0) {
-		panic("float64: NaN/Infinity not valid JSON")
+	if math.IsNaN(value) {
+		w.sb.WriteString("\"NaN\"")
+		return
+	}
+	if math.IsInf(value, 1) {
+		w.sb.WriteString("\"Infinity\"")
+		return
+	}
+	if math.IsInf(value, -1) {
+		w.sb.WriteString("\"-Infinity\"")
+		return
 	}
 	w.sb.WriteString(formatFloat64(value))
 }

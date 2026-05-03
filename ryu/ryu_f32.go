@@ -71,11 +71,11 @@ func Float32ToString(f float32) string {
 		
 		if q <= 9 {
 			if mv % 5 == 0 {
-				vrIsTrailingZeros = multipleOfPowerOf5_64(mv, q)
+				vrIsTrailingZeros = multipleOfPowerOf5_32(uint32(mv), q)
 			} else if acceptBounds {
-				vmIsTrailingZeros = multipleOfPowerOf5_64(mm, q)
+				vmIsTrailingZeros = multipleOfPowerOf5_32(uint32(mm), q)
 			} else {
-				if multipleOfPowerOf5_64(mp, q) {
+				if multipleOfPowerOf5_32(uint32(mp), q) {
 					vp--
 				}
 			}
@@ -106,9 +106,9 @@ func Float32ToString(f float32) string {
 		} else if q < 31 {
 			vrIsTrailingZeros = multipleOfPowerOf2_64(mv, q-1)
 			if acceptBounds {
-				vmIsTrailingZeros = multipleOfPowerOf5_64(mm, q)
+				vmIsTrailingZeros = multipleOfPowerOf5_32(uint32(mm), q)
 			} else {
-				if multipleOfPowerOf5_64(mp, q) {
+				if multipleOfPowerOf5_32(uint32(mp), q) {
 					vp--
 				}
 			}
@@ -150,7 +150,7 @@ func Float32ToString(f float32) string {
 			output++
 		}
 		exp := e10 + removed
-		olength := decimalLength17(output)
+		olength := decimalLength9(uint32(output))
 		
 		result := ""
 		if sign { result = "-" }
@@ -176,7 +176,7 @@ func Float32ToString(f float32) string {
 			output++
 		}
 		exp := e10 + removed
-		olength := decimalLength17(output)
+		olength := decimalLength9(uint32(output))
 		
 		result := ""
 		if sign { result = "-" }

@@ -3,6 +3,7 @@ package specodec
 import (
 	"encoding/base64"
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 )
@@ -262,6 +263,24 @@ func (r *JsonReader) ReadUint64() uint64 {
 }
 
 func (r *JsonReader) ReadFloat32() float32 {
+	ch := r.peek()
+	if ch == '"' {
+		s := r.parseString()
+		if s == "NaN" {
+			return float32(math.NaN())
+		}
+		if s == "Infinity" {
+			return float32(math.Inf(1))
+		}
+		if s == "-Infinity" {
+			return float32(math.Inf(-1))
+		}
+		v, err := strconv.ParseFloat(s, 32)
+		if err != nil {
+			panic(fmt.Sprintf("json: invalid float32: %s", s))
+		}
+		return float32(v)
+	}
 	raw := r.parseNumberRaw()
 	v, err := strconv.ParseFloat(raw, 32)
 	if err != nil {
@@ -271,6 +290,24 @@ func (r *JsonReader) ReadFloat32() float32 {
 }
 
 func (r *JsonReader) ReadFloat64() float64 {
+	ch := r.peek()
+	if ch == '"' {
+		s := r.parseString()
+		if s == "NaN" {
+			return math.NaN()
+		}
+		if s == "Infinity" {
+			return math.Inf(1)
+		}
+		if s == "-Infinity" {
+			return math.Inf(-1)
+		}
+		v, err := strconv.ParseFloat(s, 64)
+		if err != nil {
+			panic(fmt.Sprintf("json: invalid float64: %s", s))
+		}
+		return v
+	}
 	raw := r.parseNumberRaw()
 	v, err := strconv.ParseFloat(raw, 64)
 	if err != nil {

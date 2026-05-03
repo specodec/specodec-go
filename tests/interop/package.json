@@ -1,14 +1,10 @@
 {
-  "name": "specodec-go-interop-test",
-  "version": "0.0.1",
+  "name": "specodec-interop-go",
+  "version": "1.0.0",
   "type": "module",
-  "private": true,
-  "scripts": {
-    "test": "node test.mjs"
-  },
   "dependencies": {
-    "@typespec/compiler": "1.11.0",
-    "@specodec/typespec-emitter-core": "^0.0.1",
-    "@specodec/typespec-emitter-go": "^0.0.1"
+    "@specodec/typespec-emitter-core": "0.1.0",
+    "@specodec/typespec-emitter-go": "0.1.0",
+    "@typespec/compiler": "1.11.0"
   }
 }

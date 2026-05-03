@@ -2,8 +2,15 @@ FROM dhi.io/golang:1-alpine3.23-dev AS runner
 WORKDIR /app
 ARG HTTP_PROXY HTTPS_PROXY http_proxy https_proxy ALL_PROXY all_proxy
 ENV http_proxy=${HTTP_PROXY} https_proxy=${HTTPS_PROXY} HTTP_PROXY=${HTTP_PROXY} HTTPS_PROXY=${HTTPS_PROXY} ALL_PROXY=${ALL_PROXY}
-ENV GOPROXY=direct GONOSUMCHECK=* GONOSUMDB=*
-COPY --from=specodec-runtime-go . /specodec-go/
-COPY --from=emit go.mod main.go run_emit.go run_emit_map.go dump_emit.go ./
+ENV GOPROXY=https://goproxy.cn,direct GONOSUMCHECK=* GONOSUMDB=*
+COPY --from=specodec-runtime-go go.mod /specodec-go/
+COPY --from=specodec-runtime-go *.go /specodec-go/
+RUN cd /specodec-go && go mod download
+COPY --from=emit go.mod ./
+RUN go mod download
+COPY --from=emit run_emit.go ./
 COPY --from=emit_gen . /app/emit_gen/
-RUN go mod tidy && go build -o /dev/null . 2>&1 && echo "OK go emit"
+RUN mkdir -p /app/output_emit
+COPY --from=vectors . /app/vectors/
+ENV VEC_DIR=/app/vectors OUT_DIR=/app/output_emit
+RUN go run run_emit.go

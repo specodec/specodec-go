@@ -1,6 +1,6 @@
 package specodec
 
-import "specodec/ryu"
+import "github.com/specodec/specodec-go/ryu"
 
 func formatFloat32(value float32) string {
 	return ryu.Float32ToString(value)

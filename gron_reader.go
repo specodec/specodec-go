@@ -3,6 +3,7 @@ package specodec
 import (
 	"encoding/base64"
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 )
@@ -99,11 +100,29 @@ func (r *GronReader) ReadEnum() string               { v, _ := gronUnescape(r.li
 
 func (r *GronReader) ReadFloat32() float32 {
 	v := r.lines[r.cursor][1]; r.cursor++
+	if v == "\"NaN\"" || v == "NaN" {
+		return float32(math.NaN())
+	}
+	if v == "\"Infinity\"" || v == "Infinity" {
+		return float32(math.Inf(1))
+	}
+	if v == "\"-Infinity\"" || v == "-Infinity" {
+		return float32(math.Inf(-1))
+	}
 	f, _ := strconv.ParseFloat(v, 32); return float32(f)
 }
 
 func (r *GronReader) ReadFloat64() float64 {
 	v := r.lines[r.cursor][1]; r.cursor++
+	if v == "\"NaN\"" || v == "NaN" {
+		return math.NaN()
+	}
+	if v == "\"Infinity\"" || v == "Infinity" {
+		return math.Inf(1)
+	}
+	if v == "\"-Infinity\"" || v == "-Infinity" {
+		return math.Inf(-1)
+	}
 	f, _ := strconv.ParseFloat(v, 64); return f
 }
 
@@ -141,14 +160,17 @@ func (r *GronReader) HasNextElement() bool {
 	if r.cursor >= len(r.lines) {
 		return false
 	}
-	arr := r.ctx[len(r.ctx)-1]
+	arr := &r.ctx[len(r.ctx)-1]
 	ni := arr.index + 1
 	exp := fmt.Sprintf("%s[%d]", arr.prefix, ni)
 	p := r.lines[r.cursor][0]
-	return p == exp || strings.HasPrefix(p, exp+".") || strings.HasPrefix(p, exp+"[")
+	hasNext := p == exp || strings.HasPrefix(p, exp+".") || strings.HasPrefix(p, exp+"[")
+	if hasNext {
+		arr.index = ni
+	}
+	return hasNext
 }
 
-func (r *GronReader) NextElement()          { r.ctx[len(r.ctx)-1].index++ }
 func (r *GronReader) EndArray()             { r.ctx = r.ctx[:len(r.ctx)-1] }
 
 func (r *GronReader) IsNull() bool {
