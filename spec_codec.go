@@ -6,6 +6,10 @@ type SpecCodec[T any] struct {
 	Decode func(r SpecReader) *T
 }
 
+func NewCodec[T any](encode func(w SpecWriter, obj *T), decode func(r SpecReader) *T) *SpecCodec[T] {
+	return &SpecCodec[T]{Encode: encode, Decode: decode}
+}
+
 // ---------------------------------------------------------------------------
 // FormatEntry: a reader/writer factory pair for one format
 // ---------------------------------------------------------------------------
