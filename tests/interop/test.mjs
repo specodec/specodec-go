@@ -14,14 +14,14 @@ function run(cmd) {
 }
 
 console.log('\n=== Step 1: Install dependencies ===');
-run(`cd ${__dir} && pnpm install`);
+run(`cd ${__dir} && npm install`);
 
 console.log('\n=== Step 2: Clone tests repo ===');
 if (existsSync(CACHE)) rmSync(CACHE, { recursive: true });
 run(`git clone --depth=1 https://github.com/specodec/tests ${CACHE}`);
 
 console.log('\n=== Step 3: Generate vectors ===');
-run(`cd ${CACHE} && pnpm install --frozen-lockfile`);
+run(`cd ${CACHE} && npm install --frozen-lockfile`);
 run(`cd ${CACHE} && node gen_types.mjs`);
 
 const VEC_DIR = join(CACHE, 'vectors');
@@ -73,14 +73,7 @@ console.log('\n=== Step 5: Generate test runner ===');
 mkdirSync(join(__dir, 'emit'), { recursive: true });
 run(`cd ${__dir} && VEC_DIR=${VEC_DIR} node generate_emit_runner.mjs`);
 
-console.log('\n=== Step 6: Setup Go module ===');
-const goMod = `module emit_go
-
-go 1.23
-`;
-writeFileSync(join(__dir, 'emit', 'go.mod'), goMod);
-
-console.log('\n=== Step 7: Run tests ===');
+console.log('\n=== Step 6: Run tests ===');
 if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
 mkdirSync(OUT_DIR, { recursive: true });
 
@@ -102,6 +95,7 @@ const genFile = join(emitGenDir, 'all_types_types.go');
 let genContent = readFileSync(genFile, 'utf-8');
 genContent = genContent.replace(/github\.com\/specodec\/specodec-go/g, 'github.com/specodec/specodec-runtime-golang');
 genContent = genContent.replace(/github\.com\/specodec\/specodec-runtime-go/g, 'github.com/specodec/specodec-runtime-golang');
+genContent = genContent.replace(/github\.com\/specodec\/specodec-runtime-golanglang/g, 'github.com/specodec/specodec-runtime-golang');
 writeFileSync(genFile, genContent);
 console.log('  ✓ Updated runtime import paths');
 
