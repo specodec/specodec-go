@@ -30,8 +30,8 @@ console.log('\n=== Step 4: Generate emit code ===');
 if (existsSync(EMIT_GEN)) rmSync(EMIT_GEN, { recursive: true });
 mkdirSync(EMIT_GEN, { recursive: true });
 
-run(`cd ${__dir} && node_modules/.bin/tsp compile ${CACHE}/alltypes.tsp --emit=@specodec/typespec-emitter-go \
-  --option @specodec/typespec-emitter-go.emitter-output-dir=${EMIT_GEN}`);
+run(`cd ${__dir} && node_modules/.bin/tsp compile ${CACHE}/alltypes.tsp --emit=@specodec/typespec-emitter-golanglang \
+  --option @specodec/typespec-emitter-golanglang.emitter-output-dir=${EMIT_GEN}`);
 
 const goFiles = readdirSync(EMIT_GEN).filter(f => f.endsWith('.go'));
 if (goFiles.length > 0) {

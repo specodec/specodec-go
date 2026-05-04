@@ -11,7 +11,7 @@ importers:
       '@specodec/typespec-emitter-core':
         specifier: 0.1.0
         version: 0.1.0
-      '@specodec/typespec-emitter-go':
+      '@specodec/typespec-emitter-golanglang':
         specifier: 0.1.0
         version: 0.1.0
       '@typespec/compiler':
@@ -185,7 +185,7 @@ packages:
   '@specodec/typespec-emitter-core@0.1.0':
     resolution: {integrity: sha512-LIvsADq8TPlRkJW/UVgiHxQt1u2CcH+9amT8Odyp5BTafOv3Og8ddF7BAu5nR7kvlhnArvbn1Rqz3co9eIR9QA==}
 
-  '@specodec/typespec-emitter-go@0.1.0':
+  '@specodec/typespec-emitter-golanglang@0.1.0':
     resolution: {integrity: sha512-A3L9D7W/Mbm0+PU1hs8/wUFO6ldKJOqsYKLBOin02bGTCxyWZEowvk3lS9pOxzA5VNg4inRlVoL8jjcEcQfr/g==}
 
   '@typespec/compiler@1.11.0':
@@ -572,7 +572,7 @@ snapshots:
 
   '@specodec/typespec-emitter-core@0.1.0': {}
 
-  '@specodec/typespec-emitter-go@0.1.0':
+  '@specodec/typespec-emitter-golanglang@0.1.0':
     dependencies:
       '@specodec/typespec-emitter-core': 0.1.0
 
