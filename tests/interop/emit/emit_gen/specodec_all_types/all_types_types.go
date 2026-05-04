@@ -1327,7 +1327,7 @@ type ConfigEntry struct {
 	floatValue *float64
 }
 
-func writeInner(w *specodec.SpecWriter, obj Inner) {
+func writeInner(w *specodec.SpecWriter, obj *Inner) {
 	w.BeginObject(2)
 	w.WriteField("x"); w.WriteInt32(obj.x);
 	w.WriteField("y"); w.WriteInt32(obj.y);
@@ -1348,7 +1348,7 @@ func decodeInner(r *specodec.SpecReader) *Inner {
 	return obj
 }
 
-func writeCoord(w *specodec.SpecWriter, obj Coord) {
+func writeCoord(w *specodec.SpecWriter, obj *Coord) {
 	w.BeginObject(2)
 	w.WriteField("lat"); w.WriteFloat64(obj.lat);
 	w.WriteField("lng"); w.WriteFloat64(obj.lng);
@@ -1369,7 +1369,7 @@ func decodeCoord(r *specodec.SpecReader) *Coord {
 	return obj
 }
 
-func writeIdVal(w *specodec.SpecWriter, obj IdVal) {
+func writeIdVal(w *specodec.SpecWriter, obj *IdVal) {
 	w.BeginObject(2)
 	w.WriteField("id"); w.WriteString(obj.id);
 	w.WriteField("value"); w.WriteInt32(obj.value);
@@ -1390,7 +1390,7 @@ func decodeIdVal(r *specodec.SpecReader) *IdVal {
 	return obj
 }
 
-func writeLabel(w *specodec.SpecWriter, obj Label) {
+func writeLabel(w *specodec.SpecWriter, obj *Label) {
 	w.BeginObject(2)
 	w.WriteField("key"); w.WriteString(obj.key);
 	w.WriteField("text"); w.WriteString(obj.text);
@@ -1411,7 +1411,7 @@ func decodeLabel(r *specodec.SpecReader) *Label {
 	return obj
 }
 
-func writeMoney(w *specodec.SpecWriter, obj Money) {
+func writeMoney(w *specodec.SpecWriter, obj *Money) {
 	w.BeginObject(2)
 	w.WriteField("amount"); w.WriteInt64(obj.amount);
 	w.WriteField("currency"); w.WriteString(obj.currency);
@@ -1432,7 +1432,7 @@ func decodeMoney(r *specodec.SpecReader) *Money {
 	return obj
 }
 
-func writeRange32(w *specodec.SpecWriter, obj Range32) {
+func writeRange32(w *specodec.SpecWriter, obj *Range32) {
 	w.BeginObject(2)
 	w.WriteField("min"); w.WriteInt32(obj.min);
 	w.WriteField("max"); w.WriteInt32(obj.max);
@@ -1453,7 +1453,7 @@ func decodeRange32(r *specodec.SpecReader) *Range32 {
 	return obj
 }
 
-func writeAddr(w *specodec.SpecWriter, obj Addr) {
+func writeAddr(w *specodec.SpecWriter, obj *Addr) {
 	w.BeginObject(3)
 	w.WriteField("street"); w.WriteString(obj.street);
 	w.WriteField("city"); w.WriteString(obj.city);
@@ -1476,7 +1476,7 @@ func decodeAddr(r *specodec.SpecReader) *Addr {
 	return obj
 }
 
-func writePoint3(w *specodec.SpecWriter, obj Point3) {
+func writePoint3(w *specodec.SpecWriter, obj *Point3) {
 	w.BeginObject(3)
 	w.WriteField("x"); w.WriteFloat64(obj.x);
 	w.WriteField("y"); w.WriteFloat64(obj.y);
@@ -1499,7 +1499,7 @@ func decodePoint3(r *specodec.SpecReader) *Point3 {
 	return obj
 }
 
-func writeOptInner(w *specodec.SpecWriter, obj OptInner) {
+func writeOptInner(w *specodec.SpecWriter, obj *OptInner) {
 	_n := 0
 	if obj.name != nil { _n++ }
 	if obj.score != nil { _n++ }
@@ -1526,7 +1526,7 @@ func decodeOptInner(r *specodec.SpecReader) *OptInner {
 	return obj
 }
 
-func writeSingleString(w *specodec.SpecWriter, obj SingleString) {
+func writeSingleString(w *specodec.SpecWriter, obj *SingleString) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteString(obj.v);
 	w.EndObject()
@@ -1545,7 +1545,7 @@ func decodeSingleString(r *specodec.SpecReader) *SingleString {
 	return obj
 }
 
-func writeSingleBoolean(w *specodec.SpecWriter, obj SingleBoolean) {
+func writeSingleBoolean(w *specodec.SpecWriter, obj *SingleBoolean) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteBool(obj.v);
 	w.EndObject()
@@ -1564,7 +1564,7 @@ func decodeSingleBoolean(r *specodec.SpecReader) *SingleBoolean {
 	return obj
 }
 
-func writeSingleInt8(w *specodec.SpecWriter, obj SingleInt8) {
+func writeSingleInt8(w *specodec.SpecWriter, obj *SingleInt8) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteInt32(int32(obj.v));
 	w.EndObject()
@@ -1583,7 +1583,7 @@ func decodeSingleInt8(r *specodec.SpecReader) *SingleInt8 {
 	return obj
 }
 
-func writeSingleInt16(w *specodec.SpecWriter, obj SingleInt16) {
+func writeSingleInt16(w *specodec.SpecWriter, obj *SingleInt16) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteInt32(int32(obj.v));
 	w.EndObject()
@@ -1602,7 +1602,7 @@ func decodeSingleInt16(r *specodec.SpecReader) *SingleInt16 {
 	return obj
 }
 
-func writeSingleInt32(w *specodec.SpecWriter, obj SingleInt32) {
+func writeSingleInt32(w *specodec.SpecWriter, obj *SingleInt32) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteInt32(obj.v);
 	w.EndObject()
@@ -1621,7 +1621,7 @@ func decodeSingleInt32(r *specodec.SpecReader) *SingleInt32 {
 	return obj
 }
 
-func writeSingleInt64(w *specodec.SpecWriter, obj SingleInt64) {
+func writeSingleInt64(w *specodec.SpecWriter, obj *SingleInt64) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteInt64(obj.v);
 	w.EndObject()
@@ -1640,7 +1640,7 @@ func decodeSingleInt64(r *specodec.SpecReader) *SingleInt64 {
 	return obj
 }
 
-func writeSingleUint8(w *specodec.SpecWriter, obj SingleUint8) {
+func writeSingleUint8(w *specodec.SpecWriter, obj *SingleUint8) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteUint32(uint32(obj.v));
 	w.EndObject()
@@ -1659,7 +1659,7 @@ func decodeSingleUint8(r *specodec.SpecReader) *SingleUint8 {
 	return obj
 }
 
-func writeSingleUint16(w *specodec.SpecWriter, obj SingleUint16) {
+func writeSingleUint16(w *specodec.SpecWriter, obj *SingleUint16) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteUint32(uint32(obj.v));
 	w.EndObject()
@@ -1678,7 +1678,7 @@ func decodeSingleUint16(r *specodec.SpecReader) *SingleUint16 {
 	return obj
 }
 
-func writeSingleUint32(w *specodec.SpecWriter, obj SingleUint32) {
+func writeSingleUint32(w *specodec.SpecWriter, obj *SingleUint32) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteUint32(obj.v);
 	w.EndObject()
@@ -1697,7 +1697,7 @@ func decodeSingleUint32(r *specodec.SpecReader) *SingleUint32 {
 	return obj
 }
 
-func writeSingleUint64(w *specodec.SpecWriter, obj SingleUint64) {
+func writeSingleUint64(w *specodec.SpecWriter, obj *SingleUint64) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteUint64(obj.v);
 	w.EndObject()
@@ -1716,7 +1716,7 @@ func decodeSingleUint64(r *specodec.SpecReader) *SingleUint64 {
 	return obj
 }
 
-func writeSingleFloat32(w *specodec.SpecWriter, obj SingleFloat32) {
+func writeSingleFloat32(w *specodec.SpecWriter, obj *SingleFloat32) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteFloat32(obj.v);
 	w.EndObject()
@@ -1735,7 +1735,7 @@ func decodeSingleFloat32(r *specodec.SpecReader) *SingleFloat32 {
 	return obj
 }
 
-func writeSingleFloat64(w *specodec.SpecWriter, obj SingleFloat64) {
+func writeSingleFloat64(w *specodec.SpecWriter, obj *SingleFloat64) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteFloat64(obj.v);
 	w.EndObject()
@@ -1754,7 +1754,7 @@ func decodeSingleFloat64(r *specodec.SpecReader) *SingleFloat64 {
 	return obj
 }
 
-func writeSingleBytes(w *specodec.SpecWriter, obj SingleBytes) {
+func writeSingleBytes(w *specodec.SpecWriter, obj *SingleBytes) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteBytes(obj.v);
 	w.EndObject()
@@ -1773,7 +1773,7 @@ func decodeSingleBytes(r *specodec.SpecReader) *SingleBytes {
 	return obj
 }
 
-func writeOptSingleString(w *specodec.SpecWriter, obj OptSingleString) {
+func writeOptSingleString(w *specodec.SpecWriter, obj *OptSingleString) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1794,7 +1794,7 @@ func decodeOptSingleString(r *specodec.SpecReader) *OptSingleString {
 	return obj
 }
 
-func writeOptSingleBoolean(w *specodec.SpecWriter, obj OptSingleBoolean) {
+func writeOptSingleBoolean(w *specodec.SpecWriter, obj *OptSingleBoolean) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1815,7 +1815,7 @@ func decodeOptSingleBoolean(r *specodec.SpecReader) *OptSingleBoolean {
 	return obj
 }
 
-func writeOptSingleInt8(w *specodec.SpecWriter, obj OptSingleInt8) {
+func writeOptSingleInt8(w *specodec.SpecWriter, obj *OptSingleInt8) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1836,7 +1836,7 @@ func decodeOptSingleInt8(r *specodec.SpecReader) *OptSingleInt8 {
 	return obj
 }
 
-func writeOptSingleInt16(w *specodec.SpecWriter, obj OptSingleInt16) {
+func writeOptSingleInt16(w *specodec.SpecWriter, obj *OptSingleInt16) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1857,7 +1857,7 @@ func decodeOptSingleInt16(r *specodec.SpecReader) *OptSingleInt16 {
 	return obj
 }
 
-func writeOptSingleInt32(w *specodec.SpecWriter, obj OptSingleInt32) {
+func writeOptSingleInt32(w *specodec.SpecWriter, obj *OptSingleInt32) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1878,7 +1878,7 @@ func decodeOptSingleInt32(r *specodec.SpecReader) *OptSingleInt32 {
 	return obj
 }
 
-func writeOptSingleInt64(w *specodec.SpecWriter, obj OptSingleInt64) {
+func writeOptSingleInt64(w *specodec.SpecWriter, obj *OptSingleInt64) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1899,7 +1899,7 @@ func decodeOptSingleInt64(r *specodec.SpecReader) *OptSingleInt64 {
 	return obj
 }
 
-func writeOptSingleUint8(w *specodec.SpecWriter, obj OptSingleUint8) {
+func writeOptSingleUint8(w *specodec.SpecWriter, obj *OptSingleUint8) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1920,7 +1920,7 @@ func decodeOptSingleUint8(r *specodec.SpecReader) *OptSingleUint8 {
 	return obj
 }
 
-func writeOptSingleUint16(w *specodec.SpecWriter, obj OptSingleUint16) {
+func writeOptSingleUint16(w *specodec.SpecWriter, obj *OptSingleUint16) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1941,7 +1941,7 @@ func decodeOptSingleUint16(r *specodec.SpecReader) *OptSingleUint16 {
 	return obj
 }
 
-func writeOptSingleUint32(w *specodec.SpecWriter, obj OptSingleUint32) {
+func writeOptSingleUint32(w *specodec.SpecWriter, obj *OptSingleUint32) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1962,7 +1962,7 @@ func decodeOptSingleUint32(r *specodec.SpecReader) *OptSingleUint32 {
 	return obj
 }
 
-func writeOptSingleUint64(w *specodec.SpecWriter, obj OptSingleUint64) {
+func writeOptSingleUint64(w *specodec.SpecWriter, obj *OptSingleUint64) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -1983,7 +1983,7 @@ func decodeOptSingleUint64(r *specodec.SpecReader) *OptSingleUint64 {
 	return obj
 }
 
-func writeOptSingleFloat32(w *specodec.SpecWriter, obj OptSingleFloat32) {
+func writeOptSingleFloat32(w *specodec.SpecWriter, obj *OptSingleFloat32) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -2004,7 +2004,7 @@ func decodeOptSingleFloat32(r *specodec.SpecReader) *OptSingleFloat32 {
 	return obj
 }
 
-func writeOptSingleFloat64(w *specodec.SpecWriter, obj OptSingleFloat64) {
+func writeOptSingleFloat64(w *specodec.SpecWriter, obj *OptSingleFloat64) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -2025,7 +2025,7 @@ func decodeOptSingleFloat64(r *specodec.SpecReader) *OptSingleFloat64 {
 	return obj
 }
 
-func writeOptSingleBytes(w *specodec.SpecWriter, obj OptSingleBytes) {
+func writeOptSingleBytes(w *specodec.SpecWriter, obj *OptSingleBytes) {
 	_n := 0
 	if obj.v != nil { _n++ }
 	w.BeginObject(_n)
@@ -2046,7 +2046,7 @@ func decodeOptSingleBytes(r *specodec.SpecReader) *OptSingleBytes {
 	return obj
 }
 
-func writePairString(w *specodec.SpecWriter, obj PairString) {
+func writePairString(w *specodec.SpecWriter, obj *PairString) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteString(obj.b);
@@ -2067,7 +2067,7 @@ func decodePairString(r *specodec.SpecReader) *PairString {
 	return obj
 }
 
-func writePairBoolean(w *specodec.SpecWriter, obj PairBoolean) {
+func writePairBoolean(w *specodec.SpecWriter, obj *PairBoolean) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteBool(obj.a);
 	w.WriteField("b"); w.WriteBool(obj.b);
@@ -2088,7 +2088,7 @@ func decodePairBoolean(r *specodec.SpecReader) *PairBoolean {
 	return obj
 }
 
-func writePairInt8(w *specodec.SpecWriter, obj PairInt8) {
+func writePairInt8(w *specodec.SpecWriter, obj *PairInt8) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(int32(obj.a));
 	w.WriteField("b"); w.WriteInt32(int32(obj.b));
@@ -2109,7 +2109,7 @@ func decodePairInt8(r *specodec.SpecReader) *PairInt8 {
 	return obj
 }
 
-func writePairInt16(w *specodec.SpecWriter, obj PairInt16) {
+func writePairInt16(w *specodec.SpecWriter, obj *PairInt16) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(int32(obj.a));
 	w.WriteField("b"); w.WriteInt32(int32(obj.b));
@@ -2130,7 +2130,7 @@ func decodePairInt16(r *specodec.SpecReader) *PairInt16 {
 	return obj
 }
 
-func writePairInt32(w *specodec.SpecWriter, obj PairInt32) {
+func writePairInt32(w *specodec.SpecWriter, obj *PairInt32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -2151,7 +2151,7 @@ func decodePairInt32(r *specodec.SpecReader) *PairInt32 {
 	return obj
 }
 
-func writePairInt64(w *specodec.SpecWriter, obj PairInt64) {
+func writePairInt64(w *specodec.SpecWriter, obj *PairInt64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt64(obj.a);
 	w.WriteField("b"); w.WriteInt64(obj.b);
@@ -2172,7 +2172,7 @@ func decodePairInt64(r *specodec.SpecReader) *PairInt64 {
 	return obj
 }
 
-func writePairUint8(w *specodec.SpecWriter, obj PairUint8) {
+func writePairUint8(w *specodec.SpecWriter, obj *PairUint8) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
 	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
@@ -2193,7 +2193,7 @@ func decodePairUint8(r *specodec.SpecReader) *PairUint8 {
 	return obj
 }
 
-func writePairUint16(w *specodec.SpecWriter, obj PairUint16) {
+func writePairUint16(w *specodec.SpecWriter, obj *PairUint16) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
 	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
@@ -2214,7 +2214,7 @@ func decodePairUint16(r *specodec.SpecReader) *PairUint16 {
 	return obj
 }
 
-func writePairUint32(w *specodec.SpecWriter, obj PairUint32) {
+func writePairUint32(w *specodec.SpecWriter, obj *PairUint32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint32(obj.a);
 	w.WriteField("b"); w.WriteUint32(obj.b);
@@ -2235,7 +2235,7 @@ func decodePairUint32(r *specodec.SpecReader) *PairUint32 {
 	return obj
 }
 
-func writePairUint64(w *specodec.SpecWriter, obj PairUint64) {
+func writePairUint64(w *specodec.SpecWriter, obj *PairUint64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint64(obj.a);
 	w.WriteField("b"); w.WriteUint64(obj.b);
@@ -2256,7 +2256,7 @@ func decodePairUint64(r *specodec.SpecReader) *PairUint64 {
 	return obj
 }
 
-func writePairFloat32(w *specodec.SpecWriter, obj PairFloat32) {
+func writePairFloat32(w *specodec.SpecWriter, obj *PairFloat32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteFloat32(obj.a);
 	w.WriteField("b"); w.WriteFloat32(obj.b);
@@ -2277,7 +2277,7 @@ func decodePairFloat32(r *specodec.SpecReader) *PairFloat32 {
 	return obj
 }
 
-func writePairFloat64(w *specodec.SpecWriter, obj PairFloat64) {
+func writePairFloat64(w *specodec.SpecWriter, obj *PairFloat64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteFloat64(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -2298,7 +2298,7 @@ func decodePairFloat64(r *specodec.SpecReader) *PairFloat64 {
 	return obj
 }
 
-func writePairBytes(w *specodec.SpecWriter, obj PairBytes) {
+func writePairBytes(w *specodec.SpecWriter, obj *PairBytes) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteBytes(obj.a);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -2319,7 +2319,7 @@ func decodePairBytes(r *specodec.SpecReader) *PairBytes {
 	return obj
 }
 
-func writeDualStringInt32(w *specodec.SpecWriter, obj DualStringInt32) {
+func writeDualStringInt32(w *specodec.SpecWriter, obj *DualStringInt32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -2340,7 +2340,7 @@ func decodeDualStringInt32(r *specodec.SpecReader) *DualStringInt32 {
 	return obj
 }
 
-func writeDualStringBoolean(w *specodec.SpecWriter, obj DualStringBoolean) {
+func writeDualStringBoolean(w *specodec.SpecWriter, obj *DualStringBoolean) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteBool(obj.b);
@@ -2361,7 +2361,7 @@ func decodeDualStringBoolean(r *specodec.SpecReader) *DualStringBoolean {
 	return obj
 }
 
-func writeDualStringFloat64(w *specodec.SpecWriter, obj DualStringFloat64) {
+func writeDualStringFloat64(w *specodec.SpecWriter, obj *DualStringFloat64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -2382,7 +2382,7 @@ func decodeDualStringFloat64(r *specodec.SpecReader) *DualStringFloat64 {
 	return obj
 }
 
-func writeDualStringBytes(w *specodec.SpecWriter, obj DualStringBytes) {
+func writeDualStringBytes(w *specodec.SpecWriter, obj *DualStringBytes) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -2403,7 +2403,7 @@ func decodeDualStringBytes(r *specodec.SpecReader) *DualStringBytes {
 	return obj
 }
 
-func writeDualInt32Boolean(w *specodec.SpecWriter, obj DualInt32Boolean) {
+func writeDualInt32Boolean(w *specodec.SpecWriter, obj *DualInt32Boolean) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteBool(obj.b);
@@ -2424,7 +2424,7 @@ func decodeDualInt32Boolean(r *specodec.SpecReader) *DualInt32Boolean {
 	return obj
 }
 
-func writeDualInt32Float64(w *specodec.SpecWriter, obj DualInt32Float64) {
+func writeDualInt32Float64(w *specodec.SpecWriter, obj *DualInt32Float64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -2445,7 +2445,7 @@ func decodeDualInt32Float64(r *specodec.SpecReader) *DualInt32Float64 {
 	return obj
 }
 
-func writeDualInt32Int64(w *specodec.SpecWriter, obj DualInt32Int64) {
+func writeDualInt32Int64(w *specodec.SpecWriter, obj *DualInt32Int64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteInt64(obj.b);
@@ -2466,7 +2466,7 @@ func decodeDualInt32Int64(r *specodec.SpecReader) *DualInt32Int64 {
 	return obj
 }
 
-func writeDualInt32Uint32(w *specodec.SpecWriter, obj DualInt32Uint32) {
+func writeDualInt32Uint32(w *specodec.SpecWriter, obj *DualInt32Uint32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteUint32(obj.b);
@@ -2487,7 +2487,7 @@ func decodeDualInt32Uint32(r *specodec.SpecReader) *DualInt32Uint32 {
 	return obj
 }
 
-func writeDualInt64Uint64(w *specodec.SpecWriter, obj DualInt64Uint64) {
+func writeDualInt64Uint64(w *specodec.SpecWriter, obj *DualInt64Uint64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt64(obj.a);
 	w.WriteField("b"); w.WriteUint64(obj.b);
@@ -2508,7 +2508,7 @@ func decodeDualInt64Uint64(r *specodec.SpecReader) *DualInt64Uint64 {
 	return obj
 }
 
-func writeDualFloat32Float64(w *specodec.SpecWriter, obj DualFloat32Float64) {
+func writeDualFloat32Float64(w *specodec.SpecWriter, obj *DualFloat32Float64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteFloat32(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -2529,7 +2529,7 @@ func decodeDualFloat32Float64(r *specodec.SpecReader) *DualFloat32Float64 {
 	return obj
 }
 
-func writeDualFloat64Boolean(w *specodec.SpecWriter, obj DualFloat64Boolean) {
+func writeDualFloat64Boolean(w *specodec.SpecWriter, obj *DualFloat64Boolean) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteFloat64(obj.a);
 	w.WriteField("b"); w.WriteBool(obj.b);
@@ -2550,7 +2550,7 @@ func decodeDualFloat64Boolean(r *specodec.SpecReader) *DualFloat64Boolean {
 	return obj
 }
 
-func writeDualFloat64Bytes(w *specodec.SpecWriter, obj DualFloat64Bytes) {
+func writeDualFloat64Bytes(w *specodec.SpecWriter, obj *DualFloat64Bytes) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteFloat64(obj.a);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -2571,7 +2571,7 @@ func decodeDualFloat64Bytes(r *specodec.SpecReader) *DualFloat64Bytes {
 	return obj
 }
 
-func writeDualUint32Uint64(w *specodec.SpecWriter, obj DualUint32Uint64) {
+func writeDualUint32Uint64(w *specodec.SpecWriter, obj *DualUint32Uint64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint32(obj.a);
 	w.WriteField("b"); w.WriteUint64(obj.b);
@@ -2592,7 +2592,7 @@ func decodeDualUint32Uint64(r *specodec.SpecReader) *DualUint32Uint64 {
 	return obj
 }
 
-func writeDualBooleanBytes(w *specodec.SpecWriter, obj DualBooleanBytes) {
+func writeDualBooleanBytes(w *specodec.SpecWriter, obj *DualBooleanBytes) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteBool(obj.a);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -2613,7 +2613,7 @@ func decodeDualBooleanBytes(r *specodec.SpecReader) *DualBooleanBytes {
 	return obj
 }
 
-func writeDualInt8Uint8(w *specodec.SpecWriter, obj DualInt8Uint8) {
+func writeDualInt8Uint8(w *specodec.SpecWriter, obj *DualInt8Uint8) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(int32(obj.a));
 	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
@@ -2634,7 +2634,7 @@ func decodeDualInt8Uint8(r *specodec.SpecReader) *DualInt8Uint8 {
 	return obj
 }
 
-func writeDualInt16Uint16(w *specodec.SpecWriter, obj DualInt16Uint16) {
+func writeDualInt16Uint16(w *specodec.SpecWriter, obj *DualInt16Uint16) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(int32(obj.a));
 	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
@@ -2655,7 +2655,7 @@ func decodeDualInt16Uint16(r *specodec.SpecReader) *DualInt16Uint16 {
 	return obj
 }
 
-func writeDualStringInt64(w *specodec.SpecWriter, obj DualStringInt64) {
+func writeDualStringInt64(w *specodec.SpecWriter, obj *DualStringInt64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteInt64(obj.b);
@@ -2676,7 +2676,7 @@ func decodeDualStringInt64(r *specodec.SpecReader) *DualStringInt64 {
 	return obj
 }
 
-func writeDualStringUint64(w *specodec.SpecWriter, obj DualStringUint64) {
+func writeDualStringUint64(w *specodec.SpecWriter, obj *DualStringUint64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteUint64(obj.b);
@@ -2697,7 +2697,7 @@ func decodeDualStringUint64(r *specodec.SpecReader) *DualStringUint64 {
 	return obj
 }
 
-func writeDualInt32Bytes(w *specodec.SpecWriter, obj DualInt32Bytes) {
+func writeDualInt32Bytes(w *specodec.SpecWriter, obj *DualInt32Bytes) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -2718,7 +2718,7 @@ func decodeDualInt32Bytes(r *specodec.SpecReader) *DualInt32Bytes {
 	return obj
 }
 
-func writeDualFloat64Int32(w *specodec.SpecWriter, obj DualFloat64Int32) {
+func writeDualFloat64Int32(w *specodec.SpecWriter, obj *DualFloat64Int32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteFloat64(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -2739,7 +2739,7 @@ func decodeDualFloat64Int32(r *specodec.SpecReader) *DualFloat64Int32 {
 	return obj
 }
 
-func writeDualBooleanInt32(w *specodec.SpecWriter, obj DualBooleanInt32) {
+func writeDualBooleanInt32(w *specodec.SpecWriter, obj *DualBooleanInt32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteBool(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -2760,7 +2760,7 @@ func decodeDualBooleanInt32(r *specodec.SpecReader) *DualBooleanInt32 {
 	return obj
 }
 
-func writeDualBytesInt64(w *specodec.SpecWriter, obj DualBytesInt64) {
+func writeDualBytesInt64(w *specodec.SpecWriter, obj *DualBytesInt64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteBytes(obj.a);
 	w.WriteField("b"); w.WriteInt64(obj.b);
@@ -2781,7 +2781,7 @@ func decodeDualBytesInt64(r *specodec.SpecReader) *DualBytesInt64 {
 	return obj
 }
 
-func writeDualInt8Float32(w *specodec.SpecWriter, obj DualInt8Float32) {
+func writeDualInt8Float32(w *specodec.SpecWriter, obj *DualInt8Float32) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt32(int32(obj.a));
 	w.WriteField("b"); w.WriteFloat32(obj.b);
@@ -2802,7 +2802,7 @@ func decodeDualInt8Float32(r *specodec.SpecReader) *DualInt8Float32 {
 	return obj
 }
 
-func writeDualUint8Int16(w *specodec.SpecWriter, obj DualUint8Int16) {
+func writeDualUint8Int16(w *specodec.SpecWriter, obj *DualUint8Int16) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
 	w.WriteField("b"); w.WriteInt32(int32(obj.b));
@@ -2823,7 +2823,7 @@ func decodeDualUint8Int16(r *specodec.SpecReader) *DualUint8Int16 {
 	return obj
 }
 
-func writeDualInt64Float64(w *specodec.SpecWriter, obj DualInt64Float64) {
+func writeDualInt64Float64(w *specodec.SpecWriter, obj *DualInt64Float64) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteInt64(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -2844,7 +2844,7 @@ func decodeDualInt64Float64(r *specodec.SpecReader) *DualInt64Float64 {
 	return obj
 }
 
-func writeDualUint64String(w *specodec.SpecWriter, obj DualUint64String) {
+func writeDualUint64String(w *specodec.SpecWriter, obj *DualUint64String) {
 	w.BeginObject(2)
 	w.WriteField("a"); w.WriteUint64(obj.a);
 	w.WriteField("b"); w.WriteString(obj.b);
@@ -2865,7 +2865,7 @@ func decodeDualUint64String(r *specodec.SpecReader) *DualUint64String {
 	return obj
 }
 
-func writeTriple01(w *specodec.SpecWriter, obj Triple01) {
+func writeTriple01(w *specodec.SpecWriter, obj *Triple01) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -2888,7 +2888,7 @@ func decodeTriple01(r *specodec.SpecReader) *Triple01 {
 	return obj
 }
 
-func writeTriple02(w *specodec.SpecWriter, obj Triple02) {
+func writeTriple02(w *specodec.SpecWriter, obj *Triple02) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteFloat64(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -2911,7 +2911,7 @@ func decodeTriple02(r *specodec.SpecReader) *Triple02 {
 	return obj
 }
 
-func writeTriple03(w *specodec.SpecWriter, obj Triple03) {
+func writeTriple03(w *specodec.SpecWriter, obj *Triple03) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -2934,7 +2934,7 @@ func decodeTriple03(r *specodec.SpecReader) *Triple03 {
 	return obj
 }
 
-func writeTriple04(w *specodec.SpecWriter, obj Triple04) {
+func writeTriple04(w *specodec.SpecWriter, obj *Triple04) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteString(obj.b);
@@ -2957,7 +2957,7 @@ func decodeTriple04(r *specodec.SpecReader) *Triple04 {
 	return obj
 }
 
-func writeTriple05(w *specodec.SpecWriter, obj Triple05) {
+func writeTriple05(w *specodec.SpecWriter, obj *Triple05) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteInt64(obj.a);
 	w.WriteField("b"); w.WriteString(obj.b);
@@ -2980,7 +2980,7 @@ func decodeTriple05(r *specodec.SpecReader) *Triple05 {
 	return obj
 }
 
-func writeTriple06(w *specodec.SpecWriter, obj Triple06) {
+func writeTriple06(w *specodec.SpecWriter, obj *Triple06) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteUint32(obj.a);
 	w.WriteField("b"); w.WriteUint64(obj.b);
@@ -3003,7 +3003,7 @@ func decodeTriple06(r *specodec.SpecReader) *Triple06 {
 	return obj
 }
 
-func writeTriple07(w *specodec.SpecWriter, obj Triple07) {
+func writeTriple07(w *specodec.SpecWriter, obj *Triple07) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteBytes(obj.a);
 	w.WriteField("b"); w.WriteString(obj.b);
@@ -3026,7 +3026,7 @@ func decodeTriple07(r *specodec.SpecReader) *Triple07 {
 	return obj
 }
 
-func writeTriple08(w *specodec.SpecWriter, obj Triple08) {
+func writeTriple08(w *specodec.SpecWriter, obj *Triple08) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteFloat32(obj.a);
 	w.WriteField("b"); w.WriteInt32(obj.b);
@@ -3049,7 +3049,7 @@ func decodeTriple08(r *specodec.SpecReader) *Triple08 {
 	return obj
 }
 
-func writeTriple09(w *specodec.SpecWriter, obj Triple09) {
+func writeTriple09(w *specodec.SpecWriter, obj *Triple09) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteInt64(obj.b);
@@ -3072,7 +3072,7 @@ func decodeTriple09(r *specodec.SpecReader) *Triple09 {
 	return obj
 }
 
-func writeTriple10(w *specodec.SpecWriter, obj Triple10) {
+func writeTriple10(w *specodec.SpecWriter, obj *Triple10) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteBool(obj.a);
 	w.WriteField("b"); w.WriteBool(obj.b);
@@ -3095,7 +3095,7 @@ func decodeTriple10(r *specodec.SpecReader) *Triple10 {
 	return obj
 }
 
-func writeTriple11(w *specodec.SpecWriter, obj Triple11) {
+func writeTriple11(w *specodec.SpecWriter, obj *Triple11) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteInt32(int32(obj.a));
 	w.WriteField("b"); w.WriteInt32(int32(obj.b));
@@ -3118,7 +3118,7 @@ func decodeTriple11(r *specodec.SpecReader) *Triple11 {
 	return obj
 }
 
-func writeTriple12(w *specodec.SpecWriter, obj Triple12) {
+func writeTriple12(w *specodec.SpecWriter, obj *Triple12) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
 	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
@@ -3141,7 +3141,7 @@ func decodeTriple12(r *specodec.SpecReader) *Triple12 {
 	return obj
 }
 
-func writeTriple13(w *specodec.SpecWriter, obj Triple13) {
+func writeTriple13(w *specodec.SpecWriter, obj *Triple13) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteString(obj.a);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -3164,7 +3164,7 @@ func decodeTriple13(r *specodec.SpecReader) *Triple13 {
 	return obj
 }
 
-func writeTriple14(w *specodec.SpecWriter, obj Triple14) {
+func writeTriple14(w *specodec.SpecWriter, obj *Triple14) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteInt64(obj.a);
 	w.WriteField("b"); w.WriteUint64(obj.b);
@@ -3187,7 +3187,7 @@ func decodeTriple14(r *specodec.SpecReader) *Triple14 {
 	return obj
 }
 
-func writeTriple15(w *specodec.SpecWriter, obj Triple15) {
+func writeTriple15(w *specodec.SpecWriter, obj *Triple15) {
 	w.BeginObject(3)
 	w.WriteField("a"); w.WriteFloat64(obj.a);
 	w.WriteField("b"); w.WriteString(obj.b);
@@ -3210,7 +3210,7 @@ func decodeTriple15(r *specodec.SpecReader) *Triple15 {
 	return obj
 }
 
-func writeFive01(w *specodec.SpecWriter, obj Five01) {
+func writeFive01(w *specodec.SpecWriter, obj *Five01) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteString(obj.f1);
 	w.WriteField("f2"); w.WriteInt32(obj.f2);
@@ -3237,7 +3237,7 @@ func decodeFive01(r *specodec.SpecReader) *Five01 {
 	return obj
 }
 
-func writeFive02(w *specodec.SpecWriter, obj Five02) {
+func writeFive02(w *specodec.SpecWriter, obj *Five02) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteInt32(obj.f1);
 	w.WriteField("f2"); w.WriteInt32(obj.f2);
@@ -3264,7 +3264,7 @@ func decodeFive02(r *specodec.SpecReader) *Five02 {
 	return obj
 }
 
-func writeFive03(w *specodec.SpecWriter, obj Five03) {
+func writeFive03(w *specodec.SpecWriter, obj *Five03) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteString(obj.f1);
 	w.WriteField("f2"); w.WriteString(obj.f2);
@@ -3291,7 +3291,7 @@ func decodeFive03(r *specodec.SpecReader) *Five03 {
 	return obj
 }
 
-func writeFive04(w *specodec.SpecWriter, obj Five04) {
+func writeFive04(w *specodec.SpecWriter, obj *Five04) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteFloat64(obj.f1);
 	w.WriteField("f2"); w.WriteInt32(obj.f2);
@@ -3318,7 +3318,7 @@ func decodeFive04(r *specodec.SpecReader) *Five04 {
 	return obj
 }
 
-func writeFive05(w *specodec.SpecWriter, obj Five05) {
+func writeFive05(w *specodec.SpecWriter, obj *Five05) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteInt64(obj.f1);
 	w.WriteField("f2"); w.WriteUint64(obj.f2);
@@ -3345,7 +3345,7 @@ func decodeFive05(r *specodec.SpecReader) *Five05 {
 	return obj
 }
 
-func writeFive06(w *specodec.SpecWriter, obj Five06) {
+func writeFive06(w *specodec.SpecWriter, obj *Five06) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteBool(obj.f1);
 	w.WriteField("f2"); w.WriteString(obj.f2);
@@ -3372,7 +3372,7 @@ func decodeFive06(r *specodec.SpecReader) *Five06 {
 	return obj
 }
 
-func writeFive07(w *specodec.SpecWriter, obj Five07) {
+func writeFive07(w *specodec.SpecWriter, obj *Five07) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteBytes(obj.f1);
 	w.WriteField("f2"); w.WriteBytes(obj.f2);
@@ -3399,7 +3399,7 @@ func decodeFive07(r *specodec.SpecReader) *Five07 {
 	return obj
 }
 
-func writeFive08(w *specodec.SpecWriter, obj Five08) {
+func writeFive08(w *specodec.SpecWriter, obj *Five08) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteUint32(uint32(obj.f1));
 	w.WriteField("f2"); w.WriteUint32(uint32(obj.f2));
@@ -3426,7 +3426,7 @@ func decodeFive08(r *specodec.SpecReader) *Five08 {
 	return obj
 }
 
-func writeFive09(w *specodec.SpecWriter, obj Five09) {
+func writeFive09(w *specodec.SpecWriter, obj *Five09) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteFloat32(obj.f1);
 	w.WriteField("f2"); w.WriteFloat64(obj.f2);
@@ -3453,7 +3453,7 @@ func decodeFive09(r *specodec.SpecReader) *Five09 {
 	return obj
 }
 
-func writeFive10(w *specodec.SpecWriter, obj Five10) {
+func writeFive10(w *specodec.SpecWriter, obj *Five10) {
 	w.BeginObject(5)
 	w.WriteField("f1"); w.WriteString(obj.f1);
 	w.WriteField("f2"); w.WriteBool(obj.f2);
@@ -3480,7 +3480,7 @@ func decodeFive10(r *specodec.SpecReader) *Five10 {
 	return obj
 }
 
-func writeTen01(w *specodec.SpecWriter, obj Ten01) {
+func writeTen01(w *specodec.SpecWriter, obj *Ten01) {
 	w.BeginObject(10)
 	w.WriteField("f1"); w.WriteString(obj.f1);
 	w.WriteField("f2"); w.WriteBool(obj.f2);
@@ -3517,7 +3517,7 @@ func decodeTen01(r *specodec.SpecReader) *Ten01 {
 	return obj
 }
 
-func writeTen02(w *specodec.SpecWriter, obj Ten02) {
+func writeTen02(w *specodec.SpecWriter, obj *Ten02) {
 	w.BeginObject(10)
 	w.WriteField("f1"); w.WriteInt32(int32(obj.f1));
 	w.WriteField("f2"); w.WriteInt32(obj.f2);
@@ -3554,7 +3554,7 @@ func decodeTen02(r *specodec.SpecReader) *Ten02 {
 	return obj
 }
 
-func writeTen03(w *specodec.SpecWriter, obj Ten03) {
+func writeTen03(w *specodec.SpecWriter, obj *Ten03) {
 	w.BeginObject(10)
 	w.WriteField("f1"); w.WriteUint32(uint32(obj.f1));
 	w.WriteField("f2"); w.WriteUint32(uint32(obj.f2));
@@ -3591,7 +3591,7 @@ func decodeTen03(r *specodec.SpecReader) *Ten03 {
 	return obj
 }
 
-func writeTen04(w *specodec.SpecWriter, obj Ten04) {
+func writeTen04(w *specodec.SpecWriter, obj *Ten04) {
 	w.BeginObject(10)
 	w.WriteField("f1"); w.WriteUint64(obj.f1);
 	w.WriteField("f2"); w.WriteFloat32(obj.f2);
@@ -3628,7 +3628,7 @@ func decodeTen04(r *specodec.SpecReader) *Ten04 {
 	return obj
 }
 
-func writeTen05(w *specodec.SpecWriter, obj Ten05) {
+func writeTen05(w *specodec.SpecWriter, obj *Ten05) {
 	w.BeginObject(10)
 	w.WriteField("f1"); w.WriteBytes(obj.f1);
 	w.WriteField("f2"); w.WriteString(obj.f2);
@@ -3665,7 +3665,7 @@ func decodeTen05(r *specodec.SpecReader) *Ten05 {
 	return obj
 }
 
-func writeArrString(w *specodec.SpecWriter, obj ArrString) {
+func writeArrString(w *specodec.SpecWriter, obj *ArrString) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3684,7 +3684,7 @@ func decodeArrString(r *specodec.SpecReader) *ArrString {
 	return obj
 }
 
-func writeArrInt32(w *specodec.SpecWriter, obj ArrInt32) {
+func writeArrInt32(w *specodec.SpecWriter, obj *ArrInt32) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3703,7 +3703,7 @@ func decodeArrInt32(r *specodec.SpecReader) *ArrInt32 {
 	return obj
 }
 
-func writeArrBoolean(w *specodec.SpecWriter, obj ArrBoolean) {
+func writeArrBoolean(w *specodec.SpecWriter, obj *ArrBoolean) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteBool(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3722,7 +3722,7 @@ func decodeArrBoolean(r *specodec.SpecReader) *ArrBoolean {
 	return obj
 }
 
-func writeArrFloat64(w *specodec.SpecWriter, obj ArrFloat64) {
+func writeArrFloat64(w *specodec.SpecWriter, obj *ArrFloat64) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3741,7 +3741,7 @@ func decodeArrFloat64(r *specodec.SpecReader) *ArrFloat64 {
 	return obj
 }
 
-func writeArrBytes(w *specodec.SpecWriter, obj ArrBytes) {
+func writeArrBytes(w *specodec.SpecWriter, obj *ArrBytes) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteBytes(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3760,7 +3760,7 @@ func decodeArrBytes(r *specodec.SpecReader) *ArrBytes {
 	return obj
 }
 
-func writeArrInt64(w *specodec.SpecWriter, obj ArrInt64) {
+func writeArrInt64(w *specodec.SpecWriter, obj *ArrInt64) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteInt64(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3779,7 +3779,7 @@ func decodeArrInt64(r *specodec.SpecReader) *ArrInt64 {
 	return obj
 }
 
-func writeArrUint64(w *specodec.SpecWriter, obj ArrUint64) {
+func writeArrUint64(w *specodec.SpecWriter, obj *ArrUint64) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteUint64(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -3798,7 +3798,7 @@ func decodeArrUint64(r *specodec.SpecReader) *ArrUint64 {
 	return obj
 }
 
-func writeMultiArr1(w *specodec.SpecWriter, obj MultiArr1) {
+func writeMultiArr1(w *specodec.SpecWriter, obj *MultiArr1) {
 	w.BeginObject(2)
 	w.WriteField("names"); func() { w.BeginArray(len(obj.names)); for _, _e := range obj.names { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
 	w.WriteField("scores"); func() { w.BeginArray(len(obj.scores)); for _, _e := range obj.scores { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
@@ -3819,7 +3819,7 @@ func decodeMultiArr1(r *specodec.SpecReader) *MultiArr1 {
 	return obj
 }
 
-func writeMultiArr2(w *specodec.SpecWriter, obj MultiArr2) {
+func writeMultiArr2(w *specodec.SpecWriter, obj *MultiArr2) {
 	w.BeginObject(3)
 	w.WriteField("flags"); func() { w.BeginArray(len(obj.flags)); for _, _e := range obj.flags { w.NextElement(); w.WriteBool(_e); }; w.EndArray() }();
 	w.WriteField("values"); func() { w.BeginArray(len(obj.values)); for _, _e := range obj.values { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }();
@@ -3842,7 +3842,7 @@ func decodeMultiArr2(r *specodec.SpecReader) *MultiArr2 {
 	return obj
 }
 
-func writeMultiArr3(w *specodec.SpecWriter, obj MultiArr3) {
+func writeMultiArr3(w *specodec.SpecWriter, obj *MultiArr3) {
 	w.BeginObject(3)
 	w.WriteField("a"); func() { w.BeginArray(len(obj.a)); for _, _e := range obj.a { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
 	w.WriteField("b"); func() { w.BeginArray(len(obj.b)); for _, _e := range obj.b { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
@@ -3865,7 +3865,7 @@ func decodeMultiArr3(r *specodec.SpecReader) *MultiArr3 {
 	return obj
 }
 
-func writeMultiArr4(w *specodec.SpecWriter, obj MultiArr4) {
+func writeMultiArr4(w *specodec.SpecWriter, obj *MultiArr4) {
 	w.BeginObject(2)
 	w.WriteField("ids"); func() { w.BeginArray(len(obj.ids)); for _, _e := range obj.ids { w.NextElement(); w.WriteInt64(_e); }; w.EndArray() }();
 	w.WriteField("tags"); func() { w.BeginArray(len(obj.tags)); for _, _e := range obj.tags { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
@@ -3886,7 +3886,7 @@ func decodeMultiArr4(r *specodec.SpecReader) *MultiArr4 {
 	return obj
 }
 
-func writeMultiArr5(w *specodec.SpecWriter, obj MultiArr5) {
+func writeMultiArr5(w *specodec.SpecWriter, obj *MultiArr5) {
 	w.BeginObject(3)
 	w.WriteField("xs"); func() { w.BeginArray(len(obj.xs)); for _, _e := range obj.xs { w.NextElement(); w.WriteUint64(_e); }; w.EndArray() }();
 	w.WriteField("ys"); func() { w.BeginArray(len(obj.ys)); for _, _e := range obj.ys { w.NextElement(); w.WriteFloat32(_e); }; w.EndArray() }();
@@ -3909,7 +3909,7 @@ func decodeMultiArr5(r *specodec.SpecReader) *MultiArr5 {
 	return obj
 }
 
-func writeOptCombo1(w *specodec.SpecWriter, obj OptCombo1) {
+func writeOptCombo1(w *specodec.SpecWriter, obj *OptCombo1) {
 	_n := 1
 	if obj.opt_a != nil { _n++ }
 	w.BeginObject(_n)
@@ -3932,7 +3932,7 @@ func decodeOptCombo1(r *specodec.SpecReader) *OptCombo1 {
 	return obj
 }
 
-func writeOptCombo2(w *specodec.SpecWriter, obj OptCombo2) {
+func writeOptCombo2(w *specodec.SpecWriter, obj *OptCombo2) {
 	_n := 1
 	if obj.opt_a != nil { _n++ }
 	if obj.opt_b != nil { _n++ }
@@ -3958,7 +3958,7 @@ func decodeOptCombo2(r *specodec.SpecReader) *OptCombo2 {
 	return obj
 }
 
-func writeOptCombo3(w *specodec.SpecWriter, obj OptCombo3) {
+func writeOptCombo3(w *specodec.SpecWriter, obj *OptCombo3) {
 	_n := 1
 	if obj.opt_a != nil { _n++ }
 	if obj.opt_b != nil { _n++ }
@@ -3987,7 +3987,7 @@ func decodeOptCombo3(r *specodec.SpecReader) *OptCombo3 {
 	return obj
 }
 
-func writeOptCombo4(w *specodec.SpecWriter, obj OptCombo4) {
+func writeOptCombo4(w *specodec.SpecWriter, obj *OptCombo4) {
 	_n := 1
 	if obj.opt_a != nil { _n++ }
 	if obj.opt_b != nil { _n++ }
@@ -4013,7 +4013,7 @@ func decodeOptCombo4(r *specodec.SpecReader) *OptCombo4 {
 	return obj
 }
 
-func writeOptCombo5(w *specodec.SpecWriter, obj OptCombo5) {
+func writeOptCombo5(w *specodec.SpecWriter, obj *OptCombo5) {
 	_n := 2
 	if obj.opt_a != nil { _n++ }
 	if obj.opt_b != nil { _n++ }
@@ -4041,7 +4041,7 @@ func decodeOptCombo5(r *specodec.SpecReader) *OptCombo5 {
 	return obj
 }
 
-func writeOptCombo6(w *specodec.SpecWriter, obj OptCombo6) {
+func writeOptCombo6(w *specodec.SpecWriter, obj *OptCombo6) {
 	_n := 1
 	if obj.opt_s != nil { _n++ }
 	if obj.opt_i != nil { _n++ }
@@ -4073,7 +4073,7 @@ func decodeOptCombo6(r *specodec.SpecReader) *OptCombo6 {
 	return obj
 }
 
-func writeOptCombo7(w *specodec.SpecWriter, obj OptCombo7) {
+func writeOptCombo7(w *specodec.SpecWriter, obj *OptCombo7) {
 	_n := 1
 	if obj.opt_u64 != nil { _n++ }
 	if obj.opt_str != nil { _n++ }
@@ -4099,7 +4099,7 @@ func decodeOptCombo7(r *specodec.SpecReader) *OptCombo7 {
 	return obj
 }
 
-func writeOptCombo8(w *specodec.SpecWriter, obj OptCombo8) {
+func writeOptCombo8(w *specodec.SpecWriter, obj *OptCombo8) {
 	_n := 1
 	if obj.b != nil { _n++ }
 	if obj.c != nil { _n++ }
@@ -4134,7 +4134,7 @@ func decodeOptCombo8(r *specodec.SpecReader) *OptCombo8 {
 	return obj
 }
 
-func writeOptCombo9(w *specodec.SpecWriter, obj OptCombo9) {
+func writeOptCombo9(w *specodec.SpecWriter, obj *OptCombo9) {
 	_n := 1
 	if obj.name != nil { _n++ }
 	if obj.age != nil { _n++ }
@@ -4163,7 +4163,7 @@ func decodeOptCombo9(r *specodec.SpecReader) *OptCombo9 {
 	return obj
 }
 
-func writeOptCombo10(w *specodec.SpecWriter, obj OptCombo10) {
+func writeOptCombo10(w *specodec.SpecWriter, obj *OptCombo10) {
 	_n := 1
 	if obj.msg != nil { _n++ }
 	if obj.detail != nil { _n++ }
@@ -4192,7 +4192,7 @@ func decodeOptCombo10(r *specodec.SpecReader) *OptCombo10 {
 	return obj
 }
 
-func writeNestInner(w *specodec.SpecWriter, obj NestInner) {
+func writeNestInner(w *specodec.SpecWriter, obj *NestInner) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeInner(w, obj.nested);
 	w.EndObject()
@@ -4211,7 +4211,7 @@ func decodeNestInner(r *specodec.SpecReader) *NestInner {
 	return obj
 }
 
-func writeNestCoord(w *specodec.SpecWriter, obj NestCoord) {
+func writeNestCoord(w *specodec.SpecWriter, obj *NestCoord) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeCoord(w, obj.nested);
 	w.EndObject()
@@ -4230,7 +4230,7 @@ func decodeNestCoord(r *specodec.SpecReader) *NestCoord {
 	return obj
 }
 
-func writeNestIdVal(w *specodec.SpecWriter, obj NestIdVal) {
+func writeNestIdVal(w *specodec.SpecWriter, obj *NestIdVal) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeIdVal(w, obj.nested);
 	w.EndObject()
@@ -4249,7 +4249,7 @@ func decodeNestIdVal(r *specodec.SpecReader) *NestIdVal {
 	return obj
 }
 
-func writeNestLabel(w *specodec.SpecWriter, obj NestLabel) {
+func writeNestLabel(w *specodec.SpecWriter, obj *NestLabel) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeLabel(w, obj.nested);
 	w.EndObject()
@@ -4268,7 +4268,7 @@ func decodeNestLabel(r *specodec.SpecReader) *NestLabel {
 	return obj
 }
 
-func writeNestMoney(w *specodec.SpecWriter, obj NestMoney) {
+func writeNestMoney(w *specodec.SpecWriter, obj *NestMoney) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeMoney(w, obj.nested);
 	w.EndObject()
@@ -4287,7 +4287,7 @@ func decodeNestMoney(r *specodec.SpecReader) *NestMoney {
 	return obj
 }
 
-func writeNestRange32(w *specodec.SpecWriter, obj NestRange32) {
+func writeNestRange32(w *specodec.SpecWriter, obj *NestRange32) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeRange32(w, obj.nested);
 	w.EndObject()
@@ -4306,7 +4306,7 @@ func decodeNestRange32(r *specodec.SpecReader) *NestRange32 {
 	return obj
 }
 
-func writeNestAddr(w *specodec.SpecWriter, obj NestAddr) {
+func writeNestAddr(w *specodec.SpecWriter, obj *NestAddr) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writeAddr(w, obj.nested);
 	w.EndObject()
@@ -4325,7 +4325,7 @@ func decodeNestAddr(r *specodec.SpecReader) *NestAddr {
 	return obj
 }
 
-func writeNestPoint3(w *specodec.SpecWriter, obj NestPoint3) {
+func writeNestPoint3(w *specodec.SpecWriter, obj *NestPoint3) {
 	w.BeginObject(1)
 	w.WriteField("nested"); writePoint3(w, obj.nested);
 	w.EndObject()
@@ -4344,7 +4344,7 @@ func decodeNestPoint3(r *specodec.SpecReader) *NestPoint3 {
 	return obj
 }
 
-func writeOptNestInner(w *specodec.SpecWriter, obj OptNestInner) {
+func writeOptNestInner(w *specodec.SpecWriter, obj *OptNestInner) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4367,7 +4367,7 @@ func decodeOptNestInner(r *specodec.SpecReader) *OptNestInner {
 	return obj
 }
 
-func writeOptNestCoord(w *specodec.SpecWriter, obj OptNestCoord) {
+func writeOptNestCoord(w *specodec.SpecWriter, obj *OptNestCoord) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4390,7 +4390,7 @@ func decodeOptNestCoord(r *specodec.SpecReader) *OptNestCoord {
 	return obj
 }
 
-func writeOptNestIdVal(w *specodec.SpecWriter, obj OptNestIdVal) {
+func writeOptNestIdVal(w *specodec.SpecWriter, obj *OptNestIdVal) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4413,7 +4413,7 @@ func decodeOptNestIdVal(r *specodec.SpecReader) *OptNestIdVal {
 	return obj
 }
 
-func writeOptNestLabel(w *specodec.SpecWriter, obj OptNestLabel) {
+func writeOptNestLabel(w *specodec.SpecWriter, obj *OptNestLabel) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4436,7 +4436,7 @@ func decodeOptNestLabel(r *specodec.SpecReader) *OptNestLabel {
 	return obj
 }
 
-func writeOptNestMoney(w *specodec.SpecWriter, obj OptNestMoney) {
+func writeOptNestMoney(w *specodec.SpecWriter, obj *OptNestMoney) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4459,7 +4459,7 @@ func decodeOptNestMoney(r *specodec.SpecReader) *OptNestMoney {
 	return obj
 }
 
-func writeOptNestRange32(w *specodec.SpecWriter, obj OptNestRange32) {
+func writeOptNestRange32(w *specodec.SpecWriter, obj *OptNestRange32) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4482,7 +4482,7 @@ func decodeOptNestRange32(r *specodec.SpecReader) *OptNestRange32 {
 	return obj
 }
 
-func writeOptNestAddr(w *specodec.SpecWriter, obj OptNestAddr) {
+func writeOptNestAddr(w *specodec.SpecWriter, obj *OptNestAddr) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4505,7 +4505,7 @@ func decodeOptNestAddr(r *specodec.SpecReader) *OptNestAddr {
 	return obj
 }
 
-func writeOptNestPoint3(w *specodec.SpecWriter, obj OptNestPoint3) {
+func writeOptNestPoint3(w *specodec.SpecWriter, obj *OptNestPoint3) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -4528,7 +4528,7 @@ func decodeOptNestPoint3(r *specodec.SpecReader) *OptNestPoint3 {
 	return obj
 }
 
-func writeModelArr1(w *specodec.SpecWriter, obj ModelArr1) {
+func writeModelArr1(w *specodec.SpecWriter, obj *ModelArr1) {
 	w.BeginObject(1)
 	w.WriteField("points"); func() { w.BeginArray(len(obj.points)); for _, _e := range obj.points { w.NextElement(); writeInner(w, _e); }; w.EndArray() }();
 	w.EndObject()
@@ -4547,7 +4547,7 @@ func decodeModelArr1(r *specodec.SpecReader) *ModelArr1 {
 	return obj
 }
 
-func writeModelArr2(w *specodec.SpecWriter, obj ModelArr2) {
+func writeModelArr2(w *specodec.SpecWriter, obj *ModelArr2) {
 	w.BeginObject(1)
 	w.WriteField("coords"); func() { w.BeginArray(len(obj.coords)); for _, _e := range obj.coords { w.NextElement(); writeCoord(w, _e); }; w.EndArray() }();
 	w.EndObject()
@@ -4566,7 +4566,7 @@ func decodeModelArr2(r *specodec.SpecReader) *ModelArr2 {
 	return obj
 }
 
-func writeModelArr3(w *specodec.SpecWriter, obj ModelArr3) {
+func writeModelArr3(w *specodec.SpecWriter, obj *ModelArr3) {
 	w.BeginObject(2)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); writeIdVal(w, _e); }; w.EndArray() }();
 	w.WriteField("tag"); w.WriteString(obj.tag);
@@ -4587,7 +4587,7 @@ func decodeModelArr3(r *specodec.SpecReader) *ModelArr3 {
 	return obj
 }
 
-func writeModelArr4(w *specodec.SpecWriter, obj ModelArr4) {
+func writeModelArr4(w *specodec.SpecWriter, obj *ModelArr4) {
 	w.BeginObject(2)
 	w.WriteField("labels"); func() { w.BeginArray(len(obj.labels)); for _, _e := range obj.labels { w.NextElement(); writeLabel(w, _e); }; w.EndArray() }();
 	w.WriteField("count"); w.WriteInt32(obj.count);
@@ -4608,7 +4608,7 @@ func decodeModelArr4(r *specodec.SpecReader) *ModelArr4 {
 	return obj
 }
 
-func writeModelArr5(w *specodec.SpecWriter, obj ModelArr5) {
+func writeModelArr5(w *specodec.SpecWriter, obj *ModelArr5) {
 	w.BeginObject(2)
 	w.WriteField("arr"); func() { w.BeginArray(len(obj.arr)); for _, _e := range obj.arr { w.NextElement(); writeMoney(w, _e); }; w.EndArray() }();
 	w.WriteField("bs"); func() { w.BeginArray(len(obj.bs)); for _, _e := range obj.bs { w.NextElement(); writeAddr(w, _e); }; w.EndArray() }();
@@ -4629,7 +4629,7 @@ func decodeModelArr5(r *specodec.SpecReader) *ModelArr5 {
 	return obj
 }
 
-func writeMix01(w *specodec.SpecWriter, obj Mix01) {
+func writeMix01(w *specodec.SpecWriter, obj *Mix01) {
 	w.BeginObject(3)
 	w.WriteField("name"); w.WriteString(obj.name);
 	w.WriteField("value"); w.WriteInt32(obj.value);
@@ -4652,7 +4652,7 @@ func decodeMix01(r *specodec.SpecReader) *Mix01 {
 	return obj
 }
 
-func writeMix02(w *specodec.SpecWriter, obj Mix02) {
+func writeMix02(w *specodec.SpecWriter, obj *Mix02) {
 	w.BeginObject(3)
 	w.WriteField("id"); w.WriteString(obj.id);
 	w.WriteField("loc"); writeCoord(w, obj.loc);
@@ -4675,7 +4675,7 @@ func decodeMix02(r *specodec.SpecReader) *Mix02 {
 	return obj
 }
 
-func writeMix03(w *specodec.SpecWriter, obj Mix03) {
+func writeMix03(w *specodec.SpecWriter, obj *Mix03) {
 	w.BeginObject(3)
 	w.WriteField("label"); w.WriteString(obj.label);
 	w.WriteField("value_range"); writeRange32(w, obj.value_range);
@@ -4698,7 +4698,7 @@ func decodeMix03(r *specodec.SpecReader) *Mix03 {
 	return obj
 }
 
-func writeMix04(w *specodec.SpecWriter, obj Mix04) {
+func writeMix04(w *specodec.SpecWriter, obj *Mix04) {
 	w.BeginObject(4)
 	w.WriteField("title"); w.WriteString(obj.title);
 	w.WriteField("price"); writeMoney(w, obj.price);
@@ -4723,7 +4723,7 @@ func decodeMix04(r *specodec.SpecReader) *Mix04 {
 	return obj
 }
 
-func writeMix05(w *specodec.SpecWriter, obj Mix05) {
+func writeMix05(w *specodec.SpecWriter, obj *Mix05) {
 	w.BeginObject(2)
 	w.WriteField("addr"); writeAddr(w, obj.addr);
 	w.WriteField("coords"); func() { w.BeginArray(len(obj.coords)); for _, _e := range obj.coords { w.NextElement(); writeCoord(w, _e); }; w.EndArray() }();
@@ -4744,7 +4744,7 @@ func decodeMix05(r *specodec.SpecReader) *Mix05 {
 	return obj
 }
 
-func writeMix06(w *specodec.SpecWriter, obj Mix06) {
+func writeMix06(w *specodec.SpecWriter, obj *Mix06) {
 	_n := 2
 	if obj.address != nil { _n++ }
 	if obj.email != nil { _n++ }
@@ -4772,7 +4772,7 @@ func decodeMix06(r *specodec.SpecReader) *Mix06 {
 	return obj
 }
 
-func writeMix07(w *specodec.SpecWriter, obj Mix07) {
+func writeMix07(w *specodec.SpecWriter, obj *Mix07) {
 	w.BeginObject(3)
 	w.WriteField("origin"); writePoint3(w, obj.origin);
 	w.WriteField("dest"); writePoint3(w, obj.dest);
@@ -4795,7 +4795,7 @@ func decodeMix07(r *specodec.SpecReader) *Mix07 {
 	return obj
 }
 
-func writeMix08(w *specodec.SpecWriter, obj Mix08) {
+func writeMix08(w *specodec.SpecWriter, obj *Mix08) {
 	_n := 2
 	if obj.meta != nil { _n++ }
 	w.BeginObject(_n)
@@ -4820,7 +4820,7 @@ func decodeMix08(r *specodec.SpecReader) *Mix08 {
 	return obj
 }
 
-func writeMix09(w *specodec.SpecWriter, obj Mix09) {
+func writeMix09(w *specodec.SpecWriter, obj *Mix09) {
 	_n := 3
 	if obj.prev != nil { _n++ }
 	w.BeginObject(_n)
@@ -4847,7 +4847,7 @@ func decodeMix09(r *specodec.SpecReader) *Mix09 {
 	return obj
 }
 
-func writeMix10(w *specodec.SpecWriter, obj Mix10) {
+func writeMix10(w *specodec.SpecWriter, obj *Mix10) {
 	w.BeginObject(4)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
 	w.WriteField("total"); w.WriteInt32(obj.total);
@@ -4872,7 +4872,7 @@ func decodeMix10(r *specodec.SpecReader) *Mix10 {
 	return obj
 }
 
-func writeMix11(w *specodec.SpecWriter, obj Mix11) {
+func writeMix11(w *specodec.SpecWriter, obj *Mix11) {
 	_n := 2
 	if obj.nested != nil { _n++ }
 	if obj.flag != nil { _n++ }
@@ -4900,7 +4900,7 @@ func decodeMix11(r *specodec.SpecReader) *Mix11 {
 	return obj
 }
 
-func writeMix12(w *specodec.SpecWriter, obj Mix12) {
+func writeMix12(w *specodec.SpecWriter, obj *Mix12) {
 	_n := 2
 	if obj.footer != nil { _n++ }
 	w.BeginObject(_n)
@@ -4925,7 +4925,7 @@ func decodeMix12(r *specodec.SpecReader) *Mix12 {
 	return obj
 }
 
-func writeMix13(w *specodec.SpecWriter, obj Mix13) {
+func writeMix13(w *specodec.SpecWriter, obj *Mix13) {
 	w.BeginObject(6)
 	w.WriteField("a"); w.WriteInt32(obj.a);
 	w.WriteField("b"); w.WriteFloat64(obj.b);
@@ -4954,7 +4954,7 @@ func decodeMix13(r *specodec.SpecReader) *Mix13 {
 	return obj
 }
 
-func writeMix14(w *specodec.SpecWriter, obj Mix14) {
+func writeMix14(w *specodec.SpecWriter, obj *Mix14) {
 	w.BeginObject(3)
 	w.WriteField("amounts"); func() { w.BeginArray(len(obj.amounts)); for _, _e := range obj.amounts { w.NextElement(); writeMoney(w, _e); }; w.EndArray() }();
 	w.WriteField("total"); w.WriteInt64(obj.total);
@@ -4977,7 +4977,7 @@ func decodeMix14(r *specodec.SpecReader) *Mix14 {
 	return obj
 }
 
-func writeMix15(w *specodec.SpecWriter, obj Mix15) {
+func writeMix15(w *specodec.SpecWriter, obj *Mix15) {
 	w.BeginObject(4)
 	w.WriteField("src_addr"); writeAddr(w, obj.src_addr);
 	w.WriteField("dst_addr"); writeAddr(w, obj.dst_addr);
@@ -5002,7 +5002,7 @@ func decodeMix15(r *specodec.SpecReader) *Mix15 {
 	return obj
 }
 
-func writeAllOpt1(w *specodec.SpecWriter, obj AllOpt1) {
+func writeAllOpt1(w *specodec.SpecWriter, obj *AllOpt1) {
 	_n := 0
 	if obj.a != nil { _n++ }
 	if obj.b != nil { _n++ }
@@ -5029,7 +5029,7 @@ func decodeAllOpt1(r *specodec.SpecReader) *AllOpt1 {
 	return obj
 }
 
-func writeAllOpt2(w *specodec.SpecWriter, obj AllOpt2) {
+func writeAllOpt2(w *specodec.SpecWriter, obj *AllOpt2) {
 	_n := 0
 	if obj.x != nil { _n++ }
 	if obj.y != nil { _n++ }
@@ -5056,7 +5056,7 @@ func decodeAllOpt2(r *specodec.SpecReader) *AllOpt2 {
 	return obj
 }
 
-func writeAllOpt3(w *specodec.SpecWriter, obj AllOpt3) {
+func writeAllOpt3(w *specodec.SpecWriter, obj *AllOpt3) {
 	_n := 0
 	if obj.name != nil { _n++ }
 	if obj.age != nil { _n++ }
@@ -5086,7 +5086,7 @@ func decodeAllOpt3(r *specodec.SpecReader) *AllOpt3 {
 	return obj
 }
 
-func writeAllOpt4(w *specodec.SpecWriter, obj AllOpt4) {
+func writeAllOpt4(w *specodec.SpecWriter, obj *AllOpt4) {
 	_n := 0
 	if obj.a != nil { _n++ }
 	if obj.b != nil { _n++ }
@@ -5119,7 +5119,7 @@ func decodeAllOpt4(r *specodec.SpecReader) *AllOpt4 {
 	return obj
 }
 
-func writeAllOpt5(w *specodec.SpecWriter, obj AllOpt5) {
+func writeAllOpt5(w *specodec.SpecWriter, obj *AllOpt5) {
 	_n := 0
 	if obj.p != nil { _n++ }
 	if obj.q != nil { _n++ }
@@ -5143,7 +5143,7 @@ func decodeAllOpt5(r *specodec.SpecReader) *AllOpt5 {
 	return obj
 }
 
-func writeRecList(w *specodec.SpecWriter, obj RecList) {
+func writeRecList(w *specodec.SpecWriter, obj *RecList) {
 	_n := 1
 	if obj.next != nil { _n++ }
 	w.BeginObject(_n)
@@ -5166,7 +5166,7 @@ func decodeRecList(r *specodec.SpecReader) *RecList {
 	return obj
 }
 
-func writeRecTree(w *specodec.SpecWriter, obj RecTree) {
+func writeRecTree(w *specodec.SpecWriter, obj *RecTree) {
 	_n := 1
 	if obj.left_node != nil { _n++ }
 	if obj.right_node != nil { _n++ }
@@ -5192,7 +5192,7 @@ func decodeRecTree(r *specodec.SpecReader) *RecTree {
 	return obj
 }
 
-func writeRecChain(w *specodec.SpecWriter, obj RecChain) {
+func writeRecChain(w *specodec.SpecWriter, obj *RecChain) {
 	_n := 2
 	if obj.next != nil { _n++ }
 	w.BeginObject(_n)
@@ -5217,7 +5217,7 @@ func decodeRecChain(r *specodec.SpecReader) *RecChain {
 	return obj
 }
 
-func writeRecWrap(w *specodec.SpecWriter, obj RecWrap) {
+func writeRecWrap(w *specodec.SpecWriter, obj *RecWrap) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -5240,7 +5240,7 @@ func decodeRecWrap(r *specodec.SpecReader) *RecWrap {
 	return obj
 }
 
-func writeRecWide(w *specodec.SpecWriter, obj RecWide) {
+func writeRecWide(w *specodec.SpecWriter, obj *RecWide) {
 	_n := 3
 	if obj.child != nil { _n++ }
 	w.BeginObject(_n)
@@ -5267,7 +5267,7 @@ func decodeRecWide(r *specodec.SpecReader) *RecWide {
 	return obj
 }
 
-func writeWide20(w *specodec.SpecWriter, obj Wide20) {
+func writeWide20(w *specodec.SpecWriter, obj *Wide20) {
 	w.BeginObject(20)
 	w.WriteField("f1"); w.WriteString(obj.f1);
 	w.WriteField("f2"); w.WriteBool(obj.f2);
@@ -5324,7 +5324,7 @@ func decodeWide20(r *specodec.SpecReader) *Wide20 {
 	return obj
 }
 
-func writeWide25(w *specodec.SpecWriter, obj Wide25) {
+func writeWide25(w *specodec.SpecWriter, obj *Wide25) {
 	w.BeginObject(25)
 	w.WriteField("f1"); w.WriteUint32(uint32(obj.f1));
 	w.WriteField("f2"); w.WriteUint32(obj.f2);
@@ -5391,7 +5391,7 @@ func decodeWide25(r *specodec.SpecReader) *Wide25 {
 	return obj
 }
 
-func writeWide30(w *specodec.SpecWriter, obj Wide30) {
+func writeWide30(w *specodec.SpecWriter, obj *Wide30) {
 	w.BeginObject(30)
 	w.WriteField("f1"); w.WriteBool(obj.f1);
 	w.WriteField("f2"); w.WriteInt32(int32(obj.f2));
@@ -5468,7 +5468,7 @@ func decodeWide30(r *specodec.SpecReader) *Wide30 {
 	return obj
 }
 
-func writeWide35(w *specodec.SpecWriter, obj Wide35) {
+func writeWide35(w *specodec.SpecWriter, obj *Wide35) {
 	w.BeginObject(35)
 	w.WriteField("f1"); w.WriteUint32(obj.f1);
 	w.WriteField("f2"); w.WriteUint64(obj.f2);
@@ -5555,7 +5555,7 @@ func decodeWide35(r *specodec.SpecReader) *Wide35 {
 	return obj
 }
 
-func writeWide40(w *specodec.SpecWriter, obj Wide40) {
+func writeWide40(w *specodec.SpecWriter, obj *Wide40) {
 	w.BeginObject(40)
 	w.WriteField("f1"); w.WriteInt32(int32(obj.f1));
 	w.WriteField("f2"); w.WriteInt32(int32(obj.f2));
@@ -5652,7 +5652,7 @@ func decodeWide40(r *specodec.SpecReader) *Wide40 {
 	return obj
 }
 
-func writeEdgeEmpty(w *specodec.SpecWriter, obj EdgeEmpty) {
+func writeEdgeEmpty(w *specodec.SpecWriter, obj *EdgeEmpty) {
 	w.BeginObject(0)
 	w.EndObject()
 }
@@ -5669,7 +5669,7 @@ func decodeEdgeEmpty(r *specodec.SpecReader) *EdgeEmpty {
 	return obj
 }
 
-func writeEdgeOneOpt(w *specodec.SpecWriter, obj EdgeOneOpt) {
+func writeEdgeOneOpt(w *specodec.SpecWriter, obj *EdgeOneOpt) {
 	_n := 0
 	if obj.maybe != nil { _n++ }
 	w.BeginObject(_n)
@@ -5690,7 +5690,7 @@ func decodeEdgeOneOpt(r *specodec.SpecReader) *EdgeOneOpt {
 	return obj
 }
 
-func writeEdgeBigNums(w *specodec.SpecWriter, obj EdgeBigNums) {
+func writeEdgeBigNums(w *specodec.SpecWriter, obj *EdgeBigNums) {
 	w.BeginObject(8)
 	w.WriteField("i8"); w.WriteInt32(int32(obj.i8));
 	w.WriteField("i16"); w.WriteInt32(int32(obj.i16));
@@ -5723,7 +5723,7 @@ func decodeEdgeBigNums(r *specodec.SpecReader) *EdgeBigNums {
 	return obj
 }
 
-func writeEdgeZeroVals(w *specodec.SpecWriter, obj EdgeZeroVals) {
+func writeEdgeZeroVals(w *specodec.SpecWriter, obj *EdgeZeroVals) {
 	w.BeginObject(5)
 	w.WriteField("s"); w.WriteString(obj.s);
 	w.WriteField("i"); w.WriteInt32(obj.i);
@@ -5750,7 +5750,7 @@ func decodeEdgeZeroVals(r *specodec.SpecReader) *EdgeZeroVals {
 	return obj
 }
 
-func writeEdgeNullable(w *specodec.SpecWriter, obj EdgeNullable) {
+func writeEdgeNullable(w *specodec.SpecWriter, obj *EdgeNullable) {
 	_n := 0
 	if obj.a != nil { _n++ }
 	if obj.b != nil { _n++ }
@@ -5780,7 +5780,7 @@ func decodeEdgeNullable(r *specodec.SpecReader) *EdgeNullable {
 	return obj
 }
 
-func writeEdgeNegZero(w *specodec.SpecWriter, obj EdgeNegZero) {
+func writeEdgeNegZero(w *specodec.SpecWriter, obj *EdgeNegZero) {
 	w.BeginObject(1)
 	w.WriteField("v"); w.WriteFloat64(obj.v);
 	w.EndObject()
@@ -5799,7 +5799,7 @@ func decodeEdgeNegZero(r *specodec.SpecReader) *EdgeNegZero {
 	return obj
 }
 
-func writeEdgeNullByte(w *specodec.SpecWriter, obj EdgeNullByte) {
+func writeEdgeNullByte(w *specodec.SpecWriter, obj *EdgeNullByte) {
 	w.BeginObject(2)
 	w.WriteField("s"); w.WriteString(obj.s);
 	w.WriteField("b"); w.WriteBytes(obj.b);
@@ -5820,7 +5820,7 @@ func decodeEdgeNullByte(r *specodec.SpecReader) *EdgeNullByte {
 	return obj
 }
 
-func writeEdgeBoundary(w *specodec.SpecWriter, obj EdgeBoundary) {
+func writeEdgeBoundary(w *specodec.SpecWriter, obj *EdgeBoundary) {
 	w.BeginObject(6)
 	w.WriteField("i32_neg129"); w.WriteInt32(obj.i32_neg129);
 	w.WriteField("i32_128"); w.WriteInt32(obj.i32_128);
@@ -5849,7 +5849,7 @@ func decodeEdgeBoundary(r *specodec.SpecReader) *EdgeBoundary {
 	return obj
 }
 
-func writeEdgeStrLen(w *specodec.SpecWriter, obj EdgeStrLen) {
+func writeEdgeStrLen(w *specodec.SpecWriter, obj *EdgeStrLen) {
 	w.BeginObject(4)
 	w.WriteField("s31"); w.WriteString(obj.s31);
 	w.WriteField("s32"); w.WriteString(obj.s32);
@@ -5874,7 +5874,7 @@ func decodeEdgeStrLen(r *specodec.SpecReader) *EdgeStrLen {
 	return obj
 }
 
-func writeEdgeBytesLen(w *specodec.SpecWriter, obj EdgeBytesLen) {
+func writeEdgeBytesLen(w *specodec.SpecWriter, obj *EdgeBytesLen) {
 	w.BeginObject(4)
 	w.WriteField("b31"); w.WriteBytes(obj.b31);
 	w.WriteField("b32"); w.WriteBytes(obj.b32);
@@ -5899,7 +5899,7 @@ func decodeEdgeBytesLen(r *specodec.SpecReader) *EdgeBytesLen {
 	return obj
 }
 
-func writeEdgeArrEmpty(w *specodec.SpecWriter, obj EdgeArrEmpty) {
+func writeEdgeArrEmpty(w *specodec.SpecWriter, obj *EdgeArrEmpty) {
 	w.BeginObject(1)
 	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
 	w.EndObject()
@@ -5918,7 +5918,7 @@ func decodeEdgeArrEmpty(r *specodec.SpecReader) *EdgeArrEmpty {
 	return obj
 }
 
-func writeEdgeArrBoundary(w *specodec.SpecWriter, obj EdgeArrBoundary) {
+func writeEdgeArrBoundary(w *specodec.SpecWriter, obj *EdgeArrBoundary) {
 	w.BeginObject(2)
 	w.WriteField("a15"); func() { w.BeginArray(len(obj.a15)); for _, _e := range obj.a15 { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
 	w.WriteField("a16"); func() { w.BeginArray(len(obj.a16)); for _, _e := range obj.a16 { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
@@ -5939,7 +5939,7 @@ func decodeEdgeArrBoundary(r *specodec.SpecReader) *EdgeArrBoundary {
 	return obj
 }
 
-func writeOptArr1(w *specodec.SpecWriter, obj OptArr1) {
+func writeOptArr1(w *specodec.SpecWriter, obj *OptArr1) {
 	_n := 1
 	if obj.items != nil { _n++ }
 	w.BeginObject(_n)
@@ -5962,7 +5962,7 @@ func decodeOptArr1(r *specodec.SpecReader) *OptArr1 {
 	return obj
 }
 
-func writeOptArr2(w *specodec.SpecWriter, obj OptArr2) {
+func writeOptArr2(w *specodec.SpecWriter, obj *OptArr2) {
 	_n := 1
 	if obj.names != nil { _n++ }
 	if obj.flags != nil { _n++ }
@@ -5988,7 +5988,7 @@ func decodeOptArr2(r *specodec.SpecReader) *OptArr2 {
 	return obj
 }
 
-func writeOptArr3(w *specodec.SpecWriter, obj OptArr3) {
+func writeOptArr3(w *specodec.SpecWriter, obj *OptArr3) {
 	_n := 0
 	if obj.a != nil { _n++ }
 	if obj.b != nil { _n++ }
@@ -6012,7 +6012,7 @@ func decodeOptArr3(r *specodec.SpecReader) *OptArr3 {
 	return obj
 }
 
-func writeOptArr4(w *specodec.SpecWriter, obj OptArr4) {
+func writeOptArr4(w *specodec.SpecWriter, obj *OptArr4) {
 	_n := 1
 	if obj.chunks != nil { _n++ }
 	w.BeginObject(_n)
@@ -6035,7 +6035,7 @@ func decodeOptArr4(r *specodec.SpecReader) *OptArr4 {
 	return obj
 }
 
-func writeOptArr5(w *specodec.SpecWriter, obj OptArr5) {
+func writeOptArr5(w *specodec.SpecWriter, obj *OptArr5) {
 	_n := 1
 	if obj.models != nil { _n++ }
 	w.BeginObject(_n)
@@ -6058,7 +6058,7 @@ func decodeOptArr5(r *specodec.SpecReader) *OptArr5 {
 	return obj
 }
 
-func writeNestOpt1(w *specodec.SpecWriter, obj NestOpt1) {
+func writeNestOpt1(w *specodec.SpecWriter, obj *NestOpt1) {
 	w.BeginObject(2)
 	w.WriteField("outer"); writeLabel(w, obj.outer);
 	w.WriteField("name"); w.WriteString(obj.name);
@@ -6079,7 +6079,7 @@ func decodeNestOpt1(r *specodec.SpecReader) *NestOpt1 {
 	return obj
 }
 
-func writeNestOpt2(w *specodec.SpecWriter, obj NestOpt2) {
+func writeNestOpt2(w *specodec.SpecWriter, obj *NestOpt2) {
 	_n := 0
 	if obj.a != nil { _n++ }
 	if obj.b != nil { _n++ }
@@ -6106,7 +6106,7 @@ func decodeNestOpt2(r *specodec.SpecReader) *NestOpt2 {
 	return obj
 }
 
-func writeNestOpt3(w *specodec.SpecWriter, obj NestOpt3) {
+func writeNestOpt3(w *specodec.SpecWriter, obj *NestOpt3) {
 	_n := 1
 	if obj.value_range != nil { _n++ }
 	w.BeginObject(_n)
@@ -6129,7 +6129,7 @@ func decodeNestOpt3(r *specodec.SpecReader) *NestOpt3 {
 	return obj
 }
 
-func writeNestOpt4(w *specodec.SpecWriter, obj NestOpt4) {
+func writeNestOpt4(w *specodec.SpecWriter, obj *NestOpt4) {
 	_n := 1
 	if obj.addr != nil { _n++ }
 	if obj.coord != nil { _n++ }
@@ -6155,7 +6155,7 @@ func decodeNestOpt4(r *specodec.SpecReader) *NestOpt4 {
 	return obj
 }
 
-func writeNestOpt5(w *specodec.SpecWriter, obj NestOpt5) {
+func writeNestOpt5(w *specodec.SpecWriter, obj *NestOpt5) {
 	_n := 2
 	if obj.label != nil { _n++ }
 	w.BeginObject(_n)
@@ -6180,7 +6180,7 @@ func decodeNestOpt5(r *specodec.SpecReader) *NestOpt5 {
 	return obj
 }
 
-func writeNestOptInner1(w *specodec.SpecWriter, obj NestOptInner1) {
+func writeNestOptInner1(w *specodec.SpecWriter, obj *NestOptInner1) {
 	_n := 1
 	if obj.nested != nil { _n++ }
 	w.BeginObject(_n)
@@ -6203,7 +6203,7 @@ func decodeNestOptInner1(r *specodec.SpecReader) *NestOptInner1 {
 	return obj
 }
 
-func writeNestOptInner2(w *specodec.SpecWriter, obj NestOptInner2) {
+func writeNestOptInner2(w *specodec.SpecWriter, obj *NestOptInner2) {
 	w.BeginObject(2)
 	w.WriteField("tag"); w.WriteString(obj.tag);
 	w.WriteField("nested"); writeOptInner(w, obj.nested);
@@ -6224,7 +6224,7 @@ func decodeNestOptInner2(r *specodec.SpecReader) *NestOptInner2 {
 	return obj
 }
 
-func writeNestOptInner3(w *specodec.SpecWriter, obj NestOptInner3) {
+func writeNestOptInner3(w *specodec.SpecWriter, obj *NestOptInner3) {
 	_n := 0
 	if obj.outer != nil { _n++ }
 	if obj.nested != nil { _n++ }
@@ -6248,7 +6248,7 @@ func decodeNestOptInner3(r *specodec.SpecReader) *NestOptInner3 {
 	return obj
 }
 
-func writeDeepNest1(w *specodec.SpecWriter, obj DeepNest1) {
+func writeDeepNest1(w *specodec.SpecWriter, obj *DeepNest1) {
 	w.BeginObject(2)
 	w.WriteField("label"); w.WriteString(obj.label);
 	w.WriteField("nested"); writeAddr(w, obj.nested);
@@ -6269,7 +6269,7 @@ func decodeDeepNest1(r *specodec.SpecReader) *DeepNest1 {
 	return obj
 }
 
-func writeDeepNest2(w *specodec.SpecWriter, obj DeepNest2) {
+func writeDeepNest2(w *specodec.SpecWriter, obj *DeepNest2) {
 	w.BeginObject(3)
 	w.WriteField("name"); w.WriteString(obj.name);
 	w.WriteField("money"); writeMoney(w, obj.money);
@@ -6292,7 +6292,7 @@ func decodeDeepNest2(r *specodec.SpecReader) *DeepNest2 {
 	return obj
 }
 
-func writeDeepNest3(w *specodec.SpecWriter, obj DeepNest3) {
+func writeDeepNest3(w *specodec.SpecWriter, obj *DeepNest3) {
 	w.BeginObject(4)
 	w.WriteField("title"); w.WriteString(obj.title);
 	w.WriteField("point"); writePoint3(w, obj.point);
@@ -6317,7 +6317,7 @@ func decodeDeepNest3(r *specodec.SpecReader) *DeepNest3 {
 	return obj
 }
 
-func writeDeepNest4(w *specodec.SpecWriter, obj DeepNest4) {
+func writeDeepNest4(w *specodec.SpecWriter, obj *DeepNest4) {
 	w.BeginObject(3)
 	w.WriteField("coords"); func() { w.BeginArray(len(obj.coords)); for _, _e := range obj.coords { w.NextElement(); writeCoord(w, _e); }; w.EndArray() }();
 	w.WriteField("nested"); writeInner(w, obj.nested);
@@ -6340,7 +6340,7 @@ func decodeDeepNest4(r *specodec.SpecReader) *DeepNest4 {
 	return obj
 }
 
-func writeDeepNest5(w *specodec.SpecWriter, obj DeepNest5) {
+func writeDeepNest5(w *specodec.SpecWriter, obj *DeepNest5) {
 	w.BeginObject(3)
 	w.WriteField("labels"); func() { w.BeginArray(len(obj.labels)); for _, _e := range obj.labels { w.NextElement(); writeLabel(w, _e); }; w.EndArray() }();
 	w.WriteField("money"); writeMoney(w, obj.money);
@@ -6363,7 +6363,7 @@ func decodeDeepNest5(r *specodec.SpecReader) *DeepNest5 {
 	return obj
 }
 
-func writeDeepNest6(w *specodec.SpecWriter, obj DeepNest6) {
+func writeDeepNest6(w *specodec.SpecWriter, obj *DeepNest6) {
 	_n := 2
 	if obj.addr != nil { _n++ }
 	w.BeginObject(_n)
@@ -6388,7 +6388,7 @@ func decodeDeepNest6(r *specodec.SpecReader) *DeepNest6 {
 	return obj
 }
 
-func writeDeepNest7(w *specodec.SpecWriter, obj DeepNest7) {
+func writeDeepNest7(w *specodec.SpecWriter, obj *DeepNest7) {
 	w.BeginObject(3)
 	w.WriteField("a"); writeAddr(w, obj.a);
 	w.WriteField("b"); writeAddr(w, obj.b);
@@ -6411,7 +6411,7 @@ func decodeDeepNest7(r *specodec.SpecReader) *DeepNest7 {
 	return obj
 }
 
-func writeTimestampEntry(w *specodec.SpecWriter, obj TimestampEntry) {
+func writeTimestampEntry(w *specodec.SpecWriter, obj *TimestampEntry) {
 	_n := 2
 	if obj.payload != nil { _n++ }
 	w.BeginObject(_n)
@@ -6436,7 +6436,7 @@ func decodeTimestampEntry(r *specodec.SpecReader) *TimestampEntry {
 	return obj
 }
 
-func writeConfigEntry(w *specodec.SpecWriter, obj ConfigEntry) {
+func writeConfigEntry(w *specodec.SpecWriter, obj *ConfigEntry) {
 	_n := 1
 	if obj.intValue != nil { _n++ }
 	if obj.strValue != nil { _n++ }
