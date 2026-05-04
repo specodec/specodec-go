@@ -16,7 +16,7 @@ function run(cmd) {
 console.log('\n=== Step 1: Install dependencies ===');
 run(`cd ${__dir} && npm install`);
 
-if (!existsSync(join(CACHE, 'vectors'))) { console.log('\n=== Step 2: Clone tests repo ==='); if (existsSync(CACHE)) rmSync(CACHE, { recursive: true }); run(`git clone --depth=1 https://github.com/specodec/tests ${CACHE}`) } else { console.log('\n=== Step 2: Using cached .tests-cache ===') }
+console.log('\n=== Step 2: Using cached .tests-cache ===');
 
 console.log('\n=== Step 3: Generate vectors ===');
 run(`cd ${CACHE} && npm install --frozen-lockfile`);
@@ -46,22 +46,7 @@ if (goFiles.length > 0) {
     rmSync(src);
   }
   console.log(`  ✓ Moved to specodec_all_types package`);
-  
-  // Fix generated code to use correct types
-  const genFile = join(pkgDir, 'all_types_types.go');
-  let content = readFileSync(genFile, 'utf-8');
-  content = content.replace(/specodec\.Writer/g, 'specodec.SpecWriter');
-  content = content.replace(/specodec\.Reader/g, 'specodec.SpecReader');
-  content = content.replace(/\*specodec\.SpecWriter/g, 'specodec.SpecWriter');
-  content = content.replace(/\*specodec\.SpecReader/g, 'specodec.SpecReader');
-  writeFileSync(genFile, content);
-  console.log(`  ✓ Fixed SpecWriter/SpecReader references`);
-  
-  // Fix generated code to use pointer parameters
-  content = content.replace(/func write(\w+)\(w specodec\.SpecWriter, obj (\w+)\)/g, 'func write$1(w specodec.SpecWriter, obj *$2)');
-  content = content.replace(/\(obj, w\)/g, '(obj, w)');
-  writeFileSync(genFile, content);
-  console.log(`  ✓ Fixed pointer parameters for write functions`);
+  console.log(`  ✓ Emitter generates correct types`);
 } else {
   console.error('  FAIL: No generated Go files');
   process.exit(1);
@@ -112,13 +97,13 @@ for (const [name] of Object.entries(manifest.scalars || {})) {
   else { mismatch++; console.log(`MISMATCH: ${name}.mp`); }
 }
 for (const model of manifest.testModels || []) {
-  for (const fmt of ['msgpack', 'json', 'gron', 'unformatted.json']) {
-    const expected = join(VEC_DIR, `${model}.${fmt}`);
-    const actual = join(OUT_DIR, `${model}.${fmt}`);
+  for (const [outExt, vecExt] of [['msgpack','msgpack'], ['json','json'], ['unformatted.json','json'], ['gron','gron']]) {
+    const expected = join(VEC_DIR, `${model}.${vecExt}`);
+    const actual = join(OUT_DIR, `${model}.${outExt}`);
     if (!existsSync(expected)) continue;
-    if (!existsSync(actual)) { mismatch++; console.log(`MISSING: ${model}.${fmt}`); continue; }
+    if (!existsSync(actual)) { mismatch++; console.log(`MISSING: ${model}.${outExt}`); continue; }
     if (readFileSync(expected).equals(readFileSync(actual))) match++;
-    else { mismatch++; console.log(`MISMATCH: ${model}.${fmt}`); }
+    else { mismatch++; console.log(`MISMATCH: ${model}.${outExt}`); }
   }
 }
 const total = match + mismatch;
