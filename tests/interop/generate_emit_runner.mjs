@@ -135,7 +135,7 @@ import (
 \t"fmt"
 \t"os"
 \t"path/filepath"
-\tspecodec "github.com/specodec/specodec-go"
+\tspecodec "github.com/specodec/specodec-runtime-golang"
 \tspecodec_all_types "emit_go/emit_gen/specodec_all_types"
 )
 

@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	ryu "github.com/specodec/specodec-go/ryu"
+	ryu "github.com/specodec/specodec-runtime-golang/ryu"
 )
 
 func loadTests(filename string) []float64 {

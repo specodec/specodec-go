@@ -30,8 +30,8 @@ console.log('\n=== Step 4: Generate emit code ===');
 if (existsSync(EMIT_GEN)) rmSync(EMIT_GEN, { recursive: true });
 mkdirSync(EMIT_GEN, { recursive: true });
 
-run(`cd ${__dir} && node_modules/.bin/tsp compile ${CACHE}/alltypes.tsp --emit=@specodec/typespec-emitter-golanglang \
-  --option @specodec/typespec-emitter-golanglang.emitter-output-dir=${EMIT_GEN}`);
+run(`cd ${__dir} && node_modules/.bin/tsp compile ${CACHE}/alltypes.tsp --emit=@specodec/typespec-emitter-golang \
+  --option @specodec/typespec-emitter-golang.emitter-output-dir=${EMIT_GEN}`);
 
 const goFiles = readdirSync(EMIT_GEN).filter(f => f.endsWith('.go'));
 if (goFiles.length > 0) {
@@ -84,11 +84,28 @@ console.log('\n=== Step 7: Run tests ===');
 if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
 mkdirSync(OUT_DIR, { recursive: true });
 
-// Get latest commit hash from GitHub
-const getLatestCommit = 'main';
+// Use local runtime source instead of remote
+const runtimeDir = join(__dir, '..', '..');  // specodec-runtime-golang root
+const goMod = `module emit_go
 
-writeFileSync(join(__dir, 'emit', 'go.mod'), `module emit_go\n\ngo 1.23\n`);
-run(`cd ${__dir}/emit && GOPROXY=direct GONOSUMDB=github.com/specodec/* go get github.com/specodec/specodec-go@${getLatestCommit}`);
-run(`cd ${__dir}/emit && GOPROXY=direct GONOSUMDB=github.com/specodec/* VEC_DIR=${VEC_DIR} OUT_DIR=${OUT_DIR} go run run_emit.go`);
+go 1.23
+
+require github.com/specodec/specodec-runtime-golang v0.0.0
+
+replace github.com/specodec/specodec-runtime-golang => ${runtimeDir}
+`;
+writeFileSync(join(__dir, 'emit', 'go.mod'), goMod);
+
+// Update generated code imports to match new module path
+const emitGenDir = join(__dir, 'emit', 'emit_gen', 'specodec_all_types');
+const genFile = join(emitGenDir, 'all_types_types.go');
+let genContent = readFileSync(genFile, 'utf-8');
+genContent = genContent.replace(/github\.com\/specodec\/specodec-go/g, 'github.com/specodec/specodec-runtime-golang');
+genContent = genContent.replace(/github\.com\/specodec\/specodec-runtime-go/g, 'github.com/specodec/specodec-runtime-golang');
+writeFileSync(genFile, genContent);
+console.log('  ✓ Updated runtime import paths');
+
+run(`cd ${__dir}/emit && go mod tidy`);
+run(`cd ${__dir}/emit && VEC_DIR=${VEC_DIR} OUT_DIR=${OUT_DIR} go run run_emit.go`);
 
 console.log('\n=== ALL PASSED ===');

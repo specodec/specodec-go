@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	specodec "github.com/specodec/specodec-go"
+	specodec "github.com/specodec/specodec-runtime-golang"
 	specodec_all_types "emit_go/emit_gen/specodec_all_types"
 )
 
