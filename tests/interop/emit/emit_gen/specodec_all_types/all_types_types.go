@@ -4,1343 +4,1343 @@ package specodec_all_types
 import specodec "github.com/specodec/specodec-runtime-golang"
 
 type Inner struct {
-	x int32
-	y int32
+	X int32
+	Y int32
 }
 
 type Coord struct {
-	lat float64
-	lng float64
+	Lat float64
+	Lng float64
 }
 
 type IdVal struct {
-	id string
-	value int32
+	Id string
+	Value int32
 }
 
 type Label struct {
-	key string
-	text string
+	Key string
+	Text string
 }
 
 type Money struct {
-	amount int64
-	currency string
+	Amount int64
+	Currency string
 }
 
 type Range32 struct {
-	min int32
-	max int32
+	Min int32
+	Max int32
 }
 
 type Addr struct {
-	street string
-	city string
-	zip string
+	Street string
+	City string
+	Zip string
 }
 
 type Point3 struct {
-	x float64
-	y float64
-	z float64
+	X float64
+	Y float64
+	Z float64
 }
 
 type OptInner struct {
-	name *string
-	score *float64
-	tag *string
+	Name *string
+	Score *float64
+	Tag *string
 }
 
 type SingleString struct {
-	v string
+	V string
 }
 
 type SingleBoolean struct {
-	v bool
+	V bool
 }
 
 type SingleInt8 struct {
-	v int8
+	V int8
 }
 
 type SingleInt16 struct {
-	v int16
+	V int16
 }
 
 type SingleInt32 struct {
-	v int32
+	V int32
 }
 
 type SingleInt64 struct {
-	v int64
+	V int64
 }
 
 type SingleUint8 struct {
-	v uint8
+	V uint8
 }
 
 type SingleUint16 struct {
-	v uint16
+	V uint16
 }
 
 type SingleUint32 struct {
-	v uint32
+	V uint32
 }
 
 type SingleUint64 struct {
-	v uint64
+	V uint64
 }
 
 type SingleFloat32 struct {
-	v float32
+	V float32
 }
 
 type SingleFloat64 struct {
-	v float64
+	V float64
 }
 
 type SingleBytes struct {
-	v []byte
+	V []byte
 }
 
 type OptSingleString struct {
-	v *string
+	V *string
 }
 
 type OptSingleBoolean struct {
-	v *bool
+	V *bool
 }
 
 type OptSingleInt8 struct {
-	v *int8
+	V *int8
 }
 
 type OptSingleInt16 struct {
-	v *int16
+	V *int16
 }
 
 type OptSingleInt32 struct {
-	v *int32
+	V *int32
 }
 
 type OptSingleInt64 struct {
-	v *int64
+	V *int64
 }
 
 type OptSingleUint8 struct {
-	v *uint8
+	V *uint8
 }
 
 type OptSingleUint16 struct {
-	v *uint16
+	V *uint16
 }
 
 type OptSingleUint32 struct {
-	v *uint32
+	V *uint32
 }
 
 type OptSingleUint64 struct {
-	v *uint64
+	V *uint64
 }
 
 type OptSingleFloat32 struct {
-	v *float32
+	V *float32
 }
 
 type OptSingleFloat64 struct {
-	v *float64
+	V *float64
 }
 
 type OptSingleBytes struct {
-	v *[]byte
+	V *[]byte
 }
 
 type PairString struct {
-	a string
-	b string
+	A string
+	B string
 }
 
 type PairBoolean struct {
-	a bool
-	b bool
+	A bool
+	B bool
 }
 
 type PairInt8 struct {
-	a int8
-	b int8
+	A int8
+	B int8
 }
 
 type PairInt16 struct {
-	a int16
-	b int16
+	A int16
+	B int16
 }
 
 type PairInt32 struct {
-	a int32
-	b int32
+	A int32
+	B int32
 }
 
 type PairInt64 struct {
-	a int64
-	b int64
+	A int64
+	B int64
 }
 
 type PairUint8 struct {
-	a uint8
-	b uint8
+	A uint8
+	B uint8
 }
 
 type PairUint16 struct {
-	a uint16
-	b uint16
+	A uint16
+	B uint16
 }
 
 type PairUint32 struct {
-	a uint32
-	b uint32
+	A uint32
+	B uint32
 }
 
 type PairUint64 struct {
-	a uint64
-	b uint64
+	A uint64
+	B uint64
 }
 
 type PairFloat32 struct {
-	a float32
-	b float32
+	A float32
+	B float32
 }
 
 type PairFloat64 struct {
-	a float64
-	b float64
+	A float64
+	B float64
 }
 
 type PairBytes struct {
-	a []byte
-	b []byte
+	A []byte
+	B []byte
 }
 
 type DualStringInt32 struct {
-	a string
-	b int32
+	A string
+	B int32
 }
 
 type DualStringBoolean struct {
-	a string
-	b bool
+	A string
+	B bool
 }
 
 type DualStringFloat64 struct {
-	a string
-	b float64
+	A string
+	B float64
 }
 
 type DualStringBytes struct {
-	a string
-	b []byte
+	A string
+	B []byte
 }
 
 type DualInt32Boolean struct {
-	a int32
-	b bool
+	A int32
+	B bool
 }
 
 type DualInt32Float64 struct {
-	a int32
-	b float64
+	A int32
+	B float64
 }
 
 type DualInt32Int64 struct {
-	a int32
-	b int64
+	A int32
+	B int64
 }
 
 type DualInt32Uint32 struct {
-	a int32
-	b uint32
+	A int32
+	B uint32
 }
 
 type DualInt64Uint64 struct {
-	a int64
-	b uint64
+	A int64
+	B uint64
 }
 
 type DualFloat32Float64 struct {
-	a float32
-	b float64
+	A float32
+	B float64
 }
 
 type DualFloat64Boolean struct {
-	a float64
-	b bool
+	A float64
+	B bool
 }
 
 type DualFloat64Bytes struct {
-	a float64
-	b []byte
+	A float64
+	B []byte
 }
 
 type DualUint32Uint64 struct {
-	a uint32
-	b uint64
+	A uint32
+	B uint64
 }
 
 type DualBooleanBytes struct {
-	a bool
-	b []byte
+	A bool
+	B []byte
 }
 
 type DualInt8Uint8 struct {
-	a int8
-	b uint8
+	A int8
+	B uint8
 }
 
 type DualInt16Uint16 struct {
-	a int16
-	b uint16
+	A int16
+	B uint16
 }
 
 type DualStringInt64 struct {
-	a string
-	b int64
+	A string
+	B int64
 }
 
 type DualStringUint64 struct {
-	a string
-	b uint64
+	A string
+	B uint64
 }
 
 type DualInt32Bytes struct {
-	a int32
-	b []byte
+	A int32
+	B []byte
 }
 
 type DualFloat64Int32 struct {
-	a float64
-	b int32
+	A float64
+	B int32
 }
 
 type DualBooleanInt32 struct {
-	a bool
-	b int32
+	A bool
+	B int32
 }
 
 type DualBytesInt64 struct {
-	a []byte
-	b int64
+	A []byte
+	B int64
 }
 
 type DualInt8Float32 struct {
-	a int8
-	b float32
+	A int8
+	B float32
 }
 
 type DualUint8Int16 struct {
-	a uint8
-	b int16
+	A uint8
+	B int16
 }
 
 type DualInt64Float64 struct {
-	a int64
-	b float64
+	A int64
+	B float64
 }
 
 type DualUint64String struct {
-	a uint64
-	b string
+	A uint64
+	B string
 }
 
 type Triple01 struct {
-	a string
-	b int32
-	c bool
+	A string
+	B int32
+	C bool
 }
 
 type Triple02 struct {
-	a float64
-	b float64
-	c float64
+	A float64
+	B float64
+	C float64
 }
 
 type Triple03 struct {
-	a int32
-	b int32
-	c int32
+	A int32
+	B int32
+	C int32
 }
 
 type Triple04 struct {
-	a string
-	b string
-	c int32
+	A string
+	B string
+	C int32
 }
 
 type Triple05 struct {
-	a int64
-	b string
-	c bool
+	A int64
+	B string
+	C bool
 }
 
 type Triple06 struct {
-	a uint32
-	b uint64
-	c string
+	A uint32
+	B uint64
+	C string
 }
 
 type Triple07 struct {
-	a []byte
-	b string
-	c int32
+	A []byte
+	B string
+	C int32
 }
 
 type Triple08 struct {
-	a float32
-	b int32
-	c bool
+	A float32
+	B int32
+	C bool
 }
 
 type Triple09 struct {
-	a string
-	b int64
-	c float64
+	A string
+	B int64
+	C float64
 }
 
 type Triple10 struct {
-	a bool
-	b bool
-	c bool
+	A bool
+	B bool
+	C bool
 }
 
 type Triple11 struct {
-	a int8
-	b int16
-	c int32
+	A int8
+	B int16
+	C int32
 }
 
 type Triple12 struct {
-	a uint8
-	b uint16
-	c uint32
+	A uint8
+	B uint16
+	C uint32
 }
 
 type Triple13 struct {
-	a string
-	b []byte
-	c float64
+	A string
+	B []byte
+	C float64
 }
 
 type Triple14 struct {
-	a int64
-	b uint64
-	c bool
+	A int64
+	B uint64
+	C bool
 }
 
 type Triple15 struct {
-	a float64
-	b string
-	c []byte
+	A float64
+	B string
+	C []byte
 }
 
 type Five01 struct {
-	f1 string
-	f2 int32
-	f3 bool
-	f4 float64
-	f5 []byte
+	F1 string
+	F2 int32
+	F3 bool
+	F4 float64
+	F5 []byte
 }
 
 type Five02 struct {
-	f1 int32
-	f2 int32
-	f3 int32
-	f4 int32
-	f5 int32
+	F1 int32
+	F2 int32
+	F3 int32
+	F4 int32
+	F5 int32
 }
 
 type Five03 struct {
-	f1 string
-	f2 string
-	f3 string
-	f4 string
-	f5 string
+	F1 string
+	F2 string
+	F3 string
+	F4 string
+	F5 string
 }
 
 type Five04 struct {
-	f1 float64
-	f2 int32
-	f3 string
-	f4 bool
-	f5 []byte
+	F1 float64
+	F2 int32
+	F3 string
+	F4 bool
+	F5 []byte
 }
 
 type Five05 struct {
-	f1 int64
-	f2 uint64
-	f3 string
-	f4 float32
-	f5 int32
+	F1 int64
+	F2 uint64
+	F3 string
+	F4 float32
+	F5 int32
 }
 
 type Five06 struct {
-	f1 bool
-	f2 string
-	f3 int32
-	f4 float64
-	f5 uint32
+	F1 bool
+	F2 string
+	F3 int32
+	F4 float64
+	F5 uint32
 }
 
 type Five07 struct {
-	f1 []byte
-	f2 []byte
-	f3 string
-	f4 int32
-	f5 float64
+	F1 []byte
+	F2 []byte
+	F3 string
+	F4 int32
+	F5 float64
 }
 
 type Five08 struct {
-	f1 uint8
-	f2 uint16
-	f3 uint32
-	f4 int8
-	f5 int16
+	F1 uint8
+	F2 uint16
+	F3 uint32
+	F4 int8
+	F5 int16
 }
 
 type Five09 struct {
-	f1 float32
-	f2 float64
-	f3 int32
-	f4 int64
-	f5 string
+	F1 float32
+	F2 float64
+	F3 int32
+	F4 int64
+	F5 string
 }
 
 type Five10 struct {
-	f1 string
-	f2 bool
-	f3 int64
-	f4 uint64
-	f5 float64
+	F1 string
+	F2 bool
+	F3 int64
+	F4 uint64
+	F5 float64
 }
 
 type Ten01 struct {
-	f1 string
-	f2 bool
-	f3 int8
-	f4 int16
-	f5 int32
-	f6 int64
-	f7 uint8
-	f8 uint16
-	f9 uint32
-	f10 uint64
+	F1 string
+	F2 bool
+	F3 int8
+	F4 int16
+	F5 int32
+	F6 int64
+	F7 uint8
+	F8 uint16
+	F9 uint32
+	F10 uint64
 }
 
 type Ten02 struct {
-	f1 int16
-	f2 int32
-	f3 int64
-	f4 uint8
-	f5 uint16
-	f6 uint32
-	f7 uint64
-	f8 float32
-	f9 float64
-	f10 []byte
+	F1 int16
+	F2 int32
+	F3 int64
+	F4 uint8
+	F5 uint16
+	F6 uint32
+	F7 uint64
+	F8 float32
+	F9 float64
+	F10 []byte
 }
 
 type Ten03 struct {
-	f1 uint8
-	f2 uint16
-	f3 uint32
-	f4 uint64
-	f5 float32
-	f6 float64
-	f7 []byte
-	f8 string
-	f9 bool
-	f10 int8
+	F1 uint8
+	F2 uint16
+	F3 uint32
+	F4 uint64
+	F5 float32
+	F6 float64
+	F7 []byte
+	F8 string
+	F9 bool
+	F10 int8
 }
 
 type Ten04 struct {
-	f1 uint64
-	f2 float32
-	f3 float64
-	f4 []byte
-	f5 string
-	f6 bool
-	f7 int8
-	f8 int16
-	f9 int32
-	f10 int64
+	F1 uint64
+	F2 float32
+	F3 float64
+	F4 []byte
+	F5 string
+	F6 bool
+	F7 int8
+	F8 int16
+	F9 int32
+	F10 int64
 }
 
 type Ten05 struct {
-	f1 []byte
-	f2 string
-	f3 bool
-	f4 int8
-	f5 int16
-	f6 int32
-	f7 int64
-	f8 uint8
-	f9 uint16
-	f10 uint32
+	F1 []byte
+	F2 string
+	F3 bool
+	F4 int8
+	F5 int16
+	F6 int32
+	F7 int64
+	F8 uint8
+	F9 uint16
+	F10 uint32
 }
 
 type ArrString struct {
-	items []string
+	Items []string
 }
 
 type ArrInt32 struct {
-	items []int32
+	Items []int32
 }
 
 type ArrBoolean struct {
-	items []bool
+	Items []bool
 }
 
 type ArrFloat64 struct {
-	items []float64
+	Items []float64
 }
 
 type ArrBytes struct {
-	items [][]byte
+	Items [][]byte
 }
 
 type ArrInt64 struct {
-	items []int64
+	Items []int64
 }
 
 type ArrUint64 struct {
-	items []uint64
+	Items []uint64
 }
 
 type MultiArr1 struct {
-	names []string
-	scores []int32
+	Names []string
+	Scores []int32
 }
 
 type MultiArr2 struct {
-	flags []bool
-	values []float64
-	payload [][]byte
+	Flags []bool
+	Values []float64
+	Payload [][]byte
 }
 
 type MultiArr3 struct {
-	a []string
-	b []int32
-	c []float64
+	A []string
+	B []int32
+	C []float64
 }
 
 type MultiArr4 struct {
-	ids []int64
-	tags []string
+	Ids []int64
+	Tags []string
 }
 
 type MultiArr5 struct {
-	xs []uint64
-	ys []float32
-	zs []bool
+	Xs []uint64
+	Ys []float32
+	Zs []bool
 }
 
 type OptCombo1 struct {
-	req string
-	opt_a *int32
+	Req string
+	OptA *int32
 }
 
 type OptCombo2 struct {
-	req string
-	opt_a *int32
-	opt_b *bool
+	Req string
+	OptA *int32
+	OptB *bool
 }
 
 type OptCombo3 struct {
-	req string
-	opt_a *int32
-	opt_b *bool
-	opt_c *float64
+	Req string
+	OptA *int32
+	OptB *bool
+	OptC *float64
 }
 
 type OptCombo4 struct {
-	req int32
-	opt_a *string
-	opt_b *[]byte
+	Req int32
+	OptA *string
+	OptB *[]byte
 }
 
 type OptCombo5 struct {
-	req1 string
-	req2 int32
-	opt_a *bool
-	opt_b *float64
+	Req1 string
+	Req2 int32
+	OptA *bool
+	OptB *float64
 }
 
 type OptCombo6 struct {
-	req string
-	opt_s *string
-	opt_i *int32
-	opt_f *float64
-	opt_b *[]byte
+	Req string
+	OptS *string
+	OptI *int32
+	OptF *float64
+	OptB *[]byte
 }
 
 type OptCombo7 struct {
-	req int64
-	opt_u64 *uint64
-	opt_str *string
+	Req int64
+	OptU64 *uint64
+	OptStr *string
 }
 
 type OptCombo8 struct {
-	a string
-	b *int32
-	c *float64
-	d *bool
-	e *[]byte
-	f *int64
+	A string
+	B *int32
+	C *float64
+	D *bool
+	E *[]byte
+	F *int64
 }
 
 type OptCombo9 struct {
-	id string
-	name *string
-	age *int32
-	score *float64
+	Id string
+	Name *string
+	Age *int32
+	Score *float64
 }
 
 type OptCombo10 struct {
-	code int32
-	msg *string
-	detail *string
-	retry *bool
+	Code int32
+	Msg *string
+	Detail *string
+	Retry *bool
 }
 
 type NestInner struct {
-	nested *Inner
+	Nested *Inner
 }
 
 type NestCoord struct {
-	nested *Coord
+	Nested *Coord
 }
 
 type NestIdVal struct {
-	nested *IdVal
+	Nested *IdVal
 }
 
 type NestLabel struct {
-	nested *Label
+	Nested *Label
 }
 
 type NestMoney struct {
-	nested *Money
+	Nested *Money
 }
 
 type NestRange32 struct {
-	nested *Range32
+	Nested *Range32
 }
 
 type NestAddr struct {
-	nested *Addr
+	Nested *Addr
 }
 
 type NestPoint3 struct {
-	nested *Point3
+	Nested *Point3
 }
 
 type OptNestInner struct {
-	label string
-	nested *Inner
+	Label string
+	Nested *Inner
 }
 
 type OptNestCoord struct {
-	label string
-	nested *Coord
+	Label string
+	Nested *Coord
 }
 
 type OptNestIdVal struct {
-	label string
-	nested *IdVal
+	Label string
+	Nested *IdVal
 }
 
 type OptNestLabel struct {
-	label string
-	nested *Label
+	Label string
+	Nested *Label
 }
 
 type OptNestMoney struct {
-	label string
-	nested *Money
+	Label string
+	Nested *Money
 }
 
 type OptNestRange32 struct {
-	label string
-	nested *Range32
+	Label string
+	Nested *Range32
 }
 
 type OptNestAddr struct {
-	label string
-	nested *Addr
+	Label string
+	Nested *Addr
 }
 
 type OptNestPoint3 struct {
-	label string
-	nested *Point3
+	Label string
+	Nested *Point3
 }
 
 type ModelArr1 struct {
-	points []*Inner
+	Points []*Inner
 }
 
 type ModelArr2 struct {
-	coords []*Coord
+	Coords []*Coord
 }
 
 type ModelArr3 struct {
-	items []*IdVal
-	tag string
+	Items []*IdVal
+	Tag string
 }
 
 type ModelArr4 struct {
-	labels []*Label
-	count int32
+	Labels []*Label
+	Count int32
 }
 
 type ModelArr5 struct {
-	arr []*Money
-	bs []*Addr
+	Arr []*Money
+	Bs []*Addr
 }
 
 type Mix01 struct {
-	name string
-	value int32
-	point *Inner
+	Name string
+	Value int32
+	Point *Inner
 }
 
 type Mix02 struct {
-	id string
-	loc *Coord
-	tags []string
+	Id string
+	Loc *Coord
+	Tags []string
 }
 
 type Mix03 struct {
-	label string
-	value_range *Range32
-	active bool
+	Label string
+	ValueRange *Range32
+	Active bool
 }
 
 type Mix04 struct {
-	title string
-	price *Money
-	inStock bool
-	rating float64
+	Title string
+	Price *Money
+	InStock bool
+	Rating float64
 }
 
 type Mix05 struct {
-	addr *Addr
-	coords []*Coord
+	Addr *Addr
+	Coords []*Coord
 }
 
 type Mix06 struct {
-	name string
-	age int32
-	address *Addr
-	email *string
+	Name string
+	Age int32
+	Address *Addr
+	Email *string
 }
 
 type Mix07 struct {
-	origin *Point3
-	dest *Point3
-	distance float64
+	Origin *Point3
+	Dest *Point3
+	Distance float64
 }
 
 type Mix08 struct {
-	keys []string
-	values []int32
-	meta *Label
+	Keys []string
+	Values []int32
+	Meta *Label
 }
 
 type Mix09 struct {
-	id int64
-	payload []byte
-	checksum uint32
-	prev *IdVal
+	Id int64
+	Payload []byte
+	Checksum uint32
+	Prev *IdVal
 }
 
 type Mix10 struct {
-	items []string
-	total int32
-	avg float64
-	value_range *Range32
+	Items []string
+	Total int32
+	Avg float64
+	ValueRange *Range32
 }
 
 type Mix11 struct {
-	name string
-	values []float64
-	nested *Inner
-	flag *bool
+	Name string
+	Values []float64
+	Nested *Inner
+	Flag *bool
 }
 
 type Mix12 struct {
-	header string
-	entries []*IdVal
-	footer *string
+	Header string
+	Entries []*IdVal
+	Footer *string
 }
 
 type Mix13 struct {
-	a int32
-	b float64
-	c string
-	d bool
-	e []byte
-	nested *Inner
+	A int32
+	B float64
+	C string
+	D bool
+	E []byte
+	Nested *Inner
 }
 
 type Mix14 struct {
-	amounts []*Money
-	total int64
-	currency string
+	Amounts []*Money
+	Total int64
+	Currency string
 }
 
 type Mix15 struct {
-	src_addr *Addr
-	dst_addr *Addr
-	distance float64
-	duration float64
+	SrcAddr *Addr
+	DstAddr *Addr
+	Distance float64
+	Duration float64
 }
 
 type AllOpt1 struct {
-	a *string
-	b *int32
-	c *bool
+	A *string
+	B *int32
+	C *bool
 }
 
 type AllOpt2 struct {
-	x *float64
-	y *[]byte
-	z *int64
+	X *float64
+	Y *[]byte
+	Z *int64
 }
 
 type AllOpt3 struct {
-	name *string
-	age *int32
-	score *float64
-	active *bool
+	Name *string
+	Age *int32
+	Score *float64
+	Active *bool
 }
 
 type AllOpt4 struct {
-	a *uint32
-	b *uint64
-	c *int32
-	d *string
-	e *[]byte
+	A *uint32
+	B *uint64
+	C *int32
+	D *string
+	E *[]byte
 }
 
 type AllOpt5 struct {
-	p *Inner
-	q *string
+	P *Inner
+	Q *string
 }
 
 type RecList struct {
-	value int32
-	next *RecList
+	Value int32
+	Next *RecList
 }
 
 type RecTree struct {
-	value string
-	left_node *RecTree
-	right_node *RecTree
+	Value string
+	LeftNode *RecTree
+	RightNode *RecTree
 }
 
 type RecChain struct {
-	id int32
-	label string
-	next *RecChain
+	Id int32
+	Label string
+	Next *RecChain
 }
 
 type RecWrap struct {
-	payload []byte
-	nested *RecWrap
+	Payload []byte
+	Nested *RecWrap
 }
 
 type RecWide struct {
-	a int32
-	b string
-	c float64
-	child *RecWide
+	A int32
+	B string
+	C float64
+	Child *RecWide
 }
 
 type Wide20 struct {
-	f1 string
-	f2 bool
-	f3 int8
-	f4 int16
-	f5 int32
-	f6 int64
-	f7 uint8
-	f8 uint16
-	f9 uint32
-	f10 uint64
-	f11 float32
-	f12 float64
-	f13 []byte
-	f14 string
-	f15 bool
-	f16 int8
-	f17 int16
-	f18 int32
-	f19 int64
-	f20 uint8
+	F1 string
+	F2 bool
+	F3 int8
+	F4 int16
+	F5 int32
+	F6 int64
+	F7 uint8
+	F8 uint16
+	F9 uint32
+	F10 uint64
+	F11 float32
+	F12 float64
+	F13 []byte
+	F14 string
+	F15 bool
+	F16 int8
+	F17 int16
+	F18 int32
+	F19 int64
+	F20 uint8
 }
 
 type Wide25 struct {
-	f1 uint16
-	f2 uint32
-	f3 uint64
-	f4 float32
-	f5 float64
-	f6 []byte
-	f7 string
-	f8 bool
-	f9 int8
-	f10 int16
-	f11 int32
-	f12 int64
-	f13 uint8
-	f14 uint16
-	f15 uint32
-	f16 uint64
-	f17 float32
-	f18 float64
-	f19 []byte
-	f20 string
-	f21 bool
-	f22 int8
-	f23 int16
-	f24 int32
-	f25 int64
+	F1 uint16
+	F2 uint32
+	F3 uint64
+	F4 float32
+	F5 float64
+	F6 []byte
+	F7 string
+	F8 bool
+	F9 int8
+	F10 int16
+	F11 int32
+	F12 int64
+	F13 uint8
+	F14 uint16
+	F15 uint32
+	F16 uint64
+	F17 float32
+	F18 float64
+	F19 []byte
+	F20 string
+	F21 bool
+	F22 int8
+	F23 int16
+	F24 int32
+	F25 int64
 }
 
 type Wide30 struct {
-	f1 bool
-	f2 int8
-	f3 int16
-	f4 int32
-	f5 int64
-	f6 uint8
-	f7 uint16
-	f8 uint32
-	f9 uint64
-	f10 float32
-	f11 float64
-	f12 []byte
-	f13 string
-	f14 bool
-	f15 int8
-	f16 int16
-	f17 int32
-	f18 int64
-	f19 uint8
-	f20 uint16
-	f21 uint32
-	f22 uint64
-	f23 float32
-	f24 float64
-	f25 []byte
-	f26 string
-	f27 bool
-	f28 int8
-	f29 int16
-	f30 int32
+	F1 bool
+	F2 int8
+	F3 int16
+	F4 int32
+	F5 int64
+	F6 uint8
+	F7 uint16
+	F8 uint32
+	F9 uint64
+	F10 float32
+	F11 float64
+	F12 []byte
+	F13 string
+	F14 bool
+	F15 int8
+	F16 int16
+	F17 int32
+	F18 int64
+	F19 uint8
+	F20 uint16
+	F21 uint32
+	F22 uint64
+	F23 float32
+	F24 float64
+	F25 []byte
+	F26 string
+	F27 bool
+	F28 int8
+	F29 int16
+	F30 int32
 }
 
 type Wide35 struct {
-	f1 uint32
-	f2 uint64
-	f3 float32
-	f4 float64
-	f5 []byte
-	f6 string
-	f7 bool
-	f8 int8
-	f9 int16
-	f10 int32
-	f11 int64
-	f12 uint8
-	f13 uint16
-	f14 uint32
-	f15 uint64
-	f16 float32
-	f17 float64
-	f18 []byte
-	f19 string
-	f20 bool
-	f21 int8
-	f22 int16
-	f23 int32
-	f24 int64
-	f25 uint8
-	f26 uint16
-	f27 uint32
-	f28 uint64
-	f29 float32
-	f30 float64
-	f31 []byte
-	f32 string
-	f33 bool
-	f34 int8
-	f35 int16
+	F1 uint32
+	F2 uint64
+	F3 float32
+	F4 float64
+	F5 []byte
+	F6 string
+	F7 bool
+	F8 int8
+	F9 int16
+	F10 int32
+	F11 int64
+	F12 uint8
+	F13 uint16
+	F14 uint32
+	F15 uint64
+	F16 float32
+	F17 float64
+	F18 []byte
+	F19 string
+	F20 bool
+	F21 int8
+	F22 int16
+	F23 int32
+	F24 int64
+	F25 uint8
+	F26 uint16
+	F27 uint32
+	F28 uint64
+	F29 float32
+	F30 float64
+	F31 []byte
+	F32 string
+	F33 bool
+	F34 int8
+	F35 int16
 }
 
 type Wide40 struct {
-	f1 int8
-	f2 int16
-	f3 int32
-	f4 int64
-	f5 uint8
-	f6 uint16
-	f7 uint32
-	f8 uint64
-	f9 float32
-	f10 float64
-	f11 []byte
-	f12 string
-	f13 bool
-	f14 int8
-	f15 int16
-	f16 int32
-	f17 int64
-	f18 uint8
-	f19 uint16
-	f20 uint32
-	f21 uint64
-	f22 float32
-	f23 float64
-	f24 []byte
-	f25 string
-	f26 bool
-	f27 int8
-	f28 int16
-	f29 int32
-	f30 int64
-	f31 uint8
-	f32 uint16
-	f33 uint32
-	f34 uint64
-	f35 float32
-	f36 float64
-	f37 []byte
-	f38 string
-	f39 bool
-	f40 int8
+	F1 int8
+	F2 int16
+	F3 int32
+	F4 int64
+	F5 uint8
+	F6 uint16
+	F7 uint32
+	F8 uint64
+	F9 float32
+	F10 float64
+	F11 []byte
+	F12 string
+	F13 bool
+	F14 int8
+	F15 int16
+	F16 int32
+	F17 int64
+	F18 uint8
+	F19 uint16
+	F20 uint32
+	F21 uint64
+	F22 float32
+	F23 float64
+	F24 []byte
+	F25 string
+	F26 bool
+	F27 int8
+	F28 int16
+	F29 int32
+	F30 int64
+	F31 uint8
+	F32 uint16
+	F33 uint32
+	F34 uint64
+	F35 float32
+	F36 float64
+	F37 []byte
+	F38 string
+	F39 bool
+	F40 int8
 }
 
 type EdgeEmpty struct {
 }
 
 type EdgeOneOpt struct {
-	maybe *string
+	Maybe *string
 }
 
 type EdgeBigNums struct {
-	i8 int8
-	i16 int16
-	i32 int32
-	i64 int64
-	u8 uint8
-	u16 uint16
-	u32 uint32
-	u64 uint64
+	I8 int8
+	I16 int16
+	I32 int32
+	I64 int64
+	U8 uint8
+	U16 uint16
+	U32 uint32
+	U64 uint64
 }
 
 type EdgeZeroVals struct {
-	s string
-	i int32
-	f float64
-	b bool
-	by_field []byte
+	S string
+	I int32
+	F float64
+	B bool
+	ByField []byte
 }
 
 type EdgeNullable struct {
-	a *string
-	b *int32
-	c *Inner
-	d *[]string
+	A *string
+	B *int32
+	C *Inner
+	D *[]string
 }
 
 type EdgeNegZero struct {
-	v float64
+	V float64
 }
 
 type EdgeNullByte struct {
-	s string
-	b []byte
+	S string
+	B []byte
 }
 
 type EdgeBoundary struct {
-	i32_neg129 int32
-	i32_128 int32
-	i32_256 int32
-	i32_65536 int32
-	i32_neg32769 int32
-	u32_65536 uint32
+	I32Neg129 int32
+	I32128 int32
+	I32256 int32
+	I3265536 int32
+	I32Neg32769 int32
+	U3265536 uint32
 }
 
 type EdgeStrLen struct {
-	s31 string
-	s32 string
-	s255 string
-	s256 string
+	S31 string
+	S32 string
+	S255 string
+	S256 string
 }
 
 type EdgeBytesLen struct {
-	b31 []byte
-	b32 []byte
-	b255 []byte
-	b256 []byte
+	B31 []byte
+	B32 []byte
+	B255 []byte
+	B256 []byte
 }
 
 type EdgeArrEmpty struct {
-	items []string
+	Items []string
 }
 
 type EdgeArrBoundary struct {
-	a15 []int32
-	a16 []int32
+	A15 []int32
+	A16 []int32
 }
 
 type OptArr1 struct {
-	req string
-	items *[]int32
+	Req string
+	Items *[]int32
 }
 
 type OptArr2 struct {
-	id int32
-	names *[]string
-	flags *[]bool
+	Id int32
+	Names *[]string
+	Flags *[]bool
 }
 
 type OptArr3 struct {
-	a *[]string
-	b *[]float64
+	A *[]string
+	B *[]float64
 }
 
 type OptArr4 struct {
-	payload []byte
-	chunks *[][]byte
+	Payload []byte
+	Chunks *[][]byte
 }
 
 type OptArr5 struct {
-	models *[]*Inner
-	name string
+	Models *[]*Inner
+	Name string
 }
 
 type NestOpt1 struct {
-	outer *Label
-	name string
+	Outer *Label
+	Name string
 }
 
 type NestOpt2 struct {
-	a *IdVal
-	b *IdVal
-	c *IdVal
+	A *IdVal
+	B *IdVal
+	C *IdVal
 }
 
 type NestOpt3 struct {
-	money *Money
-	value_range *Range32
+	Money *Money
+	ValueRange *Range32
 }
 
 type NestOpt4 struct {
-	addr *Addr
-	coord *Coord
-	name string
+	Addr *Addr
+	Coord *Coord
+	Name string
 }
 
 type NestOpt5 struct {
-	point *Point3
-	addr *Addr
-	label *Label
+	Point *Point3
+	Addr *Addr
+	Label *Label
 }
 
 type NestOptInner1 struct {
-	tag string
-	nested *OptInner
+	Tag string
+	Nested *OptInner
 }
 
 type NestOptInner2 struct {
-	tag string
-	nested *OptInner
+	Tag string
+	Nested *OptInner
 }
 
 type NestOptInner3 struct {
-	outer *OptInner
-	nested *OptInner
+	Outer *OptInner
+	Nested *OptInner
 }
 
 type DeepNest1 struct {
-	label string
-	nested *Addr
+	Label string
+	Nested *Addr
 }
 
 type DeepNest2 struct {
-	name string
-	money *Money
-	addr *Addr
+	Name string
+	Money *Money
+	Addr *Addr
 }
 
 type DeepNest3 struct {
-	title string
-	point *Point3
-	value_range *Range32
-	money *Money
+	Title string
+	Point *Point3
+	ValueRange *Range32
+	Money *Money
 }
 
 type DeepNest4 struct {
-	coords []*Coord
-	nested *Inner
-	tag string
+	Coords []*Coord
+	Nested *Inner
+	Tag string
 }
 
 type DeepNest5 struct {
-	labels []*Label
-	money *Money
-	name string
+	Labels []*Label
+	Money *Money
+	Name string
 }
 
 type DeepNest6 struct {
-	items []*IdVal
-	addr *Addr
-	coord *Coord
+	Items []*IdVal
+	Addr *Addr
+	Coord *Coord
 }
 
 type DeepNest7 struct {
-	a *Addr
-	b *Addr
-	c *Addr
+	A *Addr
+	B *Addr
+	C *Addr
 }
 
 type TimestampEntry struct {
-	ts int64
-	event string
-	payload *[]byte
+	Ts int64
+	Event string
+	Payload *[]byte
 }
 
 type ConfigEntry struct {
-	key string
-	intValue *int32
-	strValue *string
-	boolValue *bool
-	floatValue *float64
+	Key string
+	IntValue *int32
+	StrValue *string
+	BoolValue *bool
+	FloatValue *float64
 }
 
-func writeInner(w *specodec.SpecWriter, obj *Inner) {
+func writeInner(w specodec.SpecWriter, obj *Inner) {
 	w.BeginObject(2)
-	w.WriteField("x"); w.WriteInt32(obj.x);
-	w.WriteField("y"); w.WriteInt32(obj.y);
+	w.WriteField("x"); w.WriteInt32(obj.X);
+	w.WriteField("y"); w.WriteInt32(obj.Y);
 	w.EndObject()
 }
 
-func decodeInner(r *specodec.SpecReader) *Inner {
+func decodeInner(r specodec.SpecReader) *Inner {
 	obj := &Inner{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "x": obj.x = r.ReadInt32()
-		case "y": obj.y = r.ReadInt32()
+		case "x": obj.X = r.ReadInt32()
+		case "y": obj.Y = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -1348,20 +1348,20 @@ func decodeInner(r *specodec.SpecReader) *Inner {
 	return obj
 }
 
-func writeCoord(w *specodec.SpecWriter, obj *Coord) {
+func writeCoord(w specodec.SpecWriter, obj *Coord) {
 	w.BeginObject(2)
-	w.WriteField("lat"); w.WriteFloat64(obj.lat);
-	w.WriteField("lng"); w.WriteFloat64(obj.lng);
+	w.WriteField("lat"); w.WriteFloat64(obj.Lat);
+	w.WriteField("lng"); w.WriteFloat64(obj.Lng);
 	w.EndObject()
 }
 
-func decodeCoord(r *specodec.SpecReader) *Coord {
+func decodeCoord(r specodec.SpecReader) *Coord {
 	obj := &Coord{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "lat": obj.lat = r.ReadFloat64()
-		case "lng": obj.lng = r.ReadFloat64()
+		case "lat": obj.Lat = r.ReadFloat64()
+		case "lng": obj.Lng = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -1369,20 +1369,20 @@ func decodeCoord(r *specodec.SpecReader) *Coord {
 	return obj
 }
 
-func writeIdVal(w *specodec.SpecWriter, obj *IdVal) {
+func writeIdVal(w specodec.SpecWriter, obj *IdVal) {
 	w.BeginObject(2)
-	w.WriteField("id"); w.WriteString(obj.id);
-	w.WriteField("value"); w.WriteInt32(obj.value);
+	w.WriteField("id"); w.WriteString(obj.Id);
+	w.WriteField("value"); w.WriteInt32(obj.Value);
 	w.EndObject()
 }
 
-func decodeIdVal(r *specodec.SpecReader) *IdVal {
+func decodeIdVal(r specodec.SpecReader) *IdVal {
 	obj := &IdVal{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "id": obj.id = r.ReadString()
-		case "value": obj.value = r.ReadInt32()
+		case "id": obj.Id = r.ReadString()
+		case "value": obj.Value = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -1390,20 +1390,20 @@ func decodeIdVal(r *specodec.SpecReader) *IdVal {
 	return obj
 }
 
-func writeLabel(w *specodec.SpecWriter, obj *Label) {
+func writeLabel(w specodec.SpecWriter, obj *Label) {
 	w.BeginObject(2)
-	w.WriteField("key"); w.WriteString(obj.key);
-	w.WriteField("text"); w.WriteString(obj.text);
+	w.WriteField("key"); w.WriteString(obj.Key);
+	w.WriteField("text"); w.WriteString(obj.Text);
 	w.EndObject()
 }
 
-func decodeLabel(r *specodec.SpecReader) *Label {
+func decodeLabel(r specodec.SpecReader) *Label {
 	obj := &Label{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "key": obj.key = r.ReadString()
-		case "text": obj.text = r.ReadString()
+		case "key": obj.Key = r.ReadString()
+		case "text": obj.Text = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -1411,20 +1411,20 @@ func decodeLabel(r *specodec.SpecReader) *Label {
 	return obj
 }
 
-func writeMoney(w *specodec.SpecWriter, obj *Money) {
+func writeMoney(w specodec.SpecWriter, obj *Money) {
 	w.BeginObject(2)
-	w.WriteField("amount"); w.WriteInt64(obj.amount);
-	w.WriteField("currency"); w.WriteString(obj.currency);
+	w.WriteField("amount"); w.WriteInt64(obj.Amount);
+	w.WriteField("currency"); w.WriteString(obj.Currency);
 	w.EndObject()
 }
 
-func decodeMoney(r *specodec.SpecReader) *Money {
+func decodeMoney(r specodec.SpecReader) *Money {
 	obj := &Money{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "amount": obj.amount = r.ReadInt64()
-		case "currency": obj.currency = r.ReadString()
+		case "amount": obj.Amount = r.ReadInt64()
+		case "currency": obj.Currency = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -1432,20 +1432,20 @@ func decodeMoney(r *specodec.SpecReader) *Money {
 	return obj
 }
 
-func writeRange32(w *specodec.SpecWriter, obj *Range32) {
+func writeRange32(w specodec.SpecWriter, obj *Range32) {
 	w.BeginObject(2)
-	w.WriteField("min"); w.WriteInt32(obj.min);
-	w.WriteField("max"); w.WriteInt32(obj.max);
+	w.WriteField("min"); w.WriteInt32(obj.Min);
+	w.WriteField("max"); w.WriteInt32(obj.Max);
 	w.EndObject()
 }
 
-func decodeRange32(r *specodec.SpecReader) *Range32 {
+func decodeRange32(r specodec.SpecReader) *Range32 {
 	obj := &Range32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "min": obj.min = r.ReadInt32()
-		case "max": obj.max = r.ReadInt32()
+		case "min": obj.Min = r.ReadInt32()
+		case "max": obj.Max = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -1453,22 +1453,22 @@ func decodeRange32(r *specodec.SpecReader) *Range32 {
 	return obj
 }
 
-func writeAddr(w *specodec.SpecWriter, obj *Addr) {
+func writeAddr(w specodec.SpecWriter, obj *Addr) {
 	w.BeginObject(3)
-	w.WriteField("street"); w.WriteString(obj.street);
-	w.WriteField("city"); w.WriteString(obj.city);
-	w.WriteField("zip"); w.WriteString(obj.zip);
+	w.WriteField("street"); w.WriteString(obj.Street);
+	w.WriteField("city"); w.WriteString(obj.City);
+	w.WriteField("zip"); w.WriteString(obj.Zip);
 	w.EndObject()
 }
 
-func decodeAddr(r *specodec.SpecReader) *Addr {
+func decodeAddr(r specodec.SpecReader) *Addr {
 	obj := &Addr{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "street": obj.street = r.ReadString()
-		case "city": obj.city = r.ReadString()
-		case "zip": obj.zip = r.ReadString()
+		case "street": obj.Street = r.ReadString()
+		case "city": obj.City = r.ReadString()
+		case "zip": obj.Zip = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -1476,22 +1476,22 @@ func decodeAddr(r *specodec.SpecReader) *Addr {
 	return obj
 }
 
-func writePoint3(w *specodec.SpecWriter, obj *Point3) {
+func writePoint3(w specodec.SpecWriter, obj *Point3) {
 	w.BeginObject(3)
-	w.WriteField("x"); w.WriteFloat64(obj.x);
-	w.WriteField("y"); w.WriteFloat64(obj.y);
-	w.WriteField("z"); w.WriteFloat64(obj.z);
+	w.WriteField("x"); w.WriteFloat64(obj.X);
+	w.WriteField("y"); w.WriteFloat64(obj.Y);
+	w.WriteField("z"); w.WriteFloat64(obj.Z);
 	w.EndObject()
 }
 
-func decodePoint3(r *specodec.SpecReader) *Point3 {
+func decodePoint3(r specodec.SpecReader) *Point3 {
 	obj := &Point3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "x": obj.x = r.ReadFloat64()
-		case "y": obj.y = r.ReadFloat64()
-		case "z": obj.z = r.ReadFloat64()
+		case "x": obj.X = r.ReadFloat64()
+		case "y": obj.Y = r.ReadFloat64()
+		case "z": obj.Z = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -1499,26 +1499,26 @@ func decodePoint3(r *specodec.SpecReader) *Point3 {
 	return obj
 }
 
-func writeOptInner(w *specodec.SpecWriter, obj *OptInner) {
-	_n := 0
-	if obj.name != nil { _n++ }
-	if obj.score != nil { _n++ }
-	if obj.tag != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.name != nil { w.WriteField("name"); w.WriteString(*obj.name); }
-	if obj.score != nil { w.WriteField("score"); w.WriteFloat64(*obj.score); }
-	if obj.tag != nil { w.WriteField("tag"); w.WriteString(*obj.tag); }
+func writeOptInner(w specodec.SpecWriter, obj *OptInner) {
+	fieldCount := 0
+	if obj.Name != nil { fieldCount++ }
+	if obj.Score != nil { fieldCount++ }
+	if obj.Tag != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.Name != nil { w.WriteField("name"); w.WriteString(*obj.Name); }
+	if obj.Score != nil { w.WriteField("score"); w.WriteFloat64(*obj.Score); }
+	if obj.Tag != nil { w.WriteField("tag"); w.WriteString(*obj.Tag); }
 	w.EndObject()
 }
 
-func decodeOptInner(r *specodec.SpecReader) *OptInner {
+func decodeOptInner(r specodec.SpecReader) *OptInner {
 	obj := &OptInner{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "name": _v := r.ReadString(); obj.name = &_v
-		case "score": _v := r.ReadFloat64(); obj.score = &_v
-		case "tag": _v := r.ReadString(); obj.tag = &_v
+		case "name": val := r.ReadString(); obj.Name = &val
+		case "score": val := r.ReadFloat64(); obj.Score = &val
+		case "tag": val := r.ReadString(); obj.Tag = &val
 		default: r.Skip()
 		}
 	}
@@ -1526,18 +1526,18 @@ func decodeOptInner(r *specodec.SpecReader) *OptInner {
 	return obj
 }
 
-func writeSingleString(w *specodec.SpecWriter, obj *SingleString) {
+func writeSingleString(w specodec.SpecWriter, obj *SingleString) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteString(obj.v);
+	w.WriteField("v"); w.WriteString(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleString(r *specodec.SpecReader) *SingleString {
+func decodeSingleString(r specodec.SpecReader) *SingleString {
 	obj := &SingleString{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadString()
+		case "v": obj.V = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -1545,18 +1545,18 @@ func decodeSingleString(r *specodec.SpecReader) *SingleString {
 	return obj
 }
 
-func writeSingleBoolean(w *specodec.SpecWriter, obj *SingleBoolean) {
+func writeSingleBoolean(w specodec.SpecWriter, obj *SingleBoolean) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteBool(obj.v);
+	w.WriteField("v"); w.WriteBool(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleBoolean(r *specodec.SpecReader) *SingleBoolean {
+func decodeSingleBoolean(r specodec.SpecReader) *SingleBoolean {
 	obj := &SingleBoolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadBool()
+		case "v": obj.V = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -1564,18 +1564,18 @@ func decodeSingleBoolean(r *specodec.SpecReader) *SingleBoolean {
 	return obj
 }
 
-func writeSingleInt8(w *specodec.SpecWriter, obj *SingleInt8) {
+func writeSingleInt8(w specodec.SpecWriter, obj *SingleInt8) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteInt32(int32(obj.v));
+	w.WriteField("v"); w.WriteInt32(int32(obj.V));
 	w.EndObject()
 }
 
-func decodeSingleInt8(r *specodec.SpecReader) *SingleInt8 {
+func decodeSingleInt8(r specodec.SpecReader) *SingleInt8 {
 	obj := &SingleInt8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = int8(r.ReadInt32())
+		case "v": obj.V = int8(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -1583,18 +1583,18 @@ func decodeSingleInt8(r *specodec.SpecReader) *SingleInt8 {
 	return obj
 }
 
-func writeSingleInt16(w *specodec.SpecWriter, obj *SingleInt16) {
+func writeSingleInt16(w specodec.SpecWriter, obj *SingleInt16) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteInt32(int32(obj.v));
+	w.WriteField("v"); w.WriteInt32(int32(obj.V));
 	w.EndObject()
 }
 
-func decodeSingleInt16(r *specodec.SpecReader) *SingleInt16 {
+func decodeSingleInt16(r specodec.SpecReader) *SingleInt16 {
 	obj := &SingleInt16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = int16(r.ReadInt32())
+		case "v": obj.V = int16(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -1602,18 +1602,18 @@ func decodeSingleInt16(r *specodec.SpecReader) *SingleInt16 {
 	return obj
 }
 
-func writeSingleInt32(w *specodec.SpecWriter, obj *SingleInt32) {
+func writeSingleInt32(w specodec.SpecWriter, obj *SingleInt32) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteInt32(obj.v);
+	w.WriteField("v"); w.WriteInt32(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleInt32(r *specodec.SpecReader) *SingleInt32 {
+func decodeSingleInt32(r specodec.SpecReader) *SingleInt32 {
 	obj := &SingleInt32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadInt32()
+		case "v": obj.V = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -1621,18 +1621,18 @@ func decodeSingleInt32(r *specodec.SpecReader) *SingleInt32 {
 	return obj
 }
 
-func writeSingleInt64(w *specodec.SpecWriter, obj *SingleInt64) {
+func writeSingleInt64(w specodec.SpecWriter, obj *SingleInt64) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteInt64(obj.v);
+	w.WriteField("v"); w.WriteInt64(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleInt64(r *specodec.SpecReader) *SingleInt64 {
+func decodeSingleInt64(r specodec.SpecReader) *SingleInt64 {
 	obj := &SingleInt64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadInt64()
+		case "v": obj.V = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -1640,18 +1640,18 @@ func decodeSingleInt64(r *specodec.SpecReader) *SingleInt64 {
 	return obj
 }
 
-func writeSingleUint8(w *specodec.SpecWriter, obj *SingleUint8) {
+func writeSingleUint8(w specodec.SpecWriter, obj *SingleUint8) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteUint32(uint32(obj.v));
+	w.WriteField("v"); w.WriteUint32(uint32(obj.V));
 	w.EndObject()
 }
 
-func decodeSingleUint8(r *specodec.SpecReader) *SingleUint8 {
+func decodeSingleUint8(r specodec.SpecReader) *SingleUint8 {
 	obj := &SingleUint8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = uint8(r.ReadUint32())
+		case "v": obj.V = uint8(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -1659,18 +1659,18 @@ func decodeSingleUint8(r *specodec.SpecReader) *SingleUint8 {
 	return obj
 }
 
-func writeSingleUint16(w *specodec.SpecWriter, obj *SingleUint16) {
+func writeSingleUint16(w specodec.SpecWriter, obj *SingleUint16) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteUint32(uint32(obj.v));
+	w.WriteField("v"); w.WriteUint32(uint32(obj.V));
 	w.EndObject()
 }
 
-func decodeSingleUint16(r *specodec.SpecReader) *SingleUint16 {
+func decodeSingleUint16(r specodec.SpecReader) *SingleUint16 {
 	obj := &SingleUint16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = uint16(r.ReadUint32())
+		case "v": obj.V = uint16(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -1678,18 +1678,18 @@ func decodeSingleUint16(r *specodec.SpecReader) *SingleUint16 {
 	return obj
 }
 
-func writeSingleUint32(w *specodec.SpecWriter, obj *SingleUint32) {
+func writeSingleUint32(w specodec.SpecWriter, obj *SingleUint32) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteUint32(obj.v);
+	w.WriteField("v"); w.WriteUint32(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleUint32(r *specodec.SpecReader) *SingleUint32 {
+func decodeSingleUint32(r specodec.SpecReader) *SingleUint32 {
 	obj := &SingleUint32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadUint32()
+		case "v": obj.V = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -1697,18 +1697,18 @@ func decodeSingleUint32(r *specodec.SpecReader) *SingleUint32 {
 	return obj
 }
 
-func writeSingleUint64(w *specodec.SpecWriter, obj *SingleUint64) {
+func writeSingleUint64(w specodec.SpecWriter, obj *SingleUint64) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteUint64(obj.v);
+	w.WriteField("v"); w.WriteUint64(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleUint64(r *specodec.SpecReader) *SingleUint64 {
+func decodeSingleUint64(r specodec.SpecReader) *SingleUint64 {
 	obj := &SingleUint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadUint64()
+		case "v": obj.V = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -1716,18 +1716,18 @@ func decodeSingleUint64(r *specodec.SpecReader) *SingleUint64 {
 	return obj
 }
 
-func writeSingleFloat32(w *specodec.SpecWriter, obj *SingleFloat32) {
+func writeSingleFloat32(w specodec.SpecWriter, obj *SingleFloat32) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteFloat32(obj.v);
+	w.WriteField("v"); w.WriteFloat32(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleFloat32(r *specodec.SpecReader) *SingleFloat32 {
+func decodeSingleFloat32(r specodec.SpecReader) *SingleFloat32 {
 	obj := &SingleFloat32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadFloat32()
+		case "v": obj.V = r.ReadFloat32()
 		default: r.Skip()
 		}
 	}
@@ -1735,18 +1735,18 @@ func decodeSingleFloat32(r *specodec.SpecReader) *SingleFloat32 {
 	return obj
 }
 
-func writeSingleFloat64(w *specodec.SpecWriter, obj *SingleFloat64) {
+func writeSingleFloat64(w specodec.SpecWriter, obj *SingleFloat64) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteFloat64(obj.v);
+	w.WriteField("v"); w.WriteFloat64(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleFloat64(r *specodec.SpecReader) *SingleFloat64 {
+func decodeSingleFloat64(r specodec.SpecReader) *SingleFloat64 {
 	obj := &SingleFloat64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadFloat64()
+		case "v": obj.V = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -1754,18 +1754,18 @@ func decodeSingleFloat64(r *specodec.SpecReader) *SingleFloat64 {
 	return obj
 }
 
-func writeSingleBytes(w *specodec.SpecWriter, obj *SingleBytes) {
+func writeSingleBytes(w specodec.SpecWriter, obj *SingleBytes) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteBytes(obj.v);
+	w.WriteField("v"); w.WriteBytes(obj.V);
 	w.EndObject()
 }
 
-func decodeSingleBytes(r *specodec.SpecReader) *SingleBytes {
+func decodeSingleBytes(r specodec.SpecReader) *SingleBytes {
 	obj := &SingleBytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadBytes()
+		case "v": obj.V = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -1773,20 +1773,20 @@ func decodeSingleBytes(r *specodec.SpecReader) *SingleBytes {
 	return obj
 }
 
-func writeOptSingleString(w *specodec.SpecWriter, obj *OptSingleString) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteString(*obj.v); }
+func writeOptSingleString(w specodec.SpecWriter, obj *OptSingleString) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteString(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleString(r *specodec.SpecReader) *OptSingleString {
+func decodeOptSingleString(r specodec.SpecReader) *OptSingleString {
 	obj := &OptSingleString{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadString(); obj.v = &_v
+		case "v": val := r.ReadString(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1794,20 +1794,20 @@ func decodeOptSingleString(r *specodec.SpecReader) *OptSingleString {
 	return obj
 }
 
-func writeOptSingleBoolean(w *specodec.SpecWriter, obj *OptSingleBoolean) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteBool(*obj.v); }
+func writeOptSingleBoolean(w specodec.SpecWriter, obj *OptSingleBoolean) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteBool(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleBoolean(r *specodec.SpecReader) *OptSingleBoolean {
+func decodeOptSingleBoolean(r specodec.SpecReader) *OptSingleBoolean {
 	obj := &OptSingleBoolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadBool(); obj.v = &_v
+		case "v": val := r.ReadBool(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1815,20 +1815,20 @@ func decodeOptSingleBoolean(r *specodec.SpecReader) *OptSingleBoolean {
 	return obj
 }
 
-func writeOptSingleInt8(w *specodec.SpecWriter, obj *OptSingleInt8) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteInt32(int32(*obj.v)); }
+func writeOptSingleInt8(w specodec.SpecWriter, obj *OptSingleInt8) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteInt32(int32(*obj.V)); }
 	w.EndObject()
 }
 
-func decodeOptSingleInt8(r *specodec.SpecReader) *OptSingleInt8 {
+func decodeOptSingleInt8(r specodec.SpecReader) *OptSingleInt8 {
 	obj := &OptSingleInt8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := int8(r.ReadInt32()); obj.v = &_v
+		case "v": val := int8(r.ReadInt32()); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1836,20 +1836,20 @@ func decodeOptSingleInt8(r *specodec.SpecReader) *OptSingleInt8 {
 	return obj
 }
 
-func writeOptSingleInt16(w *specodec.SpecWriter, obj *OptSingleInt16) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteInt32(int32(*obj.v)); }
+func writeOptSingleInt16(w specodec.SpecWriter, obj *OptSingleInt16) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteInt32(int32(*obj.V)); }
 	w.EndObject()
 }
 
-func decodeOptSingleInt16(r *specodec.SpecReader) *OptSingleInt16 {
+func decodeOptSingleInt16(r specodec.SpecReader) *OptSingleInt16 {
 	obj := &OptSingleInt16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := int16(r.ReadInt32()); obj.v = &_v
+		case "v": val := int16(r.ReadInt32()); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1857,20 +1857,20 @@ func decodeOptSingleInt16(r *specodec.SpecReader) *OptSingleInt16 {
 	return obj
 }
 
-func writeOptSingleInt32(w *specodec.SpecWriter, obj *OptSingleInt32) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteInt32(*obj.v); }
+func writeOptSingleInt32(w specodec.SpecWriter, obj *OptSingleInt32) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteInt32(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleInt32(r *specodec.SpecReader) *OptSingleInt32 {
+func decodeOptSingleInt32(r specodec.SpecReader) *OptSingleInt32 {
 	obj := &OptSingleInt32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadInt32(); obj.v = &_v
+		case "v": val := r.ReadInt32(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1878,20 +1878,20 @@ func decodeOptSingleInt32(r *specodec.SpecReader) *OptSingleInt32 {
 	return obj
 }
 
-func writeOptSingleInt64(w *specodec.SpecWriter, obj *OptSingleInt64) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteInt64(*obj.v); }
+func writeOptSingleInt64(w specodec.SpecWriter, obj *OptSingleInt64) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteInt64(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleInt64(r *specodec.SpecReader) *OptSingleInt64 {
+func decodeOptSingleInt64(r specodec.SpecReader) *OptSingleInt64 {
 	obj := &OptSingleInt64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadInt64(); obj.v = &_v
+		case "v": val := r.ReadInt64(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1899,20 +1899,20 @@ func decodeOptSingleInt64(r *specodec.SpecReader) *OptSingleInt64 {
 	return obj
 }
 
-func writeOptSingleUint8(w *specodec.SpecWriter, obj *OptSingleUint8) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteUint32(uint32(*obj.v)); }
+func writeOptSingleUint8(w specodec.SpecWriter, obj *OptSingleUint8) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteUint32(uint32(*obj.V)); }
 	w.EndObject()
 }
 
-func decodeOptSingleUint8(r *specodec.SpecReader) *OptSingleUint8 {
+func decodeOptSingleUint8(r specodec.SpecReader) *OptSingleUint8 {
 	obj := &OptSingleUint8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := uint8(r.ReadUint32()); obj.v = &_v
+		case "v": val := uint8(r.ReadUint32()); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1920,20 +1920,20 @@ func decodeOptSingleUint8(r *specodec.SpecReader) *OptSingleUint8 {
 	return obj
 }
 
-func writeOptSingleUint16(w *specodec.SpecWriter, obj *OptSingleUint16) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteUint32(uint32(*obj.v)); }
+func writeOptSingleUint16(w specodec.SpecWriter, obj *OptSingleUint16) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteUint32(uint32(*obj.V)); }
 	w.EndObject()
 }
 
-func decodeOptSingleUint16(r *specodec.SpecReader) *OptSingleUint16 {
+func decodeOptSingleUint16(r specodec.SpecReader) *OptSingleUint16 {
 	obj := &OptSingleUint16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := uint16(r.ReadUint32()); obj.v = &_v
+		case "v": val := uint16(r.ReadUint32()); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1941,20 +1941,20 @@ func decodeOptSingleUint16(r *specodec.SpecReader) *OptSingleUint16 {
 	return obj
 }
 
-func writeOptSingleUint32(w *specodec.SpecWriter, obj *OptSingleUint32) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteUint32(*obj.v); }
+func writeOptSingleUint32(w specodec.SpecWriter, obj *OptSingleUint32) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteUint32(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleUint32(r *specodec.SpecReader) *OptSingleUint32 {
+func decodeOptSingleUint32(r specodec.SpecReader) *OptSingleUint32 {
 	obj := &OptSingleUint32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadUint32(); obj.v = &_v
+		case "v": val := r.ReadUint32(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1962,20 +1962,20 @@ func decodeOptSingleUint32(r *specodec.SpecReader) *OptSingleUint32 {
 	return obj
 }
 
-func writeOptSingleUint64(w *specodec.SpecWriter, obj *OptSingleUint64) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteUint64(*obj.v); }
+func writeOptSingleUint64(w specodec.SpecWriter, obj *OptSingleUint64) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteUint64(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleUint64(r *specodec.SpecReader) *OptSingleUint64 {
+func decodeOptSingleUint64(r specodec.SpecReader) *OptSingleUint64 {
 	obj := &OptSingleUint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadUint64(); obj.v = &_v
+		case "v": val := r.ReadUint64(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -1983,20 +1983,20 @@ func decodeOptSingleUint64(r *specodec.SpecReader) *OptSingleUint64 {
 	return obj
 }
 
-func writeOptSingleFloat32(w *specodec.SpecWriter, obj *OptSingleFloat32) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteFloat32(*obj.v); }
+func writeOptSingleFloat32(w specodec.SpecWriter, obj *OptSingleFloat32) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteFloat32(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleFloat32(r *specodec.SpecReader) *OptSingleFloat32 {
+func decodeOptSingleFloat32(r specodec.SpecReader) *OptSingleFloat32 {
 	obj := &OptSingleFloat32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadFloat32(); obj.v = &_v
+		case "v": val := r.ReadFloat32(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -2004,20 +2004,20 @@ func decodeOptSingleFloat32(r *specodec.SpecReader) *OptSingleFloat32 {
 	return obj
 }
 
-func writeOptSingleFloat64(w *specodec.SpecWriter, obj *OptSingleFloat64) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteFloat64(*obj.v); }
+func writeOptSingleFloat64(w specodec.SpecWriter, obj *OptSingleFloat64) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteFloat64(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleFloat64(r *specodec.SpecReader) *OptSingleFloat64 {
+func decodeOptSingleFloat64(r specodec.SpecReader) *OptSingleFloat64 {
 	obj := &OptSingleFloat64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadFloat64(); obj.v = &_v
+		case "v": val := r.ReadFloat64(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -2025,20 +2025,20 @@ func decodeOptSingleFloat64(r *specodec.SpecReader) *OptSingleFloat64 {
 	return obj
 }
 
-func writeOptSingleBytes(w *specodec.SpecWriter, obj *OptSingleBytes) {
-	_n := 0
-	if obj.v != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.v != nil { w.WriteField("v"); w.WriteBytes(*obj.v); }
+func writeOptSingleBytes(w specodec.SpecWriter, obj *OptSingleBytes) {
+	fieldCount := 0
+	if obj.V != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.V != nil { w.WriteField("v"); w.WriteBytes(*obj.V); }
 	w.EndObject()
 }
 
-func decodeOptSingleBytes(r *specodec.SpecReader) *OptSingleBytes {
+func decodeOptSingleBytes(r specodec.SpecReader) *OptSingleBytes {
 	obj := &OptSingleBytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": _v := r.ReadBytes(); obj.v = &_v
+		case "v": val := r.ReadBytes(); obj.V = &val
 		default: r.Skip()
 		}
 	}
@@ -2046,20 +2046,20 @@ func decodeOptSingleBytes(r *specodec.SpecReader) *OptSingleBytes {
 	return obj
 }
 
-func writePairString(w *specodec.SpecWriter, obj *PairString) {
+func writePairString(w specodec.SpecWriter, obj *PairString) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
 	w.EndObject()
 }
 
-func decodePairString(r *specodec.SpecReader) *PairString {
+func decodePairString(r specodec.SpecReader) *PairString {
 	obj := &PairString{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadString()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -2067,20 +2067,20 @@ func decodePairString(r *specodec.SpecReader) *PairString {
 	return obj
 }
 
-func writePairBoolean(w *specodec.SpecWriter, obj *PairBoolean) {
+func writePairBoolean(w specodec.SpecWriter, obj *PairBoolean) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteBool(obj.a);
-	w.WriteField("b"); w.WriteBool(obj.b);
+	w.WriteField("a"); w.WriteBool(obj.A);
+	w.WriteField("b"); w.WriteBool(obj.B);
 	w.EndObject()
 }
 
-func decodePairBoolean(r *specodec.SpecReader) *PairBoolean {
+func decodePairBoolean(r specodec.SpecReader) *PairBoolean {
 	obj := &PairBoolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBool()
-		case "b": obj.b = r.ReadBool()
+		case "a": obj.A = r.ReadBool()
+		case "b": obj.B = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -2088,20 +2088,20 @@ func decodePairBoolean(r *specodec.SpecReader) *PairBoolean {
 	return obj
 }
 
-func writePairInt8(w *specodec.SpecWriter, obj *PairInt8) {
+func writePairInt8(w specodec.SpecWriter, obj *PairInt8) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(int32(obj.a));
-	w.WriteField("b"); w.WriteInt32(int32(obj.b));
+	w.WriteField("a"); w.WriteInt32(int32(obj.A));
+	w.WriteField("b"); w.WriteInt32(int32(obj.B));
 	w.EndObject()
 }
 
-func decodePairInt8(r *specodec.SpecReader) *PairInt8 {
+func decodePairInt8(r specodec.SpecReader) *PairInt8 {
 	obj := &PairInt8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = int8(r.ReadInt32())
-		case "b": obj.b = int8(r.ReadInt32())
+		case "a": obj.A = int8(r.ReadInt32())
+		case "b": obj.B = int8(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -2109,20 +2109,20 @@ func decodePairInt8(r *specodec.SpecReader) *PairInt8 {
 	return obj
 }
 
-func writePairInt16(w *specodec.SpecWriter, obj *PairInt16) {
+func writePairInt16(w specodec.SpecWriter, obj *PairInt16) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(int32(obj.a));
-	w.WriteField("b"); w.WriteInt32(int32(obj.b));
+	w.WriteField("a"); w.WriteInt32(int32(obj.A));
+	w.WriteField("b"); w.WriteInt32(int32(obj.B));
 	w.EndObject()
 }
 
-func decodePairInt16(r *specodec.SpecReader) *PairInt16 {
+func decodePairInt16(r specodec.SpecReader) *PairInt16 {
 	obj := &PairInt16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = int16(r.ReadInt32())
-		case "b": obj.b = int16(r.ReadInt32())
+		case "a": obj.A = int16(r.ReadInt32())
+		case "b": obj.B = int16(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -2130,20 +2130,20 @@ func decodePairInt16(r *specodec.SpecReader) *PairInt16 {
 	return obj
 }
 
-func writePairInt32(w *specodec.SpecWriter, obj *PairInt32) {
+func writePairInt32(w specodec.SpecWriter, obj *PairInt32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
 	w.EndObject()
 }
 
-func decodePairInt32(r *specodec.SpecReader) *PairInt32 {
+func decodePairInt32(r specodec.SpecReader) *PairInt32 {
 	obj := &PairInt32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadInt32()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -2151,20 +2151,20 @@ func decodePairInt32(r *specodec.SpecReader) *PairInt32 {
 	return obj
 }
 
-func writePairInt64(w *specodec.SpecWriter, obj *PairInt64) {
+func writePairInt64(w specodec.SpecWriter, obj *PairInt64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt64(obj.a);
-	w.WriteField("b"); w.WriteInt64(obj.b);
+	w.WriteField("a"); w.WriteInt64(obj.A);
+	w.WriteField("b"); w.WriteInt64(obj.B);
 	w.EndObject()
 }
 
-func decodePairInt64(r *specodec.SpecReader) *PairInt64 {
+func decodePairInt64(r specodec.SpecReader) *PairInt64 {
 	obj := &PairInt64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt64()
-		case "b": obj.b = r.ReadInt64()
+		case "a": obj.A = r.ReadInt64()
+		case "b": obj.B = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -2172,20 +2172,20 @@ func decodePairInt64(r *specodec.SpecReader) *PairInt64 {
 	return obj
 }
 
-func writePairUint8(w *specodec.SpecWriter, obj *PairUint8) {
+func writePairUint8(w specodec.SpecWriter, obj *PairUint8) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
-	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
+	w.WriteField("a"); w.WriteUint32(uint32(obj.A));
+	w.WriteField("b"); w.WriteUint32(uint32(obj.B));
 	w.EndObject()
 }
 
-func decodePairUint8(r *specodec.SpecReader) *PairUint8 {
+func decodePairUint8(r specodec.SpecReader) *PairUint8 {
 	obj := &PairUint8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = uint8(r.ReadUint32())
-		case "b": obj.b = uint8(r.ReadUint32())
+		case "a": obj.A = uint8(r.ReadUint32())
+		case "b": obj.B = uint8(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -2193,20 +2193,20 @@ func decodePairUint8(r *specodec.SpecReader) *PairUint8 {
 	return obj
 }
 
-func writePairUint16(w *specodec.SpecWriter, obj *PairUint16) {
+func writePairUint16(w specodec.SpecWriter, obj *PairUint16) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
-	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
+	w.WriteField("a"); w.WriteUint32(uint32(obj.A));
+	w.WriteField("b"); w.WriteUint32(uint32(obj.B));
 	w.EndObject()
 }
 
-func decodePairUint16(r *specodec.SpecReader) *PairUint16 {
+func decodePairUint16(r specodec.SpecReader) *PairUint16 {
 	obj := &PairUint16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = uint16(r.ReadUint32())
-		case "b": obj.b = uint16(r.ReadUint32())
+		case "a": obj.A = uint16(r.ReadUint32())
+		case "b": obj.B = uint16(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -2214,20 +2214,20 @@ func decodePairUint16(r *specodec.SpecReader) *PairUint16 {
 	return obj
 }
 
-func writePairUint32(w *specodec.SpecWriter, obj *PairUint32) {
+func writePairUint32(w specodec.SpecWriter, obj *PairUint32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint32(obj.a);
-	w.WriteField("b"); w.WriteUint32(obj.b);
+	w.WriteField("a"); w.WriteUint32(obj.A);
+	w.WriteField("b"); w.WriteUint32(obj.B);
 	w.EndObject()
 }
 
-func decodePairUint32(r *specodec.SpecReader) *PairUint32 {
+func decodePairUint32(r specodec.SpecReader) *PairUint32 {
 	obj := &PairUint32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadUint32()
-		case "b": obj.b = r.ReadUint32()
+		case "a": obj.A = r.ReadUint32()
+		case "b": obj.B = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -2235,20 +2235,20 @@ func decodePairUint32(r *specodec.SpecReader) *PairUint32 {
 	return obj
 }
 
-func writePairUint64(w *specodec.SpecWriter, obj *PairUint64) {
+func writePairUint64(w specodec.SpecWriter, obj *PairUint64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint64(obj.a);
-	w.WriteField("b"); w.WriteUint64(obj.b);
+	w.WriteField("a"); w.WriteUint64(obj.A);
+	w.WriteField("b"); w.WriteUint64(obj.B);
 	w.EndObject()
 }
 
-func decodePairUint64(r *specodec.SpecReader) *PairUint64 {
+func decodePairUint64(r specodec.SpecReader) *PairUint64 {
 	obj := &PairUint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadUint64()
-		case "b": obj.b = r.ReadUint64()
+		case "a": obj.A = r.ReadUint64()
+		case "b": obj.B = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -2256,20 +2256,20 @@ func decodePairUint64(r *specodec.SpecReader) *PairUint64 {
 	return obj
 }
 
-func writePairFloat32(w *specodec.SpecWriter, obj *PairFloat32) {
+func writePairFloat32(w specodec.SpecWriter, obj *PairFloat32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteFloat32(obj.a);
-	w.WriteField("b"); w.WriteFloat32(obj.b);
+	w.WriteField("a"); w.WriteFloat32(obj.A);
+	w.WriteField("b"); w.WriteFloat32(obj.B);
 	w.EndObject()
 }
 
-func decodePairFloat32(r *specodec.SpecReader) *PairFloat32 {
+func decodePairFloat32(r specodec.SpecReader) *PairFloat32 {
 	obj := &PairFloat32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat32()
-		case "b": obj.b = r.ReadFloat32()
+		case "a": obj.A = r.ReadFloat32()
+		case "b": obj.B = r.ReadFloat32()
 		default: r.Skip()
 		}
 	}
@@ -2277,20 +2277,20 @@ func decodePairFloat32(r *specodec.SpecReader) *PairFloat32 {
 	return obj
 }
 
-func writePairFloat64(w *specodec.SpecWriter, obj *PairFloat64) {
+func writePairFloat64(w specodec.SpecWriter, obj *PairFloat64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteFloat64(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
+	w.WriteField("a"); w.WriteFloat64(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
 	w.EndObject()
 }
 
-func decodePairFloat64(r *specodec.SpecReader) *PairFloat64 {
+func decodePairFloat64(r specodec.SpecReader) *PairFloat64 {
 	obj := &PairFloat64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat64()
-		case "b": obj.b = r.ReadFloat64()
+		case "a": obj.A = r.ReadFloat64()
+		case "b": obj.B = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -2298,20 +2298,20 @@ func decodePairFloat64(r *specodec.SpecReader) *PairFloat64 {
 	return obj
 }
 
-func writePairBytes(w *specodec.SpecWriter, obj *PairBytes) {
+func writePairBytes(w specodec.SpecWriter, obj *PairBytes) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteBytes(obj.a);
-	w.WriteField("b"); w.WriteBytes(obj.b);
+	w.WriteField("a"); w.WriteBytes(obj.A);
+	w.WriteField("b"); w.WriteBytes(obj.B);
 	w.EndObject()
 }
 
-func decodePairBytes(r *specodec.SpecReader) *PairBytes {
+func decodePairBytes(r specodec.SpecReader) *PairBytes {
 	obj := &PairBytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBytes()
-		case "b": obj.b = r.ReadBytes()
+		case "a": obj.A = r.ReadBytes()
+		case "b": obj.B = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -2319,20 +2319,20 @@ func decodePairBytes(r *specodec.SpecReader) *PairBytes {
 	return obj
 }
 
-func writeDualStringInt32(w *specodec.SpecWriter, obj *DualStringInt32) {
+func writeDualStringInt32(w specodec.SpecWriter, obj *DualStringInt32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
 	w.EndObject()
 }
 
-func decodeDualStringInt32(r *specodec.SpecReader) *DualStringInt32 {
+func decodeDualStringInt32(r specodec.SpecReader) *DualStringInt32 {
 	obj := &DualStringInt32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadInt32()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -2340,20 +2340,20 @@ func decodeDualStringInt32(r *specodec.SpecReader) *DualStringInt32 {
 	return obj
 }
 
-func writeDualStringBoolean(w *specodec.SpecWriter, obj *DualStringBoolean) {
+func writeDualStringBoolean(w specodec.SpecWriter, obj *DualStringBoolean) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteBool(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteBool(obj.B);
 	w.EndObject()
 }
 
-func decodeDualStringBoolean(r *specodec.SpecReader) *DualStringBoolean {
+func decodeDualStringBoolean(r specodec.SpecReader) *DualStringBoolean {
 	obj := &DualStringBoolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadBool()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -2361,20 +2361,20 @@ func decodeDualStringBoolean(r *specodec.SpecReader) *DualStringBoolean {
 	return obj
 }
 
-func writeDualStringFloat64(w *specodec.SpecWriter, obj *DualStringFloat64) {
+func writeDualStringFloat64(w specodec.SpecWriter, obj *DualStringFloat64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualStringFloat64(r *specodec.SpecReader) *DualStringFloat64 {
+func decodeDualStringFloat64(r specodec.SpecReader) *DualStringFloat64 {
 	obj := &DualStringFloat64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadFloat64()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -2382,20 +2382,20 @@ func decodeDualStringFloat64(r *specodec.SpecReader) *DualStringFloat64 {
 	return obj
 }
 
-func writeDualStringBytes(w *specodec.SpecWriter, obj *DualStringBytes) {
+func writeDualStringBytes(w specodec.SpecWriter, obj *DualStringBytes) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteBytes(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteBytes(obj.B);
 	w.EndObject()
 }
 
-func decodeDualStringBytes(r *specodec.SpecReader) *DualStringBytes {
+func decodeDualStringBytes(r specodec.SpecReader) *DualStringBytes {
 	obj := &DualStringBytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadBytes()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -2403,20 +2403,20 @@ func decodeDualStringBytes(r *specodec.SpecReader) *DualStringBytes {
 	return obj
 }
 
-func writeDualInt32Boolean(w *specodec.SpecWriter, obj *DualInt32Boolean) {
+func writeDualInt32Boolean(w specodec.SpecWriter, obj *DualInt32Boolean) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteBool(obj.b);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteBool(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt32Boolean(r *specodec.SpecReader) *DualInt32Boolean {
+func decodeDualInt32Boolean(r specodec.SpecReader) *DualInt32Boolean {
 	obj := &DualInt32Boolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadBool()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -2424,20 +2424,20 @@ func decodeDualInt32Boolean(r *specodec.SpecReader) *DualInt32Boolean {
 	return obj
 }
 
-func writeDualInt32Float64(w *specodec.SpecWriter, obj *DualInt32Float64) {
+func writeDualInt32Float64(w specodec.SpecWriter, obj *DualInt32Float64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt32Float64(r *specodec.SpecReader) *DualInt32Float64 {
+func decodeDualInt32Float64(r specodec.SpecReader) *DualInt32Float64 {
 	obj := &DualInt32Float64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadFloat64()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -2445,20 +2445,20 @@ func decodeDualInt32Float64(r *specodec.SpecReader) *DualInt32Float64 {
 	return obj
 }
 
-func writeDualInt32Int64(w *specodec.SpecWriter, obj *DualInt32Int64) {
+func writeDualInt32Int64(w specodec.SpecWriter, obj *DualInt32Int64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteInt64(obj.b);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteInt64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt32Int64(r *specodec.SpecReader) *DualInt32Int64 {
+func decodeDualInt32Int64(r specodec.SpecReader) *DualInt32Int64 {
 	obj := &DualInt32Int64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadInt64()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -2466,20 +2466,20 @@ func decodeDualInt32Int64(r *specodec.SpecReader) *DualInt32Int64 {
 	return obj
 }
 
-func writeDualInt32Uint32(w *specodec.SpecWriter, obj *DualInt32Uint32) {
+func writeDualInt32Uint32(w specodec.SpecWriter, obj *DualInt32Uint32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteUint32(obj.b);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteUint32(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt32Uint32(r *specodec.SpecReader) *DualInt32Uint32 {
+func decodeDualInt32Uint32(r specodec.SpecReader) *DualInt32Uint32 {
 	obj := &DualInt32Uint32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadUint32()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -2487,20 +2487,20 @@ func decodeDualInt32Uint32(r *specodec.SpecReader) *DualInt32Uint32 {
 	return obj
 }
 
-func writeDualInt64Uint64(w *specodec.SpecWriter, obj *DualInt64Uint64) {
+func writeDualInt64Uint64(w specodec.SpecWriter, obj *DualInt64Uint64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt64(obj.a);
-	w.WriteField("b"); w.WriteUint64(obj.b);
+	w.WriteField("a"); w.WriteInt64(obj.A);
+	w.WriteField("b"); w.WriteUint64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt64Uint64(r *specodec.SpecReader) *DualInt64Uint64 {
+func decodeDualInt64Uint64(r specodec.SpecReader) *DualInt64Uint64 {
 	obj := &DualInt64Uint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt64()
-		case "b": obj.b = r.ReadUint64()
+		case "a": obj.A = r.ReadInt64()
+		case "b": obj.B = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -2508,20 +2508,20 @@ func decodeDualInt64Uint64(r *specodec.SpecReader) *DualInt64Uint64 {
 	return obj
 }
 
-func writeDualFloat32Float64(w *specodec.SpecWriter, obj *DualFloat32Float64) {
+func writeDualFloat32Float64(w specodec.SpecWriter, obj *DualFloat32Float64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteFloat32(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
+	w.WriteField("a"); w.WriteFloat32(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualFloat32Float64(r *specodec.SpecReader) *DualFloat32Float64 {
+func decodeDualFloat32Float64(r specodec.SpecReader) *DualFloat32Float64 {
 	obj := &DualFloat32Float64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat32()
-		case "b": obj.b = r.ReadFloat64()
+		case "a": obj.A = r.ReadFloat32()
+		case "b": obj.B = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -2529,20 +2529,20 @@ func decodeDualFloat32Float64(r *specodec.SpecReader) *DualFloat32Float64 {
 	return obj
 }
 
-func writeDualFloat64Boolean(w *specodec.SpecWriter, obj *DualFloat64Boolean) {
+func writeDualFloat64Boolean(w specodec.SpecWriter, obj *DualFloat64Boolean) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteFloat64(obj.a);
-	w.WriteField("b"); w.WriteBool(obj.b);
+	w.WriteField("a"); w.WriteFloat64(obj.A);
+	w.WriteField("b"); w.WriteBool(obj.B);
 	w.EndObject()
 }
 
-func decodeDualFloat64Boolean(r *specodec.SpecReader) *DualFloat64Boolean {
+func decodeDualFloat64Boolean(r specodec.SpecReader) *DualFloat64Boolean {
 	obj := &DualFloat64Boolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat64()
-		case "b": obj.b = r.ReadBool()
+		case "a": obj.A = r.ReadFloat64()
+		case "b": obj.B = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -2550,20 +2550,20 @@ func decodeDualFloat64Boolean(r *specodec.SpecReader) *DualFloat64Boolean {
 	return obj
 }
 
-func writeDualFloat64Bytes(w *specodec.SpecWriter, obj *DualFloat64Bytes) {
+func writeDualFloat64Bytes(w specodec.SpecWriter, obj *DualFloat64Bytes) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteFloat64(obj.a);
-	w.WriteField("b"); w.WriteBytes(obj.b);
+	w.WriteField("a"); w.WriteFloat64(obj.A);
+	w.WriteField("b"); w.WriteBytes(obj.B);
 	w.EndObject()
 }
 
-func decodeDualFloat64Bytes(r *specodec.SpecReader) *DualFloat64Bytes {
+func decodeDualFloat64Bytes(r specodec.SpecReader) *DualFloat64Bytes {
 	obj := &DualFloat64Bytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat64()
-		case "b": obj.b = r.ReadBytes()
+		case "a": obj.A = r.ReadFloat64()
+		case "b": obj.B = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -2571,20 +2571,20 @@ func decodeDualFloat64Bytes(r *specodec.SpecReader) *DualFloat64Bytes {
 	return obj
 }
 
-func writeDualUint32Uint64(w *specodec.SpecWriter, obj *DualUint32Uint64) {
+func writeDualUint32Uint64(w specodec.SpecWriter, obj *DualUint32Uint64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint32(obj.a);
-	w.WriteField("b"); w.WriteUint64(obj.b);
+	w.WriteField("a"); w.WriteUint32(obj.A);
+	w.WriteField("b"); w.WriteUint64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualUint32Uint64(r *specodec.SpecReader) *DualUint32Uint64 {
+func decodeDualUint32Uint64(r specodec.SpecReader) *DualUint32Uint64 {
 	obj := &DualUint32Uint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadUint32()
-		case "b": obj.b = r.ReadUint64()
+		case "a": obj.A = r.ReadUint32()
+		case "b": obj.B = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -2592,20 +2592,20 @@ func decodeDualUint32Uint64(r *specodec.SpecReader) *DualUint32Uint64 {
 	return obj
 }
 
-func writeDualBooleanBytes(w *specodec.SpecWriter, obj *DualBooleanBytes) {
+func writeDualBooleanBytes(w specodec.SpecWriter, obj *DualBooleanBytes) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteBool(obj.a);
-	w.WriteField("b"); w.WriteBytes(obj.b);
+	w.WriteField("a"); w.WriteBool(obj.A);
+	w.WriteField("b"); w.WriteBytes(obj.B);
 	w.EndObject()
 }
 
-func decodeDualBooleanBytes(r *specodec.SpecReader) *DualBooleanBytes {
+func decodeDualBooleanBytes(r specodec.SpecReader) *DualBooleanBytes {
 	obj := &DualBooleanBytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBool()
-		case "b": obj.b = r.ReadBytes()
+		case "a": obj.A = r.ReadBool()
+		case "b": obj.B = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -2613,20 +2613,20 @@ func decodeDualBooleanBytes(r *specodec.SpecReader) *DualBooleanBytes {
 	return obj
 }
 
-func writeDualInt8Uint8(w *specodec.SpecWriter, obj *DualInt8Uint8) {
+func writeDualInt8Uint8(w specodec.SpecWriter, obj *DualInt8Uint8) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(int32(obj.a));
-	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
+	w.WriteField("a"); w.WriteInt32(int32(obj.A));
+	w.WriteField("b"); w.WriteUint32(uint32(obj.B));
 	w.EndObject()
 }
 
-func decodeDualInt8Uint8(r *specodec.SpecReader) *DualInt8Uint8 {
+func decodeDualInt8Uint8(r specodec.SpecReader) *DualInt8Uint8 {
 	obj := &DualInt8Uint8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = int8(r.ReadInt32())
-		case "b": obj.b = uint8(r.ReadUint32())
+		case "a": obj.A = int8(r.ReadInt32())
+		case "b": obj.B = uint8(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -2634,20 +2634,20 @@ func decodeDualInt8Uint8(r *specodec.SpecReader) *DualInt8Uint8 {
 	return obj
 }
 
-func writeDualInt16Uint16(w *specodec.SpecWriter, obj *DualInt16Uint16) {
+func writeDualInt16Uint16(w specodec.SpecWriter, obj *DualInt16Uint16) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(int32(obj.a));
-	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
+	w.WriteField("a"); w.WriteInt32(int32(obj.A));
+	w.WriteField("b"); w.WriteUint32(uint32(obj.B));
 	w.EndObject()
 }
 
-func decodeDualInt16Uint16(r *specodec.SpecReader) *DualInt16Uint16 {
+func decodeDualInt16Uint16(r specodec.SpecReader) *DualInt16Uint16 {
 	obj := &DualInt16Uint16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = int16(r.ReadInt32())
-		case "b": obj.b = uint16(r.ReadUint32())
+		case "a": obj.A = int16(r.ReadInt32())
+		case "b": obj.B = uint16(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -2655,20 +2655,20 @@ func decodeDualInt16Uint16(r *specodec.SpecReader) *DualInt16Uint16 {
 	return obj
 }
 
-func writeDualStringInt64(w *specodec.SpecWriter, obj *DualStringInt64) {
+func writeDualStringInt64(w specodec.SpecWriter, obj *DualStringInt64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteInt64(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteInt64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualStringInt64(r *specodec.SpecReader) *DualStringInt64 {
+func decodeDualStringInt64(r specodec.SpecReader) *DualStringInt64 {
 	obj := &DualStringInt64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadInt64()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -2676,20 +2676,20 @@ func decodeDualStringInt64(r *specodec.SpecReader) *DualStringInt64 {
 	return obj
 }
 
-func writeDualStringUint64(w *specodec.SpecWriter, obj *DualStringUint64) {
+func writeDualStringUint64(w specodec.SpecWriter, obj *DualStringUint64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteUint64(obj.b);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteUint64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualStringUint64(r *specodec.SpecReader) *DualStringUint64 {
+func decodeDualStringUint64(r specodec.SpecReader) *DualStringUint64 {
 	obj := &DualStringUint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadUint64()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -2697,20 +2697,20 @@ func decodeDualStringUint64(r *specodec.SpecReader) *DualStringUint64 {
 	return obj
 }
 
-func writeDualInt32Bytes(w *specodec.SpecWriter, obj *DualInt32Bytes) {
+func writeDualInt32Bytes(w specodec.SpecWriter, obj *DualInt32Bytes) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteBytes(obj.b);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteBytes(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt32Bytes(r *specodec.SpecReader) *DualInt32Bytes {
+func decodeDualInt32Bytes(r specodec.SpecReader) *DualInt32Bytes {
 	obj := &DualInt32Bytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadBytes()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -2718,20 +2718,20 @@ func decodeDualInt32Bytes(r *specodec.SpecReader) *DualInt32Bytes {
 	return obj
 }
 
-func writeDualFloat64Int32(w *specodec.SpecWriter, obj *DualFloat64Int32) {
+func writeDualFloat64Int32(w specodec.SpecWriter, obj *DualFloat64Int32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteFloat64(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
+	w.WriteField("a"); w.WriteFloat64(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
 	w.EndObject()
 }
 
-func decodeDualFloat64Int32(r *specodec.SpecReader) *DualFloat64Int32 {
+func decodeDualFloat64Int32(r specodec.SpecReader) *DualFloat64Int32 {
 	obj := &DualFloat64Int32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat64()
-		case "b": obj.b = r.ReadInt32()
+		case "a": obj.A = r.ReadFloat64()
+		case "b": obj.B = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -2739,20 +2739,20 @@ func decodeDualFloat64Int32(r *specodec.SpecReader) *DualFloat64Int32 {
 	return obj
 }
 
-func writeDualBooleanInt32(w *specodec.SpecWriter, obj *DualBooleanInt32) {
+func writeDualBooleanInt32(w specodec.SpecWriter, obj *DualBooleanInt32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteBool(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
+	w.WriteField("a"); w.WriteBool(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
 	w.EndObject()
 }
 
-func decodeDualBooleanInt32(r *specodec.SpecReader) *DualBooleanInt32 {
+func decodeDualBooleanInt32(r specodec.SpecReader) *DualBooleanInt32 {
 	obj := &DualBooleanInt32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBool()
-		case "b": obj.b = r.ReadInt32()
+		case "a": obj.A = r.ReadBool()
+		case "b": obj.B = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -2760,20 +2760,20 @@ func decodeDualBooleanInt32(r *specodec.SpecReader) *DualBooleanInt32 {
 	return obj
 }
 
-func writeDualBytesInt64(w *specodec.SpecWriter, obj *DualBytesInt64) {
+func writeDualBytesInt64(w specodec.SpecWriter, obj *DualBytesInt64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteBytes(obj.a);
-	w.WriteField("b"); w.WriteInt64(obj.b);
+	w.WriteField("a"); w.WriteBytes(obj.A);
+	w.WriteField("b"); w.WriteInt64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualBytesInt64(r *specodec.SpecReader) *DualBytesInt64 {
+func decodeDualBytesInt64(r specodec.SpecReader) *DualBytesInt64 {
 	obj := &DualBytesInt64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBytes()
-		case "b": obj.b = r.ReadInt64()
+		case "a": obj.A = r.ReadBytes()
+		case "b": obj.B = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -2781,20 +2781,20 @@ func decodeDualBytesInt64(r *specodec.SpecReader) *DualBytesInt64 {
 	return obj
 }
 
-func writeDualInt8Float32(w *specodec.SpecWriter, obj *DualInt8Float32) {
+func writeDualInt8Float32(w specodec.SpecWriter, obj *DualInt8Float32) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt32(int32(obj.a));
-	w.WriteField("b"); w.WriteFloat32(obj.b);
+	w.WriteField("a"); w.WriteInt32(int32(obj.A));
+	w.WriteField("b"); w.WriteFloat32(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt8Float32(r *specodec.SpecReader) *DualInt8Float32 {
+func decodeDualInt8Float32(r specodec.SpecReader) *DualInt8Float32 {
 	obj := &DualInt8Float32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = int8(r.ReadInt32())
-		case "b": obj.b = r.ReadFloat32()
+		case "a": obj.A = int8(r.ReadInt32())
+		case "b": obj.B = r.ReadFloat32()
 		default: r.Skip()
 		}
 	}
@@ -2802,20 +2802,20 @@ func decodeDualInt8Float32(r *specodec.SpecReader) *DualInt8Float32 {
 	return obj
 }
 
-func writeDualUint8Int16(w *specodec.SpecWriter, obj *DualUint8Int16) {
+func writeDualUint8Int16(w specodec.SpecWriter, obj *DualUint8Int16) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
-	w.WriteField("b"); w.WriteInt32(int32(obj.b));
+	w.WriteField("a"); w.WriteUint32(uint32(obj.A));
+	w.WriteField("b"); w.WriteInt32(int32(obj.B));
 	w.EndObject()
 }
 
-func decodeDualUint8Int16(r *specodec.SpecReader) *DualUint8Int16 {
+func decodeDualUint8Int16(r specodec.SpecReader) *DualUint8Int16 {
 	obj := &DualUint8Int16{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = uint8(r.ReadUint32())
-		case "b": obj.b = int16(r.ReadInt32())
+		case "a": obj.A = uint8(r.ReadUint32())
+		case "b": obj.B = int16(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -2823,20 +2823,20 @@ func decodeDualUint8Int16(r *specodec.SpecReader) *DualUint8Int16 {
 	return obj
 }
 
-func writeDualInt64Float64(w *specodec.SpecWriter, obj *DualInt64Float64) {
+func writeDualInt64Float64(w specodec.SpecWriter, obj *DualInt64Float64) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteInt64(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
+	w.WriteField("a"); w.WriteInt64(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
 	w.EndObject()
 }
 
-func decodeDualInt64Float64(r *specodec.SpecReader) *DualInt64Float64 {
+func decodeDualInt64Float64(r specodec.SpecReader) *DualInt64Float64 {
 	obj := &DualInt64Float64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt64()
-		case "b": obj.b = r.ReadFloat64()
+		case "a": obj.A = r.ReadInt64()
+		case "b": obj.B = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -2844,20 +2844,20 @@ func decodeDualInt64Float64(r *specodec.SpecReader) *DualInt64Float64 {
 	return obj
 }
 
-func writeDualUint64String(w *specodec.SpecWriter, obj *DualUint64String) {
+func writeDualUint64String(w specodec.SpecWriter, obj *DualUint64String) {
 	w.BeginObject(2)
-	w.WriteField("a"); w.WriteUint64(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
+	w.WriteField("a"); w.WriteUint64(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
 	w.EndObject()
 }
 
-func decodeDualUint64String(r *specodec.SpecReader) *DualUint64String {
+func decodeDualUint64String(r specodec.SpecReader) *DualUint64String {
 	obj := &DualUint64String{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadUint64()
-		case "b": obj.b = r.ReadString()
+		case "a": obj.A = r.ReadUint64()
+		case "b": obj.B = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -2865,22 +2865,22 @@ func decodeDualUint64String(r *specodec.SpecReader) *DualUint64String {
 	return obj
 }
 
-func writeTriple01(w *specodec.SpecWriter, obj *Triple01) {
+func writeTriple01(w specodec.SpecWriter, obj *Triple01) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
-	w.WriteField("c"); w.WriteBool(obj.c);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
+	w.WriteField("c"); w.WriteBool(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple01(r *specodec.SpecReader) *Triple01 {
+func decodeTriple01(r specodec.SpecReader) *Triple01 {
 	obj := &Triple01{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadInt32()
-		case "c": obj.c = r.ReadBool()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadInt32()
+		case "c": obj.C = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -2888,22 +2888,22 @@ func decodeTriple01(r *specodec.SpecReader) *Triple01 {
 	return obj
 }
 
-func writeTriple02(w *specodec.SpecWriter, obj *Triple02) {
+func writeTriple02(w specodec.SpecWriter, obj *Triple02) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteFloat64(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
-	w.WriteField("c"); w.WriteFloat64(obj.c);
+	w.WriteField("a"); w.WriteFloat64(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
+	w.WriteField("c"); w.WriteFloat64(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple02(r *specodec.SpecReader) *Triple02 {
+func decodeTriple02(r specodec.SpecReader) *Triple02 {
 	obj := &Triple02{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat64()
-		case "b": obj.b = r.ReadFloat64()
-		case "c": obj.c = r.ReadFloat64()
+		case "a": obj.A = r.ReadFloat64()
+		case "b": obj.B = r.ReadFloat64()
+		case "c": obj.C = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -2911,22 +2911,22 @@ func decodeTriple02(r *specodec.SpecReader) *Triple02 {
 	return obj
 }
 
-func writeTriple03(w *specodec.SpecWriter, obj *Triple03) {
+func writeTriple03(w specodec.SpecWriter, obj *Triple03) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
-	w.WriteField("c"); w.WriteInt32(obj.c);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
+	w.WriteField("c"); w.WriteInt32(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple03(r *specodec.SpecReader) *Triple03 {
+func decodeTriple03(r specodec.SpecReader) *Triple03 {
 	obj := &Triple03{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadInt32()
-		case "c": obj.c = r.ReadInt32()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadInt32()
+		case "c": obj.C = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -2934,22 +2934,22 @@ func decodeTriple03(r *specodec.SpecReader) *Triple03 {
 	return obj
 }
 
-func writeTriple04(w *specodec.SpecWriter, obj *Triple04) {
+func writeTriple04(w specodec.SpecWriter, obj *Triple04) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
-	w.WriteField("c"); w.WriteInt32(obj.c);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
+	w.WriteField("c"); w.WriteInt32(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple04(r *specodec.SpecReader) *Triple04 {
+func decodeTriple04(r specodec.SpecReader) *Triple04 {
 	obj := &Triple04{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadString()
-		case "c": obj.c = r.ReadInt32()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadString()
+		case "c": obj.C = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -2957,22 +2957,22 @@ func decodeTriple04(r *specodec.SpecReader) *Triple04 {
 	return obj
 }
 
-func writeTriple05(w *specodec.SpecWriter, obj *Triple05) {
+func writeTriple05(w specodec.SpecWriter, obj *Triple05) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteInt64(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
-	w.WriteField("c"); w.WriteBool(obj.c);
+	w.WriteField("a"); w.WriteInt64(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
+	w.WriteField("c"); w.WriteBool(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple05(r *specodec.SpecReader) *Triple05 {
+func decodeTriple05(r specodec.SpecReader) *Triple05 {
 	obj := &Triple05{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt64()
-		case "b": obj.b = r.ReadString()
-		case "c": obj.c = r.ReadBool()
+		case "a": obj.A = r.ReadInt64()
+		case "b": obj.B = r.ReadString()
+		case "c": obj.C = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -2980,22 +2980,22 @@ func decodeTriple05(r *specodec.SpecReader) *Triple05 {
 	return obj
 }
 
-func writeTriple06(w *specodec.SpecWriter, obj *Triple06) {
+func writeTriple06(w specodec.SpecWriter, obj *Triple06) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteUint32(obj.a);
-	w.WriteField("b"); w.WriteUint64(obj.b);
-	w.WriteField("c"); w.WriteString(obj.c);
+	w.WriteField("a"); w.WriteUint32(obj.A);
+	w.WriteField("b"); w.WriteUint64(obj.B);
+	w.WriteField("c"); w.WriteString(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple06(r *specodec.SpecReader) *Triple06 {
+func decodeTriple06(r specodec.SpecReader) *Triple06 {
 	obj := &Triple06{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadUint32()
-		case "b": obj.b = r.ReadUint64()
-		case "c": obj.c = r.ReadString()
+		case "a": obj.A = r.ReadUint32()
+		case "b": obj.B = r.ReadUint64()
+		case "c": obj.C = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -3003,22 +3003,22 @@ func decodeTriple06(r *specodec.SpecReader) *Triple06 {
 	return obj
 }
 
-func writeTriple07(w *specodec.SpecWriter, obj *Triple07) {
+func writeTriple07(w specodec.SpecWriter, obj *Triple07) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteBytes(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
-	w.WriteField("c"); w.WriteInt32(obj.c);
+	w.WriteField("a"); w.WriteBytes(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
+	w.WriteField("c"); w.WriteInt32(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple07(r *specodec.SpecReader) *Triple07 {
+func decodeTriple07(r specodec.SpecReader) *Triple07 {
 	obj := &Triple07{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBytes()
-		case "b": obj.b = r.ReadString()
-		case "c": obj.c = r.ReadInt32()
+		case "a": obj.A = r.ReadBytes()
+		case "b": obj.B = r.ReadString()
+		case "c": obj.C = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -3026,22 +3026,22 @@ func decodeTriple07(r *specodec.SpecReader) *Triple07 {
 	return obj
 }
 
-func writeTriple08(w *specodec.SpecWriter, obj *Triple08) {
+func writeTriple08(w specodec.SpecWriter, obj *Triple08) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteFloat32(obj.a);
-	w.WriteField("b"); w.WriteInt32(obj.b);
-	w.WriteField("c"); w.WriteBool(obj.c);
+	w.WriteField("a"); w.WriteFloat32(obj.A);
+	w.WriteField("b"); w.WriteInt32(obj.B);
+	w.WriteField("c"); w.WriteBool(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple08(r *specodec.SpecReader) *Triple08 {
+func decodeTriple08(r specodec.SpecReader) *Triple08 {
 	obj := &Triple08{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat32()
-		case "b": obj.b = r.ReadInt32()
-		case "c": obj.c = r.ReadBool()
+		case "a": obj.A = r.ReadFloat32()
+		case "b": obj.B = r.ReadInt32()
+		case "c": obj.C = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -3049,22 +3049,22 @@ func decodeTriple08(r *specodec.SpecReader) *Triple08 {
 	return obj
 }
 
-func writeTriple09(w *specodec.SpecWriter, obj *Triple09) {
+func writeTriple09(w specodec.SpecWriter, obj *Triple09) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteInt64(obj.b);
-	w.WriteField("c"); w.WriteFloat64(obj.c);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteInt64(obj.B);
+	w.WriteField("c"); w.WriteFloat64(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple09(r *specodec.SpecReader) *Triple09 {
+func decodeTriple09(r specodec.SpecReader) *Triple09 {
 	obj := &Triple09{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadInt64()
-		case "c": obj.c = r.ReadFloat64()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadInt64()
+		case "c": obj.C = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -3072,22 +3072,22 @@ func decodeTriple09(r *specodec.SpecReader) *Triple09 {
 	return obj
 }
 
-func writeTriple10(w *specodec.SpecWriter, obj *Triple10) {
+func writeTriple10(w specodec.SpecWriter, obj *Triple10) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteBool(obj.a);
-	w.WriteField("b"); w.WriteBool(obj.b);
-	w.WriteField("c"); w.WriteBool(obj.c);
+	w.WriteField("a"); w.WriteBool(obj.A);
+	w.WriteField("b"); w.WriteBool(obj.B);
+	w.WriteField("c"); w.WriteBool(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple10(r *specodec.SpecReader) *Triple10 {
+func decodeTriple10(r specodec.SpecReader) *Triple10 {
 	obj := &Triple10{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadBool()
-		case "b": obj.b = r.ReadBool()
-		case "c": obj.c = r.ReadBool()
+		case "a": obj.A = r.ReadBool()
+		case "b": obj.B = r.ReadBool()
+		case "c": obj.C = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -3095,22 +3095,22 @@ func decodeTriple10(r *specodec.SpecReader) *Triple10 {
 	return obj
 }
 
-func writeTriple11(w *specodec.SpecWriter, obj *Triple11) {
+func writeTriple11(w specodec.SpecWriter, obj *Triple11) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteInt32(int32(obj.a));
-	w.WriteField("b"); w.WriteInt32(int32(obj.b));
-	w.WriteField("c"); w.WriteInt32(obj.c);
+	w.WriteField("a"); w.WriteInt32(int32(obj.A));
+	w.WriteField("b"); w.WriteInt32(int32(obj.B));
+	w.WriteField("c"); w.WriteInt32(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple11(r *specodec.SpecReader) *Triple11 {
+func decodeTriple11(r specodec.SpecReader) *Triple11 {
 	obj := &Triple11{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = int8(r.ReadInt32())
-		case "b": obj.b = int16(r.ReadInt32())
-		case "c": obj.c = r.ReadInt32()
+		case "a": obj.A = int8(r.ReadInt32())
+		case "b": obj.B = int16(r.ReadInt32())
+		case "c": obj.C = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -3118,22 +3118,22 @@ func decodeTriple11(r *specodec.SpecReader) *Triple11 {
 	return obj
 }
 
-func writeTriple12(w *specodec.SpecWriter, obj *Triple12) {
+func writeTriple12(w specodec.SpecWriter, obj *Triple12) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteUint32(uint32(obj.a));
-	w.WriteField("b"); w.WriteUint32(uint32(obj.b));
-	w.WriteField("c"); w.WriteUint32(obj.c);
+	w.WriteField("a"); w.WriteUint32(uint32(obj.A));
+	w.WriteField("b"); w.WriteUint32(uint32(obj.B));
+	w.WriteField("c"); w.WriteUint32(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple12(r *specodec.SpecReader) *Triple12 {
+func decodeTriple12(r specodec.SpecReader) *Triple12 {
 	obj := &Triple12{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = uint8(r.ReadUint32())
-		case "b": obj.b = uint16(r.ReadUint32())
-		case "c": obj.c = r.ReadUint32()
+		case "a": obj.A = uint8(r.ReadUint32())
+		case "b": obj.B = uint16(r.ReadUint32())
+		case "c": obj.C = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -3141,22 +3141,22 @@ func decodeTriple12(r *specodec.SpecReader) *Triple12 {
 	return obj
 }
 
-func writeTriple13(w *specodec.SpecWriter, obj *Triple13) {
+func writeTriple13(w specodec.SpecWriter, obj *Triple13) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteString(obj.a);
-	w.WriteField("b"); w.WriteBytes(obj.b);
-	w.WriteField("c"); w.WriteFloat64(obj.c);
+	w.WriteField("a"); w.WriteString(obj.A);
+	w.WriteField("b"); w.WriteBytes(obj.B);
+	w.WriteField("c"); w.WriteFloat64(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple13(r *specodec.SpecReader) *Triple13 {
+func decodeTriple13(r specodec.SpecReader) *Triple13 {
 	obj := &Triple13{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": obj.b = r.ReadBytes()
-		case "c": obj.c = r.ReadFloat64()
+		case "a": obj.A = r.ReadString()
+		case "b": obj.B = r.ReadBytes()
+		case "c": obj.C = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -3164,22 +3164,22 @@ func decodeTriple13(r *specodec.SpecReader) *Triple13 {
 	return obj
 }
 
-func writeTriple14(w *specodec.SpecWriter, obj *Triple14) {
+func writeTriple14(w specodec.SpecWriter, obj *Triple14) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteInt64(obj.a);
-	w.WriteField("b"); w.WriteUint64(obj.b);
-	w.WriteField("c"); w.WriteBool(obj.c);
+	w.WriteField("a"); w.WriteInt64(obj.A);
+	w.WriteField("b"); w.WriteUint64(obj.B);
+	w.WriteField("c"); w.WriteBool(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple14(r *specodec.SpecReader) *Triple14 {
+func decodeTriple14(r specodec.SpecReader) *Triple14 {
 	obj := &Triple14{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt64()
-		case "b": obj.b = r.ReadUint64()
-		case "c": obj.c = r.ReadBool()
+		case "a": obj.A = r.ReadInt64()
+		case "b": obj.B = r.ReadUint64()
+		case "c": obj.C = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -3187,22 +3187,22 @@ func decodeTriple14(r *specodec.SpecReader) *Triple14 {
 	return obj
 }
 
-func writeTriple15(w *specodec.SpecWriter, obj *Triple15) {
+func writeTriple15(w specodec.SpecWriter, obj *Triple15) {
 	w.BeginObject(3)
-	w.WriteField("a"); w.WriteFloat64(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
-	w.WriteField("c"); w.WriteBytes(obj.c);
+	w.WriteField("a"); w.WriteFloat64(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
+	w.WriteField("c"); w.WriteBytes(obj.C);
 	w.EndObject()
 }
 
-func decodeTriple15(r *specodec.SpecReader) *Triple15 {
+func decodeTriple15(r specodec.SpecReader) *Triple15 {
 	obj := &Triple15{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadFloat64()
-		case "b": obj.b = r.ReadString()
-		case "c": obj.c = r.ReadBytes()
+		case "a": obj.A = r.ReadFloat64()
+		case "b": obj.B = r.ReadString()
+		case "c": obj.C = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -3210,26 +3210,26 @@ func decodeTriple15(r *specodec.SpecReader) *Triple15 {
 	return obj
 }
 
-func writeFive01(w *specodec.SpecWriter, obj *Five01) {
+func writeFive01(w specodec.SpecWriter, obj *Five01) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteString(obj.f1);
-	w.WriteField("f2"); w.WriteInt32(obj.f2);
-	w.WriteField("f3"); w.WriteBool(obj.f3);
-	w.WriteField("f4"); w.WriteFloat64(obj.f4);
-	w.WriteField("f5"); w.WriteBytes(obj.f5);
+	w.WriteField("f1"); w.WriteString(obj.F1);
+	w.WriteField("f2"); w.WriteInt32(obj.F2);
+	w.WriteField("f3"); w.WriteBool(obj.F3);
+	w.WriteField("f4"); w.WriteFloat64(obj.F4);
+	w.WriteField("f5"); w.WriteBytes(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive01(r *specodec.SpecReader) *Five01 {
+func decodeFive01(r specodec.SpecReader) *Five01 {
 	obj := &Five01{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadString()
-		case "f2": obj.f2 = r.ReadInt32()
-		case "f3": obj.f3 = r.ReadBool()
-		case "f4": obj.f4 = r.ReadFloat64()
-		case "f5": obj.f5 = r.ReadBytes()
+		case "f1": obj.F1 = r.ReadString()
+		case "f2": obj.F2 = r.ReadInt32()
+		case "f3": obj.F3 = r.ReadBool()
+		case "f4": obj.F4 = r.ReadFloat64()
+		case "f5": obj.F5 = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -3237,26 +3237,26 @@ func decodeFive01(r *specodec.SpecReader) *Five01 {
 	return obj
 }
 
-func writeFive02(w *specodec.SpecWriter, obj *Five02) {
+func writeFive02(w specodec.SpecWriter, obj *Five02) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteInt32(obj.f1);
-	w.WriteField("f2"); w.WriteInt32(obj.f2);
-	w.WriteField("f3"); w.WriteInt32(obj.f3);
-	w.WriteField("f4"); w.WriteInt32(obj.f4);
-	w.WriteField("f5"); w.WriteInt32(obj.f5);
+	w.WriteField("f1"); w.WriteInt32(obj.F1);
+	w.WriteField("f2"); w.WriteInt32(obj.F2);
+	w.WriteField("f3"); w.WriteInt32(obj.F3);
+	w.WriteField("f4"); w.WriteInt32(obj.F4);
+	w.WriteField("f5"); w.WriteInt32(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive02(r *specodec.SpecReader) *Five02 {
+func decodeFive02(r specodec.SpecReader) *Five02 {
 	obj := &Five02{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadInt32()
-		case "f2": obj.f2 = r.ReadInt32()
-		case "f3": obj.f3 = r.ReadInt32()
-		case "f4": obj.f4 = r.ReadInt32()
-		case "f5": obj.f5 = r.ReadInt32()
+		case "f1": obj.F1 = r.ReadInt32()
+		case "f2": obj.F2 = r.ReadInt32()
+		case "f3": obj.F3 = r.ReadInt32()
+		case "f4": obj.F4 = r.ReadInt32()
+		case "f5": obj.F5 = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -3264,26 +3264,26 @@ func decodeFive02(r *specodec.SpecReader) *Five02 {
 	return obj
 }
 
-func writeFive03(w *specodec.SpecWriter, obj *Five03) {
+func writeFive03(w specodec.SpecWriter, obj *Five03) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteString(obj.f1);
-	w.WriteField("f2"); w.WriteString(obj.f2);
-	w.WriteField("f3"); w.WriteString(obj.f3);
-	w.WriteField("f4"); w.WriteString(obj.f4);
-	w.WriteField("f5"); w.WriteString(obj.f5);
+	w.WriteField("f1"); w.WriteString(obj.F1);
+	w.WriteField("f2"); w.WriteString(obj.F2);
+	w.WriteField("f3"); w.WriteString(obj.F3);
+	w.WriteField("f4"); w.WriteString(obj.F4);
+	w.WriteField("f5"); w.WriteString(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive03(r *specodec.SpecReader) *Five03 {
+func decodeFive03(r specodec.SpecReader) *Five03 {
 	obj := &Five03{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadString()
-		case "f2": obj.f2 = r.ReadString()
-		case "f3": obj.f3 = r.ReadString()
-		case "f4": obj.f4 = r.ReadString()
-		case "f5": obj.f5 = r.ReadString()
+		case "f1": obj.F1 = r.ReadString()
+		case "f2": obj.F2 = r.ReadString()
+		case "f3": obj.F3 = r.ReadString()
+		case "f4": obj.F4 = r.ReadString()
+		case "f5": obj.F5 = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -3291,26 +3291,26 @@ func decodeFive03(r *specodec.SpecReader) *Five03 {
 	return obj
 }
 
-func writeFive04(w *specodec.SpecWriter, obj *Five04) {
+func writeFive04(w specodec.SpecWriter, obj *Five04) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteFloat64(obj.f1);
-	w.WriteField("f2"); w.WriteInt32(obj.f2);
-	w.WriteField("f3"); w.WriteString(obj.f3);
-	w.WriteField("f4"); w.WriteBool(obj.f4);
-	w.WriteField("f5"); w.WriteBytes(obj.f5);
+	w.WriteField("f1"); w.WriteFloat64(obj.F1);
+	w.WriteField("f2"); w.WriteInt32(obj.F2);
+	w.WriteField("f3"); w.WriteString(obj.F3);
+	w.WriteField("f4"); w.WriteBool(obj.F4);
+	w.WriteField("f5"); w.WriteBytes(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive04(r *specodec.SpecReader) *Five04 {
+func decodeFive04(r specodec.SpecReader) *Five04 {
 	obj := &Five04{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadFloat64()
-		case "f2": obj.f2 = r.ReadInt32()
-		case "f3": obj.f3 = r.ReadString()
-		case "f4": obj.f4 = r.ReadBool()
-		case "f5": obj.f5 = r.ReadBytes()
+		case "f1": obj.F1 = r.ReadFloat64()
+		case "f2": obj.F2 = r.ReadInt32()
+		case "f3": obj.F3 = r.ReadString()
+		case "f4": obj.F4 = r.ReadBool()
+		case "f5": obj.F5 = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -3318,26 +3318,26 @@ func decodeFive04(r *specodec.SpecReader) *Five04 {
 	return obj
 }
 
-func writeFive05(w *specodec.SpecWriter, obj *Five05) {
+func writeFive05(w specodec.SpecWriter, obj *Five05) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteInt64(obj.f1);
-	w.WriteField("f2"); w.WriteUint64(obj.f2);
-	w.WriteField("f3"); w.WriteString(obj.f3);
-	w.WriteField("f4"); w.WriteFloat32(obj.f4);
-	w.WriteField("f5"); w.WriteInt32(obj.f5);
+	w.WriteField("f1"); w.WriteInt64(obj.F1);
+	w.WriteField("f2"); w.WriteUint64(obj.F2);
+	w.WriteField("f3"); w.WriteString(obj.F3);
+	w.WriteField("f4"); w.WriteFloat32(obj.F4);
+	w.WriteField("f5"); w.WriteInt32(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive05(r *specodec.SpecReader) *Five05 {
+func decodeFive05(r specodec.SpecReader) *Five05 {
 	obj := &Five05{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadInt64()
-		case "f2": obj.f2 = r.ReadUint64()
-		case "f3": obj.f3 = r.ReadString()
-		case "f4": obj.f4 = r.ReadFloat32()
-		case "f5": obj.f5 = r.ReadInt32()
+		case "f1": obj.F1 = r.ReadInt64()
+		case "f2": obj.F2 = r.ReadUint64()
+		case "f3": obj.F3 = r.ReadString()
+		case "f4": obj.F4 = r.ReadFloat32()
+		case "f5": obj.F5 = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -3345,26 +3345,26 @@ func decodeFive05(r *specodec.SpecReader) *Five05 {
 	return obj
 }
 
-func writeFive06(w *specodec.SpecWriter, obj *Five06) {
+func writeFive06(w specodec.SpecWriter, obj *Five06) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteBool(obj.f1);
-	w.WriteField("f2"); w.WriteString(obj.f2);
-	w.WriteField("f3"); w.WriteInt32(obj.f3);
-	w.WriteField("f4"); w.WriteFloat64(obj.f4);
-	w.WriteField("f5"); w.WriteUint32(obj.f5);
+	w.WriteField("f1"); w.WriteBool(obj.F1);
+	w.WriteField("f2"); w.WriteString(obj.F2);
+	w.WriteField("f3"); w.WriteInt32(obj.F3);
+	w.WriteField("f4"); w.WriteFloat64(obj.F4);
+	w.WriteField("f5"); w.WriteUint32(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive06(r *specodec.SpecReader) *Five06 {
+func decodeFive06(r specodec.SpecReader) *Five06 {
 	obj := &Five06{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadBool()
-		case "f2": obj.f2 = r.ReadString()
-		case "f3": obj.f3 = r.ReadInt32()
-		case "f4": obj.f4 = r.ReadFloat64()
-		case "f5": obj.f5 = r.ReadUint32()
+		case "f1": obj.F1 = r.ReadBool()
+		case "f2": obj.F2 = r.ReadString()
+		case "f3": obj.F3 = r.ReadInt32()
+		case "f4": obj.F4 = r.ReadFloat64()
+		case "f5": obj.F5 = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -3372,26 +3372,26 @@ func decodeFive06(r *specodec.SpecReader) *Five06 {
 	return obj
 }
 
-func writeFive07(w *specodec.SpecWriter, obj *Five07) {
+func writeFive07(w specodec.SpecWriter, obj *Five07) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteBytes(obj.f1);
-	w.WriteField("f2"); w.WriteBytes(obj.f2);
-	w.WriteField("f3"); w.WriteString(obj.f3);
-	w.WriteField("f4"); w.WriteInt32(obj.f4);
-	w.WriteField("f5"); w.WriteFloat64(obj.f5);
+	w.WriteField("f1"); w.WriteBytes(obj.F1);
+	w.WriteField("f2"); w.WriteBytes(obj.F2);
+	w.WriteField("f3"); w.WriteString(obj.F3);
+	w.WriteField("f4"); w.WriteInt32(obj.F4);
+	w.WriteField("f5"); w.WriteFloat64(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive07(r *specodec.SpecReader) *Five07 {
+func decodeFive07(r specodec.SpecReader) *Five07 {
 	obj := &Five07{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadBytes()
-		case "f2": obj.f2 = r.ReadBytes()
-		case "f3": obj.f3 = r.ReadString()
-		case "f4": obj.f4 = r.ReadInt32()
-		case "f5": obj.f5 = r.ReadFloat64()
+		case "f1": obj.F1 = r.ReadBytes()
+		case "f2": obj.F2 = r.ReadBytes()
+		case "f3": obj.F3 = r.ReadString()
+		case "f4": obj.F4 = r.ReadInt32()
+		case "f5": obj.F5 = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -3399,26 +3399,26 @@ func decodeFive07(r *specodec.SpecReader) *Five07 {
 	return obj
 }
 
-func writeFive08(w *specodec.SpecWriter, obj *Five08) {
+func writeFive08(w specodec.SpecWriter, obj *Five08) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteUint32(uint32(obj.f1));
-	w.WriteField("f2"); w.WriteUint32(uint32(obj.f2));
-	w.WriteField("f3"); w.WriteUint32(obj.f3);
-	w.WriteField("f4"); w.WriteInt32(int32(obj.f4));
-	w.WriteField("f5"); w.WriteInt32(int32(obj.f5));
+	w.WriteField("f1"); w.WriteUint32(uint32(obj.F1));
+	w.WriteField("f2"); w.WriteUint32(uint32(obj.F2));
+	w.WriteField("f3"); w.WriteUint32(obj.F3);
+	w.WriteField("f4"); w.WriteInt32(int32(obj.F4));
+	w.WriteField("f5"); w.WriteInt32(int32(obj.F5));
 	w.EndObject()
 }
 
-func decodeFive08(r *specodec.SpecReader) *Five08 {
+func decodeFive08(r specodec.SpecReader) *Five08 {
 	obj := &Five08{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = uint8(r.ReadUint32())
-		case "f2": obj.f2 = uint16(r.ReadUint32())
-		case "f3": obj.f3 = r.ReadUint32()
-		case "f4": obj.f4 = int8(r.ReadInt32())
-		case "f5": obj.f5 = int16(r.ReadInt32())
+		case "f1": obj.F1 = uint8(r.ReadUint32())
+		case "f2": obj.F2 = uint16(r.ReadUint32())
+		case "f3": obj.F3 = r.ReadUint32()
+		case "f4": obj.F4 = int8(r.ReadInt32())
+		case "f5": obj.F5 = int16(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -3426,26 +3426,26 @@ func decodeFive08(r *specodec.SpecReader) *Five08 {
 	return obj
 }
 
-func writeFive09(w *specodec.SpecWriter, obj *Five09) {
+func writeFive09(w specodec.SpecWriter, obj *Five09) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteFloat32(obj.f1);
-	w.WriteField("f2"); w.WriteFloat64(obj.f2);
-	w.WriteField("f3"); w.WriteInt32(obj.f3);
-	w.WriteField("f4"); w.WriteInt64(obj.f4);
-	w.WriteField("f5"); w.WriteString(obj.f5);
+	w.WriteField("f1"); w.WriteFloat32(obj.F1);
+	w.WriteField("f2"); w.WriteFloat64(obj.F2);
+	w.WriteField("f3"); w.WriteInt32(obj.F3);
+	w.WriteField("f4"); w.WriteInt64(obj.F4);
+	w.WriteField("f5"); w.WriteString(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive09(r *specodec.SpecReader) *Five09 {
+func decodeFive09(r specodec.SpecReader) *Five09 {
 	obj := &Five09{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadFloat32()
-		case "f2": obj.f2 = r.ReadFloat64()
-		case "f3": obj.f3 = r.ReadInt32()
-		case "f4": obj.f4 = r.ReadInt64()
-		case "f5": obj.f5 = r.ReadString()
+		case "f1": obj.F1 = r.ReadFloat32()
+		case "f2": obj.F2 = r.ReadFloat64()
+		case "f3": obj.F3 = r.ReadInt32()
+		case "f4": obj.F4 = r.ReadInt64()
+		case "f5": obj.F5 = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -3453,26 +3453,26 @@ func decodeFive09(r *specodec.SpecReader) *Five09 {
 	return obj
 }
 
-func writeFive10(w *specodec.SpecWriter, obj *Five10) {
+func writeFive10(w specodec.SpecWriter, obj *Five10) {
 	w.BeginObject(5)
-	w.WriteField("f1"); w.WriteString(obj.f1);
-	w.WriteField("f2"); w.WriteBool(obj.f2);
-	w.WriteField("f3"); w.WriteInt64(obj.f3);
-	w.WriteField("f4"); w.WriteUint64(obj.f4);
-	w.WriteField("f5"); w.WriteFloat64(obj.f5);
+	w.WriteField("f1"); w.WriteString(obj.F1);
+	w.WriteField("f2"); w.WriteBool(obj.F2);
+	w.WriteField("f3"); w.WriteInt64(obj.F3);
+	w.WriteField("f4"); w.WriteUint64(obj.F4);
+	w.WriteField("f5"); w.WriteFloat64(obj.F5);
 	w.EndObject()
 }
 
-func decodeFive10(r *specodec.SpecReader) *Five10 {
+func decodeFive10(r specodec.SpecReader) *Five10 {
 	obj := &Five10{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadString()
-		case "f2": obj.f2 = r.ReadBool()
-		case "f3": obj.f3 = r.ReadInt64()
-		case "f4": obj.f4 = r.ReadUint64()
-		case "f5": obj.f5 = r.ReadFloat64()
+		case "f1": obj.F1 = r.ReadString()
+		case "f2": obj.F2 = r.ReadBool()
+		case "f3": obj.F3 = r.ReadInt64()
+		case "f4": obj.F4 = r.ReadUint64()
+		case "f5": obj.F5 = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -3480,36 +3480,36 @@ func decodeFive10(r *specodec.SpecReader) *Five10 {
 	return obj
 }
 
-func writeTen01(w *specodec.SpecWriter, obj *Ten01) {
+func writeTen01(w specodec.SpecWriter, obj *Ten01) {
 	w.BeginObject(10)
-	w.WriteField("f1"); w.WriteString(obj.f1);
-	w.WriteField("f2"); w.WriteBool(obj.f2);
-	w.WriteField("f3"); w.WriteInt32(int32(obj.f3));
-	w.WriteField("f4"); w.WriteInt32(int32(obj.f4));
-	w.WriteField("f5"); w.WriteInt32(obj.f5);
-	w.WriteField("f6"); w.WriteInt64(obj.f6);
-	w.WriteField("f7"); w.WriteUint32(uint32(obj.f7));
-	w.WriteField("f8"); w.WriteUint32(uint32(obj.f8));
-	w.WriteField("f9"); w.WriteUint32(obj.f9);
-	w.WriteField("f10"); w.WriteUint64(obj.f10);
+	w.WriteField("f1"); w.WriteString(obj.F1);
+	w.WriteField("f2"); w.WriteBool(obj.F2);
+	w.WriteField("f3"); w.WriteInt32(int32(obj.F3));
+	w.WriteField("f4"); w.WriteInt32(int32(obj.F4));
+	w.WriteField("f5"); w.WriteInt32(obj.F5);
+	w.WriteField("f6"); w.WriteInt64(obj.F6);
+	w.WriteField("f7"); w.WriteUint32(uint32(obj.F7));
+	w.WriteField("f8"); w.WriteUint32(uint32(obj.F8));
+	w.WriteField("f9"); w.WriteUint32(obj.F9);
+	w.WriteField("f10"); w.WriteUint64(obj.F10);
 	w.EndObject()
 }
 
-func decodeTen01(r *specodec.SpecReader) *Ten01 {
+func decodeTen01(r specodec.SpecReader) *Ten01 {
 	obj := &Ten01{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadString()
-		case "f2": obj.f2 = r.ReadBool()
-		case "f3": obj.f3 = int8(r.ReadInt32())
-		case "f4": obj.f4 = int16(r.ReadInt32())
-		case "f5": obj.f5 = r.ReadInt32()
-		case "f6": obj.f6 = r.ReadInt64()
-		case "f7": obj.f7 = uint8(r.ReadUint32())
-		case "f8": obj.f8 = uint16(r.ReadUint32())
-		case "f9": obj.f9 = r.ReadUint32()
-		case "f10": obj.f10 = r.ReadUint64()
+		case "f1": obj.F1 = r.ReadString()
+		case "f2": obj.F2 = r.ReadBool()
+		case "f3": obj.F3 = int8(r.ReadInt32())
+		case "f4": obj.F4 = int16(r.ReadInt32())
+		case "f5": obj.F5 = r.ReadInt32()
+		case "f6": obj.F6 = r.ReadInt64()
+		case "f7": obj.F7 = uint8(r.ReadUint32())
+		case "f8": obj.F8 = uint16(r.ReadUint32())
+		case "f9": obj.F9 = r.ReadUint32()
+		case "f10": obj.F10 = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -3517,36 +3517,36 @@ func decodeTen01(r *specodec.SpecReader) *Ten01 {
 	return obj
 }
 
-func writeTen02(w *specodec.SpecWriter, obj *Ten02) {
+func writeTen02(w specodec.SpecWriter, obj *Ten02) {
 	w.BeginObject(10)
-	w.WriteField("f1"); w.WriteInt32(int32(obj.f1));
-	w.WriteField("f2"); w.WriteInt32(obj.f2);
-	w.WriteField("f3"); w.WriteInt64(obj.f3);
-	w.WriteField("f4"); w.WriteUint32(uint32(obj.f4));
-	w.WriteField("f5"); w.WriteUint32(uint32(obj.f5));
-	w.WriteField("f6"); w.WriteUint32(obj.f6);
-	w.WriteField("f7"); w.WriteUint64(obj.f7);
-	w.WriteField("f8"); w.WriteFloat32(obj.f8);
-	w.WriteField("f9"); w.WriteFloat64(obj.f9);
-	w.WriteField("f10"); w.WriteBytes(obj.f10);
+	w.WriteField("f1"); w.WriteInt32(int32(obj.F1));
+	w.WriteField("f2"); w.WriteInt32(obj.F2);
+	w.WriteField("f3"); w.WriteInt64(obj.F3);
+	w.WriteField("f4"); w.WriteUint32(uint32(obj.F4));
+	w.WriteField("f5"); w.WriteUint32(uint32(obj.F5));
+	w.WriteField("f6"); w.WriteUint32(obj.F6);
+	w.WriteField("f7"); w.WriteUint64(obj.F7);
+	w.WriteField("f8"); w.WriteFloat32(obj.F8);
+	w.WriteField("f9"); w.WriteFloat64(obj.F9);
+	w.WriteField("f10"); w.WriteBytes(obj.F10);
 	w.EndObject()
 }
 
-func decodeTen02(r *specodec.SpecReader) *Ten02 {
+func decodeTen02(r specodec.SpecReader) *Ten02 {
 	obj := &Ten02{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = int16(r.ReadInt32())
-		case "f2": obj.f2 = r.ReadInt32()
-		case "f3": obj.f3 = r.ReadInt64()
-		case "f4": obj.f4 = uint8(r.ReadUint32())
-		case "f5": obj.f5 = uint16(r.ReadUint32())
-		case "f6": obj.f6 = r.ReadUint32()
-		case "f7": obj.f7 = r.ReadUint64()
-		case "f8": obj.f8 = r.ReadFloat32()
-		case "f9": obj.f9 = r.ReadFloat64()
-		case "f10": obj.f10 = r.ReadBytes()
+		case "f1": obj.F1 = int16(r.ReadInt32())
+		case "f2": obj.F2 = r.ReadInt32()
+		case "f3": obj.F3 = r.ReadInt64()
+		case "f4": obj.F4 = uint8(r.ReadUint32())
+		case "f5": obj.F5 = uint16(r.ReadUint32())
+		case "f6": obj.F6 = r.ReadUint32()
+		case "f7": obj.F7 = r.ReadUint64()
+		case "f8": obj.F8 = r.ReadFloat32()
+		case "f9": obj.F9 = r.ReadFloat64()
+		case "f10": obj.F10 = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -3554,36 +3554,36 @@ func decodeTen02(r *specodec.SpecReader) *Ten02 {
 	return obj
 }
 
-func writeTen03(w *specodec.SpecWriter, obj *Ten03) {
+func writeTen03(w specodec.SpecWriter, obj *Ten03) {
 	w.BeginObject(10)
-	w.WriteField("f1"); w.WriteUint32(uint32(obj.f1));
-	w.WriteField("f2"); w.WriteUint32(uint32(obj.f2));
-	w.WriteField("f3"); w.WriteUint32(obj.f3);
-	w.WriteField("f4"); w.WriteUint64(obj.f4);
-	w.WriteField("f5"); w.WriteFloat32(obj.f5);
-	w.WriteField("f6"); w.WriteFloat64(obj.f6);
-	w.WriteField("f7"); w.WriteBytes(obj.f7);
-	w.WriteField("f8"); w.WriteString(obj.f8);
-	w.WriteField("f9"); w.WriteBool(obj.f9);
-	w.WriteField("f10"); w.WriteInt32(int32(obj.f10));
+	w.WriteField("f1"); w.WriteUint32(uint32(obj.F1));
+	w.WriteField("f2"); w.WriteUint32(uint32(obj.F2));
+	w.WriteField("f3"); w.WriteUint32(obj.F3);
+	w.WriteField("f4"); w.WriteUint64(obj.F4);
+	w.WriteField("f5"); w.WriteFloat32(obj.F5);
+	w.WriteField("f6"); w.WriteFloat64(obj.F6);
+	w.WriteField("f7"); w.WriteBytes(obj.F7);
+	w.WriteField("f8"); w.WriteString(obj.F8);
+	w.WriteField("f9"); w.WriteBool(obj.F9);
+	w.WriteField("f10"); w.WriteInt32(int32(obj.F10));
 	w.EndObject()
 }
 
-func decodeTen03(r *specodec.SpecReader) *Ten03 {
+func decodeTen03(r specodec.SpecReader) *Ten03 {
 	obj := &Ten03{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = uint8(r.ReadUint32())
-		case "f2": obj.f2 = uint16(r.ReadUint32())
-		case "f3": obj.f3 = r.ReadUint32()
-		case "f4": obj.f4 = r.ReadUint64()
-		case "f5": obj.f5 = r.ReadFloat32()
-		case "f6": obj.f6 = r.ReadFloat64()
-		case "f7": obj.f7 = r.ReadBytes()
-		case "f8": obj.f8 = r.ReadString()
-		case "f9": obj.f9 = r.ReadBool()
-		case "f10": obj.f10 = int8(r.ReadInt32())
+		case "f1": obj.F1 = uint8(r.ReadUint32())
+		case "f2": obj.F2 = uint16(r.ReadUint32())
+		case "f3": obj.F3 = r.ReadUint32()
+		case "f4": obj.F4 = r.ReadUint64()
+		case "f5": obj.F5 = r.ReadFloat32()
+		case "f6": obj.F6 = r.ReadFloat64()
+		case "f7": obj.F7 = r.ReadBytes()
+		case "f8": obj.F8 = r.ReadString()
+		case "f9": obj.F9 = r.ReadBool()
+		case "f10": obj.F10 = int8(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -3591,36 +3591,36 @@ func decodeTen03(r *specodec.SpecReader) *Ten03 {
 	return obj
 }
 
-func writeTen04(w *specodec.SpecWriter, obj *Ten04) {
+func writeTen04(w specodec.SpecWriter, obj *Ten04) {
 	w.BeginObject(10)
-	w.WriteField("f1"); w.WriteUint64(obj.f1);
-	w.WriteField("f2"); w.WriteFloat32(obj.f2);
-	w.WriteField("f3"); w.WriteFloat64(obj.f3);
-	w.WriteField("f4"); w.WriteBytes(obj.f4);
-	w.WriteField("f5"); w.WriteString(obj.f5);
-	w.WriteField("f6"); w.WriteBool(obj.f6);
-	w.WriteField("f7"); w.WriteInt32(int32(obj.f7));
-	w.WriteField("f8"); w.WriteInt32(int32(obj.f8));
-	w.WriteField("f9"); w.WriteInt32(obj.f9);
-	w.WriteField("f10"); w.WriteInt64(obj.f10);
+	w.WriteField("f1"); w.WriteUint64(obj.F1);
+	w.WriteField("f2"); w.WriteFloat32(obj.F2);
+	w.WriteField("f3"); w.WriteFloat64(obj.F3);
+	w.WriteField("f4"); w.WriteBytes(obj.F4);
+	w.WriteField("f5"); w.WriteString(obj.F5);
+	w.WriteField("f6"); w.WriteBool(obj.F6);
+	w.WriteField("f7"); w.WriteInt32(int32(obj.F7));
+	w.WriteField("f8"); w.WriteInt32(int32(obj.F8));
+	w.WriteField("f9"); w.WriteInt32(obj.F9);
+	w.WriteField("f10"); w.WriteInt64(obj.F10);
 	w.EndObject()
 }
 
-func decodeTen04(r *specodec.SpecReader) *Ten04 {
+func decodeTen04(r specodec.SpecReader) *Ten04 {
 	obj := &Ten04{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadUint64()
-		case "f2": obj.f2 = r.ReadFloat32()
-		case "f3": obj.f3 = r.ReadFloat64()
-		case "f4": obj.f4 = r.ReadBytes()
-		case "f5": obj.f5 = r.ReadString()
-		case "f6": obj.f6 = r.ReadBool()
-		case "f7": obj.f7 = int8(r.ReadInt32())
-		case "f8": obj.f8 = int16(r.ReadInt32())
-		case "f9": obj.f9 = r.ReadInt32()
-		case "f10": obj.f10 = r.ReadInt64()
+		case "f1": obj.F1 = r.ReadUint64()
+		case "f2": obj.F2 = r.ReadFloat32()
+		case "f3": obj.F3 = r.ReadFloat64()
+		case "f4": obj.F4 = r.ReadBytes()
+		case "f5": obj.F5 = r.ReadString()
+		case "f6": obj.F6 = r.ReadBool()
+		case "f7": obj.F7 = int8(r.ReadInt32())
+		case "f8": obj.F8 = int16(r.ReadInt32())
+		case "f9": obj.F9 = r.ReadInt32()
+		case "f10": obj.F10 = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -3628,36 +3628,36 @@ func decodeTen04(r *specodec.SpecReader) *Ten04 {
 	return obj
 }
 
-func writeTen05(w *specodec.SpecWriter, obj *Ten05) {
+func writeTen05(w specodec.SpecWriter, obj *Ten05) {
 	w.BeginObject(10)
-	w.WriteField("f1"); w.WriteBytes(obj.f1);
-	w.WriteField("f2"); w.WriteString(obj.f2);
-	w.WriteField("f3"); w.WriteBool(obj.f3);
-	w.WriteField("f4"); w.WriteInt32(int32(obj.f4));
-	w.WriteField("f5"); w.WriteInt32(int32(obj.f5));
-	w.WriteField("f6"); w.WriteInt32(obj.f6);
-	w.WriteField("f7"); w.WriteInt64(obj.f7);
-	w.WriteField("f8"); w.WriteUint32(uint32(obj.f8));
-	w.WriteField("f9"); w.WriteUint32(uint32(obj.f9));
-	w.WriteField("f10"); w.WriteUint32(obj.f10);
+	w.WriteField("f1"); w.WriteBytes(obj.F1);
+	w.WriteField("f2"); w.WriteString(obj.F2);
+	w.WriteField("f3"); w.WriteBool(obj.F3);
+	w.WriteField("f4"); w.WriteInt32(int32(obj.F4));
+	w.WriteField("f5"); w.WriteInt32(int32(obj.F5));
+	w.WriteField("f6"); w.WriteInt32(obj.F6);
+	w.WriteField("f7"); w.WriteInt64(obj.F7);
+	w.WriteField("f8"); w.WriteUint32(uint32(obj.F8));
+	w.WriteField("f9"); w.WriteUint32(uint32(obj.F9));
+	w.WriteField("f10"); w.WriteUint32(obj.F10);
 	w.EndObject()
 }
 
-func decodeTen05(r *specodec.SpecReader) *Ten05 {
+func decodeTen05(r specodec.SpecReader) *Ten05 {
 	obj := &Ten05{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadBytes()
-		case "f2": obj.f2 = r.ReadString()
-		case "f3": obj.f3 = r.ReadBool()
-		case "f4": obj.f4 = int8(r.ReadInt32())
-		case "f5": obj.f5 = int16(r.ReadInt32())
-		case "f6": obj.f6 = r.ReadInt32()
-		case "f7": obj.f7 = r.ReadInt64()
-		case "f8": obj.f8 = uint8(r.ReadUint32())
-		case "f9": obj.f9 = uint16(r.ReadUint32())
-		case "f10": obj.f10 = r.ReadUint32()
+		case "f1": obj.F1 = r.ReadBytes()
+		case "f2": obj.F2 = r.ReadString()
+		case "f3": obj.F3 = r.ReadBool()
+		case "f4": obj.F4 = int8(r.ReadInt32())
+		case "f5": obj.F5 = int16(r.ReadInt32())
+		case "f6": obj.F6 = r.ReadInt32()
+		case "f7": obj.F7 = r.ReadInt64()
+		case "f8": obj.F8 = uint8(r.ReadUint32())
+		case "f9": obj.F9 = uint16(r.ReadUint32())
+		case "f10": obj.F10 = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -3665,18 +3665,18 @@ func decodeTen05(r *specodec.SpecReader) *Ten05 {
 	return obj
 }
 
-func writeArrString(w *specodec.SpecWriter, obj *ArrString) {
+func writeArrString(w specodec.SpecWriter, obj *ArrString) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrString(r *specodec.SpecReader) *ArrString {
+func decodeArrString(r specodec.SpecReader) *ArrString {
 	obj := &ArrString{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3684,18 +3684,18 @@ func decodeArrString(r *specodec.SpecReader) *ArrString {
 	return obj
 }
 
-func writeArrInt32(w *specodec.SpecWriter, obj *ArrInt32) {
+func writeArrInt32(w specodec.SpecWriter, obj *ArrInt32) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrInt32(r *specodec.SpecReader) *ArrInt32 {
+func decodeArrInt32(r specodec.SpecReader) *ArrInt32 {
 	obj := &ArrInt32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3703,18 +3703,18 @@ func decodeArrInt32(r *specodec.SpecReader) *ArrInt32 {
 	return obj
 }
 
-func writeArrBoolean(w *specodec.SpecWriter, obj *ArrBoolean) {
+func writeArrBoolean(w specodec.SpecWriter, obj *ArrBoolean) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteBool(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteBool(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrBoolean(r *specodec.SpecReader) *ArrBoolean {
+func decodeArrBoolean(r specodec.SpecReader) *ArrBoolean {
 	obj := &ArrBoolean{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []bool { var _a []bool; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBool()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3722,18 +3722,18 @@ func decodeArrBoolean(r *specodec.SpecReader) *ArrBoolean {
 	return obj
 }
 
-func writeArrFloat64(w *specodec.SpecWriter, obj *ArrFloat64) {
+func writeArrFloat64(w specodec.SpecWriter, obj *ArrFloat64) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteFloat64(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrFloat64(r *specodec.SpecReader) *ArrFloat64 {
+func decodeArrFloat64(r specodec.SpecReader) *ArrFloat64 {
 	obj := &ArrFloat64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []float64 { var _a []float64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadFloat64()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3741,18 +3741,18 @@ func decodeArrFloat64(r *specodec.SpecReader) *ArrFloat64 {
 	return obj
 }
 
-func writeArrBytes(w *specodec.SpecWriter, obj *ArrBytes) {
+func writeArrBytes(w specodec.SpecWriter, obj *ArrBytes) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteBytes(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteBytes(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrBytes(r *specodec.SpecReader) *ArrBytes {
+func decodeArrBytes(r specodec.SpecReader) *ArrBytes {
 	obj := &ArrBytes{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() [][]byte { var _a [][]byte; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBytes()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() [][]byte { var arr [][]byte; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBytes()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3760,18 +3760,18 @@ func decodeArrBytes(r *specodec.SpecReader) *ArrBytes {
 	return obj
 }
 
-func writeArrInt64(w *specodec.SpecWriter, obj *ArrInt64) {
+func writeArrInt64(w specodec.SpecWriter, obj *ArrInt64) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteInt64(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteInt64(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrInt64(r *specodec.SpecReader) *ArrInt64 {
+func decodeArrInt64(r specodec.SpecReader) *ArrInt64 {
 	obj := &ArrInt64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []int64 { var _a []int64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt64()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []int64 { var arr []int64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt64()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3779,18 +3779,18 @@ func decodeArrInt64(r *specodec.SpecReader) *ArrInt64 {
 	return obj
 }
 
-func writeArrUint64(w *specodec.SpecWriter, obj *ArrUint64) {
+func writeArrUint64(w specodec.SpecWriter, obj *ArrUint64) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteUint64(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteUint64(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeArrUint64(r *specodec.SpecReader) *ArrUint64 {
+func decodeArrUint64(r specodec.SpecReader) *ArrUint64 {
 	obj := &ArrUint64{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []uint64 { var _a []uint64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadUint64()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []uint64 { var arr []uint64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadUint64()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3798,20 +3798,20 @@ func decodeArrUint64(r *specodec.SpecReader) *ArrUint64 {
 	return obj
 }
 
-func writeMultiArr1(w *specodec.SpecWriter, obj *MultiArr1) {
+func writeMultiArr1(w specodec.SpecWriter, obj *MultiArr1) {
 	w.BeginObject(2)
-	w.WriteField("names"); func() { w.BeginArray(len(obj.names)); for _, _e := range obj.names { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
-	w.WriteField("scores"); func() { w.BeginArray(len(obj.scores)); for _, _e := range obj.scores { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
+	w.WriteField("names"); func() { w.BeginArray(len(obj.Names)); for _, item := range obj.Names { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
+	w.WriteField("scores"); func() { w.BeginArray(len(obj.Scores)); for _, item := range obj.Scores { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMultiArr1(r *specodec.SpecReader) *MultiArr1 {
+func decodeMultiArr1(r specodec.SpecReader) *MultiArr1 {
 	obj := &MultiArr1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "names": obj.names = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
-		case "scores": obj.scores = func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }()
+		case "names": obj.Names = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "scores": obj.Scores = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3819,22 +3819,22 @@ func decodeMultiArr1(r *specodec.SpecReader) *MultiArr1 {
 	return obj
 }
 
-func writeMultiArr2(w *specodec.SpecWriter, obj *MultiArr2) {
+func writeMultiArr2(w specodec.SpecWriter, obj *MultiArr2) {
 	w.BeginObject(3)
-	w.WriteField("flags"); func() { w.BeginArray(len(obj.flags)); for _, _e := range obj.flags { w.NextElement(); w.WriteBool(_e); }; w.EndArray() }();
-	w.WriteField("values"); func() { w.BeginArray(len(obj.values)); for _, _e := range obj.values { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }();
-	w.WriteField("payload"); func() { w.BeginArray(len(obj.payload)); for _, _e := range obj.payload { w.NextElement(); w.WriteBytes(_e); }; w.EndArray() }();
+	w.WriteField("flags"); func() { w.BeginArray(len(obj.Flags)); for _, item := range obj.Flags { w.NextElement(); w.WriteBool(item); }; w.EndArray() }();
+	w.WriteField("values"); func() { w.BeginArray(len(obj.Values)); for _, item := range obj.Values { w.NextElement(); w.WriteFloat64(item); }; w.EndArray() }();
+	w.WriteField("payload"); func() { w.BeginArray(len(obj.Payload)); for _, item := range obj.Payload { w.NextElement(); w.WriteBytes(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMultiArr2(r *specodec.SpecReader) *MultiArr2 {
+func decodeMultiArr2(r specodec.SpecReader) *MultiArr2 {
 	obj := &MultiArr2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "flags": obj.flags = func() []bool { var _a []bool; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBool()) }; r.EndArray(); return _a }()
-		case "values": obj.values = func() []float64 { var _a []float64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadFloat64()) }; r.EndArray(); return _a }()
-		case "payload": obj.payload = func() [][]byte { var _a [][]byte; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBytes()) }; r.EndArray(); return _a }()
+		case "flags": obj.Flags = func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }()
+		case "values": obj.Values = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
+		case "payload": obj.Payload = func() [][]byte { var arr [][]byte; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBytes()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3842,22 +3842,22 @@ func decodeMultiArr2(r *specodec.SpecReader) *MultiArr2 {
 	return obj
 }
 
-func writeMultiArr3(w *specodec.SpecWriter, obj *MultiArr3) {
+func writeMultiArr3(w specodec.SpecWriter, obj *MultiArr3) {
 	w.BeginObject(3)
-	w.WriteField("a"); func() { w.BeginArray(len(obj.a)); for _, _e := range obj.a { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
-	w.WriteField("b"); func() { w.BeginArray(len(obj.b)); for _, _e := range obj.b { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
-	w.WriteField("c"); func() { w.BeginArray(len(obj.c)); for _, _e := range obj.c { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }();
+	w.WriteField("a"); func() { w.BeginArray(len(obj.A)); for _, item := range obj.A { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
+	w.WriteField("b"); func() { w.BeginArray(len(obj.B)); for _, item := range obj.B { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }();
+	w.WriteField("c"); func() { w.BeginArray(len(obj.C)); for _, item := range obj.C { w.NextElement(); w.WriteFloat64(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMultiArr3(r *specodec.SpecReader) *MultiArr3 {
+func decodeMultiArr3(r specodec.SpecReader) *MultiArr3 {
 	obj := &MultiArr3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
-		case "b": obj.b = func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }()
-		case "c": obj.c = func() []float64 { var _a []float64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadFloat64()) }; r.EndArray(); return _a }()
+		case "a": obj.A = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "b": obj.B = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
+		case "c": obj.C = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3865,20 +3865,20 @@ func decodeMultiArr3(r *specodec.SpecReader) *MultiArr3 {
 	return obj
 }
 
-func writeMultiArr4(w *specodec.SpecWriter, obj *MultiArr4) {
+func writeMultiArr4(w specodec.SpecWriter, obj *MultiArr4) {
 	w.BeginObject(2)
-	w.WriteField("ids"); func() { w.BeginArray(len(obj.ids)); for _, _e := range obj.ids { w.NextElement(); w.WriteInt64(_e); }; w.EndArray() }();
-	w.WriteField("tags"); func() { w.BeginArray(len(obj.tags)); for _, _e := range obj.tags { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
+	w.WriteField("ids"); func() { w.BeginArray(len(obj.Ids)); for _, item := range obj.Ids { w.NextElement(); w.WriteInt64(item); }; w.EndArray() }();
+	w.WriteField("tags"); func() { w.BeginArray(len(obj.Tags)); for _, item := range obj.Tags { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMultiArr4(r *specodec.SpecReader) *MultiArr4 {
+func decodeMultiArr4(r specodec.SpecReader) *MultiArr4 {
 	obj := &MultiArr4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "ids": obj.ids = func() []int64 { var _a []int64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt64()) }; r.EndArray(); return _a }()
-		case "tags": obj.tags = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
+		case "ids": obj.Ids = func() []int64 { var arr []int64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt64()) }; r.EndArray(); return arr }()
+		case "tags": obj.Tags = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3886,22 +3886,22 @@ func decodeMultiArr4(r *specodec.SpecReader) *MultiArr4 {
 	return obj
 }
 
-func writeMultiArr5(w *specodec.SpecWriter, obj *MultiArr5) {
+func writeMultiArr5(w specodec.SpecWriter, obj *MultiArr5) {
 	w.BeginObject(3)
-	w.WriteField("xs"); func() { w.BeginArray(len(obj.xs)); for _, _e := range obj.xs { w.NextElement(); w.WriteUint64(_e); }; w.EndArray() }();
-	w.WriteField("ys"); func() { w.BeginArray(len(obj.ys)); for _, _e := range obj.ys { w.NextElement(); w.WriteFloat32(_e); }; w.EndArray() }();
-	w.WriteField("zs"); func() { w.BeginArray(len(obj.zs)); for _, _e := range obj.zs { w.NextElement(); w.WriteBool(_e); }; w.EndArray() }();
+	w.WriteField("xs"); func() { w.BeginArray(len(obj.Xs)); for _, item := range obj.Xs { w.NextElement(); w.WriteUint64(item); }; w.EndArray() }();
+	w.WriteField("ys"); func() { w.BeginArray(len(obj.Ys)); for _, item := range obj.Ys { w.NextElement(); w.WriteFloat32(item); }; w.EndArray() }();
+	w.WriteField("zs"); func() { w.BeginArray(len(obj.Zs)); for _, item := range obj.Zs { w.NextElement(); w.WriteBool(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMultiArr5(r *specodec.SpecReader) *MultiArr5 {
+func decodeMultiArr5(r specodec.SpecReader) *MultiArr5 {
 	obj := &MultiArr5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "xs": obj.xs = func() []uint64 { var _a []uint64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadUint64()) }; r.EndArray(); return _a }()
-		case "ys": obj.ys = func() []float32 { var _a []float32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadFloat32()) }; r.EndArray(); return _a }()
-		case "zs": obj.zs = func() []bool { var _a []bool; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBool()) }; r.EndArray(); return _a }()
+		case "xs": obj.Xs = func() []uint64 { var arr []uint64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadUint64()) }; r.EndArray(); return arr }()
+		case "ys": obj.Ys = func() []float32 { var arr []float32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat32()) }; r.EndArray(); return arr }()
+		case "zs": obj.Zs = func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -3909,22 +3909,22 @@ func decodeMultiArr5(r *specodec.SpecReader) *MultiArr5 {
 	return obj
 }
 
-func writeOptCombo1(w *specodec.SpecWriter, obj *OptCombo1) {
-	_n := 1
-	if obj.opt_a != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteString(obj.req);
-	if obj.opt_a != nil { w.WriteField("opt_a"); w.WriteInt32(*obj.opt_a); }
+func writeOptCombo1(w specodec.SpecWriter, obj *OptCombo1) {
+	fieldCount := 1
+	if obj.OptA != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteString(obj.Req);
+	if obj.OptA != nil { w.WriteField("opt_a"); w.WriteInt32(*obj.OptA); }
 	w.EndObject()
 }
 
-func decodeOptCombo1(r *specodec.SpecReader) *OptCombo1 {
+func decodeOptCombo1(r specodec.SpecReader) *OptCombo1 {
 	obj := &OptCombo1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadString()
-		case "opt_a": _v := r.ReadInt32(); obj.opt_a = &_v
+		case "req": obj.Req = r.ReadString()
+		case "opt_a": val := r.ReadInt32(); obj.OptA = &val
 		default: r.Skip()
 		}
 	}
@@ -3932,25 +3932,25 @@ func decodeOptCombo1(r *specodec.SpecReader) *OptCombo1 {
 	return obj
 }
 
-func writeOptCombo2(w *specodec.SpecWriter, obj *OptCombo2) {
-	_n := 1
-	if obj.opt_a != nil { _n++ }
-	if obj.opt_b != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteString(obj.req);
-	if obj.opt_a != nil { w.WriteField("opt_a"); w.WriteInt32(*obj.opt_a); }
-	if obj.opt_b != nil { w.WriteField("opt_b"); w.WriteBool(*obj.opt_b); }
+func writeOptCombo2(w specodec.SpecWriter, obj *OptCombo2) {
+	fieldCount := 1
+	if obj.OptA != nil { fieldCount++ }
+	if obj.OptB != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteString(obj.Req);
+	if obj.OptA != nil { w.WriteField("opt_a"); w.WriteInt32(*obj.OptA); }
+	if obj.OptB != nil { w.WriteField("opt_b"); w.WriteBool(*obj.OptB); }
 	w.EndObject()
 }
 
-func decodeOptCombo2(r *specodec.SpecReader) *OptCombo2 {
+func decodeOptCombo2(r specodec.SpecReader) *OptCombo2 {
 	obj := &OptCombo2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadString()
-		case "opt_a": _v := r.ReadInt32(); obj.opt_a = &_v
-		case "opt_b": _v := r.ReadBool(); obj.opt_b = &_v
+		case "req": obj.Req = r.ReadString()
+		case "opt_a": val := r.ReadInt32(); obj.OptA = &val
+		case "opt_b": val := r.ReadBool(); obj.OptB = &val
 		default: r.Skip()
 		}
 	}
@@ -3958,28 +3958,28 @@ func decodeOptCombo2(r *specodec.SpecReader) *OptCombo2 {
 	return obj
 }
 
-func writeOptCombo3(w *specodec.SpecWriter, obj *OptCombo3) {
-	_n := 1
-	if obj.opt_a != nil { _n++ }
-	if obj.opt_b != nil { _n++ }
-	if obj.opt_c != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteString(obj.req);
-	if obj.opt_a != nil { w.WriteField("opt_a"); w.WriteInt32(*obj.opt_a); }
-	if obj.opt_b != nil { w.WriteField("opt_b"); w.WriteBool(*obj.opt_b); }
-	if obj.opt_c != nil { w.WriteField("opt_c"); w.WriteFloat64(*obj.opt_c); }
+func writeOptCombo3(w specodec.SpecWriter, obj *OptCombo3) {
+	fieldCount := 1
+	if obj.OptA != nil { fieldCount++ }
+	if obj.OptB != nil { fieldCount++ }
+	if obj.OptC != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteString(obj.Req);
+	if obj.OptA != nil { w.WriteField("opt_a"); w.WriteInt32(*obj.OptA); }
+	if obj.OptB != nil { w.WriteField("opt_b"); w.WriteBool(*obj.OptB); }
+	if obj.OptC != nil { w.WriteField("opt_c"); w.WriteFloat64(*obj.OptC); }
 	w.EndObject()
 }
 
-func decodeOptCombo3(r *specodec.SpecReader) *OptCombo3 {
+func decodeOptCombo3(r specodec.SpecReader) *OptCombo3 {
 	obj := &OptCombo3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadString()
-		case "opt_a": _v := r.ReadInt32(); obj.opt_a = &_v
-		case "opt_b": _v := r.ReadBool(); obj.opt_b = &_v
-		case "opt_c": _v := r.ReadFloat64(); obj.opt_c = &_v
+		case "req": obj.Req = r.ReadString()
+		case "opt_a": val := r.ReadInt32(); obj.OptA = &val
+		case "opt_b": val := r.ReadBool(); obj.OptB = &val
+		case "opt_c": val := r.ReadFloat64(); obj.OptC = &val
 		default: r.Skip()
 		}
 	}
@@ -3987,25 +3987,25 @@ func decodeOptCombo3(r *specodec.SpecReader) *OptCombo3 {
 	return obj
 }
 
-func writeOptCombo4(w *specodec.SpecWriter, obj *OptCombo4) {
-	_n := 1
-	if obj.opt_a != nil { _n++ }
-	if obj.opt_b != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteInt32(obj.req);
-	if obj.opt_a != nil { w.WriteField("opt_a"); w.WriteString(*obj.opt_a); }
-	if obj.opt_b != nil { w.WriteField("opt_b"); w.WriteBytes(*obj.opt_b); }
+func writeOptCombo4(w specodec.SpecWriter, obj *OptCombo4) {
+	fieldCount := 1
+	if obj.OptA != nil { fieldCount++ }
+	if obj.OptB != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteInt32(obj.Req);
+	if obj.OptA != nil { w.WriteField("opt_a"); w.WriteString(*obj.OptA); }
+	if obj.OptB != nil { w.WriteField("opt_b"); w.WriteBytes(*obj.OptB); }
 	w.EndObject()
 }
 
-func decodeOptCombo4(r *specodec.SpecReader) *OptCombo4 {
+func decodeOptCombo4(r specodec.SpecReader) *OptCombo4 {
 	obj := &OptCombo4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadInt32()
-		case "opt_a": _v := r.ReadString(); obj.opt_a = &_v
-		case "opt_b": _v := r.ReadBytes(); obj.opt_b = &_v
+		case "req": obj.Req = r.ReadInt32()
+		case "opt_a": val := r.ReadString(); obj.OptA = &val
+		case "opt_b": val := r.ReadBytes(); obj.OptB = &val
 		default: r.Skip()
 		}
 	}
@@ -4013,27 +4013,27 @@ func decodeOptCombo4(r *specodec.SpecReader) *OptCombo4 {
 	return obj
 }
 
-func writeOptCombo5(w *specodec.SpecWriter, obj *OptCombo5) {
-	_n := 2
-	if obj.opt_a != nil { _n++ }
-	if obj.opt_b != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req1"); w.WriteString(obj.req1);
-	w.WriteField("req2"); w.WriteInt32(obj.req2);
-	if obj.opt_a != nil { w.WriteField("opt_a"); w.WriteBool(*obj.opt_a); }
-	if obj.opt_b != nil { w.WriteField("opt_b"); w.WriteFloat64(*obj.opt_b); }
+func writeOptCombo5(w specodec.SpecWriter, obj *OptCombo5) {
+	fieldCount := 2
+	if obj.OptA != nil { fieldCount++ }
+	if obj.OptB != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req1"); w.WriteString(obj.Req1);
+	w.WriteField("req2"); w.WriteInt32(obj.Req2);
+	if obj.OptA != nil { w.WriteField("opt_a"); w.WriteBool(*obj.OptA); }
+	if obj.OptB != nil { w.WriteField("opt_b"); w.WriteFloat64(*obj.OptB); }
 	w.EndObject()
 }
 
-func decodeOptCombo5(r *specodec.SpecReader) *OptCombo5 {
+func decodeOptCombo5(r specodec.SpecReader) *OptCombo5 {
 	obj := &OptCombo5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req1": obj.req1 = r.ReadString()
-		case "req2": obj.req2 = r.ReadInt32()
-		case "opt_a": _v := r.ReadBool(); obj.opt_a = &_v
-		case "opt_b": _v := r.ReadFloat64(); obj.opt_b = &_v
+		case "req1": obj.Req1 = r.ReadString()
+		case "req2": obj.Req2 = r.ReadInt32()
+		case "opt_a": val := r.ReadBool(); obj.OptA = &val
+		case "opt_b": val := r.ReadFloat64(); obj.OptB = &val
 		default: r.Skip()
 		}
 	}
@@ -4041,31 +4041,31 @@ func decodeOptCombo5(r *specodec.SpecReader) *OptCombo5 {
 	return obj
 }
 
-func writeOptCombo6(w *specodec.SpecWriter, obj *OptCombo6) {
-	_n := 1
-	if obj.opt_s != nil { _n++ }
-	if obj.opt_i != nil { _n++ }
-	if obj.opt_f != nil { _n++ }
-	if obj.opt_b != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteString(obj.req);
-	if obj.opt_s != nil { w.WriteField("opt_s"); w.WriteString(*obj.opt_s); }
-	if obj.opt_i != nil { w.WriteField("opt_i"); w.WriteInt32(*obj.opt_i); }
-	if obj.opt_f != nil { w.WriteField("opt_f"); w.WriteFloat64(*obj.opt_f); }
-	if obj.opt_b != nil { w.WriteField("opt_b"); w.WriteBytes(*obj.opt_b); }
+func writeOptCombo6(w specodec.SpecWriter, obj *OptCombo6) {
+	fieldCount := 1
+	if obj.OptS != nil { fieldCount++ }
+	if obj.OptI != nil { fieldCount++ }
+	if obj.OptF != nil { fieldCount++ }
+	if obj.OptB != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteString(obj.Req);
+	if obj.OptS != nil { w.WriteField("opt_s"); w.WriteString(*obj.OptS); }
+	if obj.OptI != nil { w.WriteField("opt_i"); w.WriteInt32(*obj.OptI); }
+	if obj.OptF != nil { w.WriteField("opt_f"); w.WriteFloat64(*obj.OptF); }
+	if obj.OptB != nil { w.WriteField("opt_b"); w.WriteBytes(*obj.OptB); }
 	w.EndObject()
 }
 
-func decodeOptCombo6(r *specodec.SpecReader) *OptCombo6 {
+func decodeOptCombo6(r specodec.SpecReader) *OptCombo6 {
 	obj := &OptCombo6{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadString()
-		case "opt_s": _v := r.ReadString(); obj.opt_s = &_v
-		case "opt_i": _v := r.ReadInt32(); obj.opt_i = &_v
-		case "opt_f": _v := r.ReadFloat64(); obj.opt_f = &_v
-		case "opt_b": _v := r.ReadBytes(); obj.opt_b = &_v
+		case "req": obj.Req = r.ReadString()
+		case "opt_s": val := r.ReadString(); obj.OptS = &val
+		case "opt_i": val := r.ReadInt32(); obj.OptI = &val
+		case "opt_f": val := r.ReadFloat64(); obj.OptF = &val
+		case "opt_b": val := r.ReadBytes(); obj.OptB = &val
 		default: r.Skip()
 		}
 	}
@@ -4073,25 +4073,25 @@ func decodeOptCombo6(r *specodec.SpecReader) *OptCombo6 {
 	return obj
 }
 
-func writeOptCombo7(w *specodec.SpecWriter, obj *OptCombo7) {
-	_n := 1
-	if obj.opt_u64 != nil { _n++ }
-	if obj.opt_str != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteInt64(obj.req);
-	if obj.opt_u64 != nil { w.WriteField("opt_u64"); w.WriteUint64(*obj.opt_u64); }
-	if obj.opt_str != nil { w.WriteField("opt_str"); w.WriteString(*obj.opt_str); }
+func writeOptCombo7(w specodec.SpecWriter, obj *OptCombo7) {
+	fieldCount := 1
+	if obj.OptU64 != nil { fieldCount++ }
+	if obj.OptStr != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteInt64(obj.Req);
+	if obj.OptU64 != nil { w.WriteField("opt_u64"); w.WriteUint64(*obj.OptU64); }
+	if obj.OptStr != nil { w.WriteField("opt_str"); w.WriteString(*obj.OptStr); }
 	w.EndObject()
 }
 
-func decodeOptCombo7(r *specodec.SpecReader) *OptCombo7 {
+func decodeOptCombo7(r specodec.SpecReader) *OptCombo7 {
 	obj := &OptCombo7{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadInt64()
-		case "opt_u64": _v := r.ReadUint64(); obj.opt_u64 = &_v
-		case "opt_str": _v := r.ReadString(); obj.opt_str = &_v
+		case "req": obj.Req = r.ReadInt64()
+		case "opt_u64": val := r.ReadUint64(); obj.OptU64 = &val
+		case "opt_str": val := r.ReadString(); obj.OptStr = &val
 		default: r.Skip()
 		}
 	}
@@ -4099,34 +4099,34 @@ func decodeOptCombo7(r *specodec.SpecReader) *OptCombo7 {
 	return obj
 }
 
-func writeOptCombo8(w *specodec.SpecWriter, obj *OptCombo8) {
-	_n := 1
-	if obj.b != nil { _n++ }
-	if obj.c != nil { _n++ }
-	if obj.d != nil { _n++ }
-	if obj.e != nil { _n++ }
-	if obj.f != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("a"); w.WriteString(obj.a);
-	if obj.b != nil { w.WriteField("b"); w.WriteInt32(*obj.b); }
-	if obj.c != nil { w.WriteField("c"); w.WriteFloat64(*obj.c); }
-	if obj.d != nil { w.WriteField("d"); w.WriteBool(*obj.d); }
-	if obj.e != nil { w.WriteField("e"); w.WriteBytes(*obj.e); }
-	if obj.f != nil { w.WriteField("f"); w.WriteInt64(*obj.f); }
+func writeOptCombo8(w specodec.SpecWriter, obj *OptCombo8) {
+	fieldCount := 1
+	if obj.B != nil { fieldCount++ }
+	if obj.C != nil { fieldCount++ }
+	if obj.D != nil { fieldCount++ }
+	if obj.E != nil { fieldCount++ }
+	if obj.F != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("a"); w.WriteString(obj.A);
+	if obj.B != nil { w.WriteField("b"); w.WriteInt32(*obj.B); }
+	if obj.C != nil { w.WriteField("c"); w.WriteFloat64(*obj.C); }
+	if obj.D != nil { w.WriteField("d"); w.WriteBool(*obj.D); }
+	if obj.E != nil { w.WriteField("e"); w.WriteBytes(*obj.E); }
+	if obj.F != nil { w.WriteField("f"); w.WriteInt64(*obj.F); }
 	w.EndObject()
 }
 
-func decodeOptCombo8(r *specodec.SpecReader) *OptCombo8 {
+func decodeOptCombo8(r specodec.SpecReader) *OptCombo8 {
 	obj := &OptCombo8{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadString()
-		case "b": _v := r.ReadInt32(); obj.b = &_v
-		case "c": _v := r.ReadFloat64(); obj.c = &_v
-		case "d": _v := r.ReadBool(); obj.d = &_v
-		case "e": _v := r.ReadBytes(); obj.e = &_v
-		case "f": _v := r.ReadInt64(); obj.f = &_v
+		case "a": obj.A = r.ReadString()
+		case "b": val := r.ReadInt32(); obj.B = &val
+		case "c": val := r.ReadFloat64(); obj.C = &val
+		case "d": val := r.ReadBool(); obj.D = &val
+		case "e": val := r.ReadBytes(); obj.E = &val
+		case "f": val := r.ReadInt64(); obj.F = &val
 		default: r.Skip()
 		}
 	}
@@ -4134,28 +4134,28 @@ func decodeOptCombo8(r *specodec.SpecReader) *OptCombo8 {
 	return obj
 }
 
-func writeOptCombo9(w *specodec.SpecWriter, obj *OptCombo9) {
-	_n := 1
-	if obj.name != nil { _n++ }
-	if obj.age != nil { _n++ }
-	if obj.score != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("id"); w.WriteString(obj.id);
-	if obj.name != nil { w.WriteField("name"); w.WriteString(*obj.name); }
-	if obj.age != nil { w.WriteField("age"); w.WriteInt32(*obj.age); }
-	if obj.score != nil { w.WriteField("score"); w.WriteFloat64(*obj.score); }
+func writeOptCombo9(w specodec.SpecWriter, obj *OptCombo9) {
+	fieldCount := 1
+	if obj.Name != nil { fieldCount++ }
+	if obj.Age != nil { fieldCount++ }
+	if obj.Score != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("id"); w.WriteString(obj.Id);
+	if obj.Name != nil { w.WriteField("name"); w.WriteString(*obj.Name); }
+	if obj.Age != nil { w.WriteField("age"); w.WriteInt32(*obj.Age); }
+	if obj.Score != nil { w.WriteField("score"); w.WriteFloat64(*obj.Score); }
 	w.EndObject()
 }
 
-func decodeOptCombo9(r *specodec.SpecReader) *OptCombo9 {
+func decodeOptCombo9(r specodec.SpecReader) *OptCombo9 {
 	obj := &OptCombo9{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "id": obj.id = r.ReadString()
-		case "name": _v := r.ReadString(); obj.name = &_v
-		case "age": _v := r.ReadInt32(); obj.age = &_v
-		case "score": _v := r.ReadFloat64(); obj.score = &_v
+		case "id": obj.Id = r.ReadString()
+		case "name": val := r.ReadString(); obj.Name = &val
+		case "age": val := r.ReadInt32(); obj.Age = &val
+		case "score": val := r.ReadFloat64(); obj.Score = &val
 		default: r.Skip()
 		}
 	}
@@ -4163,28 +4163,28 @@ func decodeOptCombo9(r *specodec.SpecReader) *OptCombo9 {
 	return obj
 }
 
-func writeOptCombo10(w *specodec.SpecWriter, obj *OptCombo10) {
-	_n := 1
-	if obj.msg != nil { _n++ }
-	if obj.detail != nil { _n++ }
-	if obj.retry != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("code"); w.WriteInt32(obj.code);
-	if obj.msg != nil { w.WriteField("msg"); w.WriteString(*obj.msg); }
-	if obj.detail != nil { w.WriteField("detail"); w.WriteString(*obj.detail); }
-	if obj.retry != nil { w.WriteField("retry"); w.WriteBool(*obj.retry); }
+func writeOptCombo10(w specodec.SpecWriter, obj *OptCombo10) {
+	fieldCount := 1
+	if obj.Msg != nil { fieldCount++ }
+	if obj.Detail != nil { fieldCount++ }
+	if obj.Retry != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("code"); w.WriteInt32(obj.Code);
+	if obj.Msg != nil { w.WriteField("msg"); w.WriteString(*obj.Msg); }
+	if obj.Detail != nil { w.WriteField("detail"); w.WriteString(*obj.Detail); }
+	if obj.Retry != nil { w.WriteField("retry"); w.WriteBool(*obj.Retry); }
 	w.EndObject()
 }
 
-func decodeOptCombo10(r *specodec.SpecReader) *OptCombo10 {
+func decodeOptCombo10(r specodec.SpecReader) *OptCombo10 {
 	obj := &OptCombo10{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "code": obj.code = r.ReadInt32()
-		case "msg": _v := r.ReadString(); obj.msg = &_v
-		case "detail": _v := r.ReadString(); obj.detail = &_v
-		case "retry": _v := r.ReadBool(); obj.retry = &_v
+		case "code": obj.Code = r.ReadInt32()
+		case "msg": val := r.ReadString(); obj.Msg = &val
+		case "detail": val := r.ReadString(); obj.Detail = &val
+		case "retry": val := r.ReadBool(); obj.Retry = &val
 		default: r.Skip()
 		}
 	}
@@ -4192,18 +4192,18 @@ func decodeOptCombo10(r *specodec.SpecReader) *OptCombo10 {
 	return obj
 }
 
-func writeNestInner(w *specodec.SpecWriter, obj *NestInner) {
+func writeNestInner(w specodec.SpecWriter, obj *NestInner) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeInner(w, obj.nested);
+	w.WriteField("nested"); writeInner(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestInner(r *specodec.SpecReader) *NestInner {
+func decodeNestInner(r specodec.SpecReader) *NestInner {
 	obj := &NestInner{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeInner(r)
+		case "nested": obj.Nested = decodeInner(r)
 		default: r.Skip()
 		}
 	}
@@ -4211,18 +4211,18 @@ func decodeNestInner(r *specodec.SpecReader) *NestInner {
 	return obj
 }
 
-func writeNestCoord(w *specodec.SpecWriter, obj *NestCoord) {
+func writeNestCoord(w specodec.SpecWriter, obj *NestCoord) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeCoord(w, obj.nested);
+	w.WriteField("nested"); writeCoord(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestCoord(r *specodec.SpecReader) *NestCoord {
+func decodeNestCoord(r specodec.SpecReader) *NestCoord {
 	obj := &NestCoord{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeCoord(r)
+		case "nested": obj.Nested = decodeCoord(r)
 		default: r.Skip()
 		}
 	}
@@ -4230,18 +4230,18 @@ func decodeNestCoord(r *specodec.SpecReader) *NestCoord {
 	return obj
 }
 
-func writeNestIdVal(w *specodec.SpecWriter, obj *NestIdVal) {
+func writeNestIdVal(w specodec.SpecWriter, obj *NestIdVal) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeIdVal(w, obj.nested);
+	w.WriteField("nested"); writeIdVal(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestIdVal(r *specodec.SpecReader) *NestIdVal {
+func decodeNestIdVal(r specodec.SpecReader) *NestIdVal {
 	obj := &NestIdVal{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeIdVal(r)
+		case "nested": obj.Nested = decodeIdVal(r)
 		default: r.Skip()
 		}
 	}
@@ -4249,18 +4249,18 @@ func decodeNestIdVal(r *specodec.SpecReader) *NestIdVal {
 	return obj
 }
 
-func writeNestLabel(w *specodec.SpecWriter, obj *NestLabel) {
+func writeNestLabel(w specodec.SpecWriter, obj *NestLabel) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeLabel(w, obj.nested);
+	w.WriteField("nested"); writeLabel(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestLabel(r *specodec.SpecReader) *NestLabel {
+func decodeNestLabel(r specodec.SpecReader) *NestLabel {
 	obj := &NestLabel{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeLabel(r)
+		case "nested": obj.Nested = decodeLabel(r)
 		default: r.Skip()
 		}
 	}
@@ -4268,18 +4268,18 @@ func decodeNestLabel(r *specodec.SpecReader) *NestLabel {
 	return obj
 }
 
-func writeNestMoney(w *specodec.SpecWriter, obj *NestMoney) {
+func writeNestMoney(w specodec.SpecWriter, obj *NestMoney) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeMoney(w, obj.nested);
+	w.WriteField("nested"); writeMoney(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestMoney(r *specodec.SpecReader) *NestMoney {
+func decodeNestMoney(r specodec.SpecReader) *NestMoney {
 	obj := &NestMoney{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeMoney(r)
+		case "nested": obj.Nested = decodeMoney(r)
 		default: r.Skip()
 		}
 	}
@@ -4287,18 +4287,18 @@ func decodeNestMoney(r *specodec.SpecReader) *NestMoney {
 	return obj
 }
 
-func writeNestRange32(w *specodec.SpecWriter, obj *NestRange32) {
+func writeNestRange32(w specodec.SpecWriter, obj *NestRange32) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeRange32(w, obj.nested);
+	w.WriteField("nested"); writeRange32(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestRange32(r *specodec.SpecReader) *NestRange32 {
+func decodeNestRange32(r specodec.SpecReader) *NestRange32 {
 	obj := &NestRange32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeRange32(r)
+		case "nested": obj.Nested = decodeRange32(r)
 		default: r.Skip()
 		}
 	}
@@ -4306,18 +4306,18 @@ func decodeNestRange32(r *specodec.SpecReader) *NestRange32 {
 	return obj
 }
 
-func writeNestAddr(w *specodec.SpecWriter, obj *NestAddr) {
+func writeNestAddr(w specodec.SpecWriter, obj *NestAddr) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writeAddr(w, obj.nested);
+	w.WriteField("nested"); writeAddr(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestAddr(r *specodec.SpecReader) *NestAddr {
+func decodeNestAddr(r specodec.SpecReader) *NestAddr {
 	obj := &NestAddr{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodeAddr(r)
+		case "nested": obj.Nested = decodeAddr(r)
 		default: r.Skip()
 		}
 	}
@@ -4325,18 +4325,18 @@ func decodeNestAddr(r *specodec.SpecReader) *NestAddr {
 	return obj
 }
 
-func writeNestPoint3(w *specodec.SpecWriter, obj *NestPoint3) {
+func writeNestPoint3(w specodec.SpecWriter, obj *NestPoint3) {
 	w.BeginObject(1)
-	w.WriteField("nested"); writePoint3(w, obj.nested);
+	w.WriteField("nested"); writePoint3(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestPoint3(r *specodec.SpecReader) *NestPoint3 {
+func decodeNestPoint3(r specodec.SpecReader) *NestPoint3 {
 	obj := &NestPoint3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "nested": obj.nested = decodePoint3(r)
+		case "nested": obj.Nested = decodePoint3(r)
 		default: r.Skip()
 		}
 	}
@@ -4344,22 +4344,22 @@ func decodeNestPoint3(r *specodec.SpecReader) *NestPoint3 {
 	return obj
 }
 
-func writeOptNestInner(w *specodec.SpecWriter, obj *OptNestInner) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeInner(w, obj.nested); }
+func writeOptNestInner(w specodec.SpecWriter, obj *OptNestInner) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeInner(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestInner(r *specodec.SpecReader) *OptNestInner {
+func decodeOptNestInner(r specodec.SpecReader) *OptNestInner {
 	obj := &OptNestInner{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4367,22 +4367,22 @@ func decodeOptNestInner(r *specodec.SpecReader) *OptNestInner {
 	return obj
 }
 
-func writeOptNestCoord(w *specodec.SpecWriter, obj *OptNestCoord) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeCoord(w, obj.nested); }
+func writeOptNestCoord(w specodec.SpecWriter, obj *OptNestCoord) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeCoord(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestCoord(r *specodec.SpecReader) *OptNestCoord {
+func decodeOptNestCoord(r specodec.SpecReader) *OptNestCoord {
 	obj := &OptNestCoord{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Coord { if r.IsNull() { r.ReadNull(); return nil }; return decodeCoord(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Coord { if r.IsNull() { r.ReadNull(); return nil }; return decodeCoord(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4390,22 +4390,22 @@ func decodeOptNestCoord(r *specodec.SpecReader) *OptNestCoord {
 	return obj
 }
 
-func writeOptNestIdVal(w *specodec.SpecWriter, obj *OptNestIdVal) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeIdVal(w, obj.nested); }
+func writeOptNestIdVal(w specodec.SpecWriter, obj *OptNestIdVal) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeIdVal(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestIdVal(r *specodec.SpecReader) *OptNestIdVal {
+func decodeOptNestIdVal(r specodec.SpecReader) *OptNestIdVal {
 	obj := &OptNestIdVal{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4413,22 +4413,22 @@ func decodeOptNestIdVal(r *specodec.SpecReader) *OptNestIdVal {
 	return obj
 }
 
-func writeOptNestLabel(w *specodec.SpecWriter, obj *OptNestLabel) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeLabel(w, obj.nested); }
+func writeOptNestLabel(w specodec.SpecWriter, obj *OptNestLabel) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeLabel(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestLabel(r *specodec.SpecReader) *OptNestLabel {
+func decodeOptNestLabel(r specodec.SpecReader) *OptNestLabel {
 	obj := &OptNestLabel{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Label { if r.IsNull() { r.ReadNull(); return nil }; return decodeLabel(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Label { if r.IsNull() { r.ReadNull(); return nil }; return decodeLabel(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4436,22 +4436,22 @@ func decodeOptNestLabel(r *specodec.SpecReader) *OptNestLabel {
 	return obj
 }
 
-func writeOptNestMoney(w *specodec.SpecWriter, obj *OptNestMoney) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeMoney(w, obj.nested); }
+func writeOptNestMoney(w specodec.SpecWriter, obj *OptNestMoney) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeMoney(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestMoney(r *specodec.SpecReader) *OptNestMoney {
+func decodeOptNestMoney(r specodec.SpecReader) *OptNestMoney {
 	obj := &OptNestMoney{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Money { if r.IsNull() { r.ReadNull(); return nil }; return decodeMoney(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Money { if r.IsNull() { r.ReadNull(); return nil }; return decodeMoney(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4459,22 +4459,22 @@ func decodeOptNestMoney(r *specodec.SpecReader) *OptNestMoney {
 	return obj
 }
 
-func writeOptNestRange32(w *specodec.SpecWriter, obj *OptNestRange32) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeRange32(w, obj.nested); }
+func writeOptNestRange32(w specodec.SpecWriter, obj *OptNestRange32) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeRange32(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestRange32(r *specodec.SpecReader) *OptNestRange32 {
+func decodeOptNestRange32(r specodec.SpecReader) *OptNestRange32 {
 	obj := &OptNestRange32{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Range32 { if r.IsNull() { r.ReadNull(); return nil }; return decodeRange32(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Range32 { if r.IsNull() { r.ReadNull(); return nil }; return decodeRange32(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4482,22 +4482,22 @@ func decodeOptNestRange32(r *specodec.SpecReader) *OptNestRange32 {
 	return obj
 }
 
-func writeOptNestAddr(w *specodec.SpecWriter, obj *OptNestAddr) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writeAddr(w, obj.nested); }
+func writeOptNestAddr(w specodec.SpecWriter, obj *OptNestAddr) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writeAddr(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestAddr(r *specodec.SpecReader) *OptNestAddr {
+func decodeOptNestAddr(r specodec.SpecReader) *OptNestAddr {
 	obj := &OptNestAddr{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4505,22 +4505,22 @@ func decodeOptNestAddr(r *specodec.SpecReader) *OptNestAddr {
 	return obj
 }
 
-func writeOptNestPoint3(w *specodec.SpecWriter, obj *OptNestPoint3) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.nested != nil { w.WriteField("nested"); writePoint3(w, obj.nested); }
+func writeOptNestPoint3(w specodec.SpecWriter, obj *OptNestPoint3) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Nested != nil { w.WriteField("nested"); writePoint3(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeOptNestPoint3(r *specodec.SpecReader) *OptNestPoint3 {
+func decodeOptNestPoint3(r specodec.SpecReader) *OptNestPoint3 {
 	obj := &OptNestPoint3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = func() *Point3 { if r.IsNull() { r.ReadNull(); return nil }; return decodePoint3(r) }()
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = func() *Point3 { if r.IsNull() { r.ReadNull(); return nil }; return decodePoint3(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4528,18 +4528,18 @@ func decodeOptNestPoint3(r *specodec.SpecReader) *OptNestPoint3 {
 	return obj
 }
 
-func writeModelArr1(w *specodec.SpecWriter, obj *ModelArr1) {
+func writeModelArr1(w specodec.SpecWriter, obj *ModelArr1) {
 	w.BeginObject(1)
-	w.WriteField("points"); func() { w.BeginArray(len(obj.points)); for _, _e := range obj.points { w.NextElement(); writeInner(w, _e); }; w.EndArray() }();
+	w.WriteField("points"); func() { w.BeginArray(len(obj.Points)); for _, item := range obj.Points { w.NextElement(); writeInner(w, item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeModelArr1(r *specodec.SpecReader) *ModelArr1 {
+func decodeModelArr1(r specodec.SpecReader) *ModelArr1 {
 	obj := &ModelArr1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "points": obj.points = func() []*Inner { var _a []*Inner; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeInner(r)) }; r.EndArray(); return _a }()
+		case "points": obj.Points = func() []*Inner { var arr []*Inner; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeInner(r)) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -4547,18 +4547,18 @@ func decodeModelArr1(r *specodec.SpecReader) *ModelArr1 {
 	return obj
 }
 
-func writeModelArr2(w *specodec.SpecWriter, obj *ModelArr2) {
+func writeModelArr2(w specodec.SpecWriter, obj *ModelArr2) {
 	w.BeginObject(1)
-	w.WriteField("coords"); func() { w.BeginArray(len(obj.coords)); for _, _e := range obj.coords { w.NextElement(); writeCoord(w, _e); }; w.EndArray() }();
+	w.WriteField("coords"); func() { w.BeginArray(len(obj.Coords)); for _, item := range obj.Coords { w.NextElement(); writeCoord(w, item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeModelArr2(r *specodec.SpecReader) *ModelArr2 {
+func decodeModelArr2(r specodec.SpecReader) *ModelArr2 {
 	obj := &ModelArr2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "coords": obj.coords = func() []*Coord { var _a []*Coord; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeCoord(r)) }; r.EndArray(); return _a }()
+		case "coords": obj.Coords = func() []*Coord { var arr []*Coord; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeCoord(r)) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -4566,20 +4566,20 @@ func decodeModelArr2(r *specodec.SpecReader) *ModelArr2 {
 	return obj
 }
 
-func writeModelArr3(w *specodec.SpecWriter, obj *ModelArr3) {
+func writeModelArr3(w specodec.SpecWriter, obj *ModelArr3) {
 	w.BeginObject(2)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); writeIdVal(w, _e); }; w.EndArray() }();
-	w.WriteField("tag"); w.WriteString(obj.tag);
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); writeIdVal(w, item); }; w.EndArray() }();
+	w.WriteField("tag"); w.WriteString(obj.Tag);
 	w.EndObject()
 }
 
-func decodeModelArr3(r *specodec.SpecReader) *ModelArr3 {
+func decodeModelArr3(r specodec.SpecReader) *ModelArr3 {
 	obj := &ModelArr3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []*IdVal { var _a []*IdVal; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeIdVal(r)) }; r.EndArray(); return _a }()
-		case "tag": obj.tag = r.ReadString()
+		case "items": obj.Items = func() []*IdVal { var arr []*IdVal; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeIdVal(r)) }; r.EndArray(); return arr }()
+		case "tag": obj.Tag = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -4587,20 +4587,20 @@ func decodeModelArr3(r *specodec.SpecReader) *ModelArr3 {
 	return obj
 }
 
-func writeModelArr4(w *specodec.SpecWriter, obj *ModelArr4) {
+func writeModelArr4(w specodec.SpecWriter, obj *ModelArr4) {
 	w.BeginObject(2)
-	w.WriteField("labels"); func() { w.BeginArray(len(obj.labels)); for _, _e := range obj.labels { w.NextElement(); writeLabel(w, _e); }; w.EndArray() }();
-	w.WriteField("count"); w.WriteInt32(obj.count);
+	w.WriteField("labels"); func() { w.BeginArray(len(obj.Labels)); for _, item := range obj.Labels { w.NextElement(); writeLabel(w, item); }; w.EndArray() }();
+	w.WriteField("count"); w.WriteInt32(obj.Count);
 	w.EndObject()
 }
 
-func decodeModelArr4(r *specodec.SpecReader) *ModelArr4 {
+func decodeModelArr4(r specodec.SpecReader) *ModelArr4 {
 	obj := &ModelArr4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "labels": obj.labels = func() []*Label { var _a []*Label; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeLabel(r)) }; r.EndArray(); return _a }()
-		case "count": obj.count = r.ReadInt32()
+		case "labels": obj.Labels = func() []*Label { var arr []*Label; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeLabel(r)) }; r.EndArray(); return arr }()
+		case "count": obj.Count = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -4608,20 +4608,20 @@ func decodeModelArr4(r *specodec.SpecReader) *ModelArr4 {
 	return obj
 }
 
-func writeModelArr5(w *specodec.SpecWriter, obj *ModelArr5) {
+func writeModelArr5(w specodec.SpecWriter, obj *ModelArr5) {
 	w.BeginObject(2)
-	w.WriteField("arr"); func() { w.BeginArray(len(obj.arr)); for _, _e := range obj.arr { w.NextElement(); writeMoney(w, _e); }; w.EndArray() }();
-	w.WriteField("bs"); func() { w.BeginArray(len(obj.bs)); for _, _e := range obj.bs { w.NextElement(); writeAddr(w, _e); }; w.EndArray() }();
+	w.WriteField("arr"); func() { w.BeginArray(len(obj.Arr)); for _, item := range obj.Arr { w.NextElement(); writeMoney(w, item); }; w.EndArray() }();
+	w.WriteField("bs"); func() { w.BeginArray(len(obj.Bs)); for _, item := range obj.Bs { w.NextElement(); writeAddr(w, item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeModelArr5(r *specodec.SpecReader) *ModelArr5 {
+func decodeModelArr5(r specodec.SpecReader) *ModelArr5 {
 	obj := &ModelArr5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "arr": obj.arr = func() []*Money { var _a []*Money; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeMoney(r)) }; r.EndArray(); return _a }()
-		case "bs": obj.bs = func() []*Addr { var _a []*Addr; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeAddr(r)) }; r.EndArray(); return _a }()
+		case "arr": obj.Arr = func() []*Money { var arr []*Money; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeMoney(r)) }; r.EndArray(); return arr }()
+		case "bs": obj.Bs = func() []*Addr { var arr []*Addr; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeAddr(r)) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -4629,22 +4629,22 @@ func decodeModelArr5(r *specodec.SpecReader) *ModelArr5 {
 	return obj
 }
 
-func writeMix01(w *specodec.SpecWriter, obj *Mix01) {
+func writeMix01(w specodec.SpecWriter, obj *Mix01) {
 	w.BeginObject(3)
-	w.WriteField("name"); w.WriteString(obj.name);
-	w.WriteField("value"); w.WriteInt32(obj.value);
-	w.WriteField("point"); writeInner(w, obj.point);
+	w.WriteField("name"); w.WriteString(obj.Name);
+	w.WriteField("value"); w.WriteInt32(obj.Value);
+	w.WriteField("point"); writeInner(w, obj.Point);
 	w.EndObject()
 }
 
-func decodeMix01(r *specodec.SpecReader) *Mix01 {
+func decodeMix01(r specodec.SpecReader) *Mix01 {
 	obj := &Mix01{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "name": obj.name = r.ReadString()
-		case "value": obj.value = r.ReadInt32()
-		case "point": obj.point = decodeInner(r)
+		case "name": obj.Name = r.ReadString()
+		case "value": obj.Value = r.ReadInt32()
+		case "point": obj.Point = decodeInner(r)
 		default: r.Skip()
 		}
 	}
@@ -4652,22 +4652,22 @@ func decodeMix01(r *specodec.SpecReader) *Mix01 {
 	return obj
 }
 
-func writeMix02(w *specodec.SpecWriter, obj *Mix02) {
+func writeMix02(w specodec.SpecWriter, obj *Mix02) {
 	w.BeginObject(3)
-	w.WriteField("id"); w.WriteString(obj.id);
-	w.WriteField("loc"); writeCoord(w, obj.loc);
-	w.WriteField("tags"); func() { w.BeginArray(len(obj.tags)); for _, _e := range obj.tags { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
+	w.WriteField("id"); w.WriteString(obj.Id);
+	w.WriteField("loc"); writeCoord(w, obj.Loc);
+	w.WriteField("tags"); func() { w.BeginArray(len(obj.Tags)); for _, item := range obj.Tags { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMix02(r *specodec.SpecReader) *Mix02 {
+func decodeMix02(r specodec.SpecReader) *Mix02 {
 	obj := &Mix02{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "id": obj.id = r.ReadString()
-		case "loc": obj.loc = decodeCoord(r)
-		case "tags": obj.tags = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
+		case "id": obj.Id = r.ReadString()
+		case "loc": obj.Loc = decodeCoord(r)
+		case "tags": obj.Tags = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -4675,22 +4675,22 @@ func decodeMix02(r *specodec.SpecReader) *Mix02 {
 	return obj
 }
 
-func writeMix03(w *specodec.SpecWriter, obj *Mix03) {
+func writeMix03(w specodec.SpecWriter, obj *Mix03) {
 	w.BeginObject(3)
-	w.WriteField("label"); w.WriteString(obj.label);
-	w.WriteField("value_range"); writeRange32(w, obj.value_range);
-	w.WriteField("active"); w.WriteBool(obj.active);
+	w.WriteField("label"); w.WriteString(obj.Label);
+	w.WriteField("value_range"); writeRange32(w, obj.ValueRange);
+	w.WriteField("active"); w.WriteBool(obj.Active);
 	w.EndObject()
 }
 
-func decodeMix03(r *specodec.SpecReader) *Mix03 {
+func decodeMix03(r specodec.SpecReader) *Mix03 {
 	obj := &Mix03{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "value_range": obj.value_range = decodeRange32(r)
-		case "active": obj.active = r.ReadBool()
+		case "label": obj.Label = r.ReadString()
+		case "value_range": obj.ValueRange = decodeRange32(r)
+		case "active": obj.Active = r.ReadBool()
 		default: r.Skip()
 		}
 	}
@@ -4698,24 +4698,24 @@ func decodeMix03(r *specodec.SpecReader) *Mix03 {
 	return obj
 }
 
-func writeMix04(w *specodec.SpecWriter, obj *Mix04) {
+func writeMix04(w specodec.SpecWriter, obj *Mix04) {
 	w.BeginObject(4)
-	w.WriteField("title"); w.WriteString(obj.title);
-	w.WriteField("price"); writeMoney(w, obj.price);
-	w.WriteField("inStock"); w.WriteBool(obj.inStock);
-	w.WriteField("rating"); w.WriteFloat64(obj.rating);
+	w.WriteField("title"); w.WriteString(obj.Title);
+	w.WriteField("price"); writeMoney(w, obj.Price);
+	w.WriteField("inStock"); w.WriteBool(obj.InStock);
+	w.WriteField("rating"); w.WriteFloat64(obj.Rating);
 	w.EndObject()
 }
 
-func decodeMix04(r *specodec.SpecReader) *Mix04 {
+func decodeMix04(r specodec.SpecReader) *Mix04 {
 	obj := &Mix04{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "title": obj.title = r.ReadString()
-		case "price": obj.price = decodeMoney(r)
-		case "inStock": obj.inStock = r.ReadBool()
-		case "rating": obj.rating = r.ReadFloat64()
+		case "title": obj.Title = r.ReadString()
+		case "price": obj.Price = decodeMoney(r)
+		case "inStock": obj.InStock = r.ReadBool()
+		case "rating": obj.Rating = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -4723,20 +4723,20 @@ func decodeMix04(r *specodec.SpecReader) *Mix04 {
 	return obj
 }
 
-func writeMix05(w *specodec.SpecWriter, obj *Mix05) {
+func writeMix05(w specodec.SpecWriter, obj *Mix05) {
 	w.BeginObject(2)
-	w.WriteField("addr"); writeAddr(w, obj.addr);
-	w.WriteField("coords"); func() { w.BeginArray(len(obj.coords)); for _, _e := range obj.coords { w.NextElement(); writeCoord(w, _e); }; w.EndArray() }();
+	w.WriteField("addr"); writeAddr(w, obj.Addr);
+	w.WriteField("coords"); func() { w.BeginArray(len(obj.Coords)); for _, item := range obj.Coords { w.NextElement(); writeCoord(w, item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeMix05(r *specodec.SpecReader) *Mix05 {
+func decodeMix05(r specodec.SpecReader) *Mix05 {
 	obj := &Mix05{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "addr": obj.addr = decodeAddr(r)
-		case "coords": obj.coords = func() []*Coord { var _a []*Coord; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeCoord(r)) }; r.EndArray(); return _a }()
+		case "addr": obj.Addr = decodeAddr(r)
+		case "coords": obj.Coords = func() []*Coord { var arr []*Coord; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeCoord(r)) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -4744,27 +4744,27 @@ func decodeMix05(r *specodec.SpecReader) *Mix05 {
 	return obj
 }
 
-func writeMix06(w *specodec.SpecWriter, obj *Mix06) {
-	_n := 2
-	if obj.address != nil { _n++ }
-	if obj.email != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("name"); w.WriteString(obj.name);
-	w.WriteField("age"); w.WriteInt32(obj.age);
-	if obj.address != nil { w.WriteField("address"); writeAddr(w, obj.address); }
-	if obj.email != nil { w.WriteField("email"); w.WriteString(*obj.email); }
+func writeMix06(w specodec.SpecWriter, obj *Mix06) {
+	fieldCount := 2
+	if obj.Address != nil { fieldCount++ }
+	if obj.Email != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("name"); w.WriteString(obj.Name);
+	w.WriteField("age"); w.WriteInt32(obj.Age);
+	if obj.Address != nil { w.WriteField("address"); writeAddr(w, obj.Address); }
+	if obj.Email != nil { w.WriteField("email"); w.WriteString(*obj.Email); }
 	w.EndObject()
 }
 
-func decodeMix06(r *specodec.SpecReader) *Mix06 {
+func decodeMix06(r specodec.SpecReader) *Mix06 {
 	obj := &Mix06{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "name": obj.name = r.ReadString()
-		case "age": obj.age = r.ReadInt32()
-		case "address": obj.address = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
-		case "email": _v := r.ReadString(); obj.email = &_v
+		case "name": obj.Name = r.ReadString()
+		case "age": obj.Age = r.ReadInt32()
+		case "address": obj.Address = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
+		case "email": val := r.ReadString(); obj.Email = &val
 		default: r.Skip()
 		}
 	}
@@ -4772,22 +4772,22 @@ func decodeMix06(r *specodec.SpecReader) *Mix06 {
 	return obj
 }
 
-func writeMix07(w *specodec.SpecWriter, obj *Mix07) {
+func writeMix07(w specodec.SpecWriter, obj *Mix07) {
 	w.BeginObject(3)
-	w.WriteField("origin"); writePoint3(w, obj.origin);
-	w.WriteField("dest"); writePoint3(w, obj.dest);
-	w.WriteField("distance"); w.WriteFloat64(obj.distance);
+	w.WriteField("origin"); writePoint3(w, obj.Origin);
+	w.WriteField("dest"); writePoint3(w, obj.Dest);
+	w.WriteField("distance"); w.WriteFloat64(obj.Distance);
 	w.EndObject()
 }
 
-func decodeMix07(r *specodec.SpecReader) *Mix07 {
+func decodeMix07(r specodec.SpecReader) *Mix07 {
 	obj := &Mix07{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "origin": obj.origin = decodePoint3(r)
-		case "dest": obj.dest = decodePoint3(r)
-		case "distance": obj.distance = r.ReadFloat64()
+		case "origin": obj.Origin = decodePoint3(r)
+		case "dest": obj.Dest = decodePoint3(r)
+		case "distance": obj.Distance = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -4795,24 +4795,24 @@ func decodeMix07(r *specodec.SpecReader) *Mix07 {
 	return obj
 }
 
-func writeMix08(w *specodec.SpecWriter, obj *Mix08) {
-	_n := 2
-	if obj.meta != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("keys"); func() { w.BeginArray(len(obj.keys)); for _, _e := range obj.keys { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
-	w.WriteField("values"); func() { w.BeginArray(len(obj.values)); for _, _e := range obj.values { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
-	if obj.meta != nil { w.WriteField("meta"); writeLabel(w, obj.meta); }
+func writeMix08(w specodec.SpecWriter, obj *Mix08) {
+	fieldCount := 2
+	if obj.Meta != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("keys"); func() { w.BeginArray(len(obj.Keys)); for _, item := range obj.Keys { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
+	w.WriteField("values"); func() { w.BeginArray(len(obj.Values)); for _, item := range obj.Values { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }();
+	if obj.Meta != nil { w.WriteField("meta"); writeLabel(w, obj.Meta); }
 	w.EndObject()
 }
 
-func decodeMix08(r *specodec.SpecReader) *Mix08 {
+func decodeMix08(r specodec.SpecReader) *Mix08 {
 	obj := &Mix08{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "keys": obj.keys = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
-		case "values": obj.values = func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }()
-		case "meta": obj.meta = func() *Label { if r.IsNull() { r.ReadNull(); return nil }; return decodeLabel(r) }()
+		case "keys": obj.Keys = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "values": obj.Values = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
+		case "meta": obj.Meta = func() *Label { if r.IsNull() { r.ReadNull(); return nil }; return decodeLabel(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4820,26 +4820,26 @@ func decodeMix08(r *specodec.SpecReader) *Mix08 {
 	return obj
 }
 
-func writeMix09(w *specodec.SpecWriter, obj *Mix09) {
-	_n := 3
-	if obj.prev != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("id"); w.WriteInt64(obj.id);
-	w.WriteField("payload"); w.WriteBytes(obj.payload);
-	w.WriteField("checksum"); w.WriteUint32(obj.checksum);
-	if obj.prev != nil { w.WriteField("prev"); writeIdVal(w, obj.prev); }
+func writeMix09(w specodec.SpecWriter, obj *Mix09) {
+	fieldCount := 3
+	if obj.Prev != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("id"); w.WriteInt64(obj.Id);
+	w.WriteField("payload"); w.WriteBytes(obj.Payload);
+	w.WriteField("checksum"); w.WriteUint32(obj.Checksum);
+	if obj.Prev != nil { w.WriteField("prev"); writeIdVal(w, obj.Prev); }
 	w.EndObject()
 }
 
-func decodeMix09(r *specodec.SpecReader) *Mix09 {
+func decodeMix09(r specodec.SpecReader) *Mix09 {
 	obj := &Mix09{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "id": obj.id = r.ReadInt64()
-		case "payload": obj.payload = r.ReadBytes()
-		case "checksum": obj.checksum = r.ReadUint32()
-		case "prev": obj.prev = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
+		case "id": obj.Id = r.ReadInt64()
+		case "payload": obj.Payload = r.ReadBytes()
+		case "checksum": obj.Checksum = r.ReadUint32()
+		case "prev": obj.Prev = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
 		default: r.Skip()
 		}
 	}
@@ -4847,24 +4847,24 @@ func decodeMix09(r *specodec.SpecReader) *Mix09 {
 	return obj
 }
 
-func writeMix10(w *specodec.SpecWriter, obj *Mix10) {
+func writeMix10(w specodec.SpecWriter, obj *Mix10) {
 	w.BeginObject(4)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
-	w.WriteField("total"); w.WriteInt32(obj.total);
-	w.WriteField("avg"); w.WriteFloat64(obj.avg);
-	w.WriteField("value_range"); writeRange32(w, obj.value_range);
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
+	w.WriteField("total"); w.WriteInt32(obj.Total);
+	w.WriteField("avg"); w.WriteFloat64(obj.Avg);
+	w.WriteField("value_range"); writeRange32(w, obj.ValueRange);
 	w.EndObject()
 }
 
-func decodeMix10(r *specodec.SpecReader) *Mix10 {
+func decodeMix10(r specodec.SpecReader) *Mix10 {
 	obj := &Mix10{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
-		case "total": obj.total = r.ReadInt32()
-		case "avg": obj.avg = r.ReadFloat64()
-		case "value_range": obj.value_range = decodeRange32(r)
+		case "items": obj.Items = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "total": obj.Total = r.ReadInt32()
+		case "avg": obj.Avg = r.ReadFloat64()
+		case "value_range": obj.ValueRange = decodeRange32(r)
 		default: r.Skip()
 		}
 	}
@@ -4872,27 +4872,27 @@ func decodeMix10(r *specodec.SpecReader) *Mix10 {
 	return obj
 }
 
-func writeMix11(w *specodec.SpecWriter, obj *Mix11) {
-	_n := 2
-	if obj.nested != nil { _n++ }
-	if obj.flag != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("name"); w.WriteString(obj.name);
-	w.WriteField("values"); func() { w.BeginArray(len(obj.values)); for _, _e := range obj.values { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }();
-	if obj.nested != nil { w.WriteField("nested"); writeInner(w, obj.nested); }
-	if obj.flag != nil { w.WriteField("flag"); w.WriteBool(*obj.flag); }
+func writeMix11(w specodec.SpecWriter, obj *Mix11) {
+	fieldCount := 2
+	if obj.Nested != nil { fieldCount++ }
+	if obj.Flag != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("name"); w.WriteString(obj.Name);
+	w.WriteField("values"); func() { w.BeginArray(len(obj.Values)); for _, item := range obj.Values { w.NextElement(); w.WriteFloat64(item); }; w.EndArray() }();
+	if obj.Nested != nil { w.WriteField("nested"); writeInner(w, obj.Nested); }
+	if obj.Flag != nil { w.WriteField("flag"); w.WriteBool(*obj.Flag); }
 	w.EndObject()
 }
 
-func decodeMix11(r *specodec.SpecReader) *Mix11 {
+func decodeMix11(r specodec.SpecReader) *Mix11 {
 	obj := &Mix11{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "name": obj.name = r.ReadString()
-		case "values": obj.values = func() []float64 { var _a []float64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadFloat64()) }; r.EndArray(); return _a }()
-		case "nested": obj.nested = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
-		case "flag": _v := r.ReadBool(); obj.flag = &_v
+		case "name": obj.Name = r.ReadString()
+		case "values": obj.Values = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
+		case "nested": obj.Nested = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
+		case "flag": val := r.ReadBool(); obj.Flag = &val
 		default: r.Skip()
 		}
 	}
@@ -4900,24 +4900,24 @@ func decodeMix11(r *specodec.SpecReader) *Mix11 {
 	return obj
 }
 
-func writeMix12(w *specodec.SpecWriter, obj *Mix12) {
-	_n := 2
-	if obj.footer != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("header"); w.WriteString(obj.header);
-	w.WriteField("entries"); func() { w.BeginArray(len(obj.entries)); for _, _e := range obj.entries { w.NextElement(); writeIdVal(w, _e); }; w.EndArray() }();
-	if obj.footer != nil { w.WriteField("footer"); w.WriteString(*obj.footer); }
+func writeMix12(w specodec.SpecWriter, obj *Mix12) {
+	fieldCount := 2
+	if obj.Footer != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("header"); w.WriteString(obj.Header);
+	w.WriteField("entries"); func() { w.BeginArray(len(obj.Entries)); for _, item := range obj.Entries { w.NextElement(); writeIdVal(w, item); }; w.EndArray() }();
+	if obj.Footer != nil { w.WriteField("footer"); w.WriteString(*obj.Footer); }
 	w.EndObject()
 }
 
-func decodeMix12(r *specodec.SpecReader) *Mix12 {
+func decodeMix12(r specodec.SpecReader) *Mix12 {
 	obj := &Mix12{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "header": obj.header = r.ReadString()
-		case "entries": obj.entries = func() []*IdVal { var _a []*IdVal; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeIdVal(r)) }; r.EndArray(); return _a }()
-		case "footer": _v := r.ReadString(); obj.footer = &_v
+		case "header": obj.Header = r.ReadString()
+		case "entries": obj.Entries = func() []*IdVal { var arr []*IdVal; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeIdVal(r)) }; r.EndArray(); return arr }()
+		case "footer": val := r.ReadString(); obj.Footer = &val
 		default: r.Skip()
 		}
 	}
@@ -4925,28 +4925,28 @@ func decodeMix12(r *specodec.SpecReader) *Mix12 {
 	return obj
 }
 
-func writeMix13(w *specodec.SpecWriter, obj *Mix13) {
+func writeMix13(w specodec.SpecWriter, obj *Mix13) {
 	w.BeginObject(6)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteFloat64(obj.b);
-	w.WriteField("c"); w.WriteString(obj.c);
-	w.WriteField("d"); w.WriteBool(obj.d);
-	w.WriteField("e"); w.WriteBytes(obj.e);
-	w.WriteField("nested"); writeInner(w, obj.nested);
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteFloat64(obj.B);
+	w.WriteField("c"); w.WriteString(obj.C);
+	w.WriteField("d"); w.WriteBool(obj.D);
+	w.WriteField("e"); w.WriteBytes(obj.E);
+	w.WriteField("nested"); writeInner(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeMix13(r *specodec.SpecReader) *Mix13 {
+func decodeMix13(r specodec.SpecReader) *Mix13 {
 	obj := &Mix13{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadFloat64()
-		case "c": obj.c = r.ReadString()
-		case "d": obj.d = r.ReadBool()
-		case "e": obj.e = r.ReadBytes()
-		case "nested": obj.nested = decodeInner(r)
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadFloat64()
+		case "c": obj.C = r.ReadString()
+		case "d": obj.D = r.ReadBool()
+		case "e": obj.E = r.ReadBytes()
+		case "nested": obj.Nested = decodeInner(r)
 		default: r.Skip()
 		}
 	}
@@ -4954,22 +4954,22 @@ func decodeMix13(r *specodec.SpecReader) *Mix13 {
 	return obj
 }
 
-func writeMix14(w *specodec.SpecWriter, obj *Mix14) {
+func writeMix14(w specodec.SpecWriter, obj *Mix14) {
 	w.BeginObject(3)
-	w.WriteField("amounts"); func() { w.BeginArray(len(obj.amounts)); for _, _e := range obj.amounts { w.NextElement(); writeMoney(w, _e); }; w.EndArray() }();
-	w.WriteField("total"); w.WriteInt64(obj.total);
-	w.WriteField("currency"); w.WriteString(obj.currency);
+	w.WriteField("amounts"); func() { w.BeginArray(len(obj.Amounts)); for _, item := range obj.Amounts { w.NextElement(); writeMoney(w, item); }; w.EndArray() }();
+	w.WriteField("total"); w.WriteInt64(obj.Total);
+	w.WriteField("currency"); w.WriteString(obj.Currency);
 	w.EndObject()
 }
 
-func decodeMix14(r *specodec.SpecReader) *Mix14 {
+func decodeMix14(r specodec.SpecReader) *Mix14 {
 	obj := &Mix14{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "amounts": obj.amounts = func() []*Money { var _a []*Money; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeMoney(r)) }; r.EndArray(); return _a }()
-		case "total": obj.total = r.ReadInt64()
-		case "currency": obj.currency = r.ReadString()
+		case "amounts": obj.Amounts = func() []*Money { var arr []*Money; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeMoney(r)) }; r.EndArray(); return arr }()
+		case "total": obj.Total = r.ReadInt64()
+		case "currency": obj.Currency = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -4977,24 +4977,24 @@ func decodeMix14(r *specodec.SpecReader) *Mix14 {
 	return obj
 }
 
-func writeMix15(w *specodec.SpecWriter, obj *Mix15) {
+func writeMix15(w specodec.SpecWriter, obj *Mix15) {
 	w.BeginObject(4)
-	w.WriteField("src_addr"); writeAddr(w, obj.src_addr);
-	w.WriteField("dst_addr"); writeAddr(w, obj.dst_addr);
-	w.WriteField("distance"); w.WriteFloat64(obj.distance);
-	w.WriteField("duration"); w.WriteFloat64(obj.duration);
+	w.WriteField("src_addr"); writeAddr(w, obj.SrcAddr);
+	w.WriteField("dst_addr"); writeAddr(w, obj.DstAddr);
+	w.WriteField("distance"); w.WriteFloat64(obj.Distance);
+	w.WriteField("duration"); w.WriteFloat64(obj.Duration);
 	w.EndObject()
 }
 
-func decodeMix15(r *specodec.SpecReader) *Mix15 {
+func decodeMix15(r specodec.SpecReader) *Mix15 {
 	obj := &Mix15{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "src_addr": obj.src_addr = decodeAddr(r)
-		case "dst_addr": obj.dst_addr = decodeAddr(r)
-		case "distance": obj.distance = r.ReadFloat64()
-		case "duration": obj.duration = r.ReadFloat64()
+		case "src_addr": obj.SrcAddr = decodeAddr(r)
+		case "dst_addr": obj.DstAddr = decodeAddr(r)
+		case "distance": obj.Distance = r.ReadFloat64()
+		case "duration": obj.Duration = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -5002,26 +5002,26 @@ func decodeMix15(r *specodec.SpecReader) *Mix15 {
 	return obj
 }
 
-func writeAllOpt1(w *specodec.SpecWriter, obj *AllOpt1) {
-	_n := 0
-	if obj.a != nil { _n++ }
-	if obj.b != nil { _n++ }
-	if obj.c != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.a != nil { w.WriteField("a"); w.WriteString(*obj.a); }
-	if obj.b != nil { w.WriteField("b"); w.WriteInt32(*obj.b); }
-	if obj.c != nil { w.WriteField("c"); w.WriteBool(*obj.c); }
+func writeAllOpt1(w specodec.SpecWriter, obj *AllOpt1) {
+	fieldCount := 0
+	if obj.A != nil { fieldCount++ }
+	if obj.B != nil { fieldCount++ }
+	if obj.C != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.A != nil { w.WriteField("a"); w.WriteString(*obj.A); }
+	if obj.B != nil { w.WriteField("b"); w.WriteInt32(*obj.B); }
+	if obj.C != nil { w.WriteField("c"); w.WriteBool(*obj.C); }
 	w.EndObject()
 }
 
-func decodeAllOpt1(r *specodec.SpecReader) *AllOpt1 {
+func decodeAllOpt1(r specodec.SpecReader) *AllOpt1 {
 	obj := &AllOpt1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": _v := r.ReadString(); obj.a = &_v
-		case "b": _v := r.ReadInt32(); obj.b = &_v
-		case "c": _v := r.ReadBool(); obj.c = &_v
+		case "a": val := r.ReadString(); obj.A = &val
+		case "b": val := r.ReadInt32(); obj.B = &val
+		case "c": val := r.ReadBool(); obj.C = &val
 		default: r.Skip()
 		}
 	}
@@ -5029,26 +5029,26 @@ func decodeAllOpt1(r *specodec.SpecReader) *AllOpt1 {
 	return obj
 }
 
-func writeAllOpt2(w *specodec.SpecWriter, obj *AllOpt2) {
-	_n := 0
-	if obj.x != nil { _n++ }
-	if obj.y != nil { _n++ }
-	if obj.z != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.x != nil { w.WriteField("x"); w.WriteFloat64(*obj.x); }
-	if obj.y != nil { w.WriteField("y"); w.WriteBytes(*obj.y); }
-	if obj.z != nil { w.WriteField("z"); w.WriteInt64(*obj.z); }
+func writeAllOpt2(w specodec.SpecWriter, obj *AllOpt2) {
+	fieldCount := 0
+	if obj.X != nil { fieldCount++ }
+	if obj.Y != nil { fieldCount++ }
+	if obj.Z != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.X != nil { w.WriteField("x"); w.WriteFloat64(*obj.X); }
+	if obj.Y != nil { w.WriteField("y"); w.WriteBytes(*obj.Y); }
+	if obj.Z != nil { w.WriteField("z"); w.WriteInt64(*obj.Z); }
 	w.EndObject()
 }
 
-func decodeAllOpt2(r *specodec.SpecReader) *AllOpt2 {
+func decodeAllOpt2(r specodec.SpecReader) *AllOpt2 {
 	obj := &AllOpt2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "x": _v := r.ReadFloat64(); obj.x = &_v
-		case "y": _v := r.ReadBytes(); obj.y = &_v
-		case "z": _v := r.ReadInt64(); obj.z = &_v
+		case "x": val := r.ReadFloat64(); obj.X = &val
+		case "y": val := r.ReadBytes(); obj.Y = &val
+		case "z": val := r.ReadInt64(); obj.Z = &val
 		default: r.Skip()
 		}
 	}
@@ -5056,29 +5056,29 @@ func decodeAllOpt2(r *specodec.SpecReader) *AllOpt2 {
 	return obj
 }
 
-func writeAllOpt3(w *specodec.SpecWriter, obj *AllOpt3) {
-	_n := 0
-	if obj.name != nil { _n++ }
-	if obj.age != nil { _n++ }
-	if obj.score != nil { _n++ }
-	if obj.active != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.name != nil { w.WriteField("name"); w.WriteString(*obj.name); }
-	if obj.age != nil { w.WriteField("age"); w.WriteInt32(*obj.age); }
-	if obj.score != nil { w.WriteField("score"); w.WriteFloat64(*obj.score); }
-	if obj.active != nil { w.WriteField("active"); w.WriteBool(*obj.active); }
+func writeAllOpt3(w specodec.SpecWriter, obj *AllOpt3) {
+	fieldCount := 0
+	if obj.Name != nil { fieldCount++ }
+	if obj.Age != nil { fieldCount++ }
+	if obj.Score != nil { fieldCount++ }
+	if obj.Active != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.Name != nil { w.WriteField("name"); w.WriteString(*obj.Name); }
+	if obj.Age != nil { w.WriteField("age"); w.WriteInt32(*obj.Age); }
+	if obj.Score != nil { w.WriteField("score"); w.WriteFloat64(*obj.Score); }
+	if obj.Active != nil { w.WriteField("active"); w.WriteBool(*obj.Active); }
 	w.EndObject()
 }
 
-func decodeAllOpt3(r *specodec.SpecReader) *AllOpt3 {
+func decodeAllOpt3(r specodec.SpecReader) *AllOpt3 {
 	obj := &AllOpt3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "name": _v := r.ReadString(); obj.name = &_v
-		case "age": _v := r.ReadInt32(); obj.age = &_v
-		case "score": _v := r.ReadFloat64(); obj.score = &_v
-		case "active": _v := r.ReadBool(); obj.active = &_v
+		case "name": val := r.ReadString(); obj.Name = &val
+		case "age": val := r.ReadInt32(); obj.Age = &val
+		case "score": val := r.ReadFloat64(); obj.Score = &val
+		case "active": val := r.ReadBool(); obj.Active = &val
 		default: r.Skip()
 		}
 	}
@@ -5086,32 +5086,32 @@ func decodeAllOpt3(r *specodec.SpecReader) *AllOpt3 {
 	return obj
 }
 
-func writeAllOpt4(w *specodec.SpecWriter, obj *AllOpt4) {
-	_n := 0
-	if obj.a != nil { _n++ }
-	if obj.b != nil { _n++ }
-	if obj.c != nil { _n++ }
-	if obj.d != nil { _n++ }
-	if obj.e != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.a != nil { w.WriteField("a"); w.WriteUint32(*obj.a); }
-	if obj.b != nil { w.WriteField("b"); w.WriteUint64(*obj.b); }
-	if obj.c != nil { w.WriteField("c"); w.WriteInt32(*obj.c); }
-	if obj.d != nil { w.WriteField("d"); w.WriteString(*obj.d); }
-	if obj.e != nil { w.WriteField("e"); w.WriteBytes(*obj.e); }
+func writeAllOpt4(w specodec.SpecWriter, obj *AllOpt4) {
+	fieldCount := 0
+	if obj.A != nil { fieldCount++ }
+	if obj.B != nil { fieldCount++ }
+	if obj.C != nil { fieldCount++ }
+	if obj.D != nil { fieldCount++ }
+	if obj.E != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.A != nil { w.WriteField("a"); w.WriteUint32(*obj.A); }
+	if obj.B != nil { w.WriteField("b"); w.WriteUint64(*obj.B); }
+	if obj.C != nil { w.WriteField("c"); w.WriteInt32(*obj.C); }
+	if obj.D != nil { w.WriteField("d"); w.WriteString(*obj.D); }
+	if obj.E != nil { w.WriteField("e"); w.WriteBytes(*obj.E); }
 	w.EndObject()
 }
 
-func decodeAllOpt4(r *specodec.SpecReader) *AllOpt4 {
+func decodeAllOpt4(r specodec.SpecReader) *AllOpt4 {
 	obj := &AllOpt4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": _v := r.ReadUint32(); obj.a = &_v
-		case "b": _v := r.ReadUint64(); obj.b = &_v
-		case "c": _v := r.ReadInt32(); obj.c = &_v
-		case "d": _v := r.ReadString(); obj.d = &_v
-		case "e": _v := r.ReadBytes(); obj.e = &_v
+		case "a": val := r.ReadUint32(); obj.A = &val
+		case "b": val := r.ReadUint64(); obj.B = &val
+		case "c": val := r.ReadInt32(); obj.C = &val
+		case "d": val := r.ReadString(); obj.D = &val
+		case "e": val := r.ReadBytes(); obj.E = &val
 		default: r.Skip()
 		}
 	}
@@ -5119,23 +5119,23 @@ func decodeAllOpt4(r *specodec.SpecReader) *AllOpt4 {
 	return obj
 }
 
-func writeAllOpt5(w *specodec.SpecWriter, obj *AllOpt5) {
-	_n := 0
-	if obj.p != nil { _n++ }
-	if obj.q != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.p != nil { w.WriteField("p"); writeInner(w, obj.p); }
-	if obj.q != nil { w.WriteField("q"); w.WriteString(*obj.q); }
+func writeAllOpt5(w specodec.SpecWriter, obj *AllOpt5) {
+	fieldCount := 0
+	if obj.P != nil { fieldCount++ }
+	if obj.Q != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.P != nil { w.WriteField("p"); writeInner(w, obj.P); }
+	if obj.Q != nil { w.WriteField("q"); w.WriteString(*obj.Q); }
 	w.EndObject()
 }
 
-func decodeAllOpt5(r *specodec.SpecReader) *AllOpt5 {
+func decodeAllOpt5(r specodec.SpecReader) *AllOpt5 {
 	obj := &AllOpt5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "p": obj.p = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
-		case "q": _v := r.ReadString(); obj.q = &_v
+		case "p": obj.P = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
+		case "q": val := r.ReadString(); obj.Q = &val
 		default: r.Skip()
 		}
 	}
@@ -5143,22 +5143,22 @@ func decodeAllOpt5(r *specodec.SpecReader) *AllOpt5 {
 	return obj
 }
 
-func writeRecList(w *specodec.SpecWriter, obj *RecList) {
-	_n := 1
-	if obj.next != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("value"); w.WriteInt32(obj.value);
-	if obj.next != nil { w.WriteField("next"); writeRecList(w, obj.next); }
+func writeRecList(w specodec.SpecWriter, obj *RecList) {
+	fieldCount := 1
+	if obj.Next != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("value"); w.WriteInt32(obj.Value);
+	if obj.Next != nil { w.WriteField("next"); writeRecList(w, obj.Next); }
 	w.EndObject()
 }
 
-func decodeRecList(r *specodec.SpecReader) *RecList {
+func decodeRecList(r specodec.SpecReader) *RecList {
 	obj := &RecList{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "value": obj.value = r.ReadInt32()
-		case "next": obj.next = func() *RecList { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecList(r) }()
+		case "value": obj.Value = r.ReadInt32()
+		case "next": obj.Next = func() *RecList { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecList(r) }()
 		default: r.Skip()
 		}
 	}
@@ -5166,25 +5166,25 @@ func decodeRecList(r *specodec.SpecReader) *RecList {
 	return obj
 }
 
-func writeRecTree(w *specodec.SpecWriter, obj *RecTree) {
-	_n := 1
-	if obj.left_node != nil { _n++ }
-	if obj.right_node != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("value"); w.WriteString(obj.value);
-	if obj.left_node != nil { w.WriteField("left_node"); writeRecTree(w, obj.left_node); }
-	if obj.right_node != nil { w.WriteField("right_node"); writeRecTree(w, obj.right_node); }
+func writeRecTree(w specodec.SpecWriter, obj *RecTree) {
+	fieldCount := 1
+	if obj.LeftNode != nil { fieldCount++ }
+	if obj.RightNode != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("value"); w.WriteString(obj.Value);
+	if obj.LeftNode != nil { w.WriteField("left_node"); writeRecTree(w, obj.LeftNode); }
+	if obj.RightNode != nil { w.WriteField("right_node"); writeRecTree(w, obj.RightNode); }
 	w.EndObject()
 }
 
-func decodeRecTree(r *specodec.SpecReader) *RecTree {
+func decodeRecTree(r specodec.SpecReader) *RecTree {
 	obj := &RecTree{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "value": obj.value = r.ReadString()
-		case "left_node": obj.left_node = func() *RecTree { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecTree(r) }()
-		case "right_node": obj.right_node = func() *RecTree { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecTree(r) }()
+		case "value": obj.Value = r.ReadString()
+		case "left_node": obj.LeftNode = func() *RecTree { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecTree(r) }()
+		case "right_node": obj.RightNode = func() *RecTree { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecTree(r) }()
 		default: r.Skip()
 		}
 	}
@@ -5192,24 +5192,24 @@ func decodeRecTree(r *specodec.SpecReader) *RecTree {
 	return obj
 }
 
-func writeRecChain(w *specodec.SpecWriter, obj *RecChain) {
-	_n := 2
-	if obj.next != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("id"); w.WriteInt32(obj.id);
-	w.WriteField("label"); w.WriteString(obj.label);
-	if obj.next != nil { w.WriteField("next"); writeRecChain(w, obj.next); }
+func writeRecChain(w specodec.SpecWriter, obj *RecChain) {
+	fieldCount := 2
+	if obj.Next != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("id"); w.WriteInt32(obj.Id);
+	w.WriteField("label"); w.WriteString(obj.Label);
+	if obj.Next != nil { w.WriteField("next"); writeRecChain(w, obj.Next); }
 	w.EndObject()
 }
 
-func decodeRecChain(r *specodec.SpecReader) *RecChain {
+func decodeRecChain(r specodec.SpecReader) *RecChain {
 	obj := &RecChain{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "id": obj.id = r.ReadInt32()
-		case "label": obj.label = r.ReadString()
-		case "next": obj.next = func() *RecChain { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecChain(r) }()
+		case "id": obj.Id = r.ReadInt32()
+		case "label": obj.Label = r.ReadString()
+		case "next": obj.Next = func() *RecChain { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecChain(r) }()
 		default: r.Skip()
 		}
 	}
@@ -5217,22 +5217,22 @@ func decodeRecChain(r *specodec.SpecReader) *RecChain {
 	return obj
 }
 
-func writeRecWrap(w *specodec.SpecWriter, obj *RecWrap) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("payload"); w.WriteBytes(obj.payload);
-	if obj.nested != nil { w.WriteField("nested"); writeRecWrap(w, obj.nested); }
+func writeRecWrap(w specodec.SpecWriter, obj *RecWrap) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("payload"); w.WriteBytes(obj.Payload);
+	if obj.Nested != nil { w.WriteField("nested"); writeRecWrap(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeRecWrap(r *specodec.SpecReader) *RecWrap {
+func decodeRecWrap(r specodec.SpecReader) *RecWrap {
 	obj := &RecWrap{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "payload": obj.payload = r.ReadBytes()
-		case "nested": obj.nested = func() *RecWrap { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecWrap(r) }()
+		case "payload": obj.Payload = r.ReadBytes()
+		case "nested": obj.Nested = func() *RecWrap { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecWrap(r) }()
 		default: r.Skip()
 		}
 	}
@@ -5240,26 +5240,26 @@ func decodeRecWrap(r *specodec.SpecReader) *RecWrap {
 	return obj
 }
 
-func writeRecWide(w *specodec.SpecWriter, obj *RecWide) {
-	_n := 3
-	if obj.child != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("a"); w.WriteInt32(obj.a);
-	w.WriteField("b"); w.WriteString(obj.b);
-	w.WriteField("c"); w.WriteFloat64(obj.c);
-	if obj.child != nil { w.WriteField("child"); writeRecWide(w, obj.child); }
+func writeRecWide(w specodec.SpecWriter, obj *RecWide) {
+	fieldCount := 3
+	if obj.Child != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("a"); w.WriteInt32(obj.A);
+	w.WriteField("b"); w.WriteString(obj.B);
+	w.WriteField("c"); w.WriteFloat64(obj.C);
+	if obj.Child != nil { w.WriteField("child"); writeRecWide(w, obj.Child); }
 	w.EndObject()
 }
 
-func decodeRecWide(r *specodec.SpecReader) *RecWide {
+func decodeRecWide(r specodec.SpecReader) *RecWide {
 	obj := &RecWide{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = r.ReadInt32()
-		case "b": obj.b = r.ReadString()
-		case "c": obj.c = r.ReadFloat64()
-		case "child": obj.child = func() *RecWide { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecWide(r) }()
+		case "a": obj.A = r.ReadInt32()
+		case "b": obj.B = r.ReadString()
+		case "c": obj.C = r.ReadFloat64()
+		case "child": obj.Child = func() *RecWide { if r.IsNull() { r.ReadNull(); return nil }; return decodeRecWide(r) }()
 		default: r.Skip()
 		}
 	}
@@ -5267,56 +5267,56 @@ func decodeRecWide(r *specodec.SpecReader) *RecWide {
 	return obj
 }
 
-func writeWide20(w *specodec.SpecWriter, obj *Wide20) {
+func writeWide20(w specodec.SpecWriter, obj *Wide20) {
 	w.BeginObject(20)
-	w.WriteField("f1"); w.WriteString(obj.f1);
-	w.WriteField("f2"); w.WriteBool(obj.f2);
-	w.WriteField("f3"); w.WriteInt32(int32(obj.f3));
-	w.WriteField("f4"); w.WriteInt32(int32(obj.f4));
-	w.WriteField("f5"); w.WriteInt32(obj.f5);
-	w.WriteField("f6"); w.WriteInt64(obj.f6);
-	w.WriteField("f7"); w.WriteUint32(uint32(obj.f7));
-	w.WriteField("f8"); w.WriteUint32(uint32(obj.f8));
-	w.WriteField("f9"); w.WriteUint32(obj.f9);
-	w.WriteField("f10"); w.WriteUint64(obj.f10);
-	w.WriteField("f11"); w.WriteFloat32(obj.f11);
-	w.WriteField("f12"); w.WriteFloat64(obj.f12);
-	w.WriteField("f13"); w.WriteBytes(obj.f13);
-	w.WriteField("f14"); w.WriteString(obj.f14);
-	w.WriteField("f15"); w.WriteBool(obj.f15);
-	w.WriteField("f16"); w.WriteInt32(int32(obj.f16));
-	w.WriteField("f17"); w.WriteInt32(int32(obj.f17));
-	w.WriteField("f18"); w.WriteInt32(obj.f18);
-	w.WriteField("f19"); w.WriteInt64(obj.f19);
-	w.WriteField("f20"); w.WriteUint32(uint32(obj.f20));
+	w.WriteField("f1"); w.WriteString(obj.F1);
+	w.WriteField("f2"); w.WriteBool(obj.F2);
+	w.WriteField("f3"); w.WriteInt32(int32(obj.F3));
+	w.WriteField("f4"); w.WriteInt32(int32(obj.F4));
+	w.WriteField("f5"); w.WriteInt32(obj.F5);
+	w.WriteField("f6"); w.WriteInt64(obj.F6);
+	w.WriteField("f7"); w.WriteUint32(uint32(obj.F7));
+	w.WriteField("f8"); w.WriteUint32(uint32(obj.F8));
+	w.WriteField("f9"); w.WriteUint32(obj.F9);
+	w.WriteField("f10"); w.WriteUint64(obj.F10);
+	w.WriteField("f11"); w.WriteFloat32(obj.F11);
+	w.WriteField("f12"); w.WriteFloat64(obj.F12);
+	w.WriteField("f13"); w.WriteBytes(obj.F13);
+	w.WriteField("f14"); w.WriteString(obj.F14);
+	w.WriteField("f15"); w.WriteBool(obj.F15);
+	w.WriteField("f16"); w.WriteInt32(int32(obj.F16));
+	w.WriteField("f17"); w.WriteInt32(int32(obj.F17));
+	w.WriteField("f18"); w.WriteInt32(obj.F18);
+	w.WriteField("f19"); w.WriteInt64(obj.F19);
+	w.WriteField("f20"); w.WriteUint32(uint32(obj.F20));
 	w.EndObject()
 }
 
-func decodeWide20(r *specodec.SpecReader) *Wide20 {
+func decodeWide20(r specodec.SpecReader) *Wide20 {
 	obj := &Wide20{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadString()
-		case "f2": obj.f2 = r.ReadBool()
-		case "f3": obj.f3 = int8(r.ReadInt32())
-		case "f4": obj.f4 = int16(r.ReadInt32())
-		case "f5": obj.f5 = r.ReadInt32()
-		case "f6": obj.f6 = r.ReadInt64()
-		case "f7": obj.f7 = uint8(r.ReadUint32())
-		case "f8": obj.f8 = uint16(r.ReadUint32())
-		case "f9": obj.f9 = r.ReadUint32()
-		case "f10": obj.f10 = r.ReadUint64()
-		case "f11": obj.f11 = r.ReadFloat32()
-		case "f12": obj.f12 = r.ReadFloat64()
-		case "f13": obj.f13 = r.ReadBytes()
-		case "f14": obj.f14 = r.ReadString()
-		case "f15": obj.f15 = r.ReadBool()
-		case "f16": obj.f16 = int8(r.ReadInt32())
-		case "f17": obj.f17 = int16(r.ReadInt32())
-		case "f18": obj.f18 = r.ReadInt32()
-		case "f19": obj.f19 = r.ReadInt64()
-		case "f20": obj.f20 = uint8(r.ReadUint32())
+		case "f1": obj.F1 = r.ReadString()
+		case "f2": obj.F2 = r.ReadBool()
+		case "f3": obj.F3 = int8(r.ReadInt32())
+		case "f4": obj.F4 = int16(r.ReadInt32())
+		case "f5": obj.F5 = r.ReadInt32()
+		case "f6": obj.F6 = r.ReadInt64()
+		case "f7": obj.F7 = uint8(r.ReadUint32())
+		case "f8": obj.F8 = uint16(r.ReadUint32())
+		case "f9": obj.F9 = r.ReadUint32()
+		case "f10": obj.F10 = r.ReadUint64()
+		case "f11": obj.F11 = r.ReadFloat32()
+		case "f12": obj.F12 = r.ReadFloat64()
+		case "f13": obj.F13 = r.ReadBytes()
+		case "f14": obj.F14 = r.ReadString()
+		case "f15": obj.F15 = r.ReadBool()
+		case "f16": obj.F16 = int8(r.ReadInt32())
+		case "f17": obj.F17 = int16(r.ReadInt32())
+		case "f18": obj.F18 = r.ReadInt32()
+		case "f19": obj.F19 = r.ReadInt64()
+		case "f20": obj.F20 = uint8(r.ReadUint32())
 		default: r.Skip()
 		}
 	}
@@ -5324,66 +5324,66 @@ func decodeWide20(r *specodec.SpecReader) *Wide20 {
 	return obj
 }
 
-func writeWide25(w *specodec.SpecWriter, obj *Wide25) {
+func writeWide25(w specodec.SpecWriter, obj *Wide25) {
 	w.BeginObject(25)
-	w.WriteField("f1"); w.WriteUint32(uint32(obj.f1));
-	w.WriteField("f2"); w.WriteUint32(obj.f2);
-	w.WriteField("f3"); w.WriteUint64(obj.f3);
-	w.WriteField("f4"); w.WriteFloat32(obj.f4);
-	w.WriteField("f5"); w.WriteFloat64(obj.f5);
-	w.WriteField("f6"); w.WriteBytes(obj.f6);
-	w.WriteField("f7"); w.WriteString(obj.f7);
-	w.WriteField("f8"); w.WriteBool(obj.f8);
-	w.WriteField("f9"); w.WriteInt32(int32(obj.f9));
-	w.WriteField("f10"); w.WriteInt32(int32(obj.f10));
-	w.WriteField("f11"); w.WriteInt32(obj.f11);
-	w.WriteField("f12"); w.WriteInt64(obj.f12);
-	w.WriteField("f13"); w.WriteUint32(uint32(obj.f13));
-	w.WriteField("f14"); w.WriteUint32(uint32(obj.f14));
-	w.WriteField("f15"); w.WriteUint32(obj.f15);
-	w.WriteField("f16"); w.WriteUint64(obj.f16);
-	w.WriteField("f17"); w.WriteFloat32(obj.f17);
-	w.WriteField("f18"); w.WriteFloat64(obj.f18);
-	w.WriteField("f19"); w.WriteBytes(obj.f19);
-	w.WriteField("f20"); w.WriteString(obj.f20);
-	w.WriteField("f21"); w.WriteBool(obj.f21);
-	w.WriteField("f22"); w.WriteInt32(int32(obj.f22));
-	w.WriteField("f23"); w.WriteInt32(int32(obj.f23));
-	w.WriteField("f24"); w.WriteInt32(obj.f24);
-	w.WriteField("f25"); w.WriteInt64(obj.f25);
+	w.WriteField("f1"); w.WriteUint32(uint32(obj.F1));
+	w.WriteField("f2"); w.WriteUint32(obj.F2);
+	w.WriteField("f3"); w.WriteUint64(obj.F3);
+	w.WriteField("f4"); w.WriteFloat32(obj.F4);
+	w.WriteField("f5"); w.WriteFloat64(obj.F5);
+	w.WriteField("f6"); w.WriteBytes(obj.F6);
+	w.WriteField("f7"); w.WriteString(obj.F7);
+	w.WriteField("f8"); w.WriteBool(obj.F8);
+	w.WriteField("f9"); w.WriteInt32(int32(obj.F9));
+	w.WriteField("f10"); w.WriteInt32(int32(obj.F10));
+	w.WriteField("f11"); w.WriteInt32(obj.F11);
+	w.WriteField("f12"); w.WriteInt64(obj.F12);
+	w.WriteField("f13"); w.WriteUint32(uint32(obj.F13));
+	w.WriteField("f14"); w.WriteUint32(uint32(obj.F14));
+	w.WriteField("f15"); w.WriteUint32(obj.F15);
+	w.WriteField("f16"); w.WriteUint64(obj.F16);
+	w.WriteField("f17"); w.WriteFloat32(obj.F17);
+	w.WriteField("f18"); w.WriteFloat64(obj.F18);
+	w.WriteField("f19"); w.WriteBytes(obj.F19);
+	w.WriteField("f20"); w.WriteString(obj.F20);
+	w.WriteField("f21"); w.WriteBool(obj.F21);
+	w.WriteField("f22"); w.WriteInt32(int32(obj.F22));
+	w.WriteField("f23"); w.WriteInt32(int32(obj.F23));
+	w.WriteField("f24"); w.WriteInt32(obj.F24);
+	w.WriteField("f25"); w.WriteInt64(obj.F25);
 	w.EndObject()
 }
 
-func decodeWide25(r *specodec.SpecReader) *Wide25 {
+func decodeWide25(r specodec.SpecReader) *Wide25 {
 	obj := &Wide25{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = uint16(r.ReadUint32())
-		case "f2": obj.f2 = r.ReadUint32()
-		case "f3": obj.f3 = r.ReadUint64()
-		case "f4": obj.f4 = r.ReadFloat32()
-		case "f5": obj.f5 = r.ReadFloat64()
-		case "f6": obj.f6 = r.ReadBytes()
-		case "f7": obj.f7 = r.ReadString()
-		case "f8": obj.f8 = r.ReadBool()
-		case "f9": obj.f9 = int8(r.ReadInt32())
-		case "f10": obj.f10 = int16(r.ReadInt32())
-		case "f11": obj.f11 = r.ReadInt32()
-		case "f12": obj.f12 = r.ReadInt64()
-		case "f13": obj.f13 = uint8(r.ReadUint32())
-		case "f14": obj.f14 = uint16(r.ReadUint32())
-		case "f15": obj.f15 = r.ReadUint32()
-		case "f16": obj.f16 = r.ReadUint64()
-		case "f17": obj.f17 = r.ReadFloat32()
-		case "f18": obj.f18 = r.ReadFloat64()
-		case "f19": obj.f19 = r.ReadBytes()
-		case "f20": obj.f20 = r.ReadString()
-		case "f21": obj.f21 = r.ReadBool()
-		case "f22": obj.f22 = int8(r.ReadInt32())
-		case "f23": obj.f23 = int16(r.ReadInt32())
-		case "f24": obj.f24 = r.ReadInt32()
-		case "f25": obj.f25 = r.ReadInt64()
+		case "f1": obj.F1 = uint16(r.ReadUint32())
+		case "f2": obj.F2 = r.ReadUint32()
+		case "f3": obj.F3 = r.ReadUint64()
+		case "f4": obj.F4 = r.ReadFloat32()
+		case "f5": obj.F5 = r.ReadFloat64()
+		case "f6": obj.F6 = r.ReadBytes()
+		case "f7": obj.F7 = r.ReadString()
+		case "f8": obj.F8 = r.ReadBool()
+		case "f9": obj.F9 = int8(r.ReadInt32())
+		case "f10": obj.F10 = int16(r.ReadInt32())
+		case "f11": obj.F11 = r.ReadInt32()
+		case "f12": obj.F12 = r.ReadInt64()
+		case "f13": obj.F13 = uint8(r.ReadUint32())
+		case "f14": obj.F14 = uint16(r.ReadUint32())
+		case "f15": obj.F15 = r.ReadUint32()
+		case "f16": obj.F16 = r.ReadUint64()
+		case "f17": obj.F17 = r.ReadFloat32()
+		case "f18": obj.F18 = r.ReadFloat64()
+		case "f19": obj.F19 = r.ReadBytes()
+		case "f20": obj.F20 = r.ReadString()
+		case "f21": obj.F21 = r.ReadBool()
+		case "f22": obj.F22 = int8(r.ReadInt32())
+		case "f23": obj.F23 = int16(r.ReadInt32())
+		case "f24": obj.F24 = r.ReadInt32()
+		case "f25": obj.F25 = r.ReadInt64()
 		default: r.Skip()
 		}
 	}
@@ -5391,76 +5391,76 @@ func decodeWide25(r *specodec.SpecReader) *Wide25 {
 	return obj
 }
 
-func writeWide30(w *specodec.SpecWriter, obj *Wide30) {
+func writeWide30(w specodec.SpecWriter, obj *Wide30) {
 	w.BeginObject(30)
-	w.WriteField("f1"); w.WriteBool(obj.f1);
-	w.WriteField("f2"); w.WriteInt32(int32(obj.f2));
-	w.WriteField("f3"); w.WriteInt32(int32(obj.f3));
-	w.WriteField("f4"); w.WriteInt32(obj.f4);
-	w.WriteField("f5"); w.WriteInt64(obj.f5);
-	w.WriteField("f6"); w.WriteUint32(uint32(obj.f6));
-	w.WriteField("f7"); w.WriteUint32(uint32(obj.f7));
-	w.WriteField("f8"); w.WriteUint32(obj.f8);
-	w.WriteField("f9"); w.WriteUint64(obj.f9);
-	w.WriteField("f10"); w.WriteFloat32(obj.f10);
-	w.WriteField("f11"); w.WriteFloat64(obj.f11);
-	w.WriteField("f12"); w.WriteBytes(obj.f12);
-	w.WriteField("f13"); w.WriteString(obj.f13);
-	w.WriteField("f14"); w.WriteBool(obj.f14);
-	w.WriteField("f15"); w.WriteInt32(int32(obj.f15));
-	w.WriteField("f16"); w.WriteInt32(int32(obj.f16));
-	w.WriteField("f17"); w.WriteInt32(obj.f17);
-	w.WriteField("f18"); w.WriteInt64(obj.f18);
-	w.WriteField("f19"); w.WriteUint32(uint32(obj.f19));
-	w.WriteField("f20"); w.WriteUint32(uint32(obj.f20));
-	w.WriteField("f21"); w.WriteUint32(obj.f21);
-	w.WriteField("f22"); w.WriteUint64(obj.f22);
-	w.WriteField("f23"); w.WriteFloat32(obj.f23);
-	w.WriteField("f24"); w.WriteFloat64(obj.f24);
-	w.WriteField("f25"); w.WriteBytes(obj.f25);
-	w.WriteField("f26"); w.WriteString(obj.f26);
-	w.WriteField("f27"); w.WriteBool(obj.f27);
-	w.WriteField("f28"); w.WriteInt32(int32(obj.f28));
-	w.WriteField("f29"); w.WriteInt32(int32(obj.f29));
-	w.WriteField("f30"); w.WriteInt32(obj.f30);
+	w.WriteField("f1"); w.WriteBool(obj.F1);
+	w.WriteField("f2"); w.WriteInt32(int32(obj.F2));
+	w.WriteField("f3"); w.WriteInt32(int32(obj.F3));
+	w.WriteField("f4"); w.WriteInt32(obj.F4);
+	w.WriteField("f5"); w.WriteInt64(obj.F5);
+	w.WriteField("f6"); w.WriteUint32(uint32(obj.F6));
+	w.WriteField("f7"); w.WriteUint32(uint32(obj.F7));
+	w.WriteField("f8"); w.WriteUint32(obj.F8);
+	w.WriteField("f9"); w.WriteUint64(obj.F9);
+	w.WriteField("f10"); w.WriteFloat32(obj.F10);
+	w.WriteField("f11"); w.WriteFloat64(obj.F11);
+	w.WriteField("f12"); w.WriteBytes(obj.F12);
+	w.WriteField("f13"); w.WriteString(obj.F13);
+	w.WriteField("f14"); w.WriteBool(obj.F14);
+	w.WriteField("f15"); w.WriteInt32(int32(obj.F15));
+	w.WriteField("f16"); w.WriteInt32(int32(obj.F16));
+	w.WriteField("f17"); w.WriteInt32(obj.F17);
+	w.WriteField("f18"); w.WriteInt64(obj.F18);
+	w.WriteField("f19"); w.WriteUint32(uint32(obj.F19));
+	w.WriteField("f20"); w.WriteUint32(uint32(obj.F20));
+	w.WriteField("f21"); w.WriteUint32(obj.F21);
+	w.WriteField("f22"); w.WriteUint64(obj.F22);
+	w.WriteField("f23"); w.WriteFloat32(obj.F23);
+	w.WriteField("f24"); w.WriteFloat64(obj.F24);
+	w.WriteField("f25"); w.WriteBytes(obj.F25);
+	w.WriteField("f26"); w.WriteString(obj.F26);
+	w.WriteField("f27"); w.WriteBool(obj.F27);
+	w.WriteField("f28"); w.WriteInt32(int32(obj.F28));
+	w.WriteField("f29"); w.WriteInt32(int32(obj.F29));
+	w.WriteField("f30"); w.WriteInt32(obj.F30);
 	w.EndObject()
 }
 
-func decodeWide30(r *specodec.SpecReader) *Wide30 {
+func decodeWide30(r specodec.SpecReader) *Wide30 {
 	obj := &Wide30{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadBool()
-		case "f2": obj.f2 = int8(r.ReadInt32())
-		case "f3": obj.f3 = int16(r.ReadInt32())
-		case "f4": obj.f4 = r.ReadInt32()
-		case "f5": obj.f5 = r.ReadInt64()
-		case "f6": obj.f6 = uint8(r.ReadUint32())
-		case "f7": obj.f7 = uint16(r.ReadUint32())
-		case "f8": obj.f8 = r.ReadUint32()
-		case "f9": obj.f9 = r.ReadUint64()
-		case "f10": obj.f10 = r.ReadFloat32()
-		case "f11": obj.f11 = r.ReadFloat64()
-		case "f12": obj.f12 = r.ReadBytes()
-		case "f13": obj.f13 = r.ReadString()
-		case "f14": obj.f14 = r.ReadBool()
-		case "f15": obj.f15 = int8(r.ReadInt32())
-		case "f16": obj.f16 = int16(r.ReadInt32())
-		case "f17": obj.f17 = r.ReadInt32()
-		case "f18": obj.f18 = r.ReadInt64()
-		case "f19": obj.f19 = uint8(r.ReadUint32())
-		case "f20": obj.f20 = uint16(r.ReadUint32())
-		case "f21": obj.f21 = r.ReadUint32()
-		case "f22": obj.f22 = r.ReadUint64()
-		case "f23": obj.f23 = r.ReadFloat32()
-		case "f24": obj.f24 = r.ReadFloat64()
-		case "f25": obj.f25 = r.ReadBytes()
-		case "f26": obj.f26 = r.ReadString()
-		case "f27": obj.f27 = r.ReadBool()
-		case "f28": obj.f28 = int8(r.ReadInt32())
-		case "f29": obj.f29 = int16(r.ReadInt32())
-		case "f30": obj.f30 = r.ReadInt32()
+		case "f1": obj.F1 = r.ReadBool()
+		case "f2": obj.F2 = int8(r.ReadInt32())
+		case "f3": obj.F3 = int16(r.ReadInt32())
+		case "f4": obj.F4 = r.ReadInt32()
+		case "f5": obj.F5 = r.ReadInt64()
+		case "f6": obj.F6 = uint8(r.ReadUint32())
+		case "f7": obj.F7 = uint16(r.ReadUint32())
+		case "f8": obj.F8 = r.ReadUint32()
+		case "f9": obj.F9 = r.ReadUint64()
+		case "f10": obj.F10 = r.ReadFloat32()
+		case "f11": obj.F11 = r.ReadFloat64()
+		case "f12": obj.F12 = r.ReadBytes()
+		case "f13": obj.F13 = r.ReadString()
+		case "f14": obj.F14 = r.ReadBool()
+		case "f15": obj.F15 = int8(r.ReadInt32())
+		case "f16": obj.F16 = int16(r.ReadInt32())
+		case "f17": obj.F17 = r.ReadInt32()
+		case "f18": obj.F18 = r.ReadInt64()
+		case "f19": obj.F19 = uint8(r.ReadUint32())
+		case "f20": obj.F20 = uint16(r.ReadUint32())
+		case "f21": obj.F21 = r.ReadUint32()
+		case "f22": obj.F22 = r.ReadUint64()
+		case "f23": obj.F23 = r.ReadFloat32()
+		case "f24": obj.F24 = r.ReadFloat64()
+		case "f25": obj.F25 = r.ReadBytes()
+		case "f26": obj.F26 = r.ReadString()
+		case "f27": obj.F27 = r.ReadBool()
+		case "f28": obj.F28 = int8(r.ReadInt32())
+		case "f29": obj.F29 = int16(r.ReadInt32())
+		case "f30": obj.F30 = r.ReadInt32()
 		default: r.Skip()
 		}
 	}
@@ -5468,86 +5468,86 @@ func decodeWide30(r *specodec.SpecReader) *Wide30 {
 	return obj
 }
 
-func writeWide35(w *specodec.SpecWriter, obj *Wide35) {
+func writeWide35(w specodec.SpecWriter, obj *Wide35) {
 	w.BeginObject(35)
-	w.WriteField("f1"); w.WriteUint32(obj.f1);
-	w.WriteField("f2"); w.WriteUint64(obj.f2);
-	w.WriteField("f3"); w.WriteFloat32(obj.f3);
-	w.WriteField("f4"); w.WriteFloat64(obj.f4);
-	w.WriteField("f5"); w.WriteBytes(obj.f5);
-	w.WriteField("f6"); w.WriteString(obj.f6);
-	w.WriteField("f7"); w.WriteBool(obj.f7);
-	w.WriteField("f8"); w.WriteInt32(int32(obj.f8));
-	w.WriteField("f9"); w.WriteInt32(int32(obj.f9));
-	w.WriteField("f10"); w.WriteInt32(obj.f10);
-	w.WriteField("f11"); w.WriteInt64(obj.f11);
-	w.WriteField("f12"); w.WriteUint32(uint32(obj.f12));
-	w.WriteField("f13"); w.WriteUint32(uint32(obj.f13));
-	w.WriteField("f14"); w.WriteUint32(obj.f14);
-	w.WriteField("f15"); w.WriteUint64(obj.f15);
-	w.WriteField("f16"); w.WriteFloat32(obj.f16);
-	w.WriteField("f17"); w.WriteFloat64(obj.f17);
-	w.WriteField("f18"); w.WriteBytes(obj.f18);
-	w.WriteField("f19"); w.WriteString(obj.f19);
-	w.WriteField("f20"); w.WriteBool(obj.f20);
-	w.WriteField("f21"); w.WriteInt32(int32(obj.f21));
-	w.WriteField("f22"); w.WriteInt32(int32(obj.f22));
-	w.WriteField("f23"); w.WriteInt32(obj.f23);
-	w.WriteField("f24"); w.WriteInt64(obj.f24);
-	w.WriteField("f25"); w.WriteUint32(uint32(obj.f25));
-	w.WriteField("f26"); w.WriteUint32(uint32(obj.f26));
-	w.WriteField("f27"); w.WriteUint32(obj.f27);
-	w.WriteField("f28"); w.WriteUint64(obj.f28);
-	w.WriteField("f29"); w.WriteFloat32(obj.f29);
-	w.WriteField("f30"); w.WriteFloat64(obj.f30);
-	w.WriteField("f31"); w.WriteBytes(obj.f31);
-	w.WriteField("f32"); w.WriteString(obj.f32);
-	w.WriteField("f33"); w.WriteBool(obj.f33);
-	w.WriteField("f34"); w.WriteInt32(int32(obj.f34));
-	w.WriteField("f35"); w.WriteInt32(int32(obj.f35));
+	w.WriteField("f1"); w.WriteUint32(obj.F1);
+	w.WriteField("f2"); w.WriteUint64(obj.F2);
+	w.WriteField("f3"); w.WriteFloat32(obj.F3);
+	w.WriteField("f4"); w.WriteFloat64(obj.F4);
+	w.WriteField("f5"); w.WriteBytes(obj.F5);
+	w.WriteField("f6"); w.WriteString(obj.F6);
+	w.WriteField("f7"); w.WriteBool(obj.F7);
+	w.WriteField("f8"); w.WriteInt32(int32(obj.F8));
+	w.WriteField("f9"); w.WriteInt32(int32(obj.F9));
+	w.WriteField("f10"); w.WriteInt32(obj.F10);
+	w.WriteField("f11"); w.WriteInt64(obj.F11);
+	w.WriteField("f12"); w.WriteUint32(uint32(obj.F12));
+	w.WriteField("f13"); w.WriteUint32(uint32(obj.F13));
+	w.WriteField("f14"); w.WriteUint32(obj.F14);
+	w.WriteField("f15"); w.WriteUint64(obj.F15);
+	w.WriteField("f16"); w.WriteFloat32(obj.F16);
+	w.WriteField("f17"); w.WriteFloat64(obj.F17);
+	w.WriteField("f18"); w.WriteBytes(obj.F18);
+	w.WriteField("f19"); w.WriteString(obj.F19);
+	w.WriteField("f20"); w.WriteBool(obj.F20);
+	w.WriteField("f21"); w.WriteInt32(int32(obj.F21));
+	w.WriteField("f22"); w.WriteInt32(int32(obj.F22));
+	w.WriteField("f23"); w.WriteInt32(obj.F23);
+	w.WriteField("f24"); w.WriteInt64(obj.F24);
+	w.WriteField("f25"); w.WriteUint32(uint32(obj.F25));
+	w.WriteField("f26"); w.WriteUint32(uint32(obj.F26));
+	w.WriteField("f27"); w.WriteUint32(obj.F27);
+	w.WriteField("f28"); w.WriteUint64(obj.F28);
+	w.WriteField("f29"); w.WriteFloat32(obj.F29);
+	w.WriteField("f30"); w.WriteFloat64(obj.F30);
+	w.WriteField("f31"); w.WriteBytes(obj.F31);
+	w.WriteField("f32"); w.WriteString(obj.F32);
+	w.WriteField("f33"); w.WriteBool(obj.F33);
+	w.WriteField("f34"); w.WriteInt32(int32(obj.F34));
+	w.WriteField("f35"); w.WriteInt32(int32(obj.F35));
 	w.EndObject()
 }
 
-func decodeWide35(r *specodec.SpecReader) *Wide35 {
+func decodeWide35(r specodec.SpecReader) *Wide35 {
 	obj := &Wide35{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = r.ReadUint32()
-		case "f2": obj.f2 = r.ReadUint64()
-		case "f3": obj.f3 = r.ReadFloat32()
-		case "f4": obj.f4 = r.ReadFloat64()
-		case "f5": obj.f5 = r.ReadBytes()
-		case "f6": obj.f6 = r.ReadString()
-		case "f7": obj.f7 = r.ReadBool()
-		case "f8": obj.f8 = int8(r.ReadInt32())
-		case "f9": obj.f9 = int16(r.ReadInt32())
-		case "f10": obj.f10 = r.ReadInt32()
-		case "f11": obj.f11 = r.ReadInt64()
-		case "f12": obj.f12 = uint8(r.ReadUint32())
-		case "f13": obj.f13 = uint16(r.ReadUint32())
-		case "f14": obj.f14 = r.ReadUint32()
-		case "f15": obj.f15 = r.ReadUint64()
-		case "f16": obj.f16 = r.ReadFloat32()
-		case "f17": obj.f17 = r.ReadFloat64()
-		case "f18": obj.f18 = r.ReadBytes()
-		case "f19": obj.f19 = r.ReadString()
-		case "f20": obj.f20 = r.ReadBool()
-		case "f21": obj.f21 = int8(r.ReadInt32())
-		case "f22": obj.f22 = int16(r.ReadInt32())
-		case "f23": obj.f23 = r.ReadInt32()
-		case "f24": obj.f24 = r.ReadInt64()
-		case "f25": obj.f25 = uint8(r.ReadUint32())
-		case "f26": obj.f26 = uint16(r.ReadUint32())
-		case "f27": obj.f27 = r.ReadUint32()
-		case "f28": obj.f28 = r.ReadUint64()
-		case "f29": obj.f29 = r.ReadFloat32()
-		case "f30": obj.f30 = r.ReadFloat64()
-		case "f31": obj.f31 = r.ReadBytes()
-		case "f32": obj.f32 = r.ReadString()
-		case "f33": obj.f33 = r.ReadBool()
-		case "f34": obj.f34 = int8(r.ReadInt32())
-		case "f35": obj.f35 = int16(r.ReadInt32())
+		case "f1": obj.F1 = r.ReadUint32()
+		case "f2": obj.F2 = r.ReadUint64()
+		case "f3": obj.F3 = r.ReadFloat32()
+		case "f4": obj.F4 = r.ReadFloat64()
+		case "f5": obj.F5 = r.ReadBytes()
+		case "f6": obj.F6 = r.ReadString()
+		case "f7": obj.F7 = r.ReadBool()
+		case "f8": obj.F8 = int8(r.ReadInt32())
+		case "f9": obj.F9 = int16(r.ReadInt32())
+		case "f10": obj.F10 = r.ReadInt32()
+		case "f11": obj.F11 = r.ReadInt64()
+		case "f12": obj.F12 = uint8(r.ReadUint32())
+		case "f13": obj.F13 = uint16(r.ReadUint32())
+		case "f14": obj.F14 = r.ReadUint32()
+		case "f15": obj.F15 = r.ReadUint64()
+		case "f16": obj.F16 = r.ReadFloat32()
+		case "f17": obj.F17 = r.ReadFloat64()
+		case "f18": obj.F18 = r.ReadBytes()
+		case "f19": obj.F19 = r.ReadString()
+		case "f20": obj.F20 = r.ReadBool()
+		case "f21": obj.F21 = int8(r.ReadInt32())
+		case "f22": obj.F22 = int16(r.ReadInt32())
+		case "f23": obj.F23 = r.ReadInt32()
+		case "f24": obj.F24 = r.ReadInt64()
+		case "f25": obj.F25 = uint8(r.ReadUint32())
+		case "f26": obj.F26 = uint16(r.ReadUint32())
+		case "f27": obj.F27 = r.ReadUint32()
+		case "f28": obj.F28 = r.ReadUint64()
+		case "f29": obj.F29 = r.ReadFloat32()
+		case "f30": obj.F30 = r.ReadFloat64()
+		case "f31": obj.F31 = r.ReadBytes()
+		case "f32": obj.F32 = r.ReadString()
+		case "f33": obj.F33 = r.ReadBool()
+		case "f34": obj.F34 = int8(r.ReadInt32())
+		case "f35": obj.F35 = int16(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -5555,96 +5555,96 @@ func decodeWide35(r *specodec.SpecReader) *Wide35 {
 	return obj
 }
 
-func writeWide40(w *specodec.SpecWriter, obj *Wide40) {
+func writeWide40(w specodec.SpecWriter, obj *Wide40) {
 	w.BeginObject(40)
-	w.WriteField("f1"); w.WriteInt32(int32(obj.f1));
-	w.WriteField("f2"); w.WriteInt32(int32(obj.f2));
-	w.WriteField("f3"); w.WriteInt32(obj.f3);
-	w.WriteField("f4"); w.WriteInt64(obj.f4);
-	w.WriteField("f5"); w.WriteUint32(uint32(obj.f5));
-	w.WriteField("f6"); w.WriteUint32(uint32(obj.f6));
-	w.WriteField("f7"); w.WriteUint32(obj.f7);
-	w.WriteField("f8"); w.WriteUint64(obj.f8);
-	w.WriteField("f9"); w.WriteFloat32(obj.f9);
-	w.WriteField("f10"); w.WriteFloat64(obj.f10);
-	w.WriteField("f11"); w.WriteBytes(obj.f11);
-	w.WriteField("f12"); w.WriteString(obj.f12);
-	w.WriteField("f13"); w.WriteBool(obj.f13);
-	w.WriteField("f14"); w.WriteInt32(int32(obj.f14));
-	w.WriteField("f15"); w.WriteInt32(int32(obj.f15));
-	w.WriteField("f16"); w.WriteInt32(obj.f16);
-	w.WriteField("f17"); w.WriteInt64(obj.f17);
-	w.WriteField("f18"); w.WriteUint32(uint32(obj.f18));
-	w.WriteField("f19"); w.WriteUint32(uint32(obj.f19));
-	w.WriteField("f20"); w.WriteUint32(obj.f20);
-	w.WriteField("f21"); w.WriteUint64(obj.f21);
-	w.WriteField("f22"); w.WriteFloat32(obj.f22);
-	w.WriteField("f23"); w.WriteFloat64(obj.f23);
-	w.WriteField("f24"); w.WriteBytes(obj.f24);
-	w.WriteField("f25"); w.WriteString(obj.f25);
-	w.WriteField("f26"); w.WriteBool(obj.f26);
-	w.WriteField("f27"); w.WriteInt32(int32(obj.f27));
-	w.WriteField("f28"); w.WriteInt32(int32(obj.f28));
-	w.WriteField("f29"); w.WriteInt32(obj.f29);
-	w.WriteField("f30"); w.WriteInt64(obj.f30);
-	w.WriteField("f31"); w.WriteUint32(uint32(obj.f31));
-	w.WriteField("f32"); w.WriteUint32(uint32(obj.f32));
-	w.WriteField("f33"); w.WriteUint32(obj.f33);
-	w.WriteField("f34"); w.WriteUint64(obj.f34);
-	w.WriteField("f35"); w.WriteFloat32(obj.f35);
-	w.WriteField("f36"); w.WriteFloat64(obj.f36);
-	w.WriteField("f37"); w.WriteBytes(obj.f37);
-	w.WriteField("f38"); w.WriteString(obj.f38);
-	w.WriteField("f39"); w.WriteBool(obj.f39);
-	w.WriteField("f40"); w.WriteInt32(int32(obj.f40));
+	w.WriteField("f1"); w.WriteInt32(int32(obj.F1));
+	w.WriteField("f2"); w.WriteInt32(int32(obj.F2));
+	w.WriteField("f3"); w.WriteInt32(obj.F3);
+	w.WriteField("f4"); w.WriteInt64(obj.F4);
+	w.WriteField("f5"); w.WriteUint32(uint32(obj.F5));
+	w.WriteField("f6"); w.WriteUint32(uint32(obj.F6));
+	w.WriteField("f7"); w.WriteUint32(obj.F7);
+	w.WriteField("f8"); w.WriteUint64(obj.F8);
+	w.WriteField("f9"); w.WriteFloat32(obj.F9);
+	w.WriteField("f10"); w.WriteFloat64(obj.F10);
+	w.WriteField("f11"); w.WriteBytes(obj.F11);
+	w.WriteField("f12"); w.WriteString(obj.F12);
+	w.WriteField("f13"); w.WriteBool(obj.F13);
+	w.WriteField("f14"); w.WriteInt32(int32(obj.F14));
+	w.WriteField("f15"); w.WriteInt32(int32(obj.F15));
+	w.WriteField("f16"); w.WriteInt32(obj.F16);
+	w.WriteField("f17"); w.WriteInt64(obj.F17);
+	w.WriteField("f18"); w.WriteUint32(uint32(obj.F18));
+	w.WriteField("f19"); w.WriteUint32(uint32(obj.F19));
+	w.WriteField("f20"); w.WriteUint32(obj.F20);
+	w.WriteField("f21"); w.WriteUint64(obj.F21);
+	w.WriteField("f22"); w.WriteFloat32(obj.F22);
+	w.WriteField("f23"); w.WriteFloat64(obj.F23);
+	w.WriteField("f24"); w.WriteBytes(obj.F24);
+	w.WriteField("f25"); w.WriteString(obj.F25);
+	w.WriteField("f26"); w.WriteBool(obj.F26);
+	w.WriteField("f27"); w.WriteInt32(int32(obj.F27));
+	w.WriteField("f28"); w.WriteInt32(int32(obj.F28));
+	w.WriteField("f29"); w.WriteInt32(obj.F29);
+	w.WriteField("f30"); w.WriteInt64(obj.F30);
+	w.WriteField("f31"); w.WriteUint32(uint32(obj.F31));
+	w.WriteField("f32"); w.WriteUint32(uint32(obj.F32));
+	w.WriteField("f33"); w.WriteUint32(obj.F33);
+	w.WriteField("f34"); w.WriteUint64(obj.F34);
+	w.WriteField("f35"); w.WriteFloat32(obj.F35);
+	w.WriteField("f36"); w.WriteFloat64(obj.F36);
+	w.WriteField("f37"); w.WriteBytes(obj.F37);
+	w.WriteField("f38"); w.WriteString(obj.F38);
+	w.WriteField("f39"); w.WriteBool(obj.F39);
+	w.WriteField("f40"); w.WriteInt32(int32(obj.F40));
 	w.EndObject()
 }
 
-func decodeWide40(r *specodec.SpecReader) *Wide40 {
+func decodeWide40(r specodec.SpecReader) *Wide40 {
 	obj := &Wide40{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "f1": obj.f1 = int8(r.ReadInt32())
-		case "f2": obj.f2 = int16(r.ReadInt32())
-		case "f3": obj.f3 = r.ReadInt32()
-		case "f4": obj.f4 = r.ReadInt64()
-		case "f5": obj.f5 = uint8(r.ReadUint32())
-		case "f6": obj.f6 = uint16(r.ReadUint32())
-		case "f7": obj.f7 = r.ReadUint32()
-		case "f8": obj.f8 = r.ReadUint64()
-		case "f9": obj.f9 = r.ReadFloat32()
-		case "f10": obj.f10 = r.ReadFloat64()
-		case "f11": obj.f11 = r.ReadBytes()
-		case "f12": obj.f12 = r.ReadString()
-		case "f13": obj.f13 = r.ReadBool()
-		case "f14": obj.f14 = int8(r.ReadInt32())
-		case "f15": obj.f15 = int16(r.ReadInt32())
-		case "f16": obj.f16 = r.ReadInt32()
-		case "f17": obj.f17 = r.ReadInt64()
-		case "f18": obj.f18 = uint8(r.ReadUint32())
-		case "f19": obj.f19 = uint16(r.ReadUint32())
-		case "f20": obj.f20 = r.ReadUint32()
-		case "f21": obj.f21 = r.ReadUint64()
-		case "f22": obj.f22 = r.ReadFloat32()
-		case "f23": obj.f23 = r.ReadFloat64()
-		case "f24": obj.f24 = r.ReadBytes()
-		case "f25": obj.f25 = r.ReadString()
-		case "f26": obj.f26 = r.ReadBool()
-		case "f27": obj.f27 = int8(r.ReadInt32())
-		case "f28": obj.f28 = int16(r.ReadInt32())
-		case "f29": obj.f29 = r.ReadInt32()
-		case "f30": obj.f30 = r.ReadInt64()
-		case "f31": obj.f31 = uint8(r.ReadUint32())
-		case "f32": obj.f32 = uint16(r.ReadUint32())
-		case "f33": obj.f33 = r.ReadUint32()
-		case "f34": obj.f34 = r.ReadUint64()
-		case "f35": obj.f35 = r.ReadFloat32()
-		case "f36": obj.f36 = r.ReadFloat64()
-		case "f37": obj.f37 = r.ReadBytes()
-		case "f38": obj.f38 = r.ReadString()
-		case "f39": obj.f39 = r.ReadBool()
-		case "f40": obj.f40 = int8(r.ReadInt32())
+		case "f1": obj.F1 = int8(r.ReadInt32())
+		case "f2": obj.F2 = int16(r.ReadInt32())
+		case "f3": obj.F3 = r.ReadInt32()
+		case "f4": obj.F4 = r.ReadInt64()
+		case "f5": obj.F5 = uint8(r.ReadUint32())
+		case "f6": obj.F6 = uint16(r.ReadUint32())
+		case "f7": obj.F7 = r.ReadUint32()
+		case "f8": obj.F8 = r.ReadUint64()
+		case "f9": obj.F9 = r.ReadFloat32()
+		case "f10": obj.F10 = r.ReadFloat64()
+		case "f11": obj.F11 = r.ReadBytes()
+		case "f12": obj.F12 = r.ReadString()
+		case "f13": obj.F13 = r.ReadBool()
+		case "f14": obj.F14 = int8(r.ReadInt32())
+		case "f15": obj.F15 = int16(r.ReadInt32())
+		case "f16": obj.F16 = r.ReadInt32()
+		case "f17": obj.F17 = r.ReadInt64()
+		case "f18": obj.F18 = uint8(r.ReadUint32())
+		case "f19": obj.F19 = uint16(r.ReadUint32())
+		case "f20": obj.F20 = r.ReadUint32()
+		case "f21": obj.F21 = r.ReadUint64()
+		case "f22": obj.F22 = r.ReadFloat32()
+		case "f23": obj.F23 = r.ReadFloat64()
+		case "f24": obj.F24 = r.ReadBytes()
+		case "f25": obj.F25 = r.ReadString()
+		case "f26": obj.F26 = r.ReadBool()
+		case "f27": obj.F27 = int8(r.ReadInt32())
+		case "f28": obj.F28 = int16(r.ReadInt32())
+		case "f29": obj.F29 = r.ReadInt32()
+		case "f30": obj.F30 = r.ReadInt64()
+		case "f31": obj.F31 = uint8(r.ReadUint32())
+		case "f32": obj.F32 = uint16(r.ReadUint32())
+		case "f33": obj.F33 = r.ReadUint32()
+		case "f34": obj.F34 = r.ReadUint64()
+		case "f35": obj.F35 = r.ReadFloat32()
+		case "f36": obj.F36 = r.ReadFloat64()
+		case "f37": obj.F37 = r.ReadBytes()
+		case "f38": obj.F38 = r.ReadString()
+		case "f39": obj.F39 = r.ReadBool()
+		case "f40": obj.F40 = int8(r.ReadInt32())
 		default: r.Skip()
 		}
 	}
@@ -5652,12 +5652,12 @@ func decodeWide40(r *specodec.SpecReader) *Wide40 {
 	return obj
 }
 
-func writeEdgeEmpty(w *specodec.SpecWriter, obj *EdgeEmpty) {
+func writeEdgeEmpty(w specodec.SpecWriter, obj *EdgeEmpty) {
 	w.BeginObject(0)
 	w.EndObject()
 }
 
-func decodeEdgeEmpty(r *specodec.SpecReader) *EdgeEmpty {
+func decodeEdgeEmpty(r specodec.SpecReader) *EdgeEmpty {
 	obj := &EdgeEmpty{}
 	r.BeginObject()
 	for r.HasNextField() {
@@ -5669,20 +5669,20 @@ func decodeEdgeEmpty(r *specodec.SpecReader) *EdgeEmpty {
 	return obj
 }
 
-func writeEdgeOneOpt(w *specodec.SpecWriter, obj *EdgeOneOpt) {
-	_n := 0
-	if obj.maybe != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.maybe != nil { w.WriteField("maybe"); w.WriteString(*obj.maybe); }
+func writeEdgeOneOpt(w specodec.SpecWriter, obj *EdgeOneOpt) {
+	fieldCount := 0
+	if obj.Maybe != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.Maybe != nil { w.WriteField("maybe"); w.WriteString(*obj.Maybe); }
 	w.EndObject()
 }
 
-func decodeEdgeOneOpt(r *specodec.SpecReader) *EdgeOneOpt {
+func decodeEdgeOneOpt(r specodec.SpecReader) *EdgeOneOpt {
 	obj := &EdgeOneOpt{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "maybe": _v := r.ReadString(); obj.maybe = &_v
+		case "maybe": val := r.ReadString(); obj.Maybe = &val
 		default: r.Skip()
 		}
 	}
@@ -5690,32 +5690,32 @@ func decodeEdgeOneOpt(r *specodec.SpecReader) *EdgeOneOpt {
 	return obj
 }
 
-func writeEdgeBigNums(w *specodec.SpecWriter, obj *EdgeBigNums) {
+func writeEdgeBigNums(w specodec.SpecWriter, obj *EdgeBigNums) {
 	w.BeginObject(8)
-	w.WriteField("i8"); w.WriteInt32(int32(obj.i8));
-	w.WriteField("i16"); w.WriteInt32(int32(obj.i16));
-	w.WriteField("i32"); w.WriteInt32(obj.i32);
-	w.WriteField("i64"); w.WriteInt64(obj.i64);
-	w.WriteField("u8"); w.WriteUint32(uint32(obj.u8));
-	w.WriteField("u16"); w.WriteUint32(uint32(obj.u16));
-	w.WriteField("u32"); w.WriteUint32(obj.u32);
-	w.WriteField("u64"); w.WriteUint64(obj.u64);
+	w.WriteField("i8"); w.WriteInt32(int32(obj.I8));
+	w.WriteField("i16"); w.WriteInt32(int32(obj.I16));
+	w.WriteField("i32"); w.WriteInt32(obj.I32);
+	w.WriteField("i64"); w.WriteInt64(obj.I64);
+	w.WriteField("u8"); w.WriteUint32(uint32(obj.U8));
+	w.WriteField("u16"); w.WriteUint32(uint32(obj.U16));
+	w.WriteField("u32"); w.WriteUint32(obj.U32);
+	w.WriteField("u64"); w.WriteUint64(obj.U64);
 	w.EndObject()
 }
 
-func decodeEdgeBigNums(r *specodec.SpecReader) *EdgeBigNums {
+func decodeEdgeBigNums(r specodec.SpecReader) *EdgeBigNums {
 	obj := &EdgeBigNums{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "i8": obj.i8 = int8(r.ReadInt32())
-		case "i16": obj.i16 = int16(r.ReadInt32())
-		case "i32": obj.i32 = r.ReadInt32()
-		case "i64": obj.i64 = r.ReadInt64()
-		case "u8": obj.u8 = uint8(r.ReadUint32())
-		case "u16": obj.u16 = uint16(r.ReadUint32())
-		case "u32": obj.u32 = r.ReadUint32()
-		case "u64": obj.u64 = r.ReadUint64()
+		case "i8": obj.I8 = int8(r.ReadInt32())
+		case "i16": obj.I16 = int16(r.ReadInt32())
+		case "i32": obj.I32 = r.ReadInt32()
+		case "i64": obj.I64 = r.ReadInt64()
+		case "u8": obj.U8 = uint8(r.ReadUint32())
+		case "u16": obj.U16 = uint16(r.ReadUint32())
+		case "u32": obj.U32 = r.ReadUint32()
+		case "u64": obj.U64 = r.ReadUint64()
 		default: r.Skip()
 		}
 	}
@@ -5723,26 +5723,26 @@ func decodeEdgeBigNums(r *specodec.SpecReader) *EdgeBigNums {
 	return obj
 }
 
-func writeEdgeZeroVals(w *specodec.SpecWriter, obj *EdgeZeroVals) {
+func writeEdgeZeroVals(w specodec.SpecWriter, obj *EdgeZeroVals) {
 	w.BeginObject(5)
-	w.WriteField("s"); w.WriteString(obj.s);
-	w.WriteField("i"); w.WriteInt32(obj.i);
-	w.WriteField("f"); w.WriteFloat64(obj.f);
-	w.WriteField("b"); w.WriteBool(obj.b);
-	w.WriteField("by_field"); w.WriteBytes(obj.by_field);
+	w.WriteField("s"); w.WriteString(obj.S);
+	w.WriteField("i"); w.WriteInt32(obj.I);
+	w.WriteField("f"); w.WriteFloat64(obj.F);
+	w.WriteField("b"); w.WriteBool(obj.B);
+	w.WriteField("by_field"); w.WriteBytes(obj.ByField);
 	w.EndObject()
 }
 
-func decodeEdgeZeroVals(r *specodec.SpecReader) *EdgeZeroVals {
+func decodeEdgeZeroVals(r specodec.SpecReader) *EdgeZeroVals {
 	obj := &EdgeZeroVals{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "s": obj.s = r.ReadString()
-		case "i": obj.i = r.ReadInt32()
-		case "f": obj.f = r.ReadFloat64()
-		case "b": obj.b = r.ReadBool()
-		case "by_field": obj.by_field = r.ReadBytes()
+		case "s": obj.S = r.ReadString()
+		case "i": obj.I = r.ReadInt32()
+		case "f": obj.F = r.ReadFloat64()
+		case "b": obj.B = r.ReadBool()
+		case "by_field": obj.ByField = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -5750,29 +5750,29 @@ func decodeEdgeZeroVals(r *specodec.SpecReader) *EdgeZeroVals {
 	return obj
 }
 
-func writeEdgeNullable(w *specodec.SpecWriter, obj *EdgeNullable) {
-	_n := 0
-	if obj.a != nil { _n++ }
-	if obj.b != nil { _n++ }
-	if obj.c != nil { _n++ }
-	if obj.d != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.a != nil { w.WriteField("a"); w.WriteString(*obj.a); }
-	if obj.b != nil { w.WriteField("b"); w.WriteInt32(*obj.b); }
-	if obj.c != nil { w.WriteField("c"); writeInner(w, obj.c); }
-	if obj.d != nil { w.WriteField("d"); func() { w.BeginArray(len(*obj.d)); for _, _e := range *obj.d { w.NextElement(); w.WriteString(_e); }; w.EndArray() }(); }
+func writeEdgeNullable(w specodec.SpecWriter, obj *EdgeNullable) {
+	fieldCount := 0
+	if obj.A != nil { fieldCount++ }
+	if obj.B != nil { fieldCount++ }
+	if obj.C != nil { fieldCount++ }
+	if obj.D != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.A != nil { w.WriteField("a"); w.WriteString(*obj.A); }
+	if obj.B != nil { w.WriteField("b"); w.WriteInt32(*obj.B); }
+	if obj.C != nil { w.WriteField("c"); writeInner(w, obj.C); }
+	if obj.D != nil { w.WriteField("d"); func() { w.BeginArray(len(*obj.D)); for _, item := range *obj.D { w.NextElement(); w.WriteString(item); }; w.EndArray() }(); }
 	w.EndObject()
 }
 
-func decodeEdgeNullable(r *specodec.SpecReader) *EdgeNullable {
+func decodeEdgeNullable(r specodec.SpecReader) *EdgeNullable {
 	obj := &EdgeNullable{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": _v := r.ReadString(); obj.a = &_v
-		case "b": _v := r.ReadInt32(); obj.b = &_v
-		case "c": obj.c = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
-		case "d": _v := func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }(); obj.d = &_v
+		case "a": val := r.ReadString(); obj.A = &val
+		case "b": val := r.ReadInt32(); obj.B = &val
+		case "c": obj.C = func() *Inner { if r.IsNull() { r.ReadNull(); return nil }; return decodeInner(r) }()
+		case "d": val := func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }(); obj.D = &val
 		default: r.Skip()
 		}
 	}
@@ -5780,18 +5780,18 @@ func decodeEdgeNullable(r *specodec.SpecReader) *EdgeNullable {
 	return obj
 }
 
-func writeEdgeNegZero(w *specodec.SpecWriter, obj *EdgeNegZero) {
+func writeEdgeNegZero(w specodec.SpecWriter, obj *EdgeNegZero) {
 	w.BeginObject(1)
-	w.WriteField("v"); w.WriteFloat64(obj.v);
+	w.WriteField("v"); w.WriteFloat64(obj.V);
 	w.EndObject()
 }
 
-func decodeEdgeNegZero(r *specodec.SpecReader) *EdgeNegZero {
+func decodeEdgeNegZero(r specodec.SpecReader) *EdgeNegZero {
 	obj := &EdgeNegZero{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "v": obj.v = r.ReadFloat64()
+		case "v": obj.V = r.ReadFloat64()
 		default: r.Skip()
 		}
 	}
@@ -5799,20 +5799,20 @@ func decodeEdgeNegZero(r *specodec.SpecReader) *EdgeNegZero {
 	return obj
 }
 
-func writeEdgeNullByte(w *specodec.SpecWriter, obj *EdgeNullByte) {
+func writeEdgeNullByte(w specodec.SpecWriter, obj *EdgeNullByte) {
 	w.BeginObject(2)
-	w.WriteField("s"); w.WriteString(obj.s);
-	w.WriteField("b"); w.WriteBytes(obj.b);
+	w.WriteField("s"); w.WriteString(obj.S);
+	w.WriteField("b"); w.WriteBytes(obj.B);
 	w.EndObject()
 }
 
-func decodeEdgeNullByte(r *specodec.SpecReader) *EdgeNullByte {
+func decodeEdgeNullByte(r specodec.SpecReader) *EdgeNullByte {
 	obj := &EdgeNullByte{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "s": obj.s = r.ReadString()
-		case "b": obj.b = r.ReadBytes()
+		case "s": obj.S = r.ReadString()
+		case "b": obj.B = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -5820,28 +5820,28 @@ func decodeEdgeNullByte(r *specodec.SpecReader) *EdgeNullByte {
 	return obj
 }
 
-func writeEdgeBoundary(w *specodec.SpecWriter, obj *EdgeBoundary) {
+func writeEdgeBoundary(w specodec.SpecWriter, obj *EdgeBoundary) {
 	w.BeginObject(6)
-	w.WriteField("i32_neg129"); w.WriteInt32(obj.i32_neg129);
-	w.WriteField("i32_128"); w.WriteInt32(obj.i32_128);
-	w.WriteField("i32_256"); w.WriteInt32(obj.i32_256);
-	w.WriteField("i32_65536"); w.WriteInt32(obj.i32_65536);
-	w.WriteField("i32_neg32769"); w.WriteInt32(obj.i32_neg32769);
-	w.WriteField("u32_65536"); w.WriteUint32(obj.u32_65536);
+	w.WriteField("i32_neg129"); w.WriteInt32(obj.I32Neg129);
+	w.WriteField("i32_128"); w.WriteInt32(obj.I32128);
+	w.WriteField("i32_256"); w.WriteInt32(obj.I32256);
+	w.WriteField("i32_65536"); w.WriteInt32(obj.I3265536);
+	w.WriteField("i32_neg32769"); w.WriteInt32(obj.I32Neg32769);
+	w.WriteField("u32_65536"); w.WriteUint32(obj.U3265536);
 	w.EndObject()
 }
 
-func decodeEdgeBoundary(r *specodec.SpecReader) *EdgeBoundary {
+func decodeEdgeBoundary(r specodec.SpecReader) *EdgeBoundary {
 	obj := &EdgeBoundary{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "i32_neg129": obj.i32_neg129 = r.ReadInt32()
-		case "i32_128": obj.i32_128 = r.ReadInt32()
-		case "i32_256": obj.i32_256 = r.ReadInt32()
-		case "i32_65536": obj.i32_65536 = r.ReadInt32()
-		case "i32_neg32769": obj.i32_neg32769 = r.ReadInt32()
-		case "u32_65536": obj.u32_65536 = r.ReadUint32()
+		case "i32_neg129": obj.I32Neg129 = r.ReadInt32()
+		case "i32_128": obj.I32128 = r.ReadInt32()
+		case "i32_256": obj.I32256 = r.ReadInt32()
+		case "i32_65536": obj.I3265536 = r.ReadInt32()
+		case "i32_neg32769": obj.I32Neg32769 = r.ReadInt32()
+		case "u32_65536": obj.U3265536 = r.ReadUint32()
 		default: r.Skip()
 		}
 	}
@@ -5849,24 +5849,24 @@ func decodeEdgeBoundary(r *specodec.SpecReader) *EdgeBoundary {
 	return obj
 }
 
-func writeEdgeStrLen(w *specodec.SpecWriter, obj *EdgeStrLen) {
+func writeEdgeStrLen(w specodec.SpecWriter, obj *EdgeStrLen) {
 	w.BeginObject(4)
-	w.WriteField("s31"); w.WriteString(obj.s31);
-	w.WriteField("s32"); w.WriteString(obj.s32);
-	w.WriteField("s255"); w.WriteString(obj.s255);
-	w.WriteField("s256"); w.WriteString(obj.s256);
+	w.WriteField("s31"); w.WriteString(obj.S31);
+	w.WriteField("s32"); w.WriteString(obj.S32);
+	w.WriteField("s255"); w.WriteString(obj.S255);
+	w.WriteField("s256"); w.WriteString(obj.S256);
 	w.EndObject()
 }
 
-func decodeEdgeStrLen(r *specodec.SpecReader) *EdgeStrLen {
+func decodeEdgeStrLen(r specodec.SpecReader) *EdgeStrLen {
 	obj := &EdgeStrLen{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "s31": obj.s31 = r.ReadString()
-		case "s32": obj.s32 = r.ReadString()
-		case "s255": obj.s255 = r.ReadString()
-		case "s256": obj.s256 = r.ReadString()
+		case "s31": obj.S31 = r.ReadString()
+		case "s32": obj.S32 = r.ReadString()
+		case "s255": obj.S255 = r.ReadString()
+		case "s256": obj.S256 = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -5874,24 +5874,24 @@ func decodeEdgeStrLen(r *specodec.SpecReader) *EdgeStrLen {
 	return obj
 }
 
-func writeEdgeBytesLen(w *specodec.SpecWriter, obj *EdgeBytesLen) {
+func writeEdgeBytesLen(w specodec.SpecWriter, obj *EdgeBytesLen) {
 	w.BeginObject(4)
-	w.WriteField("b31"); w.WriteBytes(obj.b31);
-	w.WriteField("b32"); w.WriteBytes(obj.b32);
-	w.WriteField("b255"); w.WriteBytes(obj.b255);
-	w.WriteField("b256"); w.WriteBytes(obj.b256);
+	w.WriteField("b31"); w.WriteBytes(obj.B31);
+	w.WriteField("b32"); w.WriteBytes(obj.B32);
+	w.WriteField("b255"); w.WriteBytes(obj.B255);
+	w.WriteField("b256"); w.WriteBytes(obj.B256);
 	w.EndObject()
 }
 
-func decodeEdgeBytesLen(r *specodec.SpecReader) *EdgeBytesLen {
+func decodeEdgeBytesLen(r specodec.SpecReader) *EdgeBytesLen {
 	obj := &EdgeBytesLen{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "b31": obj.b31 = r.ReadBytes()
-		case "b32": obj.b32 = r.ReadBytes()
-		case "b255": obj.b255 = r.ReadBytes()
-		case "b256": obj.b256 = r.ReadBytes()
+		case "b31": obj.B31 = r.ReadBytes()
+		case "b32": obj.B32 = r.ReadBytes()
+		case "b255": obj.B255 = r.ReadBytes()
+		case "b256": obj.B256 = r.ReadBytes()
 		default: r.Skip()
 		}
 	}
@@ -5899,18 +5899,18 @@ func decodeEdgeBytesLen(r *specodec.SpecReader) *EdgeBytesLen {
 	return obj
 }
 
-func writeEdgeArrEmpty(w *specodec.SpecWriter, obj *EdgeArrEmpty) {
+func writeEdgeArrEmpty(w specodec.SpecWriter, obj *EdgeArrEmpty) {
 	w.BeginObject(1)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); w.WriteString(_e); }; w.EndArray() }();
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); w.WriteString(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeEdgeArrEmpty(r *specodec.SpecReader) *EdgeArrEmpty {
+func decodeEdgeArrEmpty(r specodec.SpecReader) *EdgeArrEmpty {
 	obj := &EdgeArrEmpty{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }()
+		case "items": obj.Items = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -5918,20 +5918,20 @@ func decodeEdgeArrEmpty(r *specodec.SpecReader) *EdgeArrEmpty {
 	return obj
 }
 
-func writeEdgeArrBoundary(w *specodec.SpecWriter, obj *EdgeArrBoundary) {
+func writeEdgeArrBoundary(w specodec.SpecWriter, obj *EdgeArrBoundary) {
 	w.BeginObject(2)
-	w.WriteField("a15"); func() { w.BeginArray(len(obj.a15)); for _, _e := range obj.a15 { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
-	w.WriteField("a16"); func() { w.BeginArray(len(obj.a16)); for _, _e := range obj.a16 { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }();
+	w.WriteField("a15"); func() { w.BeginArray(len(obj.A15)); for _, item := range obj.A15 { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }();
+	w.WriteField("a16"); func() { w.BeginArray(len(obj.A16)); for _, item := range obj.A16 { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }();
 	w.EndObject()
 }
 
-func decodeEdgeArrBoundary(r *specodec.SpecReader) *EdgeArrBoundary {
+func decodeEdgeArrBoundary(r specodec.SpecReader) *EdgeArrBoundary {
 	obj := &EdgeArrBoundary{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a15": obj.a15 = func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }()
-		case "a16": obj.a16 = func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }()
+		case "a15": obj.A15 = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
+		case "a16": obj.A16 = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
 		default: r.Skip()
 		}
 	}
@@ -5939,22 +5939,22 @@ func decodeEdgeArrBoundary(r *specodec.SpecReader) *EdgeArrBoundary {
 	return obj
 }
 
-func writeOptArr1(w *specodec.SpecWriter, obj *OptArr1) {
-	_n := 1
-	if obj.items != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("req"); w.WriteString(obj.req);
-	if obj.items != nil { w.WriteField("items"); func() { w.BeginArray(len(*obj.items)); for _, _e := range *obj.items { w.NextElement(); w.WriteInt32(_e); }; w.EndArray() }(); }
+func writeOptArr1(w specodec.SpecWriter, obj *OptArr1) {
+	fieldCount := 1
+	if obj.Items != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("req"); w.WriteString(obj.Req);
+	if obj.Items != nil { w.WriteField("items"); func() { w.BeginArray(len(*obj.Items)); for _, item := range *obj.Items { w.NextElement(); w.WriteInt32(item); }; w.EndArray() }(); }
 	w.EndObject()
 }
 
-func decodeOptArr1(r *specodec.SpecReader) *OptArr1 {
+func decodeOptArr1(r specodec.SpecReader) *OptArr1 {
 	obj := &OptArr1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "req": obj.req = r.ReadString()
-		case "items": _v := func() []int32 { var _a []int32; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadInt32()) }; r.EndArray(); return _a }(); obj.items = &_v
+		case "req": obj.Req = r.ReadString()
+		case "items": val := func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }(); obj.Items = &val
 		default: r.Skip()
 		}
 	}
@@ -5962,25 +5962,25 @@ func decodeOptArr1(r *specodec.SpecReader) *OptArr1 {
 	return obj
 }
 
-func writeOptArr2(w *specodec.SpecWriter, obj *OptArr2) {
-	_n := 1
-	if obj.names != nil { _n++ }
-	if obj.flags != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("id"); w.WriteInt32(obj.id);
-	if obj.names != nil { w.WriteField("names"); func() { w.BeginArray(len(*obj.names)); for _, _e := range *obj.names { w.NextElement(); w.WriteString(_e); }; w.EndArray() }(); }
-	if obj.flags != nil { w.WriteField("flags"); func() { w.BeginArray(len(*obj.flags)); for _, _e := range *obj.flags { w.NextElement(); w.WriteBool(_e); }; w.EndArray() }(); }
+func writeOptArr2(w specodec.SpecWriter, obj *OptArr2) {
+	fieldCount := 1
+	if obj.Names != nil { fieldCount++ }
+	if obj.Flags != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("id"); w.WriteInt32(obj.Id);
+	if obj.Names != nil { w.WriteField("names"); func() { w.BeginArray(len(*obj.Names)); for _, item := range *obj.Names { w.NextElement(); w.WriteString(item); }; w.EndArray() }(); }
+	if obj.Flags != nil { w.WriteField("flags"); func() { w.BeginArray(len(*obj.Flags)); for _, item := range *obj.Flags { w.NextElement(); w.WriteBool(item); }; w.EndArray() }(); }
 	w.EndObject()
 }
 
-func decodeOptArr2(r *specodec.SpecReader) *OptArr2 {
+func decodeOptArr2(r specodec.SpecReader) *OptArr2 {
 	obj := &OptArr2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "id": obj.id = r.ReadInt32()
-		case "names": _v := func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }(); obj.names = &_v
-		case "flags": _v := func() []bool { var _a []bool; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBool()) }; r.EndArray(); return _a }(); obj.flags = &_v
+		case "id": obj.Id = r.ReadInt32()
+		case "names": val := func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }(); obj.Names = &val
+		case "flags": val := func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }(); obj.Flags = &val
 		default: r.Skip()
 		}
 	}
@@ -5988,23 +5988,23 @@ func decodeOptArr2(r *specodec.SpecReader) *OptArr2 {
 	return obj
 }
 
-func writeOptArr3(w *specodec.SpecWriter, obj *OptArr3) {
-	_n := 0
-	if obj.a != nil { _n++ }
-	if obj.b != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.a != nil { w.WriteField("a"); func() { w.BeginArray(len(*obj.a)); for _, _e := range *obj.a { w.NextElement(); w.WriteString(_e); }; w.EndArray() }(); }
-	if obj.b != nil { w.WriteField("b"); func() { w.BeginArray(len(*obj.b)); for _, _e := range *obj.b { w.NextElement(); w.WriteFloat64(_e); }; w.EndArray() }(); }
+func writeOptArr3(w specodec.SpecWriter, obj *OptArr3) {
+	fieldCount := 0
+	if obj.A != nil { fieldCount++ }
+	if obj.B != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.A != nil { w.WriteField("a"); func() { w.BeginArray(len(*obj.A)); for _, item := range *obj.A { w.NextElement(); w.WriteString(item); }; w.EndArray() }(); }
+	if obj.B != nil { w.WriteField("b"); func() { w.BeginArray(len(*obj.B)); for _, item := range *obj.B { w.NextElement(); w.WriteFloat64(item); }; w.EndArray() }(); }
 	w.EndObject()
 }
 
-func decodeOptArr3(r *specodec.SpecReader) *OptArr3 {
+func decodeOptArr3(r specodec.SpecReader) *OptArr3 {
 	obj := &OptArr3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": _v := func() []string { var _a []string; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadString()) }; r.EndArray(); return _a }(); obj.a = &_v
-		case "b": _v := func() []float64 { var _a []float64; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadFloat64()) }; r.EndArray(); return _a }(); obj.b = &_v
+		case "a": val := func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }(); obj.A = &val
+		case "b": val := func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }(); obj.B = &val
 		default: r.Skip()
 		}
 	}
@@ -6012,22 +6012,22 @@ func decodeOptArr3(r *specodec.SpecReader) *OptArr3 {
 	return obj
 }
 
-func writeOptArr4(w *specodec.SpecWriter, obj *OptArr4) {
-	_n := 1
-	if obj.chunks != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("payload"); w.WriteBytes(obj.payload);
-	if obj.chunks != nil { w.WriteField("chunks"); func() { w.BeginArray(len(*obj.chunks)); for _, _e := range *obj.chunks { w.NextElement(); w.WriteBytes(_e); }; w.EndArray() }(); }
+func writeOptArr4(w specodec.SpecWriter, obj *OptArr4) {
+	fieldCount := 1
+	if obj.Chunks != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("payload"); w.WriteBytes(obj.Payload);
+	if obj.Chunks != nil { w.WriteField("chunks"); func() { w.BeginArray(len(*obj.Chunks)); for _, item := range *obj.Chunks { w.NextElement(); w.WriteBytes(item); }; w.EndArray() }(); }
 	w.EndObject()
 }
 
-func decodeOptArr4(r *specodec.SpecReader) *OptArr4 {
+func decodeOptArr4(r specodec.SpecReader) *OptArr4 {
 	obj := &OptArr4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "payload": obj.payload = r.ReadBytes()
-		case "chunks": _v := func() [][]byte { var _a [][]byte; r.BeginArray(); for r.HasNextElement() { _a = append(_a, r.ReadBytes()) }; r.EndArray(); return _a }(); obj.chunks = &_v
+		case "payload": obj.Payload = r.ReadBytes()
+		case "chunks": val := func() [][]byte { var arr [][]byte; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBytes()) }; r.EndArray(); return arr }(); obj.Chunks = &val
 		default: r.Skip()
 		}
 	}
@@ -6035,22 +6035,22 @@ func decodeOptArr4(r *specodec.SpecReader) *OptArr4 {
 	return obj
 }
 
-func writeOptArr5(w *specodec.SpecWriter, obj *OptArr5) {
-	_n := 1
-	if obj.models != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.models != nil { w.WriteField("models"); func() { w.BeginArray(len(*obj.models)); for _, _e := range *obj.models { w.NextElement(); writeInner(w, _e); }; w.EndArray() }(); }
-	w.WriteField("name"); w.WriteString(obj.name);
+func writeOptArr5(w specodec.SpecWriter, obj *OptArr5) {
+	fieldCount := 1
+	if obj.Models != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.Models != nil { w.WriteField("models"); func() { w.BeginArray(len(*obj.Models)); for _, item := range *obj.Models { w.NextElement(); writeInner(w, item); }; w.EndArray() }(); }
+	w.WriteField("name"); w.WriteString(obj.Name);
 	w.EndObject()
 }
 
-func decodeOptArr5(r *specodec.SpecReader) *OptArr5 {
+func decodeOptArr5(r specodec.SpecReader) *OptArr5 {
 	obj := &OptArr5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "models": _v := func() []*Inner { var _a []*Inner; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeInner(r)) }; r.EndArray(); return _a }(); obj.models = &_v
-		case "name": obj.name = r.ReadString()
+		case "models": val := func() []*Inner { var arr []*Inner; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeInner(r)) }; r.EndArray(); return arr }(); obj.Models = &val
+		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -6058,20 +6058,20 @@ func decodeOptArr5(r *specodec.SpecReader) *OptArr5 {
 	return obj
 }
 
-func writeNestOpt1(w *specodec.SpecWriter, obj *NestOpt1) {
+func writeNestOpt1(w specodec.SpecWriter, obj *NestOpt1) {
 	w.BeginObject(2)
-	w.WriteField("outer"); writeLabel(w, obj.outer);
-	w.WriteField("name"); w.WriteString(obj.name);
+	w.WriteField("outer"); writeLabel(w, obj.Outer);
+	w.WriteField("name"); w.WriteString(obj.Name);
 	w.EndObject()
 }
 
-func decodeNestOpt1(r *specodec.SpecReader) *NestOpt1 {
+func decodeNestOpt1(r specodec.SpecReader) *NestOpt1 {
 	obj := &NestOpt1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "outer": obj.outer = decodeLabel(r)
-		case "name": obj.name = r.ReadString()
+		case "outer": obj.Outer = decodeLabel(r)
+		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -6079,26 +6079,26 @@ func decodeNestOpt1(r *specodec.SpecReader) *NestOpt1 {
 	return obj
 }
 
-func writeNestOpt2(w *specodec.SpecWriter, obj *NestOpt2) {
-	_n := 0
-	if obj.a != nil { _n++ }
-	if obj.b != nil { _n++ }
-	if obj.c != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.a != nil { w.WriteField("a"); writeIdVal(w, obj.a); }
-	if obj.b != nil { w.WriteField("b"); writeIdVal(w, obj.b); }
-	if obj.c != nil { w.WriteField("c"); writeIdVal(w, obj.c); }
+func writeNestOpt2(w specodec.SpecWriter, obj *NestOpt2) {
+	fieldCount := 0
+	if obj.A != nil { fieldCount++ }
+	if obj.B != nil { fieldCount++ }
+	if obj.C != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.A != nil { w.WriteField("a"); writeIdVal(w, obj.A); }
+	if obj.B != nil { w.WriteField("b"); writeIdVal(w, obj.B); }
+	if obj.C != nil { w.WriteField("c"); writeIdVal(w, obj.C); }
 	w.EndObject()
 }
 
-func decodeNestOpt2(r *specodec.SpecReader) *NestOpt2 {
+func decodeNestOpt2(r specodec.SpecReader) *NestOpt2 {
 	obj := &NestOpt2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
-		case "b": obj.b = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
-		case "c": obj.c = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
+		case "a": obj.A = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
+		case "b": obj.B = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
+		case "c": obj.C = func() *IdVal { if r.IsNull() { r.ReadNull(); return nil }; return decodeIdVal(r) }()
 		default: r.Skip()
 		}
 	}
@@ -6106,22 +6106,22 @@ func decodeNestOpt2(r *specodec.SpecReader) *NestOpt2 {
 	return obj
 }
 
-func writeNestOpt3(w *specodec.SpecWriter, obj *NestOpt3) {
-	_n := 1
-	if obj.value_range != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("money"); writeMoney(w, obj.money);
-	if obj.value_range != nil { w.WriteField("value_range"); writeRange32(w, obj.value_range); }
+func writeNestOpt3(w specodec.SpecWriter, obj *NestOpt3) {
+	fieldCount := 1
+	if obj.ValueRange != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("money"); writeMoney(w, obj.Money);
+	if obj.ValueRange != nil { w.WriteField("value_range"); writeRange32(w, obj.ValueRange); }
 	w.EndObject()
 }
 
-func decodeNestOpt3(r *specodec.SpecReader) *NestOpt3 {
+func decodeNestOpt3(r specodec.SpecReader) *NestOpt3 {
 	obj := &NestOpt3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "money": obj.money = decodeMoney(r)
-		case "value_range": obj.value_range = func() *Range32 { if r.IsNull() { r.ReadNull(); return nil }; return decodeRange32(r) }()
+		case "money": obj.Money = decodeMoney(r)
+		case "value_range": obj.ValueRange = func() *Range32 { if r.IsNull() { r.ReadNull(); return nil }; return decodeRange32(r) }()
 		default: r.Skip()
 		}
 	}
@@ -6129,25 +6129,25 @@ func decodeNestOpt3(r *specodec.SpecReader) *NestOpt3 {
 	return obj
 }
 
-func writeNestOpt4(w *specodec.SpecWriter, obj *NestOpt4) {
-	_n := 1
-	if obj.addr != nil { _n++ }
-	if obj.coord != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.addr != nil { w.WriteField("addr"); writeAddr(w, obj.addr); }
-	if obj.coord != nil { w.WriteField("coord"); writeCoord(w, obj.coord); }
-	w.WriteField("name"); w.WriteString(obj.name);
+func writeNestOpt4(w specodec.SpecWriter, obj *NestOpt4) {
+	fieldCount := 1
+	if obj.Addr != nil { fieldCount++ }
+	if obj.Coord != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.Addr != nil { w.WriteField("addr"); writeAddr(w, obj.Addr); }
+	if obj.Coord != nil { w.WriteField("coord"); writeCoord(w, obj.Coord); }
+	w.WriteField("name"); w.WriteString(obj.Name);
 	w.EndObject()
 }
 
-func decodeNestOpt4(r *specodec.SpecReader) *NestOpt4 {
+func decodeNestOpt4(r specodec.SpecReader) *NestOpt4 {
 	obj := &NestOpt4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "addr": obj.addr = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
-		case "coord": obj.coord = func() *Coord { if r.IsNull() { r.ReadNull(); return nil }; return decodeCoord(r) }()
-		case "name": obj.name = r.ReadString()
+		case "addr": obj.Addr = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
+		case "coord": obj.Coord = func() *Coord { if r.IsNull() { r.ReadNull(); return nil }; return decodeCoord(r) }()
+		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -6155,24 +6155,24 @@ func decodeNestOpt4(r *specodec.SpecReader) *NestOpt4 {
 	return obj
 }
 
-func writeNestOpt5(w *specodec.SpecWriter, obj *NestOpt5) {
-	_n := 2
-	if obj.label != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("point"); writePoint3(w, obj.point);
-	w.WriteField("addr"); writeAddr(w, obj.addr);
-	if obj.label != nil { w.WriteField("label"); writeLabel(w, obj.label); }
+func writeNestOpt5(w specodec.SpecWriter, obj *NestOpt5) {
+	fieldCount := 2
+	if obj.Label != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("point"); writePoint3(w, obj.Point);
+	w.WriteField("addr"); writeAddr(w, obj.Addr);
+	if obj.Label != nil { w.WriteField("label"); writeLabel(w, obj.Label); }
 	w.EndObject()
 }
 
-func decodeNestOpt5(r *specodec.SpecReader) *NestOpt5 {
+func decodeNestOpt5(r specodec.SpecReader) *NestOpt5 {
 	obj := &NestOpt5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "point": obj.point = decodePoint3(r)
-		case "addr": obj.addr = decodeAddr(r)
-		case "label": obj.label = func() *Label { if r.IsNull() { r.ReadNull(); return nil }; return decodeLabel(r) }()
+		case "point": obj.Point = decodePoint3(r)
+		case "addr": obj.Addr = decodeAddr(r)
+		case "label": obj.Label = func() *Label { if r.IsNull() { r.ReadNull(); return nil }; return decodeLabel(r) }()
 		default: r.Skip()
 		}
 	}
@@ -6180,22 +6180,22 @@ func decodeNestOpt5(r *specodec.SpecReader) *NestOpt5 {
 	return obj
 }
 
-func writeNestOptInner1(w *specodec.SpecWriter, obj *NestOptInner1) {
-	_n := 1
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("tag"); w.WriteString(obj.tag);
-	if obj.nested != nil { w.WriteField("nested"); writeOptInner(w, obj.nested); }
+func writeNestOptInner1(w specodec.SpecWriter, obj *NestOptInner1) {
+	fieldCount := 1
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("tag"); w.WriteString(obj.Tag);
+	if obj.Nested != nil { w.WriteField("nested"); writeOptInner(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeNestOptInner1(r *specodec.SpecReader) *NestOptInner1 {
+func decodeNestOptInner1(r specodec.SpecReader) *NestOptInner1 {
 	obj := &NestOptInner1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "tag": obj.tag = r.ReadString()
-		case "nested": obj.nested = func() *OptInner { if r.IsNull() { r.ReadNull(); return nil }; return decodeOptInner(r) }()
+		case "tag": obj.Tag = r.ReadString()
+		case "nested": obj.Nested = func() *OptInner { if r.IsNull() { r.ReadNull(); return nil }; return decodeOptInner(r) }()
 		default: r.Skip()
 		}
 	}
@@ -6203,20 +6203,20 @@ func decodeNestOptInner1(r *specodec.SpecReader) *NestOptInner1 {
 	return obj
 }
 
-func writeNestOptInner2(w *specodec.SpecWriter, obj *NestOptInner2) {
+func writeNestOptInner2(w specodec.SpecWriter, obj *NestOptInner2) {
 	w.BeginObject(2)
-	w.WriteField("tag"); w.WriteString(obj.tag);
-	w.WriteField("nested"); writeOptInner(w, obj.nested);
+	w.WriteField("tag"); w.WriteString(obj.Tag);
+	w.WriteField("nested"); writeOptInner(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeNestOptInner2(r *specodec.SpecReader) *NestOptInner2 {
+func decodeNestOptInner2(r specodec.SpecReader) *NestOptInner2 {
 	obj := &NestOptInner2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "tag": obj.tag = r.ReadString()
-		case "nested": obj.nested = decodeOptInner(r)
+		case "tag": obj.Tag = r.ReadString()
+		case "nested": obj.Nested = decodeOptInner(r)
 		default: r.Skip()
 		}
 	}
@@ -6224,23 +6224,23 @@ func decodeNestOptInner2(r *specodec.SpecReader) *NestOptInner2 {
 	return obj
 }
 
-func writeNestOptInner3(w *specodec.SpecWriter, obj *NestOptInner3) {
-	_n := 0
-	if obj.outer != nil { _n++ }
-	if obj.nested != nil { _n++ }
-	w.BeginObject(_n)
-	if obj.outer != nil { w.WriteField("outer"); writeOptInner(w, obj.outer); }
-	if obj.nested != nil { w.WriteField("nested"); writeOptInner(w, obj.nested); }
+func writeNestOptInner3(w specodec.SpecWriter, obj *NestOptInner3) {
+	fieldCount := 0
+	if obj.Outer != nil { fieldCount++ }
+	if obj.Nested != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	if obj.Outer != nil { w.WriteField("outer"); writeOptInner(w, obj.Outer); }
+	if obj.Nested != nil { w.WriteField("nested"); writeOptInner(w, obj.Nested); }
 	w.EndObject()
 }
 
-func decodeNestOptInner3(r *specodec.SpecReader) *NestOptInner3 {
+func decodeNestOptInner3(r specodec.SpecReader) *NestOptInner3 {
 	obj := &NestOptInner3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "outer": obj.outer = func() *OptInner { if r.IsNull() { r.ReadNull(); return nil }; return decodeOptInner(r) }()
-		case "nested": obj.nested = func() *OptInner { if r.IsNull() { r.ReadNull(); return nil }; return decodeOptInner(r) }()
+		case "outer": obj.Outer = func() *OptInner { if r.IsNull() { r.ReadNull(); return nil }; return decodeOptInner(r) }()
+		case "nested": obj.Nested = func() *OptInner { if r.IsNull() { r.ReadNull(); return nil }; return decodeOptInner(r) }()
 		default: r.Skip()
 		}
 	}
@@ -6248,20 +6248,20 @@ func decodeNestOptInner3(r *specodec.SpecReader) *NestOptInner3 {
 	return obj
 }
 
-func writeDeepNest1(w *specodec.SpecWriter, obj *DeepNest1) {
+func writeDeepNest1(w specodec.SpecWriter, obj *DeepNest1) {
 	w.BeginObject(2)
-	w.WriteField("label"); w.WriteString(obj.label);
-	w.WriteField("nested"); writeAddr(w, obj.nested);
+	w.WriteField("label"); w.WriteString(obj.Label);
+	w.WriteField("nested"); writeAddr(w, obj.Nested);
 	w.EndObject()
 }
 
-func decodeDeepNest1(r *specodec.SpecReader) *DeepNest1 {
+func decodeDeepNest1(r specodec.SpecReader) *DeepNest1 {
 	obj := &DeepNest1{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "label": obj.label = r.ReadString()
-		case "nested": obj.nested = decodeAddr(r)
+		case "label": obj.Label = r.ReadString()
+		case "nested": obj.Nested = decodeAddr(r)
 		default: r.Skip()
 		}
 	}
@@ -6269,22 +6269,22 @@ func decodeDeepNest1(r *specodec.SpecReader) *DeepNest1 {
 	return obj
 }
 
-func writeDeepNest2(w *specodec.SpecWriter, obj *DeepNest2) {
+func writeDeepNest2(w specodec.SpecWriter, obj *DeepNest2) {
 	w.BeginObject(3)
-	w.WriteField("name"); w.WriteString(obj.name);
-	w.WriteField("money"); writeMoney(w, obj.money);
-	w.WriteField("addr"); writeAddr(w, obj.addr);
+	w.WriteField("name"); w.WriteString(obj.Name);
+	w.WriteField("money"); writeMoney(w, obj.Money);
+	w.WriteField("addr"); writeAddr(w, obj.Addr);
 	w.EndObject()
 }
 
-func decodeDeepNest2(r *specodec.SpecReader) *DeepNest2 {
+func decodeDeepNest2(r specodec.SpecReader) *DeepNest2 {
 	obj := &DeepNest2{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "name": obj.name = r.ReadString()
-		case "money": obj.money = decodeMoney(r)
-		case "addr": obj.addr = decodeAddr(r)
+		case "name": obj.Name = r.ReadString()
+		case "money": obj.Money = decodeMoney(r)
+		case "addr": obj.Addr = decodeAddr(r)
 		default: r.Skip()
 		}
 	}
@@ -6292,24 +6292,24 @@ func decodeDeepNest2(r *specodec.SpecReader) *DeepNest2 {
 	return obj
 }
 
-func writeDeepNest3(w *specodec.SpecWriter, obj *DeepNest3) {
+func writeDeepNest3(w specodec.SpecWriter, obj *DeepNest3) {
 	w.BeginObject(4)
-	w.WriteField("title"); w.WriteString(obj.title);
-	w.WriteField("point"); writePoint3(w, obj.point);
-	w.WriteField("value_range"); writeRange32(w, obj.value_range);
-	w.WriteField("money"); writeMoney(w, obj.money);
+	w.WriteField("title"); w.WriteString(obj.Title);
+	w.WriteField("point"); writePoint3(w, obj.Point);
+	w.WriteField("value_range"); writeRange32(w, obj.ValueRange);
+	w.WriteField("money"); writeMoney(w, obj.Money);
 	w.EndObject()
 }
 
-func decodeDeepNest3(r *specodec.SpecReader) *DeepNest3 {
+func decodeDeepNest3(r specodec.SpecReader) *DeepNest3 {
 	obj := &DeepNest3{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "title": obj.title = r.ReadString()
-		case "point": obj.point = decodePoint3(r)
-		case "value_range": obj.value_range = decodeRange32(r)
-		case "money": obj.money = decodeMoney(r)
+		case "title": obj.Title = r.ReadString()
+		case "point": obj.Point = decodePoint3(r)
+		case "value_range": obj.ValueRange = decodeRange32(r)
+		case "money": obj.Money = decodeMoney(r)
 		default: r.Skip()
 		}
 	}
@@ -6317,22 +6317,22 @@ func decodeDeepNest3(r *specodec.SpecReader) *DeepNest3 {
 	return obj
 }
 
-func writeDeepNest4(w *specodec.SpecWriter, obj *DeepNest4) {
+func writeDeepNest4(w specodec.SpecWriter, obj *DeepNest4) {
 	w.BeginObject(3)
-	w.WriteField("coords"); func() { w.BeginArray(len(obj.coords)); for _, _e := range obj.coords { w.NextElement(); writeCoord(w, _e); }; w.EndArray() }();
-	w.WriteField("nested"); writeInner(w, obj.nested);
-	w.WriteField("tag"); w.WriteString(obj.tag);
+	w.WriteField("coords"); func() { w.BeginArray(len(obj.Coords)); for _, item := range obj.Coords { w.NextElement(); writeCoord(w, item); }; w.EndArray() }();
+	w.WriteField("nested"); writeInner(w, obj.Nested);
+	w.WriteField("tag"); w.WriteString(obj.Tag);
 	w.EndObject()
 }
 
-func decodeDeepNest4(r *specodec.SpecReader) *DeepNest4 {
+func decodeDeepNest4(r specodec.SpecReader) *DeepNest4 {
 	obj := &DeepNest4{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "coords": obj.coords = func() []*Coord { var _a []*Coord; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeCoord(r)) }; r.EndArray(); return _a }()
-		case "nested": obj.nested = decodeInner(r)
-		case "tag": obj.tag = r.ReadString()
+		case "coords": obj.Coords = func() []*Coord { var arr []*Coord; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeCoord(r)) }; r.EndArray(); return arr }()
+		case "nested": obj.Nested = decodeInner(r)
+		case "tag": obj.Tag = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -6340,22 +6340,22 @@ func decodeDeepNest4(r *specodec.SpecReader) *DeepNest4 {
 	return obj
 }
 
-func writeDeepNest5(w *specodec.SpecWriter, obj *DeepNest5) {
+func writeDeepNest5(w specodec.SpecWriter, obj *DeepNest5) {
 	w.BeginObject(3)
-	w.WriteField("labels"); func() { w.BeginArray(len(obj.labels)); for _, _e := range obj.labels { w.NextElement(); writeLabel(w, _e); }; w.EndArray() }();
-	w.WriteField("money"); writeMoney(w, obj.money);
-	w.WriteField("name"); w.WriteString(obj.name);
+	w.WriteField("labels"); func() { w.BeginArray(len(obj.Labels)); for _, item := range obj.Labels { w.NextElement(); writeLabel(w, item); }; w.EndArray() }();
+	w.WriteField("money"); writeMoney(w, obj.Money);
+	w.WriteField("name"); w.WriteString(obj.Name);
 	w.EndObject()
 }
 
-func decodeDeepNest5(r *specodec.SpecReader) *DeepNest5 {
+func decodeDeepNest5(r specodec.SpecReader) *DeepNest5 {
 	obj := &DeepNest5{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "labels": obj.labels = func() []*Label { var _a []*Label; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeLabel(r)) }; r.EndArray(); return _a }()
-		case "money": obj.money = decodeMoney(r)
-		case "name": obj.name = r.ReadString()
+		case "labels": obj.Labels = func() []*Label { var arr []*Label; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeLabel(r)) }; r.EndArray(); return arr }()
+		case "money": obj.Money = decodeMoney(r)
+		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
 	}
@@ -6363,24 +6363,24 @@ func decodeDeepNest5(r *specodec.SpecReader) *DeepNest5 {
 	return obj
 }
 
-func writeDeepNest6(w *specodec.SpecWriter, obj *DeepNest6) {
-	_n := 2
-	if obj.addr != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("items"); func() { w.BeginArray(len(obj.items)); for _, _e := range obj.items { w.NextElement(); writeIdVal(w, _e); }; w.EndArray() }();
-	if obj.addr != nil { w.WriteField("addr"); writeAddr(w, obj.addr); }
-	w.WriteField("coord"); writeCoord(w, obj.coord);
+func writeDeepNest6(w specodec.SpecWriter, obj *DeepNest6) {
+	fieldCount := 2
+	if obj.Addr != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("items"); func() { w.BeginArray(len(obj.Items)); for _, item := range obj.Items { w.NextElement(); writeIdVal(w, item); }; w.EndArray() }();
+	if obj.Addr != nil { w.WriteField("addr"); writeAddr(w, obj.Addr); }
+	w.WriteField("coord"); writeCoord(w, obj.Coord);
 	w.EndObject()
 }
 
-func decodeDeepNest6(r *specodec.SpecReader) *DeepNest6 {
+func decodeDeepNest6(r specodec.SpecReader) *DeepNest6 {
 	obj := &DeepNest6{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.items = func() []*IdVal { var _a []*IdVal; r.BeginArray(); for r.HasNextElement() { _a = append(_a, decodeIdVal(r)) }; r.EndArray(); return _a }()
-		case "addr": obj.addr = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
-		case "coord": obj.coord = decodeCoord(r)
+		case "items": obj.Items = func() []*IdVal { var arr []*IdVal; r.BeginArray(); for r.HasNextElement() { arr = append(arr, decodeIdVal(r)) }; r.EndArray(); return arr }()
+		case "addr": obj.Addr = func() *Addr { if r.IsNull() { r.ReadNull(); return nil }; return decodeAddr(r) }()
+		case "coord": obj.Coord = decodeCoord(r)
 		default: r.Skip()
 		}
 	}
@@ -6388,22 +6388,22 @@ func decodeDeepNest6(r *specodec.SpecReader) *DeepNest6 {
 	return obj
 }
 
-func writeDeepNest7(w *specodec.SpecWriter, obj *DeepNest7) {
+func writeDeepNest7(w specodec.SpecWriter, obj *DeepNest7) {
 	w.BeginObject(3)
-	w.WriteField("a"); writeAddr(w, obj.a);
-	w.WriteField("b"); writeAddr(w, obj.b);
-	w.WriteField("c"); writeAddr(w, obj.c);
+	w.WriteField("a"); writeAddr(w, obj.A);
+	w.WriteField("b"); writeAddr(w, obj.B);
+	w.WriteField("c"); writeAddr(w, obj.C);
 	w.EndObject()
 }
 
-func decodeDeepNest7(r *specodec.SpecReader) *DeepNest7 {
+func decodeDeepNest7(r specodec.SpecReader) *DeepNest7 {
 	obj := &DeepNest7{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.a = decodeAddr(r)
-		case "b": obj.b = decodeAddr(r)
-		case "c": obj.c = decodeAddr(r)
+		case "a": obj.A = decodeAddr(r)
+		case "b": obj.B = decodeAddr(r)
+		case "c": obj.C = decodeAddr(r)
 		default: r.Skip()
 		}
 	}
@@ -6411,24 +6411,24 @@ func decodeDeepNest7(r *specodec.SpecReader) *DeepNest7 {
 	return obj
 }
 
-func writeTimestampEntry(w *specodec.SpecWriter, obj *TimestampEntry) {
-	_n := 2
-	if obj.payload != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("ts"); w.WriteInt64(obj.ts);
-	w.WriteField("event"); w.WriteString(obj.event);
-	if obj.payload != nil { w.WriteField("payload"); w.WriteBytes(*obj.payload); }
+func writeTimestampEntry(w specodec.SpecWriter, obj *TimestampEntry) {
+	fieldCount := 2
+	if obj.Payload != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("ts"); w.WriteInt64(obj.Ts);
+	w.WriteField("event"); w.WriteString(obj.Event);
+	if obj.Payload != nil { w.WriteField("payload"); w.WriteBytes(*obj.Payload); }
 	w.EndObject()
 }
 
-func decodeTimestampEntry(r *specodec.SpecReader) *TimestampEntry {
+func decodeTimestampEntry(r specodec.SpecReader) *TimestampEntry {
 	obj := &TimestampEntry{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "ts": obj.ts = r.ReadInt64()
-		case "event": obj.event = r.ReadString()
-		case "payload": _v := r.ReadBytes(); obj.payload = &_v
+		case "ts": obj.Ts = r.ReadInt64()
+		case "event": obj.Event = r.ReadString()
+		case "payload": val := r.ReadBytes(); obj.Payload = &val
 		default: r.Skip()
 		}
 	}
@@ -6436,31 +6436,31 @@ func decodeTimestampEntry(r *specodec.SpecReader) *TimestampEntry {
 	return obj
 }
 
-func writeConfigEntry(w *specodec.SpecWriter, obj *ConfigEntry) {
-	_n := 1
-	if obj.intValue != nil { _n++ }
-	if obj.strValue != nil { _n++ }
-	if obj.boolValue != nil { _n++ }
-	if obj.floatValue != nil { _n++ }
-	w.BeginObject(_n)
-	w.WriteField("key"); w.WriteString(obj.key);
-	if obj.intValue != nil { w.WriteField("intValue"); w.WriteInt32(*obj.intValue); }
-	if obj.strValue != nil { w.WriteField("strValue"); w.WriteString(*obj.strValue); }
-	if obj.boolValue != nil { w.WriteField("boolValue"); w.WriteBool(*obj.boolValue); }
-	if obj.floatValue != nil { w.WriteField("floatValue"); w.WriteFloat64(*obj.floatValue); }
+func writeConfigEntry(w specodec.SpecWriter, obj *ConfigEntry) {
+	fieldCount := 1
+	if obj.IntValue != nil { fieldCount++ }
+	if obj.StrValue != nil { fieldCount++ }
+	if obj.BoolValue != nil { fieldCount++ }
+	if obj.FloatValue != nil { fieldCount++ }
+	w.BeginObject(fieldCount)
+	w.WriteField("key"); w.WriteString(obj.Key);
+	if obj.IntValue != nil { w.WriteField("intValue"); w.WriteInt32(*obj.IntValue); }
+	if obj.StrValue != nil { w.WriteField("strValue"); w.WriteString(*obj.StrValue); }
+	if obj.BoolValue != nil { w.WriteField("boolValue"); w.WriteBool(*obj.BoolValue); }
+	if obj.FloatValue != nil { w.WriteField("floatValue"); w.WriteFloat64(*obj.FloatValue); }
 	w.EndObject()
 }
 
-func decodeConfigEntry(r *specodec.SpecReader) *ConfigEntry {
+func decodeConfigEntry(r specodec.SpecReader) *ConfigEntry {
 	obj := &ConfigEntry{}
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "key": obj.key = r.ReadString()
-		case "intValue": _v := r.ReadInt32(); obj.intValue = &_v
-		case "strValue": _v := r.ReadString(); obj.strValue = &_v
-		case "boolValue": _v := r.ReadBool(); obj.boolValue = &_v
-		case "floatValue": _v := r.ReadFloat64(); obj.floatValue = &_v
+		case "key": obj.Key = r.ReadString()
+		case "intValue": val := r.ReadInt32(); obj.IntValue = &val
+		case "strValue": val := r.ReadString(); obj.StrValue = &val
+		case "boolValue": val := r.ReadBool(); obj.BoolValue = &val
+		case "floatValue": val := r.ReadFloat64(); obj.FloatValue = &val
 		default: r.Skip()
 		}
 	}
