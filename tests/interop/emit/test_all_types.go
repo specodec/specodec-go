@@ -1,574 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	specodec "github.com/specodec/specodec-runtime-golang"
 	specodec_all_types "emit_go/emit_gen/specodec_all_types"
+	specodec_all_types_nested "emit_go/emit_gen/specodec_all_types_nested"
+	specodec_all_types_nested_deep "emit_go/emit_gen/specodec_all_types_nested_deep"
 )
 
-func tryTest(name string, fn func()) (passed, failed int) {
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Println("FAIL " + name + ": " + fmt.Sprint(r))
-			failed = 1
-		}
-	}()
-	fn()
-	passed = 1
-	return
-}
 
-func toSnakeCase(s string) string {
-	result := ""
-	for i, c := range s {
-		if c >= 65 && c <= 90 {
-			if i > 0 { result += "_" }
-			result += string(c + 32)
-		} else {
-			result += string(c)
-		}
-	}
-	return result
-}
-
-
-func testScalar_int8_min(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int8_min mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int8_min.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int8_min.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int8_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int8_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int8_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int8_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int16_min(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int16_min mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int16_min.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int16_min.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int16_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int16_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int16_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int16_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int32_min(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int32_min mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int32_min.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int32_min.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int32_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int32_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int32_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int32_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int64_min(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int64_min mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int64_min.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int64_min.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_int64_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("int64_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/int64_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadInt64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteInt64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/int64_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_uint8_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("uint8_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/uint8_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadUint32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteUint32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/uint8_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_uint16_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("uint16_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/uint16_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadUint32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteUint32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/uint16_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_uint32_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("uint32_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/uint32_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadUint32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteUint32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/uint32_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_uint64_max(vecDir, outDir string) (passed, failed int) {
-	return tryTest("uint64_max mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/uint64_max.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadUint64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteUint64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/uint64_max.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float32_1_5(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float32_1.5 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float32_1.5.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float32_1.5.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float32_neg_zero(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float32_neg_zero mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float32_neg_zero.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float32_neg_zero.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float32_inf(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float32_inf mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float32_inf.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float32_inf.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float32_neg_inf(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float32_neg_inf mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float32_neg_inf.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float32_neg_inf.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float32_nan(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float32_nan mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float32_nan.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat32()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat32(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float32_nan.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float64_pi(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float64_pi mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float64_pi.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float64_pi.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float64_neg_zero(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float64_neg_zero mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float64_neg_zero.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float64_neg_zero.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float64_inf(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float64_inf mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float64_inf.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float64_inf.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float64_neg_inf(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float64_neg_inf mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float64_neg_inf.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float64_neg_inf.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_float64_nan(vecDir, outDir string) (passed, failed int) {
-	return tryTest("float64_nan mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/float64_nan.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadFloat64()
-		w := specodec.NewMsgPackWriter()
-		w.WriteFloat64(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/float64_nan.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_empty(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_empty mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_empty.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_empty.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_ascii(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_ascii mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_ascii.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_ascii.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_null_byte(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_null_byte mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_null_byte.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_null_byte.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_escape(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_escape mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_escape.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_escape.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_unicode(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_unicode mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_unicode.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_unicode.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_31(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_31 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_31.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_31.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_32(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_32 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_32.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_32.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_255(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_255 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_255.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_255.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_str_256(vecDir, outDir string) (passed, failed int) {
-	return tryTest("str_256 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/str_256.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadString()
-		w := specodec.NewMsgPackWriter()
-		w.WriteString(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/str_256.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_empty(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_empty mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_empty.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_empty.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_small(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_small mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_small.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_small.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_31(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_31 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_31.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_31.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_32(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_32 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_32.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_32.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_255(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_255 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_255.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_255.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_256(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_256 mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_256.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_256.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_zeros(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_zeros mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_zeros.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_zeros.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bytes_ff(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bytes_ff mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bytes_ff.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBytes()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBytes(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bytes_ff.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bool_true(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bool_true mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bool_true.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBool()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBool(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bool_true.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-func testScalar_bool_false(vecDir, outDir string) (passed, failed int) {
-	return tryTest("bool_false mp", func() {
-		data, err := os.ReadFile(filepath.Join(vecDir, "scalars/bool_false.mp"))
-		if err != nil { panic(err) }
-		r := specodec.NewMsgPackReader(data)
-		val := r.ReadBool()
-		w := specodec.NewMsgPackWriter()
-		w.WriteBool(val)
-		err = os.WriteFile(filepath.Join(outDir, "scalars/bool_false.mp"), w.ToBytes(), 0644)
-		if err != nil { panic(err) }
-	})
-}
-
-
-func testModel_opt_inner(vecDir, outDir string) (passed, failed int) {
+func runModel_OptInner(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptInner mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptInner.msgpack"))
 		if err != nil { panic(err) }
@@ -619,7 +61,7 @@ func testModel_opt_inner(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_string(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleString(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleString mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleString.msgpack"))
 		if err != nil { panic(err) }
@@ -670,7 +112,7 @@ func testModel_single_string(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleBoolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleBoolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleBoolean.msgpack"))
 		if err != nil { panic(err) }
@@ -721,7 +163,7 @@ func testModel_single_boolean(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_int8(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleInt8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleInt8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleInt8.msgpack"))
 		if err != nil { panic(err) }
@@ -772,7 +214,7 @@ func testModel_single_int8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_int16(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleInt16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleInt16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleInt16.msgpack"))
 		if err != nil { panic(err) }
@@ -823,7 +265,7 @@ func testModel_single_int16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleInt32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleInt32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleInt32.msgpack"))
 		if err != nil { panic(err) }
@@ -874,7 +316,7 @@ func testModel_single_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleInt64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleInt64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleInt64.msgpack"))
 		if err != nil { panic(err) }
@@ -925,7 +367,7 @@ func testModel_single_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_uint8(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleUint8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleUint8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleUint8.msgpack"))
 		if err != nil { panic(err) }
@@ -976,7 +418,7 @@ func testModel_single_uint8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_uint16(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleUint16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleUint16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleUint16.msgpack"))
 		if err != nil { panic(err) }
@@ -1027,7 +469,7 @@ func testModel_single_uint16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_uint32(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleUint32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleUint32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleUint32.msgpack"))
 		if err != nil { panic(err) }
@@ -1078,7 +520,7 @@ func testModel_single_uint32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleUint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleUint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleUint64.msgpack"))
 		if err != nil { panic(err) }
@@ -1129,7 +571,7 @@ func testModel_single_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_float32(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleFloat32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleFloat32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleFloat32.msgpack"))
 		if err != nil { panic(err) }
@@ -1180,7 +622,7 @@ func testModel_single_float32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleFloat64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleFloat64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleFloat64.msgpack"))
 		if err != nil { panic(err) }
@@ -1231,7 +673,7 @@ func testModel_single_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_single_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_SingleBytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("SingleBytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "SingleBytes.msgpack"))
 		if err != nil { panic(err) }
@@ -1282,7 +724,7 @@ func testModel_single_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_string(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleString(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleString mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleString.msgpack"))
 		if err != nil { panic(err) }
@@ -1333,7 +775,7 @@ func testModel_opt_single_string(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleBoolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleBoolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleBoolean.msgpack"))
 		if err != nil { panic(err) }
@@ -1384,7 +826,7 @@ func testModel_opt_single_boolean(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_int8(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleInt8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleInt8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleInt8.msgpack"))
 		if err != nil { panic(err) }
@@ -1435,7 +877,7 @@ func testModel_opt_single_int8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_int16(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleInt16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleInt16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleInt16.msgpack"))
 		if err != nil { panic(err) }
@@ -1486,7 +928,7 @@ func testModel_opt_single_int16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleInt32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleInt32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleInt32.msgpack"))
 		if err != nil { panic(err) }
@@ -1537,7 +979,7 @@ func testModel_opt_single_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleInt64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleInt64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleInt64.msgpack"))
 		if err != nil { panic(err) }
@@ -1588,7 +1030,7 @@ func testModel_opt_single_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_uint8(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleUint8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleUint8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleUint8.msgpack"))
 		if err != nil { panic(err) }
@@ -1639,7 +1081,7 @@ func testModel_opt_single_uint8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_uint16(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleUint16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleUint16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleUint16.msgpack"))
 		if err != nil { panic(err) }
@@ -1690,7 +1132,7 @@ func testModel_opt_single_uint16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_uint32(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleUint32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleUint32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleUint32.msgpack"))
 		if err != nil { panic(err) }
@@ -1741,7 +1183,7 @@ func testModel_opt_single_uint32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleUint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleUint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleUint64.msgpack"))
 		if err != nil { panic(err) }
@@ -1792,7 +1234,7 @@ func testModel_opt_single_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_float32(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleFloat32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleFloat32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleFloat32.msgpack"))
 		if err != nil { panic(err) }
@@ -1843,7 +1285,7 @@ func testModel_opt_single_float32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleFloat64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleFloat64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleFloat64.msgpack"))
 		if err != nil { panic(err) }
@@ -1894,7 +1336,7 @@ func testModel_opt_single_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_single_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_OptSingleBytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptSingleBytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptSingleBytes.msgpack"))
 		if err != nil { panic(err) }
@@ -1945,7 +1387,7 @@ func testModel_opt_single_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_string(vecDir, outDir string) (passed, failed int) {
+func runModel_PairString(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairString mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairString.msgpack"))
 		if err != nil { panic(err) }
@@ -1996,7 +1438,7 @@ func testModel_pair_string(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_PairBoolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairBoolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairBoolean.msgpack"))
 		if err != nil { panic(err) }
@@ -2047,7 +1489,7 @@ func testModel_pair_boolean(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_int8(vecDir, outDir string) (passed, failed int) {
+func runModel_PairInt8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairInt8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairInt8.msgpack"))
 		if err != nil { panic(err) }
@@ -2098,7 +1540,7 @@ func testModel_pair_int8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_int16(vecDir, outDir string) (passed, failed int) {
+func runModel_PairInt16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairInt16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairInt16.msgpack"))
 		if err != nil { panic(err) }
@@ -2149,7 +1591,7 @@ func testModel_pair_int16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_PairInt32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairInt32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairInt32.msgpack"))
 		if err != nil { panic(err) }
@@ -2200,7 +1642,7 @@ func testModel_pair_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_PairInt64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairInt64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairInt64.msgpack"))
 		if err != nil { panic(err) }
@@ -2251,7 +1693,7 @@ func testModel_pair_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_uint8(vecDir, outDir string) (passed, failed int) {
+func runModel_PairUint8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairUint8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairUint8.msgpack"))
 		if err != nil { panic(err) }
@@ -2302,7 +1744,7 @@ func testModel_pair_uint8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_uint16(vecDir, outDir string) (passed, failed int) {
+func runModel_PairUint16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairUint16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairUint16.msgpack"))
 		if err != nil { panic(err) }
@@ -2353,7 +1795,7 @@ func testModel_pair_uint16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_uint32(vecDir, outDir string) (passed, failed int) {
+func runModel_PairUint32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairUint32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairUint32.msgpack"))
 		if err != nil { panic(err) }
@@ -2404,7 +1846,7 @@ func testModel_pair_uint32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_PairUint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairUint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairUint64.msgpack"))
 		if err != nil { panic(err) }
@@ -2455,7 +1897,7 @@ func testModel_pair_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_float32(vecDir, outDir string) (passed, failed int) {
+func runModel_PairFloat32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairFloat32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairFloat32.msgpack"))
 		if err != nil { panic(err) }
@@ -2506,7 +1948,7 @@ func testModel_pair_float32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_PairFloat64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairFloat64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairFloat64.msgpack"))
 		if err != nil { panic(err) }
@@ -2557,7 +1999,7 @@ func testModel_pair_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_pair_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_PairBytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("PairBytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "PairBytes.msgpack"))
 		if err != nil { panic(err) }
@@ -2608,7 +2050,7 @@ func testModel_pair_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_string_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_DualStringInt32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualStringInt32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualStringInt32.msgpack"))
 		if err != nil { panic(err) }
@@ -2659,7 +2101,7 @@ func testModel_dual_string_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_string_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_DualStringBoolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualStringBoolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualStringBoolean.msgpack"))
 		if err != nil { panic(err) }
@@ -2710,7 +2152,7 @@ func testModel_dual_string_boolean(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_string_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualStringFloat64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualStringFloat64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualStringFloat64.msgpack"))
 		if err != nil { panic(err) }
@@ -2761,7 +2203,7 @@ func testModel_dual_string_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_string_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_DualStringBytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualStringBytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualStringBytes.msgpack"))
 		if err != nil { panic(err) }
@@ -2812,7 +2254,7 @@ func testModel_dual_string_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int32_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt32Boolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt32Boolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt32Boolean.msgpack"))
 		if err != nil { panic(err) }
@@ -2863,7 +2305,7 @@ func testModel_dual_int32_boolean(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int32_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt32Float64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt32Float64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt32Float64.msgpack"))
 		if err != nil { panic(err) }
@@ -2914,7 +2356,7 @@ func testModel_dual_int32_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int32_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt32Int64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt32Int64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt32Int64.msgpack"))
 		if err != nil { panic(err) }
@@ -2965,7 +2407,7 @@ func testModel_dual_int32_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int32_uint32(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt32Uint32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt32Uint32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt32Uint32.msgpack"))
 		if err != nil { panic(err) }
@@ -3016,7 +2458,7 @@ func testModel_dual_int32_uint32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int64_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt64Uint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt64Uint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt64Uint64.msgpack"))
 		if err != nil { panic(err) }
@@ -3067,7 +2509,7 @@ func testModel_dual_int64_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_float32_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualFloat32Float64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualFloat32Float64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualFloat32Float64.msgpack"))
 		if err != nil { panic(err) }
@@ -3118,7 +2560,7 @@ func testModel_dual_float32_float64(vecDir, outDir string) (passed, failed int) 
 	return
 }
 
-func testModel_dual_float64_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_DualFloat64Boolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualFloat64Boolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualFloat64Boolean.msgpack"))
 		if err != nil { panic(err) }
@@ -3169,7 +2611,7 @@ func testModel_dual_float64_boolean(vecDir, outDir string) (passed, failed int) 
 	return
 }
 
-func testModel_dual_float64_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_DualFloat64Bytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualFloat64Bytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualFloat64Bytes.msgpack"))
 		if err != nil { panic(err) }
@@ -3220,7 +2662,7 @@ func testModel_dual_float64_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_uint32_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualUint32Uint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualUint32Uint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualUint32Uint64.msgpack"))
 		if err != nil { panic(err) }
@@ -3271,7 +2713,7 @@ func testModel_dual_uint32_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_boolean_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_DualBooleanBytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualBooleanBytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualBooleanBytes.msgpack"))
 		if err != nil { panic(err) }
@@ -3322,7 +2764,7 @@ func testModel_dual_boolean_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int8_uint8(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt8Uint8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt8Uint8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt8Uint8.msgpack"))
 		if err != nil { panic(err) }
@@ -3373,7 +2815,7 @@ func testModel_dual_int8_uint8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int16_uint16(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt16Uint16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt16Uint16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt16Uint16.msgpack"))
 		if err != nil { panic(err) }
@@ -3424,7 +2866,7 @@ func testModel_dual_int16_uint16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_string_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualStringInt64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualStringInt64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualStringInt64.msgpack"))
 		if err != nil { panic(err) }
@@ -3475,7 +2917,7 @@ func testModel_dual_string_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_string_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualStringUint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualStringUint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualStringUint64.msgpack"))
 		if err != nil { panic(err) }
@@ -3526,7 +2968,7 @@ func testModel_dual_string_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int32_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt32Bytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt32Bytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt32Bytes.msgpack"))
 		if err != nil { panic(err) }
@@ -3577,7 +3019,7 @@ func testModel_dual_int32_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_float64_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_DualFloat64Int32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualFloat64Int32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualFloat64Int32.msgpack"))
 		if err != nil { panic(err) }
@@ -3628,7 +3070,7 @@ func testModel_dual_float64_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_boolean_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_DualBooleanInt32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualBooleanInt32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualBooleanInt32.msgpack"))
 		if err != nil { panic(err) }
@@ -3679,7 +3121,7 @@ func testModel_dual_boolean_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_bytes_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualBytesInt64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualBytesInt64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualBytesInt64.msgpack"))
 		if err != nil { panic(err) }
@@ -3730,7 +3172,7 @@ func testModel_dual_bytes_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int8_float32(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt8Float32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt8Float32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt8Float32.msgpack"))
 		if err != nil { panic(err) }
@@ -3781,7 +3223,7 @@ func testModel_dual_int8_float32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_uint8_int16(vecDir, outDir string) (passed, failed int) {
+func runModel_DualUint8Int16(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualUint8Int16 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualUint8Int16.msgpack"))
 		if err != nil { panic(err) }
@@ -3832,7 +3274,7 @@ func testModel_dual_uint8_int16(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_int64_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_DualInt64Float64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualInt64Float64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualInt64Float64.msgpack"))
 		if err != nil { panic(err) }
@@ -3883,7 +3325,7 @@ func testModel_dual_int64_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_dual_uint64_string(vecDir, outDir string) (passed, failed int) {
+func runModel_DualUint64String(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DualUint64String mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DualUint64String.msgpack"))
 		if err != nil { panic(err) }
@@ -3934,7 +3376,7 @@ func testModel_dual_uint64_string(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple01(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple01(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple01 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple01.msgpack"))
 		if err != nil { panic(err) }
@@ -3985,7 +3427,7 @@ func testModel_triple01(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple02(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple02(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple02 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple02.msgpack"))
 		if err != nil { panic(err) }
@@ -4036,7 +3478,7 @@ func testModel_triple02(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple03(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple03(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple03 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple03.msgpack"))
 		if err != nil { panic(err) }
@@ -4087,7 +3529,7 @@ func testModel_triple03(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple04(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple04(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple04 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple04.msgpack"))
 		if err != nil { panic(err) }
@@ -4138,7 +3580,7 @@ func testModel_triple04(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple05(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple05(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple05 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple05.msgpack"))
 		if err != nil { panic(err) }
@@ -4189,7 +3631,7 @@ func testModel_triple05(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple06(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple06(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple06 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple06.msgpack"))
 		if err != nil { panic(err) }
@@ -4240,7 +3682,7 @@ func testModel_triple06(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple07(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple07(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple07 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple07.msgpack"))
 		if err != nil { panic(err) }
@@ -4291,7 +3733,7 @@ func testModel_triple07(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple08(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple08(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple08 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple08.msgpack"))
 		if err != nil { panic(err) }
@@ -4342,7 +3784,7 @@ func testModel_triple08(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple09(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple09(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple09 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple09.msgpack"))
 		if err != nil { panic(err) }
@@ -4393,7 +3835,7 @@ func testModel_triple09(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple10(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple10(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple10 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple10.msgpack"))
 		if err != nil { panic(err) }
@@ -4444,7 +3886,7 @@ func testModel_triple10(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple11(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple11(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple11 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple11.msgpack"))
 		if err != nil { panic(err) }
@@ -4495,7 +3937,7 @@ func testModel_triple11(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple12(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple12(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple12 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple12.msgpack"))
 		if err != nil { panic(err) }
@@ -4546,7 +3988,7 @@ func testModel_triple12(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple13(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple13(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple13 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple13.msgpack"))
 		if err != nil { panic(err) }
@@ -4597,7 +4039,7 @@ func testModel_triple13(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple14(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple14(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple14 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple14.msgpack"))
 		if err != nil { panic(err) }
@@ -4648,7 +4090,7 @@ func testModel_triple14(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_triple15(vecDir, outDir string) (passed, failed int) {
+func runModel_Triple15(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Triple15 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Triple15.msgpack"))
 		if err != nil { panic(err) }
@@ -4699,7 +4141,7 @@ func testModel_triple15(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five01(vecDir, outDir string) (passed, failed int) {
+func runModel_Five01(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five01 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five01.msgpack"))
 		if err != nil { panic(err) }
@@ -4750,7 +4192,7 @@ func testModel_five01(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five02(vecDir, outDir string) (passed, failed int) {
+func runModel_Five02(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five02 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five02.msgpack"))
 		if err != nil { panic(err) }
@@ -4801,7 +4243,7 @@ func testModel_five02(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five03(vecDir, outDir string) (passed, failed int) {
+func runModel_Five03(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five03 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five03.msgpack"))
 		if err != nil { panic(err) }
@@ -4852,7 +4294,7 @@ func testModel_five03(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five04(vecDir, outDir string) (passed, failed int) {
+func runModel_Five04(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five04 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five04.msgpack"))
 		if err != nil { panic(err) }
@@ -4903,7 +4345,7 @@ func testModel_five04(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five05(vecDir, outDir string) (passed, failed int) {
+func runModel_Five05(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five05 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five05.msgpack"))
 		if err != nil { panic(err) }
@@ -4954,7 +4396,7 @@ func testModel_five05(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five06(vecDir, outDir string) (passed, failed int) {
+func runModel_Five06(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five06 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five06.msgpack"))
 		if err != nil { panic(err) }
@@ -5005,7 +4447,7 @@ func testModel_five06(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five07(vecDir, outDir string) (passed, failed int) {
+func runModel_Five07(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five07 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five07.msgpack"))
 		if err != nil { panic(err) }
@@ -5056,7 +4498,7 @@ func testModel_five07(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five08(vecDir, outDir string) (passed, failed int) {
+func runModel_Five08(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five08 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five08.msgpack"))
 		if err != nil { panic(err) }
@@ -5107,7 +4549,7 @@ func testModel_five08(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five09(vecDir, outDir string) (passed, failed int) {
+func runModel_Five09(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five09 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five09.msgpack"))
 		if err != nil { panic(err) }
@@ -5158,7 +4600,7 @@ func testModel_five09(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_five10(vecDir, outDir string) (passed, failed int) {
+func runModel_Five10(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Five10 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Five10.msgpack"))
 		if err != nil { panic(err) }
@@ -5209,7 +4651,7 @@ func testModel_five10(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_ten01(vecDir, outDir string) (passed, failed int) {
+func runModel_Ten01(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Ten01 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Ten01.msgpack"))
 		if err != nil { panic(err) }
@@ -5260,7 +4702,7 @@ func testModel_ten01(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_ten02(vecDir, outDir string) (passed, failed int) {
+func runModel_Ten02(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Ten02 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Ten02.msgpack"))
 		if err != nil { panic(err) }
@@ -5311,7 +4753,7 @@ func testModel_ten02(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_ten03(vecDir, outDir string) (passed, failed int) {
+func runModel_Ten03(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Ten03 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Ten03.msgpack"))
 		if err != nil { panic(err) }
@@ -5362,7 +4804,7 @@ func testModel_ten03(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_ten04(vecDir, outDir string) (passed, failed int) {
+func runModel_Ten04(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Ten04 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Ten04.msgpack"))
 		if err != nil { panic(err) }
@@ -5413,7 +4855,7 @@ func testModel_ten04(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_ten05(vecDir, outDir string) (passed, failed int) {
+func runModel_Ten05(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Ten05 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Ten05.msgpack"))
 		if err != nil { panic(err) }
@@ -5464,7 +4906,7 @@ func testModel_ten05(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_string(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrString(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrString mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrString.msgpack"))
 		if err != nil { panic(err) }
@@ -5515,7 +4957,7 @@ func testModel_arr_string(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_int32(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrInt32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrInt32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrInt32.msgpack"))
 		if err != nil { panic(err) }
@@ -5566,7 +5008,7 @@ func testModel_arr_int32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_boolean(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrBoolean(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrBoolean mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrBoolean.msgpack"))
 		if err != nil { panic(err) }
@@ -5617,7 +5059,7 @@ func testModel_arr_boolean(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_float64(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrFloat64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrFloat64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrFloat64.msgpack"))
 		if err != nil { panic(err) }
@@ -5668,7 +5110,7 @@ func testModel_arr_float64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_bytes(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrBytes(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrBytes mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrBytes.msgpack"))
 		if err != nil { panic(err) }
@@ -5719,7 +5161,7 @@ func testModel_arr_bytes(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_int64(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrInt64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrInt64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrInt64.msgpack"))
 		if err != nil { panic(err) }
@@ -5770,7 +5212,7 @@ func testModel_arr_int64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_arr_uint64(vecDir, outDir string) (passed, failed int) {
+func runModel_ArrUint64(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ArrUint64 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ArrUint64.msgpack"))
 		if err != nil { panic(err) }
@@ -5821,7 +5263,7 @@ func testModel_arr_uint64(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_multi_arr1(vecDir, outDir string) (passed, failed int) {
+func runModel_MultiArr1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("MultiArr1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "MultiArr1.msgpack"))
 		if err != nil { panic(err) }
@@ -5872,7 +5314,7 @@ func testModel_multi_arr1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_multi_arr2(vecDir, outDir string) (passed, failed int) {
+func runModel_MultiArr2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("MultiArr2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "MultiArr2.msgpack"))
 		if err != nil { panic(err) }
@@ -5923,7 +5365,7 @@ func testModel_multi_arr2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_multi_arr3(vecDir, outDir string) (passed, failed int) {
+func runModel_MultiArr3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("MultiArr3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "MultiArr3.msgpack"))
 		if err != nil { panic(err) }
@@ -5974,7 +5416,7 @@ func testModel_multi_arr3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_multi_arr4(vecDir, outDir string) (passed, failed int) {
+func runModel_MultiArr4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("MultiArr4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "MultiArr4.msgpack"))
 		if err != nil { panic(err) }
@@ -6025,7 +5467,7 @@ func testModel_multi_arr4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_multi_arr5(vecDir, outDir string) (passed, failed int) {
+func runModel_MultiArr5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("MultiArr5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "MultiArr5.msgpack"))
 		if err != nil { panic(err) }
@@ -6076,7 +5518,7 @@ func testModel_multi_arr5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo1(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo1.msgpack"))
 		if err != nil { panic(err) }
@@ -6127,7 +5569,7 @@ func testModel_opt_combo1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo2(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo2.msgpack"))
 		if err != nil { panic(err) }
@@ -6178,7 +5620,7 @@ func testModel_opt_combo2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo3(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo3.msgpack"))
 		if err != nil { panic(err) }
@@ -6229,7 +5671,7 @@ func testModel_opt_combo3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo4(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo4.msgpack"))
 		if err != nil { panic(err) }
@@ -6280,7 +5722,7 @@ func testModel_opt_combo4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo5(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo5.msgpack"))
 		if err != nil { panic(err) }
@@ -6331,7 +5773,7 @@ func testModel_opt_combo5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo6(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo6(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo6 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo6.msgpack"))
 		if err != nil { panic(err) }
@@ -6382,7 +5824,7 @@ func testModel_opt_combo6(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo7(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo7(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo7 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo7.msgpack"))
 		if err != nil { panic(err) }
@@ -6433,7 +5875,7 @@ func testModel_opt_combo7(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo8(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo8(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo8 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo8.msgpack"))
 		if err != nil { panic(err) }
@@ -6484,7 +5926,7 @@ func testModel_opt_combo8(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo9(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo9(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo9 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo9.msgpack"))
 		if err != nil { panic(err) }
@@ -6535,7 +5977,7 @@ func testModel_opt_combo9(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_combo10(vecDir, outDir string) (passed, failed int) {
+func runModel_OptCombo10(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptCombo10 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptCombo10.msgpack"))
 		if err != nil { panic(err) }
@@ -6586,7 +6028,7 @@ func testModel_opt_combo10(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_inner(vecDir, outDir string) (passed, failed int) {
+func runModel_NestInner(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestInner mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestInner.msgpack"))
 		if err != nil { panic(err) }
@@ -6637,7 +6079,7 @@ func testModel_nest_inner(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_coord(vecDir, outDir string) (passed, failed int) {
+func runModel_NestCoord(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestCoord mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestCoord.msgpack"))
 		if err != nil { panic(err) }
@@ -6688,7 +6130,7 @@ func testModel_nest_coord(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_id_val(vecDir, outDir string) (passed, failed int) {
+func runModel_NestIdVal(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestIdVal mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestIdVal.msgpack"))
 		if err != nil { panic(err) }
@@ -6739,7 +6181,7 @@ func testModel_nest_id_val(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_label(vecDir, outDir string) (passed, failed int) {
+func runModel_NestLabel(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestLabel mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestLabel.msgpack"))
 		if err != nil { panic(err) }
@@ -6790,7 +6232,7 @@ func testModel_nest_label(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_money(vecDir, outDir string) (passed, failed int) {
+func runModel_NestMoney(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestMoney mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestMoney.msgpack"))
 		if err != nil { panic(err) }
@@ -6841,7 +6283,7 @@ func testModel_nest_money(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_range32(vecDir, outDir string) (passed, failed int) {
+func runModel_NestRange32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestRange32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestRange32.msgpack"))
 		if err != nil { panic(err) }
@@ -6892,7 +6334,7 @@ func testModel_nest_range32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_addr(vecDir, outDir string) (passed, failed int) {
+func runModel_NestAddr(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestAddr mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestAddr.msgpack"))
 		if err != nil { panic(err) }
@@ -6943,7 +6385,7 @@ func testModel_nest_addr(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_point3(vecDir, outDir string) (passed, failed int) {
+func runModel_NestPoint3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestPoint3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestPoint3.msgpack"))
 		if err != nil { panic(err) }
@@ -6994,7 +6436,7 @@ func testModel_nest_point3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_inner(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestInner(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestInner mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestInner.msgpack"))
 		if err != nil { panic(err) }
@@ -7045,7 +6487,7 @@ func testModel_opt_nest_inner(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_coord(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestCoord(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestCoord mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestCoord.msgpack"))
 		if err != nil { panic(err) }
@@ -7096,7 +6538,7 @@ func testModel_opt_nest_coord(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_id_val(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestIdVal(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestIdVal mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestIdVal.msgpack"))
 		if err != nil { panic(err) }
@@ -7147,7 +6589,7 @@ func testModel_opt_nest_id_val(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_label(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestLabel(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestLabel mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestLabel.msgpack"))
 		if err != nil { panic(err) }
@@ -7198,7 +6640,7 @@ func testModel_opt_nest_label(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_money(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestMoney(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestMoney mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestMoney.msgpack"))
 		if err != nil { panic(err) }
@@ -7249,7 +6691,7 @@ func testModel_opt_nest_money(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_range32(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestRange32(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestRange32 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestRange32.msgpack"))
 		if err != nil { panic(err) }
@@ -7300,7 +6742,7 @@ func testModel_opt_nest_range32(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_addr(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestAddr(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestAddr mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestAddr.msgpack"))
 		if err != nil { panic(err) }
@@ -7351,7 +6793,7 @@ func testModel_opt_nest_addr(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_nest_point3(vecDir, outDir string) (passed, failed int) {
+func runModel_OptNestPoint3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptNestPoint3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptNestPoint3.msgpack"))
 		if err != nil { panic(err) }
@@ -7402,7 +6844,7 @@ func testModel_opt_nest_point3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_model_arr1(vecDir, outDir string) (passed, failed int) {
+func runModel_ModelArr1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ModelArr1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ModelArr1.msgpack"))
 		if err != nil { panic(err) }
@@ -7453,7 +6895,7 @@ func testModel_model_arr1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_model_arr2(vecDir, outDir string) (passed, failed int) {
+func runModel_ModelArr2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ModelArr2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ModelArr2.msgpack"))
 		if err != nil { panic(err) }
@@ -7504,7 +6946,7 @@ func testModel_model_arr2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_model_arr3(vecDir, outDir string) (passed, failed int) {
+func runModel_ModelArr3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ModelArr3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ModelArr3.msgpack"))
 		if err != nil { panic(err) }
@@ -7555,7 +6997,7 @@ func testModel_model_arr3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_model_arr4(vecDir, outDir string) (passed, failed int) {
+func runModel_ModelArr4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ModelArr4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ModelArr4.msgpack"))
 		if err != nil { panic(err) }
@@ -7606,7 +7048,7 @@ func testModel_model_arr4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_model_arr5(vecDir, outDir string) (passed, failed int) {
+func runModel_ModelArr5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ModelArr5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ModelArr5.msgpack"))
 		if err != nil { panic(err) }
@@ -7657,7 +7099,7 @@ func testModel_model_arr5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix01(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix01(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix01 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix01.msgpack"))
 		if err != nil { panic(err) }
@@ -7708,7 +7150,7 @@ func testModel_mix01(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix02(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix02(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix02 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix02.msgpack"))
 		if err != nil { panic(err) }
@@ -7759,7 +7201,7 @@ func testModel_mix02(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix03(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix03(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix03 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix03.msgpack"))
 		if err != nil { panic(err) }
@@ -7810,7 +7252,7 @@ func testModel_mix03(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix04(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix04(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix04 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix04.msgpack"))
 		if err != nil { panic(err) }
@@ -7861,7 +7303,7 @@ func testModel_mix04(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix05(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix05(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix05 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix05.msgpack"))
 		if err != nil { panic(err) }
@@ -7912,7 +7354,7 @@ func testModel_mix05(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix06(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix06(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix06 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix06.msgpack"))
 		if err != nil { panic(err) }
@@ -7963,7 +7405,7 @@ func testModel_mix06(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix07(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix07(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix07 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix07.msgpack"))
 		if err != nil { panic(err) }
@@ -8014,7 +7456,7 @@ func testModel_mix07(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix08(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix08(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix08 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix08.msgpack"))
 		if err != nil { panic(err) }
@@ -8065,7 +7507,7 @@ func testModel_mix08(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix09(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix09(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix09 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix09.msgpack"))
 		if err != nil { panic(err) }
@@ -8116,7 +7558,7 @@ func testModel_mix09(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix10(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix10(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix10 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix10.msgpack"))
 		if err != nil { panic(err) }
@@ -8167,7 +7609,7 @@ func testModel_mix10(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix11(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix11(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix11 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix11.msgpack"))
 		if err != nil { panic(err) }
@@ -8218,7 +7660,7 @@ func testModel_mix11(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix12(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix12(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix12 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix12.msgpack"))
 		if err != nil { panic(err) }
@@ -8269,7 +7711,7 @@ func testModel_mix12(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix13(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix13(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix13 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix13.msgpack"))
 		if err != nil { panic(err) }
@@ -8320,7 +7762,7 @@ func testModel_mix13(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix14(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix14(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix14 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix14.msgpack"))
 		if err != nil { panic(err) }
@@ -8371,7 +7813,7 @@ func testModel_mix14(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_mix15(vecDir, outDir string) (passed, failed int) {
+func runModel_Mix15(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Mix15 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Mix15.msgpack"))
 		if err != nil { panic(err) }
@@ -8422,7 +7864,7 @@ func testModel_mix15(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_all_opt1(vecDir, outDir string) (passed, failed int) {
+func runModel_AllOpt1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("AllOpt1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "AllOpt1.msgpack"))
 		if err != nil { panic(err) }
@@ -8473,7 +7915,7 @@ func testModel_all_opt1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_all_opt2(vecDir, outDir string) (passed, failed int) {
+func runModel_AllOpt2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("AllOpt2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "AllOpt2.msgpack"))
 		if err != nil { panic(err) }
@@ -8524,7 +7966,7 @@ func testModel_all_opt2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_all_opt3(vecDir, outDir string) (passed, failed int) {
+func runModel_AllOpt3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("AllOpt3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "AllOpt3.msgpack"))
 		if err != nil { panic(err) }
@@ -8575,7 +8017,7 @@ func testModel_all_opt3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_all_opt4(vecDir, outDir string) (passed, failed int) {
+func runModel_AllOpt4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("AllOpt4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "AllOpt4.msgpack"))
 		if err != nil { panic(err) }
@@ -8626,7 +8068,7 @@ func testModel_all_opt4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_all_opt5(vecDir, outDir string) (passed, failed int) {
+func runModel_AllOpt5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("AllOpt5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "AllOpt5.msgpack"))
 		if err != nil { panic(err) }
@@ -8677,7 +8119,7 @@ func testModel_all_opt5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_rec_list(vecDir, outDir string) (passed, failed int) {
+func runModel_RecList(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("RecList mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "RecList.msgpack"))
 		if err != nil { panic(err) }
@@ -8728,7 +8170,7 @@ func testModel_rec_list(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_rec_tree(vecDir, outDir string) (passed, failed int) {
+func runModel_RecTree(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("RecTree mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "RecTree.msgpack"))
 		if err != nil { panic(err) }
@@ -8779,7 +8221,7 @@ func testModel_rec_tree(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_rec_chain(vecDir, outDir string) (passed, failed int) {
+func runModel_RecChain(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("RecChain mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "RecChain.msgpack"))
 		if err != nil { panic(err) }
@@ -8830,7 +8272,7 @@ func testModel_rec_chain(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_rec_wrap(vecDir, outDir string) (passed, failed int) {
+func runModel_RecWrap(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("RecWrap mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "RecWrap.msgpack"))
 		if err != nil { panic(err) }
@@ -8881,7 +8323,7 @@ func testModel_rec_wrap(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_rec_wide(vecDir, outDir string) (passed, failed int) {
+func runModel_RecWide(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("RecWide mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "RecWide.msgpack"))
 		if err != nil { panic(err) }
@@ -8932,7 +8374,7 @@ func testModel_rec_wide(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_wide20(vecDir, outDir string) (passed, failed int) {
+func runModel_Wide20(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Wide20 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Wide20.msgpack"))
 		if err != nil { panic(err) }
@@ -8983,7 +8425,7 @@ func testModel_wide20(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_wide25(vecDir, outDir string) (passed, failed int) {
+func runModel_Wide25(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Wide25 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Wide25.msgpack"))
 		if err != nil { panic(err) }
@@ -9034,7 +8476,7 @@ func testModel_wide25(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_wide30(vecDir, outDir string) (passed, failed int) {
+func runModel_Wide30(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Wide30 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Wide30.msgpack"))
 		if err != nil { panic(err) }
@@ -9085,7 +8527,7 @@ func testModel_wide30(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_wide35(vecDir, outDir string) (passed, failed int) {
+func runModel_Wide35(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Wide35 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Wide35.msgpack"))
 		if err != nil { panic(err) }
@@ -9136,7 +8578,7 @@ func testModel_wide35(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_wide40(vecDir, outDir string) (passed, failed int) {
+func runModel_Wide40(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("Wide40 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "Wide40.msgpack"))
 		if err != nil { panic(err) }
@@ -9187,7 +8629,7 @@ func testModel_wide40(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_empty(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeEmpty(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeEmpty mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeEmpty.msgpack"))
 		if err != nil { panic(err) }
@@ -9238,7 +8680,7 @@ func testModel_edge_empty(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_one_opt(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeOneOpt(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeOneOpt mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeOneOpt.msgpack"))
 		if err != nil { panic(err) }
@@ -9289,7 +8731,7 @@ func testModel_edge_one_opt(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_big_nums(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeBigNums(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeBigNums mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeBigNums.msgpack"))
 		if err != nil { panic(err) }
@@ -9340,7 +8782,7 @@ func testModel_edge_big_nums(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_zero_vals(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeZeroVals(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeZeroVals mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeZeroVals.msgpack"))
 		if err != nil { panic(err) }
@@ -9391,7 +8833,7 @@ func testModel_edge_zero_vals(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_nullable(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeNullable(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeNullable mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeNullable.msgpack"))
 		if err != nil { panic(err) }
@@ -9442,7 +8884,7 @@ func testModel_edge_nullable(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_neg_zero(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeNegZero(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeNegZero mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeNegZero.msgpack"))
 		if err != nil { panic(err) }
@@ -9493,7 +8935,7 @@ func testModel_edge_neg_zero(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_null_byte(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeNullByte(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeNullByte mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeNullByte.msgpack"))
 		if err != nil { panic(err) }
@@ -9544,7 +8986,7 @@ func testModel_edge_null_byte(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_boundary(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeBoundary(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeBoundary mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeBoundary.msgpack"))
 		if err != nil { panic(err) }
@@ -9595,7 +9037,7 @@ func testModel_edge_boundary(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_str_len(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeStrLen(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeStrLen mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeStrLen.msgpack"))
 		if err != nil { panic(err) }
@@ -9646,7 +9088,7 @@ func testModel_edge_str_len(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_bytes_len(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeBytesLen(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeBytesLen mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeBytesLen.msgpack"))
 		if err != nil { panic(err) }
@@ -9697,7 +9139,7 @@ func testModel_edge_bytes_len(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_arr_empty(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeArrEmpty(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeArrEmpty mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeArrEmpty.msgpack"))
 		if err != nil { panic(err) }
@@ -9748,7 +9190,7 @@ func testModel_edge_arr_empty(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_edge_arr_boundary(vecDir, outDir string) (passed, failed int) {
+func runModel_EdgeArrBoundary(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("EdgeArrBoundary mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "EdgeArrBoundary.msgpack"))
 		if err != nil { panic(err) }
@@ -9799,7 +9241,7 @@ func testModel_edge_arr_boundary(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_arr1(vecDir, outDir string) (passed, failed int) {
+func runModel_OptArr1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptArr1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptArr1.msgpack"))
 		if err != nil { panic(err) }
@@ -9850,7 +9292,7 @@ func testModel_opt_arr1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_arr2(vecDir, outDir string) (passed, failed int) {
+func runModel_OptArr2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptArr2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptArr2.msgpack"))
 		if err != nil { panic(err) }
@@ -9901,7 +9343,7 @@ func testModel_opt_arr2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_arr3(vecDir, outDir string) (passed, failed int) {
+func runModel_OptArr3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptArr3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptArr3.msgpack"))
 		if err != nil { panic(err) }
@@ -9952,7 +9394,7 @@ func testModel_opt_arr3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_arr4(vecDir, outDir string) (passed, failed int) {
+func runModel_OptArr4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptArr4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptArr4.msgpack"))
 		if err != nil { panic(err) }
@@ -10003,7 +9445,7 @@ func testModel_opt_arr4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_opt_arr5(vecDir, outDir string) (passed, failed int) {
+func runModel_OptArr5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("OptArr5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "OptArr5.msgpack"))
 		if err != nil { panic(err) }
@@ -10054,7 +9496,7 @@ func testModel_opt_arr5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt1(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOpt1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOpt1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOpt1.msgpack"))
 		if err != nil { panic(err) }
@@ -10105,7 +9547,7 @@ func testModel_nest_opt1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt2(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOpt2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOpt2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOpt2.msgpack"))
 		if err != nil { panic(err) }
@@ -10156,7 +9598,7 @@ func testModel_nest_opt2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt3(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOpt3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOpt3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOpt3.msgpack"))
 		if err != nil { panic(err) }
@@ -10207,7 +9649,7 @@ func testModel_nest_opt3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt4(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOpt4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOpt4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOpt4.msgpack"))
 		if err != nil { panic(err) }
@@ -10258,7 +9700,7 @@ func testModel_nest_opt4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt5(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOpt5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOpt5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOpt5.msgpack"))
 		if err != nil { panic(err) }
@@ -10309,7 +9751,7 @@ func testModel_nest_opt5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt_inner1(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOptInner1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOptInner1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOptInner1.msgpack"))
 		if err != nil { panic(err) }
@@ -10360,7 +9802,7 @@ func testModel_nest_opt_inner1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt_inner2(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOptInner2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOptInner2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOptInner2.msgpack"))
 		if err != nil { panic(err) }
@@ -10411,7 +9853,7 @@ func testModel_nest_opt_inner2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_nest_opt_inner3(vecDir, outDir string) (passed, failed int) {
+func runModel_NestOptInner3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("NestOptInner3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "NestOptInner3.msgpack"))
 		if err != nil { panic(err) }
@@ -10462,7 +9904,7 @@ func testModel_nest_opt_inner3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest1(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest1(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest1 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest1.msgpack"))
 		if err != nil { panic(err) }
@@ -10513,7 +9955,7 @@ func testModel_deep_nest1(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest2(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest2(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest2 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest2.msgpack"))
 		if err != nil { panic(err) }
@@ -10564,7 +10006,7 @@ func testModel_deep_nest2(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest3(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest3(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest3 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest3.msgpack"))
 		if err != nil { panic(err) }
@@ -10615,7 +10057,7 @@ func testModel_deep_nest3(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest4(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest4(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest4 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest4.msgpack"))
 		if err != nil { panic(err) }
@@ -10666,7 +10108,7 @@ func testModel_deep_nest4(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest5(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest5(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest5 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest5.msgpack"))
 		if err != nil { panic(err) }
@@ -10717,7 +10159,7 @@ func testModel_deep_nest5(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest6(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest6(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest6 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest6.msgpack"))
 		if err != nil { panic(err) }
@@ -10768,7 +10210,7 @@ func testModel_deep_nest6(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_deep_nest7(vecDir, outDir string) (passed, failed int) {
+func runModel_DeepNest7(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("DeepNest7 mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "DeepNest7.msgpack"))
 		if err != nil { panic(err) }
@@ -10819,7 +10261,7 @@ func testModel_deep_nest7(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_timestamp_entry(vecDir, outDir string) (passed, failed int) {
+func runModel_TimestampEntry(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("TimestampEntry mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "TimestampEntry.msgpack"))
 		if err != nil { panic(err) }
@@ -10870,7 +10312,7 @@ func testModel_timestamp_entry(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
-func testModel_config_entry(vecDir, outDir string) (passed, failed int) {
+func runModel_ConfigEntry(vecDir, outDir string) (passed, failed int) {
 	p, f := tryTest("ConfigEntry mp", func() {
 		data, err := os.ReadFile(filepath.Join(vecDir, "ConfigEntry.msgpack"))
 		if err != nil { panic(err) }
@@ -10921,263 +10363,316 @@ func testModel_config_entry(vecDir, outDir string) (passed, failed int) {
 	return
 }
 
+func runModel_NestedSimple(vecDir, outDir string) (passed, failed int) {
+	p, f := tryTest("NestedSimple mp", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "NestedSimple.msgpack"))
+		if err != nil { panic(err) }
+		r := specodec.NewMsgPackReader(data)
+		obj := specodec_all_types_nested.NestedSimpleCodec.Decode(r)
+		w := specodec.NewMsgPackWriter()
+		specodec_all_types_nested.NestedSimpleCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "NestedSimple.msgpack"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
 
-func main() {
-	vecDir := os.Getenv("VEC_DIR")
-	outDir := os.Getenv("OUT_DIR")
-	os.MkdirAll(filepath.Join(outDir, "scalars"), 0755)
+	p, f = tryTest("NestedSimple json", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "NestedSimple.json"))
+		if err != nil { panic(err) }
+		r := specodec.NewJsonReader(data)
+		obj := specodec_all_types_nested.NestedSimpleCodec.Decode(r)
+		w := specodec.NewJsonWriter()
+		specodec_all_types_nested.NestedSimpleCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "NestedSimple.json"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
 
-	passed := 0
-	failed := 0
+	p, f = tryTest("NestedSimple unformatted", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "NestedSimple.unformatted.json"))
+		if err != nil { panic(err) }
+		r := specodec.NewJsonReader(data)
+		obj := specodec_all_types_nested.NestedSimpleCodec.Decode(r)
+		w := specodec.NewJsonWriter()
+		specodec_all_types_nested.NestedSimpleCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "NestedSimple.unformatted.json"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
+
+	p, f = tryTest("NestedSimple gron", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "NestedSimple.gron"))
+		if err != nil { panic(err) }
+		r := specodec.NewGronReader(data)
+		obj := specodec_all_types_nested.NestedSimpleCodec.Decode(r)
+		w := specodec.NewGronWriter()
+		specodec_all_types_nested.NestedSimpleCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "NestedSimple.gron"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
+	return
+}
+
+func runModel_DeepModel(vecDir, outDir string) (passed, failed int) {
+	p, f := tryTest("DeepModel mp", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "DeepModel.msgpack"))
+		if err != nil { panic(err) }
+		r := specodec.NewMsgPackReader(data)
+		obj := specodec_all_types_nested_deep.DeepModelCodec.Decode(r)
+		w := specodec.NewMsgPackWriter()
+		specodec_all_types_nested_deep.DeepModelCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "DeepModel.msgpack"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
+
+	p, f = tryTest("DeepModel json", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "DeepModel.json"))
+		if err != nil { panic(err) }
+		r := specodec.NewJsonReader(data)
+		obj := specodec_all_types_nested_deep.DeepModelCodec.Decode(r)
+		w := specodec.NewJsonWriter()
+		specodec_all_types_nested_deep.DeepModelCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "DeepModel.json"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
+
+	p, f = tryTest("DeepModel unformatted", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "DeepModel.unformatted.json"))
+		if err != nil { panic(err) }
+		r := specodec.NewJsonReader(data)
+		obj := specodec_all_types_nested_deep.DeepModelCodec.Decode(r)
+		w := specodec.NewJsonWriter()
+		specodec_all_types_nested_deep.DeepModelCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "DeepModel.unformatted.json"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
+
+	p, f = tryTest("DeepModel gron", func() {
+		data, err := os.ReadFile(filepath.Join(vecDir, "DeepModel.gron"))
+		if err != nil { panic(err) }
+		r := specodec.NewGronReader(data)
+		obj := specodec_all_types_nested_deep.DeepModelCodec.Decode(r)
+		w := specodec.NewGronWriter()
+		specodec_all_types_nested_deep.DeepModelCodec.Encode(w, obj)
+		err = os.WriteFile(filepath.Join(outDir, "DeepModel.gron"), w.ToBytes(), 0644)
+		if err != nil { panic(err) }
+	})
+	passed += p; failed += f
+	return
+}
+
+
+func runAllTypes(vecDir, outDir string) (passed, failed int) {
 	var p, f int
+	p, f = runModel_OptInner(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleString(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleBoolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleInt8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleInt16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleInt32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleInt64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleUint8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleUint16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleUint32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleUint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleFloat32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleFloat64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_SingleBytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleString(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleBoolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleInt8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleInt16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleInt32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleInt64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleUint8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleUint16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleUint32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleUint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleFloat32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleFloat64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptSingleBytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairString(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairBoolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairInt8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairInt16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairInt32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairInt64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairUint8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairUint16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairUint32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairUint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairFloat32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairFloat64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_PairBytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualStringInt32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualStringBoolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualStringFloat64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualStringBytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt32Boolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt32Float64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt32Int64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt32Uint32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt64Uint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualFloat32Float64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualFloat64Boolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualFloat64Bytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualUint32Uint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualBooleanBytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt8Uint8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt16Uint16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualStringInt64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualStringUint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt32Bytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualFloat64Int32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualBooleanInt32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualBytesInt64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt8Float32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualUint8Int16(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualInt64Float64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DualUint64String(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple01(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple02(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple03(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple04(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple05(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple06(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple07(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple08(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple09(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple10(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple11(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple12(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple13(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple14(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Triple15(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five01(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five02(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five03(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five04(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five05(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five06(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five07(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five08(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five09(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Five10(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Ten01(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Ten02(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Ten03(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Ten04(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Ten05(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrString(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrInt32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrBoolean(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrFloat64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrBytes(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrInt64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ArrUint64(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_MultiArr1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_MultiArr2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_MultiArr3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_MultiArr4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_MultiArr5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo6(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo7(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo8(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo9(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptCombo10(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestInner(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestCoord(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestIdVal(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestLabel(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestMoney(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestRange32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestAddr(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestPoint3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestInner(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestCoord(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestIdVal(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestLabel(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestMoney(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestRange32(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestAddr(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptNestPoint3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ModelArr1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ModelArr2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ModelArr3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ModelArr4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ModelArr5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix01(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix02(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix03(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix04(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix05(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix06(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix07(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix08(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix09(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix10(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix11(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix12(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix13(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix14(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Mix15(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_AllOpt1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_AllOpt2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_AllOpt3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_AllOpt4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_AllOpt5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_RecList(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_RecTree(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_RecChain(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_RecWrap(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_RecWide(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Wide20(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Wide25(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Wide30(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Wide35(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_Wide40(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeEmpty(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeOneOpt(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeBigNums(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeZeroVals(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeNullable(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeNegZero(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeNullByte(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeBoundary(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeStrLen(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeBytesLen(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeArrEmpty(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_EdgeArrBoundary(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptArr1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptArr2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptArr3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptArr4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_OptArr5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOpt1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOpt2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOpt3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOpt4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOpt5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOptInner1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOptInner2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestOptInner3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest1(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest2(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest3(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest4(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest5(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest6(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepNest7(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_TimestampEntry(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_ConfigEntry(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_NestedSimple(vecDir, outDir); passed += p; failed += f
+	p, f = runModel_DeepModel(vecDir, outDir); passed += p; failed += f
 
-	p, f = testScalar_int8_min(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int8_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int16_min(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int16_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int32_min(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int32_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int64_min(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_int64_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_uint8_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_uint16_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_uint32_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_uint64_max(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float32_1_5(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float32_neg_zero(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float32_inf(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float32_neg_inf(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float32_nan(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float64_pi(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float64_neg_zero(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float64_inf(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float64_neg_inf(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_float64_nan(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_empty(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_ascii(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_null_byte(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_escape(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_unicode(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_31(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_32(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_255(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_str_256(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_empty(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_small(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_31(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_32(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_255(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_256(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_zeros(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bytes_ff(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bool_true(vecDir, outDir); passed += p; failed += f
-	p, f = testScalar_bool_false(vecDir, outDir); passed += p; failed += f
-
-	p, f = testModel_opt_inner(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_string(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_int8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_int16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_uint8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_uint16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_uint32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_float32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_single_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_string(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_int8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_int16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_uint8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_uint16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_uint32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_float32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_single_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_string(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_int8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_int16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_uint8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_uint16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_uint32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_float32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_pair_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_string_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_string_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_string_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_string_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int32_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int32_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int32_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int32_uint32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int64_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_float32_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_float64_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_float64_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_uint32_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_boolean_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int8_uint8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int16_uint16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_string_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_string_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int32_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_float64_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_boolean_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_bytes_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int8_float32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_uint8_int16(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_int64_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_dual_uint64_string(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple01(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple02(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple03(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple04(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple05(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple06(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple07(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple08(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple09(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple10(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple11(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple12(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple13(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple14(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_triple15(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five01(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five02(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five03(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five04(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five05(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five06(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five07(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five08(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five09(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_five10(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_ten01(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_ten02(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_ten03(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_ten04(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_ten05(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_string(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_int32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_boolean(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_float64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_bytes(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_int64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_arr_uint64(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_multi_arr1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_multi_arr2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_multi_arr3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_multi_arr4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_multi_arr5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo6(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo7(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo8(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo9(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_combo10(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_inner(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_coord(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_id_val(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_label(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_money(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_range32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_addr(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_point3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_inner(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_coord(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_id_val(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_label(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_money(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_range32(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_addr(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_nest_point3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_model_arr1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_model_arr2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_model_arr3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_model_arr4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_model_arr5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix01(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix02(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix03(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix04(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix05(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix06(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix07(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix08(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix09(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix10(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix11(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix12(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix13(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix14(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_mix15(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_all_opt1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_all_opt2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_all_opt3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_all_opt4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_all_opt5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_rec_list(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_rec_tree(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_rec_chain(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_rec_wrap(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_rec_wide(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_wide20(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_wide25(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_wide30(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_wide35(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_wide40(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_empty(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_one_opt(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_big_nums(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_zero_vals(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_nullable(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_neg_zero(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_null_byte(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_boundary(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_str_len(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_bytes_len(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_arr_empty(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_edge_arr_boundary(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_arr1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_arr2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_arr3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_arr4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_opt_arr5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt_inner1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt_inner2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_nest_opt_inner3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest1(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest2(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest3(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest4(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest5(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest6(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_deep_nest7(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_timestamp_entry(vecDir, outDir); passed += p; failed += f
-	p, f = testModel_config_entry(vecDir, outDir); passed += p; failed += f
-
-
-	fmt.Printf("emit-go: %d passed, %d failed\n", passed, failed)
-	if failed > 0 { os.Exit(1) }
+	return
 }

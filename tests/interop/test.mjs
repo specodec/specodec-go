@@ -35,17 +35,29 @@ const goFiles = readdirSync(EMIT_GEN).filter(f => f.endsWith('.go'));
 if (goFiles.length > 0) {
   console.log(`  ✓ Generated ${goFiles.join(', ')}`);
   
-  // Move generated files into proper package structure
-  const pkgDir = join(EMIT_GEN, 'specodec_all_types');
-  mkdirSync(pkgDir, { recursive: true });
+  // Read package declarations and group files by package
+  const pkgGroups = {};
   for (const f of goFiles) {
     const src = join(EMIT_GEN, f);
-    const dest = join(pkgDir, f);
     const content = readFileSync(src, 'utf-8');
-    writeFileSync(dest, content);
-    rmSync(src);
+    const pm = content.match(/^package\s+(\S+)/m);
+    const pkg = pm ? pm[1] : 'specodec_all_types';
+    if (!pkgGroups[pkg]) pkgGroups[pkg] = [];
+    pkgGroups[pkg].push(f);
   }
-  console.log(`  ✓ Moved to specodec_all_types package`);
+
+  for (const [pkg, files] of Object.entries(pkgGroups)) {
+    const pkgDir = join(EMIT_GEN, pkg);
+    mkdirSync(pkgDir, { recursive: true });
+    for (const f of files) {
+      const src = join(EMIT_GEN, f);
+      const dest = join(pkgDir, f);
+      const content = readFileSync(src, 'utf-8');
+      writeFileSync(dest, content);
+      rmSync(src);
+    }
+    console.log(`  ✓ Moved ${files.length} file(s) to ${pkg} package`);
+  }
   console.log(`  ✓ Emitter generates correct types`);
 } else {
   console.error('  FAIL: No generated Go files');
@@ -72,18 +84,26 @@ replace github.com/specodec/specodec-runtime-golang => ${runtimeDir}
 `;
 writeFileSync(join(__dir, 'emit', 'go.mod'), goMod);
 
-// Update generated code imports to match new module path
-const emitGenDir = join(__dir, 'emit', 'emit_gen', 'specodec_all_types');
-const genFile = join(emitGenDir, 'all_types_types.go');
-let genContent = readFileSync(genFile, 'utf-8');
-genContent = genContent.replace(/github\.com\/specodec\/specodec-go/g, 'github.com/specodec/specodec-runtime-golang');
-genContent = genContent.replace(/github\.com\/specodec\/specodec-runtime-go/g, 'github.com/specodec/specodec-runtime-golang');
-genContent = genContent.replace(/github\.com\/specodec\/specodec-runtime-golanglang/g, 'github.com/specodec/specodec-runtime-golang');
-writeFileSync(genFile, genContent);
+// Update generated code imports in all generated files to match new module path
+function fixImports(dir) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      fixImports(full);
+    } else if (entry.name.endsWith('.go')) {
+      let content = readFileSync(full, 'utf-8');
+      content = content.replace(/github\.com\/specodec\/specodec-go/g, 'github.com/specodec/specodec-runtime-golang');
+      content = content.replace(/github\.com\/specodec\/specodec-runtime-go/g, 'github.com/specodec/specodec-runtime-golang');
+      content = content.replace(/github\.com\/specodec\/specodec-runtime-golanglang/g, 'github.com/specodec/specodec-runtime-golang');
+      writeFileSync(full, content);
+    }
+  }
+}
+fixImports(join(__dir, 'emit', 'emit_gen'));
 console.log('  ✓ Updated runtime import paths');
 
 try { run(`cd ${__dir}/emit && go mod tidy`); } catch (e) { console.log("Go mod tidy completed (some failures expected)"); }
-try { run(`cd ${__dir}/emit && VEC_DIR=${VEC_DIR} OUT_DIR=${OUT_DIR} go run run_emit.go`); } catch (e) { console.log("Go tests completed (some failures expected)"); }
+try { run(`cd ${__dir}/emit && VEC_DIR=${VEC_DIR} OUT_DIR=${OUT_DIR} go run .`); } catch (e) { console.log("Go tests completed (some failures expected)"); }
 
 console.log('\n=== Step 7: Compare output ===');
 const manifest = JSON.parse(readFileSync(join(VEC_DIR, 'manifest.json'), 'utf-8'));
