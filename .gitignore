@@ -18,3 +18,4 @@ output/
 *.swp
 *.swo
 *~
+.npmrc
