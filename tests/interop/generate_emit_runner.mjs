@@ -8,9 +8,12 @@ const VEC_DIR = process.env.VEC_DIR || path.join(__dir, ".tests-cache", "vectors
 const manifestPath = path.join(VEC_DIR, "manifest.json");
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
 
-const models = manifest.testModels;
+const models = [...(manifest.testModels || []), ...(manifest.testUnions || [])];
 const scalars = manifest.scalars;
 const modelNamespaces = manifest.modelNamespaces || {};
+const testUnions = new Set(manifest.testUnions || []);
+function isUnionTest(name) { return testUnions.has(name); }
+function unionNameOf(testName) { return testName.replace(/_[^_]+$/, ''); }
 
 const emitGenDir = path.join(__dir, "emit", "emit_gen");
 
@@ -36,6 +39,12 @@ function scanGoDir(dir, base) {
         if (content.includes(model + "Codec")) {
           modelPackage[model] = pkg;
         }
+        if (isUnionTest(model)) {
+          const uname = unionNameOf(model);
+          if (content.includes(uname + "Codec")) {
+            modelPackage[model] = pkg;
+          }
+        }
       }
     }
   }
@@ -46,7 +55,7 @@ if (fs.existsSync(emitGenDir)) {
 }
 
 const packages = Object.keys(packageMap);
-if (packages.length === 0) packages.push("specodec_all_types");
+if (packages.length === 0) packages.push("all_types");
 if (!packageMap[packages[0]]) packageMap[packages[0]] = packages[0];
 
 for (const model of models) {
@@ -147,6 +156,7 @@ func ${funcName}(vecDir, outDir string) (passed, failed int) {
 function genModelFunc(model) {
   const snake = toSnakeCase(model);
   const pascal = toPascalCase(snake);
+  const codecName = isUnionTest(model) ? unionNameOf(model) : model;
   const pkgName = modelPackage[model];
   const funcName = `runModel_${pascal}`;
   return `
@@ -155,9 +165,9 @@ func ${funcName}(vecDir, outDir string) (passed, failed int) {
 \t\tdata, err := os.ReadFile(filepath.Join(vecDir, "${model}.msgpack"))
 \t\tif err != nil { panic(err) }
 \t\tr := specodec.NewMsgPackReader(data)
-\t\tobj := ${pkgName}.${model}Codec.Decode(r)
+\t\tobj := ${pkgName}.${codecName}Codec.Decode(r)
 \t\tw := specodec.NewMsgPackWriter()
-\t\t${pkgName}.${model}Codec.Encode(w, obj)
+\t\t${pkgName}.${codecName}Codec.Encode(w, obj)
 \t\terr = os.WriteFile(filepath.Join(outDir, "${model}.msgpack"), w.ToBytes(), 0644)
 \t\tif err != nil { panic(err) }
 \t})
@@ -167,9 +177,9 @@ func ${funcName}(vecDir, outDir string) (passed, failed int) {
 \t\tdata, err := os.ReadFile(filepath.Join(vecDir, "${model}.json"))
 \t\tif err != nil { panic(err) }
 \t\tr := specodec.NewJsonReader(data)
-\t\tobj := ${pkgName}.${model}Codec.Decode(r)
+\t\tobj := ${pkgName}.${codecName}Codec.Decode(r)
 \t\tw := specodec.NewJsonWriter()
-\t\t${pkgName}.${model}Codec.Encode(w, obj)
+\t\t${pkgName}.${codecName}Codec.Encode(w, obj)
 \t\terr = os.WriteFile(filepath.Join(outDir, "${model}.json"), w.ToBytes(), 0644)
 \t\tif err != nil { panic(err) }
 \t})
@@ -179,9 +189,9 @@ func ${funcName}(vecDir, outDir string) (passed, failed int) {
 \t\tdata, err := os.ReadFile(filepath.Join(vecDir, "${model}.unformatted.json"))
 \t\tif err != nil { panic(err) }
 \t\tr := specodec.NewJsonReader(data)
-\t\tobj := ${pkgName}.${model}Codec.Decode(r)
+\t\tobj := ${pkgName}.${codecName}Codec.Decode(r)
 \t\tw := specodec.NewJsonWriter()
-\t\t${pkgName}.${model}Codec.Encode(w, obj)
+\t\t${pkgName}.${codecName}Codec.Encode(w, obj)
 \t\terr = os.WriteFile(filepath.Join(outDir, "${model}.unformatted.json"), w.ToBytes(), 0644)
 \t\tif err != nil { panic(err) }
 \t})
@@ -191,9 +201,9 @@ func ${funcName}(vecDir, outDir string) (passed, failed int) {
 \t\tdata, err := os.ReadFile(filepath.Join(vecDir, "${model}.gron"))
 \t\tif err != nil { panic(err) }
 \t\tr := specodec.NewGronReader(data)
-\t\tobj := ${pkgName}.${model}Codec.Decode(r)
+\t\tobj := ${pkgName}.${codecName}Codec.Decode(r)
 \t\tw := specodec.NewGronWriter()
-\t\t${pkgName}.${model}Codec.Encode(w, obj)
+\t\t${pkgName}.${codecName}Codec.Encode(w, obj)
 \t\terr = os.WriteFile(filepath.Join(outDir, "${model}.gron"), w.ToBytes(), 0644)
 \t\tif err != nil { panic(err) }
 \t})
