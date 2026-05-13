@@ -147,6 +147,9 @@ func DecodeUnionScalarHolder(r specodec.SpecReader) *UnionScalarHolder {
 
 type Shape interface { isShape() }
 
+type ShapeUndefined struct{}
+func (ShapeUndefined) isShape() {}
+
 type ShapeCircle struct { Value *Coord }
 func (ShapeCircle) isShape() {}
 
@@ -158,15 +161,16 @@ func WriteShape(w specodec.SpecWriter, obj Shape) {
 	switch v := obj.(type) {
 	case ShapeCircle: w.WriteField("circle"); all_types.WriteCoord(w, v.Value)
 	case ShapeRect: w.WriteField("rect"); all_types.WriteRange32(w, v.Value)
+	case ShapeUndefined: panic("cannot encode Undefined for Shape")
 	}
 	w.EndObject()
 }
 
 func DecodeShape(r specodec.SpecReader) Shape {
+	var result Shape = ShapeUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union Shape") }
 	field := r.ReadFieldName()
-	var result Shape
 	switch field {
 	case "circle": result = ShapeCircle{Value: all_types.DecodeCoord(r)}
 	case "rect": result = ShapeRect{Value: all_types.DecodeRange32(r)}
@@ -184,6 +188,9 @@ var ShapeCodec = specodec.SpecCodec[Shape]{
 
 type Ident interface { isIdent() }
 
+type IdentUndefined struct{}
+func (IdentUndefined) isIdent() {}
+
 type IdentName struct { Value string }
 func (IdentName) isIdent() {}
 
@@ -195,15 +202,16 @@ func WriteIdent(w specodec.SpecWriter, obj Ident) {
 	switch v := obj.(type) {
 	case IdentName: w.WriteField("name"); w.WriteString(v.Value)
 	case IdentNumber: w.WriteField("number"); w.WriteInt32(v.Value)
+	case IdentUndefined: panic("cannot encode Undefined for Ident")
 	}
 	w.EndObject()
 }
 
 func DecodeIdent(r specodec.SpecReader) Ident {
+	var result Ident = IdentUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union Ident") }
 	field := r.ReadFieldName()
-	var result Ident
 	switch field {
 	case "name": result = IdentName{Value: r.ReadString()}
 	case "number": result = IdentNumber{Value: r.ReadInt32()}
@@ -221,6 +229,9 @@ var IdentCodec = specodec.SpecCodec[Ident]{
 
 type ResultMsg interface { isResultMsg() }
 
+type ResultMsgUndefined struct{}
+func (ResultMsgUndefined) isResultMsg() {}
+
 type ResultMsgOk struct { Value string }
 func (ResultMsgOk) isResultMsg() {}
 
@@ -232,15 +243,16 @@ func WriteResultMsg(w specodec.SpecWriter, obj ResultMsg) {
 	switch v := obj.(type) {
 	case ResultMsgOk: w.WriteField("ok"); w.WriteString(v.Value)
 	case ResultMsgErr: w.WriteField("err"); all_types.WriteLabel(w, v.Value)
+	case ResultMsgUndefined: panic("cannot encode Undefined for ResultMsg")
 	}
 	w.EndObject()
 }
 
 func DecodeResultMsg(r specodec.SpecReader) ResultMsg {
+	var result ResultMsg = ResultMsgUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union ResultMsg") }
 	field := r.ReadFieldName()
-	var result ResultMsg
 	switch field {
 	case "ok": result = ResultMsgOk{Value: r.ReadString()}
 	case "err": result = ResultMsgErr{Value: all_types.DecodeLabel(r)}
@@ -258,6 +270,9 @@ var ResultMsgCodec = specodec.SpecCodec[ResultMsg]{
 
 type Tagged interface { isTagged() }
 
+type TaggedUndefined struct{}
+func (TaggedUndefined) isTagged() {}
+
 type TaggedTag struct { Value string }
 func (TaggedTag) isTagged() {}
 
@@ -273,15 +288,16 @@ func WriteTagged(w specodec.SpecWriter, obj Tagged) {
 	case TaggedTag: w.WriteField("tag"); w.WriteString(v.Value)
 	case TaggedScore: w.WriteField("score"); w.WriteFloat64(v.Value)
 	case TaggedActive: w.WriteField("active"); w.WriteBool(v.Value)
+	case TaggedUndefined: panic("cannot encode Undefined for Tagged")
 	}
 	w.EndObject()
 }
 
 func DecodeTagged(r specodec.SpecReader) Tagged {
+	var result Tagged = TaggedUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union Tagged") }
 	field := r.ReadFieldName()
-	var result Tagged
 	switch field {
 	case "tag": result = TaggedTag{Value: r.ReadString()}
 	case "score": result = TaggedScore{Value: r.ReadFloat64()}
@@ -299,6 +315,9 @@ var TaggedCodec = specodec.SpecCodec[Tagged]{
 }
 
 type ScalarUnion interface { isScalarUnion() }
+
+type ScalarUnionUndefined struct{}
+func (ScalarUnionUndefined) isScalarUnion() {}
 
 type ScalarUnionS struct { Value string }
 func (ScalarUnionS) isScalarUnion() {}
@@ -319,15 +338,16 @@ func WriteScalarUnion(w specodec.SpecWriter, obj ScalarUnion) {
 	case ScalarUnionI: w.WriteField("i"); w.WriteInt32(v.Value)
 	case ScalarUnionF: w.WriteField("f"); w.WriteFloat64(v.Value)
 	case ScalarUnionB: w.WriteField("b"); w.WriteBool(v.Value)
+	case ScalarUnionUndefined: panic("cannot encode Undefined for ScalarUnion")
 	}
 	w.EndObject()
 }
 
 func DecodeScalarUnion(r specodec.SpecReader) ScalarUnion {
+	var result ScalarUnion = ScalarUnionUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union ScalarUnion") }
 	field := r.ReadFieldName()
-	var result ScalarUnion
 	switch field {
 	case "s": result = ScalarUnionS{Value: r.ReadString()}
 	case "i": result = ScalarUnionI{Value: r.ReadInt32()}
@@ -347,6 +367,9 @@ var ScalarUnionCodec = specodec.SpecCodec[ScalarUnion]{
 
 type OptUnionHolder interface { isOptUnionHolder() }
 
+type OptUnionHolderUndefined struct{}
+func (OptUnionHolderUndefined) isOptUnionHolder() {}
+
 type OptUnionHolderShape struct { Value Shape }
 func (OptUnionHolderShape) isOptUnionHolder() {}
 
@@ -358,15 +381,16 @@ func WriteOptUnionHolder(w specodec.SpecWriter, obj OptUnionHolder) {
 	switch v := obj.(type) {
 	case OptUnionHolderShape: w.WriteField("shape"); WriteShape(w, v.Value)
 	case OptUnionHolderId: w.WriteField("id"); WriteIdent(w, v.Value)
+	case OptUnionHolderUndefined: panic("cannot encode Undefined for OptUnionHolder")
 	}
 	w.EndObject()
 }
 
 func DecodeOptUnionHolder(r specodec.SpecReader) OptUnionHolder {
+	var result OptUnionHolder = OptUnionHolderUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union OptUnionHolder") }
 	field := r.ReadFieldName()
-	var result OptUnionHolder
 	switch field {
 	case "shape": result = OptUnionHolderShape{Value: DecodeShape(r)}
 	case "id": result = OptUnionHolderId{Value: DecodeIdent(r)}
@@ -384,6 +408,9 @@ var OptUnionHolderCodec = specodec.SpecCodec[OptUnionHolder]{
 
 type MixedUnion interface { isMixedUnion() }
 
+type MixedUnionUndefined struct{}
+func (MixedUnionUndefined) isMixedUnion() {}
+
 type MixedUnionPoint struct { Value *Coord }
 func (MixedUnionPoint) isMixedUnion() {}
 
@@ -399,15 +426,16 @@ func WriteMixedUnion(w specodec.SpecWriter, obj MixedUnion) {
 	case MixedUnionPoint: w.WriteField("point"); all_types.WriteCoord(w, v.Value)
 	case MixedUnionLabel: w.WriteField("label"); w.WriteString(v.Value)
 	case MixedUnionCount: w.WriteField("count"); w.WriteInt32(v.Value)
+	case MixedUnionUndefined: panic("cannot encode Undefined for MixedUnion")
 	}
 	w.EndObject()
 }
 
 func DecodeMixedUnion(r specodec.SpecReader) MixedUnion {
+	var result MixedUnion = MixedUnionUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union MixedUnion") }
 	field := r.ReadFieldName()
-	var result MixedUnion
 	switch field {
 	case "point": result = MixedUnionPoint{Value: all_types.DecodeCoord(r)}
 	case "label": result = MixedUnionLabel{Value: r.ReadString()}
@@ -426,6 +454,9 @@ var MixedUnionCodec = specodec.SpecCodec[MixedUnion]{
 
 type NestedUnion interface { isNestedUnion() }
 
+type NestedUnionUndefined struct{}
+func (NestedUnionUndefined) isNestedUnion() {}
+
 type NestedUnionResult struct { Value ResultMsg }
 func (NestedUnionResult) isNestedUnion() {}
 
@@ -437,15 +468,16 @@ func WriteNestedUnion(w specodec.SpecWriter, obj NestedUnion) {
 	switch v := obj.(type) {
 	case NestedUnionResult: w.WriteField("result"); WriteResultMsg(w, v.Value)
 	case NestedUnionShape: w.WriteField("shape"); WriteShape(w, v.Value)
+	case NestedUnionUndefined: panic("cannot encode Undefined for NestedUnion")
 	}
 	w.EndObject()
 }
 
 func DecodeNestedUnion(r specodec.SpecReader) NestedUnion {
+	var result NestedUnion = NestedUnionUndefined{}
 	r.BeginObject()
 	if !r.HasNextField() { r.EndObject(); panic("empty union NestedUnion") }
 	field := r.ReadFieldName()
-	var result NestedUnion
 	switch field {
 	case "result": result = NestedUnionResult{Value: DecodeResultMsg(r)}
 	case "shape": result = NestedUnionShape{Value: DecodeShape(r)}
