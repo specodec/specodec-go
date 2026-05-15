@@ -72,13 +72,16 @@ console.log('\n=== Step 6: Run tests ===');
 if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
 mkdirSync(OUT_DIR, { recursive: true });
 
-// Use local runtime source instead of remote
-const runtimeDir = join(__dir, '..', '..');  // specodec-runtime-golang root
+// Fetch runtime from Forgejo generic registry
+const runtimeDir = join(__dir, 'emit', '.runtime');
+mkdirSync(runtimeDir, { recursive: true });
+run(`curl -sfL -o /tmp/specodec-go.tar.gz "http://10.199.64.20:3000/api/packages/specodec/generic/specodec-runtime-golang/1.0.0/specodec-go.tar.gz"`);
+run(`tar xzf /tmp/specodec-go.tar.gz -C ${runtimeDir}`);
 const goMod = `module emit_go
 
 go 1.23
 
-require github.com/specodec/specodec-runtime-golang v0.0.0
+require github.com/specodec/specodec-runtime-golang v1.0.0
 
 replace github.com/specodec/specodec-runtime-golang => ${runtimeDir}
 `;
