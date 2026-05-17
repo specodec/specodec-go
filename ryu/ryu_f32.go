@@ -57,7 +57,7 @@ func Float32ToString(f float32) string {
 	if e2 >= 0 {
 		q := log10Pow2(e2)
 		e10 = q
-		k := FLOAT_POW5_INV_BITCOUNT + pow5bits(q) - 1
+		k := FLOAT_POW5_INV_BITCOUNT + pow5Bits(q) - 1
 		i := -e2 + q + k
 		
 		vr = mulShift32(mv, FLOAT_POW5_INV_SPLIT[q]+1, i)
@@ -65,7 +65,7 @@ func Float32ToString(f float32) string {
 		vm_ = mulShift32(mm, FLOAT_POW5_INV_SPLIT[q]+1, i)
 		
 		if q != 0 && (vp-1)/10 <= vm_/10 {
-			l := FLOAT_POW5_INV_BITCOUNT + pow5bits(q-1) - 1
+			l := FLOAT_POW5_INV_BITCOUNT + pow5Bits(q-1) - 1
 			lastDigit = mulShift32(mv, FLOAT_POW5_INV_SPLIT[q-1]+1, -e2+q-1+l) % 10
 		}
 		
@@ -84,7 +84,7 @@ func Float32ToString(f float32) string {
 		q := log10Pow5(-e2)
 		e10 = q + e2
 		i := -e2 - q
-		k := pow5bits(i) - FLOAT_POW5_BITCOUNT
+		k := pow5Bits(i) - FLOAT_POW5_BITCOUNT
 		j := q - k
 		
 		vr = mulShift32(mv, FLOAT_POW5_SPLIT[i], j)
@@ -92,7 +92,7 @@ func Float32ToString(f float32) string {
 		vm_ = mulShift32(mm, FLOAT_POW5_SPLIT[i], j)
 		
 		if q != 0 && (vp-1)/10 <= vm_/10 {
-			j2 := q - 1 - (pow5bits(i+1) - FLOAT_POW5_BITCOUNT)
+			j2 := q - 1 - (pow5Bits(i+1) - FLOAT_POW5_BITCOUNT)
 			lastDigit = mulShift32(mv, FLOAT_POW5_SPLIT[i+1], j2) % 10
 		}
 		

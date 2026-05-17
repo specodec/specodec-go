@@ -1,6 +1,6 @@
 package ryu
 
-func pow5bits(e int32) int32 {
+func pow5Bits(e int32) int32 {
 	return e*1217359/524288 + 1
 }
 
