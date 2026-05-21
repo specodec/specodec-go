@@ -71,7 +71,14 @@ func DecodeOptUnionFieldHolder(r specodec.SpecReader) *OptUnionFieldHolder {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "shape": val := func() Shape { if r.IsNull() { r.ReadNull(); var z Shape; return z }; return DecodeShape(r) }(); obj.Shape = &val
+		case "shape":
+			var tmp0 Shape
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp0 = DecodeShape(r)
+			}
+			obj.Shape = &tmp0
 		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
@@ -91,7 +98,14 @@ func DecodeUnionArrayHolder(r specodec.SpecReader) *UnionArrayHolder {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "shapes": obj.Shapes = func() []Shape { var arr []Shape; r.BeginArray(); for r.HasNextElement() { arr = append(arr, DecodeShape(r)) }; r.EndArray(); return arr }()
+		case "shapes":
+			tmp0 := make([]Shape, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, DecodeShape(r))
+			}
+			r.EndArray()
+			obj.Shapes = tmp0
 		default: r.Skip()
 		}
 	}

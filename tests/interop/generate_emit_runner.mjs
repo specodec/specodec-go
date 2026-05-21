@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dir = path.dirname(fileURLToPath(import.meta.url));
-const VEC_DIR = process.env.VEC_DIR || path.join(__dir, ".tests-cache", "vectors");
+const VEC_DIR = process.env.VEC_DIR || path.join(__dir, "vectors");
 
 const manifestPath = path.join(VEC_DIR, "manifest.json");
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
@@ -62,7 +62,7 @@ for (const model of models) {
   if (!modelPackage[model]) modelPackage[model] = packages[0];
 }
 
-function getReadMethod(type) {
+function readMethod(type) {
   const map = {
     "int32": "ReadInt32", "int64": "ReadInt64",
     "uint32": "ReadUint32", "uint64": "ReadUint64",
@@ -73,7 +73,7 @@ function getReadMethod(type) {
   return map[type] || "ReadInt32";
 }
 
-function getWriteMethod(type) {
+function writeMethod(type) {
   const map = {
     "int32": "WriteInt32", "int64": "WriteInt64",
     "uint32": "WriteUint32", "uint64": "WriteUint64",
@@ -142,9 +142,9 @@ func ${funcName}(vecDir, outDir string) (passed, failed int) {
 \t\tdata, err := os.ReadFile(filepath.Join(vecDir, "scalars/${name}.mp"))
 \t\tif err != nil { panic(err) }
 \t\tr := specodec.NewMsgPackReader(data)
-\t\tval := r.${getReadMethod(info.type)}()
+\t\tval := r.${readMethod(info.type)}()
 \t\tw := specodec.NewMsgPackWriter()
-\t\tw.${getWriteMethod(info.type)}(val)
+\t\tw.${writeMethod(info.type)}(val)
 \t\terr = os.WriteFile(filepath.Join(outDir, "scalars/${name}.mp"), w.ToBytes(), 0644)
 \t\tif err != nil { panic(err) }
 \t})

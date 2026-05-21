@@ -47,7 +47,14 @@ func DecodeRecList(r specodec.SpecReader) *RecList {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "value": obj.Value = r.ReadInt32()
-		case "next": obj.Next = func() *RecList { if r.IsNull() { r.ReadNull(); return nil }; return DecodeRecList(r) }()
+		case "next":
+			var tmp1 *RecList
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = DecodeRecList(r)
+			}
+			obj.Next = tmp1
 		default: r.Skip()
 		}
 	}
@@ -72,8 +79,22 @@ func DecodeRecTree(r specodec.SpecReader) *RecTree {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "value": obj.Value = r.ReadString()
-		case "left_node": obj.LeftNode = func() *RecTree { if r.IsNull() { r.ReadNull(); return nil }; return DecodeRecTree(r) }()
-		case "right_node": obj.RightNode = func() *RecTree { if r.IsNull() { r.ReadNull(); return nil }; return DecodeRecTree(r) }()
+		case "left_node":
+			var tmp1 *RecTree
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = DecodeRecTree(r)
+			}
+			obj.LeftNode = tmp1
+		case "right_node":
+			var tmp2 *RecTree
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = DecodeRecTree(r)
+			}
+			obj.RightNode = tmp2
 		default: r.Skip()
 		}
 	}
@@ -98,7 +119,14 @@ func DecodeRecChain(r specodec.SpecReader) *RecChain {
 		switch r.ReadFieldName() {
 		case "id": obj.Id = r.ReadInt32()
 		case "label": obj.Label = r.ReadString()
-		case "next": obj.Next = func() *RecChain { if r.IsNull() { r.ReadNull(); return nil }; return DecodeRecChain(r) }()
+		case "next":
+			var tmp2 *RecChain
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = DecodeRecChain(r)
+			}
+			obj.Next = tmp2
 		default: r.Skip()
 		}
 	}
@@ -121,7 +149,14 @@ func DecodeRecWrap(r specodec.SpecReader) *RecWrap {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "payload": obj.Payload = r.ReadBytes()
-		case "nested": obj.Nested = func() *RecWrap { if r.IsNull() { r.ReadNull(); return nil }; return DecodeRecWrap(r) }()
+		case "nested":
+			var tmp1 *RecWrap
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = DecodeRecWrap(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -148,7 +183,14 @@ func DecodeRecWide(r specodec.SpecReader) *RecWide {
 		case "a": obj.A = r.ReadInt32()
 		case "b": obj.B = r.ReadString()
 		case "c": obj.C = r.ReadFloat64()
-		case "child": obj.Child = func() *RecWide { if r.IsNull() { r.ReadNull(); return nil }; return DecodeRecWide(r) }()
+		case "child":
+			var tmp3 *RecWide
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp3 = DecodeRecWide(r)
+			}
+			obj.Child = tmp3
 		default: r.Skip()
 		}
 	}

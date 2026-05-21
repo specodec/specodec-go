@@ -179,7 +179,14 @@ func DecodeModelArr1(r specodec.SpecReader) *ModelArr1 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "points": obj.Points = func() []*Inner { var arr []*Inner; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeInner(r)) }; r.EndArray(); return arr }()
+		case "points":
+			tmp0 := make([]*Inner, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeInner(r))
+			}
+			r.EndArray()
+			obj.Points = tmp0
 		default: r.Skip()
 		}
 	}
@@ -198,7 +205,14 @@ func DecodeModelArr2(r specodec.SpecReader) *ModelArr2 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "coords": obj.Coords = func() []*Coord { var arr []*Coord; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeCoord(r)) }; r.EndArray(); return arr }()
+		case "coords":
+			tmp0 := make([]*Coord, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeCoord(r))
+			}
+			r.EndArray()
+			obj.Coords = tmp0
 		default: r.Skip()
 		}
 	}
@@ -218,7 +232,14 @@ func DecodeModelArr3(r specodec.SpecReader) *ModelArr3 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []*IdVal { var arr []*IdVal; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeIdVal(r)) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]*IdVal, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeIdVal(r))
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		case "tag": obj.Tag = r.ReadString()
 		default: r.Skip()
 		}
@@ -239,7 +260,14 @@ func DecodeModelArr4(r specodec.SpecReader) *ModelArr4 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "labels": obj.Labels = func() []*Label { var arr []*Label; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeLabel(r)) }; r.EndArray(); return arr }()
+		case "labels":
+			tmp0 := make([]*Label, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeLabel(r))
+			}
+			r.EndArray()
+			obj.Labels = tmp0
 		case "count": obj.Count = r.ReadInt32()
 		default: r.Skip()
 		}
@@ -260,8 +288,22 @@ func DecodeModelArr5(r specodec.SpecReader) *ModelArr5 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "arr": obj.Arr = func() []*Money { var arr []*Money; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeMoney(r)) }; r.EndArray(); return arr }()
-		case "bs": obj.Bs = func() []*Addr { var arr []*Addr; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeAddr(r)) }; r.EndArray(); return arr }()
+		case "arr":
+			tmp0 := make([]*Money, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeMoney(r))
+			}
+			r.EndArray()
+			obj.Arr = tmp0
+		case "bs":
+			tmp1 := make([]*Addr, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, all_types.DecodeAddr(r))
+			}
+			r.EndArray()
+			obj.Bs = tmp1
 		default: r.Skip()
 		}
 	}
@@ -307,7 +349,14 @@ func DecodeMix02(r specodec.SpecReader) *Mix02 {
 		switch r.ReadFieldName() {
 		case "id": obj.Id = r.ReadString()
 		case "loc": obj.Loc = all_types.DecodeCoord(r)
-		case "tags": obj.Tags = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "tags":
+			tmp2 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp2 = append(tmp2, r.ReadString())
+			}
+			r.EndArray()
+			obj.Tags = tmp2
 		default: r.Skip()
 		}
 	}
@@ -376,7 +425,14 @@ func DecodeMix05(r specodec.SpecReader) *Mix05 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "addr": obj.Addr = all_types.DecodeAddr(r)
-		case "coords": obj.Coords = func() []*Coord { var arr []*Coord; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeCoord(r)) }; r.EndArray(); return arr }()
+		case "coords":
+			tmp1 := make([]*Coord, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, all_types.DecodeCoord(r))
+			}
+			r.EndArray()
+			obj.Coords = tmp1
 		default: r.Skip()
 		}
 	}
@@ -403,7 +459,14 @@ func DecodeMix06(r specodec.SpecReader) *Mix06 {
 		switch r.ReadFieldName() {
 		case "name": obj.Name = r.ReadString()
 		case "age": obj.Age = r.ReadInt32()
-		case "address": obj.Address = func() *all_types.Addr { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeAddr(r) }()
+		case "address":
+			var tmp2 *Addr
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = all_types.DecodeAddr(r)
+			}
+			obj.Address = tmp2
 		case "email": val := r.ReadString(); obj.Email = &val
 		default: r.Skip()
 		}
@@ -450,9 +513,30 @@ func DecodeMix08(r specodec.SpecReader) *Mix08 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "keys": obj.Keys = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
-		case "values": obj.Values = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
-		case "meta": obj.Meta = func() *all_types.Label { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeLabel(r) }()
+		case "keys":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.Keys = tmp0
+		case "values":
+			tmp1 := make([]int32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadInt32())
+			}
+			r.EndArray()
+			obj.Values = tmp1
+		case "meta":
+			var tmp2 *Label
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = all_types.DecodeLabel(r)
+			}
+			obj.Meta = tmp2
 		default: r.Skip()
 		}
 	}
@@ -479,7 +563,14 @@ func DecodeMix09(r specodec.SpecReader) *Mix09 {
 		case "id": obj.Id = r.ReadInt64()
 		case "payload": obj.Payload = r.ReadBytes()
 		case "checksum": obj.Checksum = r.ReadUint32()
-		case "prev": obj.Prev = func() *all_types.IdVal { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeIdVal(r) }()
+		case "prev":
+			var tmp3 *IdVal
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp3 = all_types.DecodeIdVal(r)
+			}
+			obj.Prev = tmp3
 		default: r.Skip()
 		}
 	}
@@ -501,7 +592,14 @@ func DecodeMix10(r specodec.SpecReader) *Mix10 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		case "total": obj.Total = r.ReadInt32()
 		case "avg": obj.Avg = r.ReadFloat64()
 		case "value_range": obj.ValueRange = all_types.DecodeRange32(r)
@@ -530,8 +628,22 @@ func DecodeMix11(r specodec.SpecReader) *Mix11 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "name": obj.Name = r.ReadString()
-		case "values": obj.Values = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
-		case "nested": obj.Nested = func() *all_types.Inner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeInner(r) }()
+		case "values":
+			tmp1 := make([]float64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadFloat64())
+			}
+			r.EndArray()
+			obj.Values = tmp1
+		case "nested":
+			var tmp2 *Inner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = all_types.DecodeInner(r)
+			}
+			obj.Nested = tmp2
 		case "flag": val := r.ReadBool(); obj.Flag = &val
 		default: r.Skip()
 		}
@@ -556,7 +668,14 @@ func DecodeMix12(r specodec.SpecReader) *Mix12 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "header": obj.Header = r.ReadString()
-		case "entries": obj.Entries = func() []*IdVal { var arr []*IdVal; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeIdVal(r)) }; r.EndArray(); return arr }()
+		case "entries":
+			tmp1 := make([]*IdVal, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, all_types.DecodeIdVal(r))
+			}
+			r.EndArray()
+			obj.Entries = tmp1
 		case "footer": val := r.ReadString(); obj.Footer = &val
 		default: r.Skip()
 		}
@@ -607,7 +726,14 @@ func DecodeMix14(r specodec.SpecReader) *Mix14 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "amounts": obj.Amounts = func() []*Money { var arr []*Money; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeMoney(r)) }; r.EndArray(); return arr }()
+		case "amounts":
+			tmp0 := make([]*Money, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeMoney(r))
+			}
+			r.EndArray()
+			obj.Amounts = tmp0
 		case "total": obj.Total = r.ReadInt64()
 		case "currency": obj.Currency = r.ReadString()
 		default: r.Skip()
@@ -774,7 +900,14 @@ func DecodeAllOpt5(r specodec.SpecReader) *AllOpt5 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "p": obj.P = func() *all_types.Inner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeInner(r) }()
+		case "p":
+			var tmp0 *Inner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp0 = all_types.DecodeInner(r)
+			}
+			obj.P = tmp0
 		case "q": val := r.ReadString(); obj.Q = &val
 		default: r.Skip()
 		}

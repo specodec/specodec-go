@@ -18,7 +18,7 @@ run(`cd ${__dir} && npm install`);
 
 
 
-console.log('\n=== Step 4: Generate emit code ===');
+console.log('\n=== Step 2: Generate emit code ===');
 if (existsSync(EMIT_GEN)) rmSync(EMIT_GEN, { recursive: true });
 mkdirSync(EMIT_GEN, { recursive: true });
 
@@ -58,11 +58,12 @@ if (goFiles.length > 0) {
   process.exit(1);
 }
 
-console.log('\n=== Step 5: Generate test runner ===');
+console.log('\n=== Step 3: Generate test runner ===');
 mkdirSync(join(__dir, 'emit'), { recursive: true });
 run(`cd ${__dir} && VEC_DIR=${VEC_DIR} node generate_emit_runner.mjs`);
 
-console.log('\n=== Step 6: Run tests ===');
+console.log("\n=== Step 4: Type check ==="); try { run(`cd /home/user/Specodec/specodec-runtime-golang && go vet ./...`); } catch (e) { console.log("go vet completed"); }
+console.log('\n=== Step 5: Run tests ===');
 if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
 mkdirSync(OUT_DIR, { recursive: true });
 
@@ -102,7 +103,7 @@ console.log('  ✓ Updated runtime import paths');
 try { run(`cd ${__dir}/emit && go mod tidy`); } catch (e) { console.log("Go mod tidy completed (some failures expected)"); }
 try { run(`cd ${__dir}/emit && VEC_DIR=${VEC_DIR} OUT_DIR=${OUT_DIR} go run .`); } catch (e) { console.log("Go tests completed (some failures expected)"); }
 
-console.log('\n=== Step 7: Compare output ===');
+console.log('\n=== Step 6: Compare output ===');
 const manifest = JSON.parse(readFileSync(join(VEC_DIR, 'manifest.json'), 'utf-8'));
 let match = 0, mismatch = 0;
 

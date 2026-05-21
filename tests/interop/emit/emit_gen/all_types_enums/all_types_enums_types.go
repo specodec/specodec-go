@@ -83,7 +83,14 @@ func DecodeEnumArrayHolder(r specodec.SpecReader) *EnumArrayHolder {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "colors": obj.Colors = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "colors":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.Colors = tmp0
 		default: r.Skip()
 		}
 	}

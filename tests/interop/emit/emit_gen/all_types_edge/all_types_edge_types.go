@@ -201,8 +201,26 @@ func DecodeEdgeNullable(r specodec.SpecReader) *EdgeNullable {
 		switch r.ReadFieldName() {
 		case "a": val := r.ReadString(); obj.A = &val
 		case "b": val := r.ReadInt32(); obj.B = &val
-		case "c": obj.C = func() *all_types.Inner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeInner(r) }()
-		case "d": val := func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }(); obj.D = &val
+		case "c":
+			var tmp2 *Inner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = all_types.DecodeInner(r)
+			}
+			obj.C = tmp2
+		case "d":
+			var tmp3 []string
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp3 = append(tmp3, r.ReadString())
+				}
+				r.EndArray()
+			}
+			obj.D = &tmp3
 		default: r.Skip()
 		}
 	}
@@ -340,7 +358,14 @@ func DecodeEdgeArrEmpty(r specodec.SpecReader) *EdgeArrEmpty {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -360,8 +385,22 @@ func DecodeEdgeArrBoundary(r specodec.SpecReader) *EdgeArrBoundary {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a15": obj.A15 = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
-		case "a16": obj.A16 = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
+		case "a15":
+			tmp0 := make([]int32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadInt32())
+			}
+			r.EndArray()
+			obj.A15 = tmp0
+		case "a16":
+			tmp1 := make([]int32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadInt32())
+			}
+			r.EndArray()
+			obj.A16 = tmp1
 		default: r.Skip()
 		}
 	}

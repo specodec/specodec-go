@@ -156,7 +156,18 @@ func DecodeOptArr1(r specodec.SpecReader) *OptArr1 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "req": obj.Req = r.ReadString()
-		case "items": val := func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }(); obj.Items = &val
+		case "items":
+			var tmp1 []int32
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp1 = append(tmp1, r.ReadInt32())
+				}
+				r.EndArray()
+			}
+			obj.Items = &tmp1
 		default: r.Skip()
 		}
 	}
@@ -181,8 +192,30 @@ func DecodeOptArr2(r specodec.SpecReader) *OptArr2 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "id": obj.Id = r.ReadInt32()
-		case "names": val := func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }(); obj.Names = &val
-		case "flags": val := func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }(); obj.Flags = &val
+		case "names":
+			var tmp1 []string
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp1 = append(tmp1, r.ReadString())
+				}
+				r.EndArray()
+			}
+			obj.Names = &tmp1
+		case "flags":
+			var tmp2 []bool
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp2 = append(tmp2, r.ReadBool())
+				}
+				r.EndArray()
+			}
+			obj.Flags = &tmp2
 		default: r.Skip()
 		}
 	}
@@ -205,8 +238,30 @@ func DecodeOptArr3(r specodec.SpecReader) *OptArr3 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": val := func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }(); obj.A = &val
-		case "b": val := func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }(); obj.B = &val
+		case "a":
+			var tmp0 []string
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp0 = append(tmp0, r.ReadString())
+				}
+				r.EndArray()
+			}
+			obj.A = &tmp0
+		case "b":
+			var tmp1 []float64
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp1 = append(tmp1, r.ReadFloat64())
+				}
+				r.EndArray()
+			}
+			obj.B = &tmp1
 		default: r.Skip()
 		}
 	}
@@ -229,7 +284,18 @@ func DecodeOptArr4(r specodec.SpecReader) *OptArr4 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "payload": obj.Payload = r.ReadBytes()
-		case "chunks": val := func() [][]byte { var arr [][]byte; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBytes()) }; r.EndArray(); return arr }(); obj.Chunks = &val
+		case "chunks":
+			var tmp1 [][]byte
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp1 = append(tmp1, r.ReadBytes())
+				}
+				r.EndArray()
+			}
+			obj.Chunks = &tmp1
 		default: r.Skip()
 		}
 	}
@@ -251,7 +317,18 @@ func DecodeOptArr5(r specodec.SpecReader) *OptArr5 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "models": val := func() []*Inner { var arr []*Inner; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeInner(r)) }; r.EndArray(); return arr }(); obj.Models = &val
+		case "models":
+			var tmp0 []*Inner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				r.BeginArray()
+				for r.HasNextElement() {
+					tmp0 = append(tmp0, all_types.DecodeInner(r))
+				}
+				r.EndArray()
+			}
+			obj.Models = &tmp0
 		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
@@ -298,9 +375,30 @@ func DecodeNestOpt2(r specodec.SpecReader) *NestOpt2 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.A = func() *all_types.IdVal { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeIdVal(r) }()
-		case "b": obj.B = func() *all_types.IdVal { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeIdVal(r) }()
-		case "c": obj.C = func() *all_types.IdVal { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeIdVal(r) }()
+		case "a":
+			var tmp0 *IdVal
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp0 = all_types.DecodeIdVal(r)
+			}
+			obj.A = tmp0
+		case "b":
+			var tmp1 *IdVal
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeIdVal(r)
+			}
+			obj.B = tmp1
+		case "c":
+			var tmp2 *IdVal
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = all_types.DecodeIdVal(r)
+			}
+			obj.C = tmp2
 		default: r.Skip()
 		}
 	}
@@ -323,7 +421,14 @@ func DecodeNestOpt3(r specodec.SpecReader) *NestOpt3 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "money": obj.Money = all_types.DecodeMoney(r)
-		case "value_range": obj.ValueRange = func() *all_types.Range32 { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeRange32(r) }()
+		case "value_range":
+			var tmp1 *Range32
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeRange32(r)
+			}
+			obj.ValueRange = tmp1
 		default: r.Skip()
 		}
 	}
@@ -347,8 +452,22 @@ func DecodeNestOpt4(r specodec.SpecReader) *NestOpt4 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "addr": obj.Addr = func() *all_types.Addr { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeAddr(r) }()
-		case "coord": obj.Coord = func() *all_types.Coord { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeCoord(r) }()
+		case "addr":
+			var tmp0 *Addr
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp0 = all_types.DecodeAddr(r)
+			}
+			obj.Addr = tmp0
+		case "coord":
+			var tmp1 *Coord
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeCoord(r)
+			}
+			obj.Coord = tmp1
 		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
 		}
@@ -374,7 +493,14 @@ func DecodeNestOpt5(r specodec.SpecReader) *NestOpt5 {
 		switch r.ReadFieldName() {
 		case "point": obj.Point = all_types.DecodePoint3(r)
 		case "addr": obj.Addr = all_types.DecodeAddr(r)
-		case "label": obj.Label = func() *all_types.Label { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeLabel(r) }()
+		case "label":
+			var tmp2 *Label
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp2 = all_types.DecodeLabel(r)
+			}
+			obj.Label = tmp2
 		default: r.Skip()
 		}
 	}
@@ -397,7 +523,14 @@ func DecodeNestOptInner1(r specodec.SpecReader) *NestOptInner1 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "tag": obj.Tag = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.OptInner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeOptInner(r) }()
+		case "nested":
+			var tmp1 *OptInner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeOptInner(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -441,8 +574,22 @@ func DecodeNestOptInner3(r specodec.SpecReader) *NestOptInner3 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "outer": obj.Outer = func() *all_types.OptInner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeOptInner(r) }()
-		case "nested": obj.Nested = func() *all_types.OptInner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeOptInner(r) }()
+		case "outer":
+			var tmp0 *OptInner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp0 = all_types.DecodeOptInner(r)
+			}
+			obj.Outer = tmp0
+		case "nested":
+			var tmp1 *OptInner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeOptInner(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -532,7 +679,14 @@ func DecodeDeepNest4(r specodec.SpecReader) *DeepNest4 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "coords": obj.Coords = func() []*Coord { var arr []*Coord; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeCoord(r)) }; r.EndArray(); return arr }()
+		case "coords":
+			tmp0 := make([]*Coord, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeCoord(r))
+			}
+			r.EndArray()
+			obj.Coords = tmp0
 		case "nested": obj.Nested = all_types.DecodeInner(r)
 		case "tag": obj.Tag = r.ReadString()
 		default: r.Skip()
@@ -555,7 +709,14 @@ func DecodeDeepNest5(r specodec.SpecReader) *DeepNest5 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "labels": obj.Labels = func() []*Label { var arr []*Label; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeLabel(r)) }; r.EndArray(); return arr }()
+		case "labels":
+			tmp0 := make([]*Label, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeLabel(r))
+			}
+			r.EndArray()
+			obj.Labels = tmp0
 		case "money": obj.Money = all_types.DecodeMoney(r)
 		case "name": obj.Name = r.ReadString()
 		default: r.Skip()
@@ -580,8 +741,22 @@ func DecodeDeepNest6(r specodec.SpecReader) *DeepNest6 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []*IdVal { var arr []*IdVal; r.BeginArray(); for r.HasNextElement() { arr = append(arr, all_types.DecodeIdVal(r)) }; r.EndArray(); return arr }()
-		case "addr": obj.Addr = func() *all_types.Addr { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeAddr(r) }()
+		case "items":
+			tmp0 := make([]*IdVal, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, all_types.DecodeIdVal(r))
+			}
+			r.EndArray()
+			obj.Items = tmp0
+		case "addr":
+			var tmp1 *Addr
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeAddr(r)
+			}
+			obj.Addr = tmp1
 		case "coord": obj.Coord = all_types.DecodeCoord(r)
 		default: r.Skip()
 		}

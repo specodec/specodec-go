@@ -254,7 +254,14 @@ func DecodeOptNestInner(r specodec.SpecReader) *OptNestInner {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Inner { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeInner(r) }()
+		case "nested":
+			var tmp1 *Inner
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeInner(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -277,7 +284,14 @@ func DecodeOptNestCoord(r specodec.SpecReader) *OptNestCoord {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Coord { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeCoord(r) }()
+		case "nested":
+			var tmp1 *Coord
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeCoord(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -300,7 +314,14 @@ func DecodeOptNestIdVal(r specodec.SpecReader) *OptNestIdVal {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.IdVal { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeIdVal(r) }()
+		case "nested":
+			var tmp1 *IdVal
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeIdVal(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -323,7 +344,14 @@ func DecodeOptNestLabel(r specodec.SpecReader) *OptNestLabel {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Label { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeLabel(r) }()
+		case "nested":
+			var tmp1 *Label
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeLabel(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -346,7 +374,14 @@ func DecodeOptNestMoney(r specodec.SpecReader) *OptNestMoney {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Money { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeMoney(r) }()
+		case "nested":
+			var tmp1 *Money
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeMoney(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -369,7 +404,14 @@ func DecodeOptNestRange32(r specodec.SpecReader) *OptNestRange32 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Range32 { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeRange32(r) }()
+		case "nested":
+			var tmp1 *Range32
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeRange32(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -392,7 +434,14 @@ func DecodeOptNestAddr(r specodec.SpecReader) *OptNestAddr {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Addr { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodeAddr(r) }()
+		case "nested":
+			var tmp1 *Addr
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodeAddr(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}
@@ -415,7 +464,14 @@ func DecodeOptNestPoint3(r specodec.SpecReader) *OptNestPoint3 {
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
 		case "label": obj.Label = r.ReadString()
-		case "nested": obj.Nested = func() *all_types.Point3 { if r.IsNull() { r.ReadNull(); return nil }; return all_types.DecodePoint3(r) }()
+		case "nested":
+			var tmp1 *Point3
+			if r.IsNull() {
+				r.ReadNull()
+			} else {
+				tmp1 = all_types.DecodePoint3(r)
+			}
+			obj.Nested = tmp1
 		default: r.Skip()
 		}
 	}

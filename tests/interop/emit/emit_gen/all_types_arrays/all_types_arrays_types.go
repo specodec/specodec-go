@@ -138,7 +138,14 @@ func DecodeArrString(r specodec.SpecReader) *ArrString {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -157,7 +164,14 @@ func DecodeArrInt32(r specodec.SpecReader) *ArrInt32 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]int32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadInt32())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -176,7 +190,14 @@ func DecodeArrBoolean(r specodec.SpecReader) *ArrBoolean {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]bool, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadBool())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -195,7 +216,14 @@ func DecodeArrFloat64(r specodec.SpecReader) *ArrFloat64 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]float64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadFloat64())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -214,7 +242,14 @@ func DecodeArrBytes(r specodec.SpecReader) *ArrBytes {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() [][]byte { var arr [][]byte; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBytes()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([][]byte, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadBytes())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -233,7 +268,14 @@ func DecodeArrInt64(r specodec.SpecReader) *ArrInt64 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []int64 { var arr []int64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt64()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]int64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadInt64())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -252,7 +294,14 @@ func DecodeArrUint64(r specodec.SpecReader) *ArrUint64 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "items": obj.Items = func() []uint64 { var arr []uint64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadUint64()) }; r.EndArray(); return arr }()
+		case "items":
+			tmp0 := make([]uint64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadUint64())
+			}
+			r.EndArray()
+			obj.Items = tmp0
 		default: r.Skip()
 		}
 	}
@@ -272,8 +321,22 @@ func DecodeMultiArr1(r specodec.SpecReader) *MultiArr1 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "names": obj.Names = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
-		case "scores": obj.Scores = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
+		case "names":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.Names = tmp0
+		case "scores":
+			tmp1 := make([]int32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadInt32())
+			}
+			r.EndArray()
+			obj.Scores = tmp1
 		default: r.Skip()
 		}
 	}
@@ -294,9 +357,30 @@ func DecodeMultiArr2(r specodec.SpecReader) *MultiArr2 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "flags": obj.Flags = func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }()
-		case "values": obj.Values = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
-		case "payload": obj.Payload = func() [][]byte { var arr [][]byte; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBytes()) }; r.EndArray(); return arr }()
+		case "flags":
+			tmp0 := make([]bool, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadBool())
+			}
+			r.EndArray()
+			obj.Flags = tmp0
+		case "values":
+			tmp1 := make([]float64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadFloat64())
+			}
+			r.EndArray()
+			obj.Values = tmp1
+		case "payload":
+			tmp2 := make([][]byte, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp2 = append(tmp2, r.ReadBytes())
+			}
+			r.EndArray()
+			obj.Payload = tmp2
 		default: r.Skip()
 		}
 	}
@@ -317,9 +401,30 @@ func DecodeMultiArr3(r specodec.SpecReader) *MultiArr3 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "a": obj.A = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
-		case "b": obj.B = func() []int32 { var arr []int32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt32()) }; r.EndArray(); return arr }()
-		case "c": obj.C = func() []float64 { var arr []float64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat64()) }; r.EndArray(); return arr }()
+		case "a":
+			tmp0 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadString())
+			}
+			r.EndArray()
+			obj.A = tmp0
+		case "b":
+			tmp1 := make([]int32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadInt32())
+			}
+			r.EndArray()
+			obj.B = tmp1
+		case "c":
+			tmp2 := make([]float64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp2 = append(tmp2, r.ReadFloat64())
+			}
+			r.EndArray()
+			obj.C = tmp2
 		default: r.Skip()
 		}
 	}
@@ -339,8 +444,22 @@ func DecodeMultiArr4(r specodec.SpecReader) *MultiArr4 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "ids": obj.Ids = func() []int64 { var arr []int64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadInt64()) }; r.EndArray(); return arr }()
-		case "tags": obj.Tags = func() []string { var arr []string; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadString()) }; r.EndArray(); return arr }()
+		case "ids":
+			tmp0 := make([]int64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadInt64())
+			}
+			r.EndArray()
+			obj.Ids = tmp0
+		case "tags":
+			tmp1 := make([]string, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadString())
+			}
+			r.EndArray()
+			obj.Tags = tmp1
 		default: r.Skip()
 		}
 	}
@@ -361,9 +480,30 @@ func DecodeMultiArr5(r specodec.SpecReader) *MultiArr5 {
 	r.BeginObject()
 	for r.HasNextField() {
 		switch r.ReadFieldName() {
-		case "xs": obj.Xs = func() []uint64 { var arr []uint64; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadUint64()) }; r.EndArray(); return arr }()
-		case "ys": obj.Ys = func() []float32 { var arr []float32; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadFloat32()) }; r.EndArray(); return arr }()
-		case "zs": obj.Zs = func() []bool { var arr []bool; r.BeginArray(); for r.HasNextElement() { arr = append(arr, r.ReadBool()) }; r.EndArray(); return arr }()
+		case "xs":
+			tmp0 := make([]uint64, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp0 = append(tmp0, r.ReadUint64())
+			}
+			r.EndArray()
+			obj.Xs = tmp0
+		case "ys":
+			tmp1 := make([]float32, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp1 = append(tmp1, r.ReadFloat32())
+			}
+			r.EndArray()
+			obj.Ys = tmp1
+		case "zs":
+			tmp2 := make([]bool, 0)
+			r.BeginArray()
+			for r.HasNextElement() {
+				tmp2 = append(tmp2, r.ReadBool())
+			}
+			r.EndArray()
+			obj.Zs = tmp2
 		default: r.Skip()
 		}
 	}
